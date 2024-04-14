@@ -1,6 +1,7 @@
 {
   imports = [
     ./opts.nix
+    ./cmp.nix
   ];
   programs.nixvim = {
     enable = true;
