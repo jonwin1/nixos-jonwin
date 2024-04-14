@@ -1,4 +1,4 @@
-{ lib, inputs, system, home-manager, user, ... }:
+{ lib, inputs, system, home-manager, user, nixvim, ... }:
 
 {
   desktop = lib.nixosSystem {
@@ -7,6 +7,7 @@
     modules = [
       ./desktop
       ./configuration.nix
+      nixvim.nixosModules.nixvim
 
       home-manager.nixosModules.home-manager {
         home-manager.useGlobalPkgs = true;
@@ -25,6 +26,7 @@
     modules = [
       ./laptop
       ./configuration.nix
+      nixvim.nixosModules.nixvim
 
       home-manager.nixosModules.home-manager {
         home-manager.useGlobalPkgs = true;
@@ -43,6 +45,7 @@
     modules = [
       ./vm
       ./configuration.nix
+      nixvim.nixosModules.nixvim
 
       home-manager.nixosModules.home-manager {
         home-manager.useGlobalPkgs = true;
