@@ -1,6 +1,7 @@
 {
   imports = [
     ./opts.nix
+    ./remap.nix
     ./cmp.nix
   ];
   programs.nixvim = {
