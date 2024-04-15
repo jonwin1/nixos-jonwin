@@ -48,13 +48,13 @@
       pulse.enable = true;
       wireplumber.configPackages = [
         (pkgs.writeTextDir "share/wireplumber/bluetooth.lua.d/51-bluez-config.lua" ''
-	  bluez_monitor.properties = {
-	    ["bluez5.enable-sbc-xq"] = true,
-	    ["bluez5.enable-msbc"] = true,
-	    ["bluez5.enable-hw-volume"] = true,
-	    ["bluez5.headset-roles"] = "[ hsp_hs hsp_ag hfp_hf hfp_ag ]"
-	  }
-	'')
+          bluez_monitor.properties = {
+            ["bluez5.enable-sbc-xq"] = true,
+            ["bluez5.enable-msbc"] = true,
+            ["bluez5.enable-hw-volume"] = true,
+            ["bluez5.headset-roles"] = "[ hsp_hs hsp_ag hfp_hf hfp_ag ]"
+          }
+        '')
       ];
     };
   };
@@ -63,10 +63,10 @@
     (final: prev: {
       dwm = prev.dwm.overrideAttrs (old: { 
         src = prev.fetchFromGitHub {
-	  owner = "jonwin1";
-	  repo = "dwm-jonwin";
-	  rev = "main";
-	  hash = "sha256-9vpglyur7Q4QpeR9O/d3omB4bL64cuywfIsLaDy8UFo=";
+          owner = "jonwin1";
+          repo = "dwm-jonwin";
+          rev = "main";
+          hash = "sha256-+6N0SsreQ2Ig/kvQ/cuu1lKvFJjNDCncu/iQrNyPxmA=";
         };
       });
     })
@@ -118,27 +118,27 @@
       zathura
       (st.overrideAttrs (oldAttrs: rec {
         src = fetchFromGitHub {
-	  owner = "jonwin1";
-	  repo = "st-jonwin";
-	  rev = "main";
+          owner = "jonwin1";
+          repo = "st-jonwin";
+          rev = "main";
           sha256 = "11yf304arr35kxf2bwpzaqg8zgh5vgf92vn3ck88na0kxwavkjc4";
         };
         buildInputs = oldAttrs.buildInputs ++ [ harfbuzz ];
       }))
       (dmenu.overrideAttrs (oldAttrs: rec {
         src = fetchFromGitHub {
-	  owner = "jonwin1";
-	  repo = "dmenu-jonwin";
-	  rev = "main";
-	  sha256 = "bcVSCh+jX+RI8vX4uwIUek8c4JTsvOlk5e6lCLyqI7g=";
+          owner = "jonwin1";
+          repo = "dmenu-jonwin";
+          rev = "main";
+          sha256 = "bcVSCh+jX+RI8vX4uwIUek8c4JTsvOlk5e6lCLyqI7g=";
         };
       }))
       (slstatus.overrideAttrs (oldAttrs: rec {
         src = fetchFromGitHub {
-	  owner = "jonwin1";
-	  repo = "slstatus-jonwin";
-	  rev = "main";
-	  sha256 = "NtHbEoaAplHD9xhQMYLzE3juEIjRIFbgQh48pgWiCv8=";
+          owner = "jonwin1";
+          repo = "slstatus-jonwin";
+          rev = "main";
+          sha256 = "cs62ZdY1dk+ZXz8/WUwh4YWjohDiZqW/QLa6mmio9eo=";
         };
       }))
     ];
@@ -154,6 +154,17 @@
       ];
     })
   ];
+
+  systemd.user.services.slstatus = {
+    description = "slstatus";
+    wantedBy = [ "graphical-session.target" ];
+    partOf = [ "graphical-session.target" ];
+    serviceConfig = {
+      ExecStart = "/run/current-system/sw/bin/slstatus";
+      RestartSec = 3;
+      Restart = "always";
+    };
+  };
 
   system.stateVersion = "23.11";
 }
