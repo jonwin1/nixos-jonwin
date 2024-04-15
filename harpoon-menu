@@ -1,0 +1,2 @@
+modules/nvim/default.nix
+modules/nvim/lsp.nix

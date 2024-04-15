@@ -1,8 +1,11 @@
 {
   imports = [
+    ./cmp.nix
+    ./harpoon.nix
+    ./lsp.nix
     ./opts.nix
     ./remap.nix
-    ./cmp.nix
+    ./telescope.nix
   ];
   programs.nixvim = {
     enable = true;
