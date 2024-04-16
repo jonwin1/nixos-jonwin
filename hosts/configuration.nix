@@ -115,6 +115,9 @@
       wget
       xclip
       zathura
+
+      inputs.nixvim.packages.${system}.default
+
       (st.overrideAttrs (oldAttrs: rec {
         src = fetchFromGitHub {
           owner = "jonwin1";
