@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ../modules
   ];
 
   networking.hostName = "nixos";
