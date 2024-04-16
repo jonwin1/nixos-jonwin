@@ -101,7 +101,6 @@
   environment = {
     variables = {
       TERMINAL = "st-256color";
-      EDITOR = "nvim";
     };
     systemPackages = with pkgs; [
       curl
