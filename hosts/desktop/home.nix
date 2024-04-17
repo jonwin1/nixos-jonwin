@@ -1,7 +1,9 @@
 { config, lib, pkgs, user, ... }:
 
 {
-  imports = [];
+  imports = [
+    ../../hm-modules/hyperland.nix
+  ];
 
   home = {
     # packages = with pkgs; [];
