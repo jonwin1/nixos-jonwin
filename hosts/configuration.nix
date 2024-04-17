@@ -110,6 +110,7 @@
       gimp
       light
       picom
+      ripgrep
       unclutter-xfixes
       unzip
       wget
