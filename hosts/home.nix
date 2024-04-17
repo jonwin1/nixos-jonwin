@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../modules
+    ../hm-modules
   ];
 
   home = {

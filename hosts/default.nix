@@ -1,11 +1,11 @@
 { lib, inputs, system, home-manager, user, ... }:
 
 {
-  desktop = lib.nixosSystem {
+  homeDWM = lib.nixosSystem {
     inherit system;
     specialArgs = { inherit user inputs; };
     modules = [
-      ./desktop
+      ./homeDWM
       ./configuration.nix
 
       home-manager.nixosModules.home-manager {
@@ -13,7 +13,7 @@
         home-manager.useUserPackages = true;
         home-manager.extraSpecialArgs = { inherit user; };
         home-manager.users.${user} = {
-          imports = [(import ./home.nix)] ++ [(import ./desktop/home.nix)];
+          imports = [(import ./home.nix)] ++ [(import ./homeDWM/home.nix)];
         };
       }
     ];

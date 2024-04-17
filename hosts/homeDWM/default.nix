@@ -1,8 +1,10 @@
 { config, lib, pkgs, user, ... }:
 
 {
-  imports = 
-    [(import ./hardware-configuration.nix)];
+  imports = [
+    (import ./hardware-configuration.nix)
+    ../../modules/dwm.nix
+  ];
 
   boot.loader = {
     efi = {
