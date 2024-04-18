@@ -14,7 +14,7 @@
           owner = "jonwin1";
           repo = "dwm-jonwin";
           rev = "main";
-          hash = "sha256-+6N0SsreQ2Ig/kvQ/cuu1lKvFJjNDCncu/iQrNyPxmA=";
+          hash = "sha256-y0aMEuVF5Ro3DtFVqaMTYFIls41ahSYBmrXWnv2f3z8=";
         };
       });
     })
@@ -30,7 +30,7 @@
           owner = "jonwin1";
           repo = "st-jonwin";
           rev = "main";
-          sha256 = "11yf304arr35kxf2bwpzaqg8zgh5vgf92vn3ck88na0kxwavkjc4";
+          sha256 = "HbHpPBgefXNvv0fZcGVo9ygueSWGgywFIdsoEKQSPEQ=";
         };
         buildInputs = oldAttrs.buildInputs ++ [ harfbuzz ];
       }))
@@ -39,7 +39,7 @@
           owner = "jonwin1";
           repo = "dmenu-jonwin";
           rev = "main";
-          sha256 = "bcVSCh+jX+RI8vX4uwIUek8c4JTsvOlk5e6lCLyqI7g=";
+          sha256 = "GjnkXYFGn4JHQaQJJveEUGlMD+xMTD1oVOVcrCJQrIc=";
         };
       }))
       (slstatus.overrideAttrs (oldAttrs: rec {

@@ -90,7 +90,6 @@
   environment = {
     systemPackages = with pkgs; [
       curl
-      dunst
       feh
       firefox
       gcc
@@ -109,14 +108,9 @@
   };
 
   fonts.packages = with pkgs; [
-    fira-code
+    fira-code-nerdfont
     font-awesome
     corefonts
-    (nerdfonts.override {
-      fonts = [
-        "FiraCode"
-      ];
-    })
   ];
 
   system.stateVersion = "23.11";
