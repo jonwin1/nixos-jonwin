@@ -3,7 +3,6 @@
 {
   imports = [
     (import ./hardware-configuration.nix)
-    ../../modules/dwm.nix
   ];
 
   boot.loader = {

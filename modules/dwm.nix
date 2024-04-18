@@ -3,20 +3,7 @@
 {
   services = {
     xserver = {
-      enable = true;
       windowManager.dwm.enable = true;
-      xkb = {
-        layout = "se";
-        variant = "";
-      };
-      displayManager = {
-        lightdm.enable = true;
-      };
-      desktopManager.wallpaper.mode = "fill";
-    };
-    displayManager.autoLogin = {
-      enable = false;
-      user = "${user}";
     };
   };
 

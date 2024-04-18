@@ -29,6 +29,24 @@
     extraGroups = [ "networkmanager" "wheel" "video" "audio" ];
   };
 
+  services = {
+    xserver = {
+      enable = true;
+      xkb = {
+        layout = "se";
+        variant = "";
+      };
+      displayManager = {
+        lightdm.enable = true;
+      };
+      desktopManager.wallpaper.mode = "fill";
+    };
+    displayManager.autoLogin = {
+      enable = true;
+      user = "${user}";
+    };
+  };
+
   sound.enable = true;
   services = {
     pipewire = {

@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../../hm-modules/hyperland.nix
+    #../../hm-modules/hyperland.nix
   ];
 
   home = {
