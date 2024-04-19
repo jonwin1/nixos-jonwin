@@ -95,7 +95,6 @@
       gcc
       gimp
       light
-      picom
       ripgrep
       unclutter-xfixes
       unzip
