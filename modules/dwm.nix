@@ -47,7 +47,7 @@
           owner = "jonwin1";
           repo = "slstatus-jonwin";
           rev = "main";
-          sha256 = "cs62ZdY1dk+ZXz8/WUwh4YWjohDiZqW/QLa6mmio9eo=";
+          sha256 = "JqmT/Cm5lW95m3nHffjZno4QhUGlQm0SShc8ei0feEQ=";
         };
       }))
     ];
