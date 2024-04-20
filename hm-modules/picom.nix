@@ -18,28 +18,11 @@
     fadeExclude = [];
 
     shadow = true;
-    shadowOffsets = [ (-3) (-3) ];
-    shadowOpacity = 0.5;
+    shadowOffsets = [ (-15) (-15) ];
+    shadowOpacity = 0.8;
     shadowExclude =[
       "! name~=''"
       "name = 'Notification'"
-      "name = 'Plank'"
-      "name = 'Docky'"
-      "name = 'Kupfer'"
-      "name = 'xfce4-notifyd'"
-      "name *= 'VLC'"
-      "name *= 'compton'"
-      "name *= 'picom'"
-      "name *= 'Chromium'"
-      "name *= 'Chrome'"
-      "class_g = 'Firefox' && argb"
-      "class_g = 'Conky'"
-      "class_g = 'Kupfer'"
-      "class_g = 'Synapse'"
-      "class_g ?= 'Notify-osd'"
-      "class_g ?= 'Cairo-dock'"
-      "class_g ?= 'Xfce4-notifyd'"
-      "class_g ?= 'Xfce4-power-manager'"
       "_GTK_FRAME_EXTENTS@:c"
       "_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'"
     ];
@@ -47,7 +30,7 @@
     vSync = true;
 
     settings = {
-      shadow-radius = 10;
+      shadow-radius = 25;
 
       glx-no-stencil = true;
       glx-copy-from-font = false;
@@ -61,8 +44,16 @@
       inactive-opacity-override = false;
       inactive-dim = 0.2;
 
+      focus-exclude = [
+        "! name~=''"
+        "name = 'Notification'"
+        "class_g = 'st'"
+        "_GTK_FRAME_EXTENTS@:c"
+        "_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'"
+      ];
+
       mark-wmwin-focused = true;
-      mark-ovredir-focused = true;
+      mark-ovredir-focused = false;
       use-ewmh-active-win = true;
       detect-rounded-corners = true;
       detect-transient = false;
