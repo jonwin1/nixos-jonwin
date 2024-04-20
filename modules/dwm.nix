@@ -3,28 +3,32 @@
 {
   services = {
     xserver = {
-      windowManager.dwm.enable = true;
+      windowManager.dwm = {
+        enable = true;
+        package = inputs.dwm.packages."x86_64-linux".default;
+      };
     };
   };
 
-  nixpkgs.overlays = [
-    (final: prev: {
-      dwm = prev.dwm.overrideAttrs (old: { 
-        src = prev.fetchFromGitHub {
-          owner = "jonwin1";
-          repo = "dwm-jonwin";
-          rev = "main";
-          hash = "sha256-y0aMEuVF5Ro3DtFVqaMTYFIls41ahSYBmrXWnv2f3z8=";
-        };
-      });
-    })
-  ];
+#  nixpkgs.overlays = [
+#    (final: prev: {
+#      dwm = prev.dwm.overrideAttrs (old: { 
+#        src = prev.fetchFromGitHub {
+#          owner = "jonwin1";
+#          repo = "dwm-jonwin";
+#          rev = "main";
+#          hash = "sha256-QnFfkPYV6MYwJZ19kwuFTeVu7lCBSSNimW3Bvj4NUlg=";
+#        };
+#      });
+#    })
+#  ];
 
   environment = {
     variables = {
-      TERMINAL = "st-256color";
+      TERMINAL = "st";
     };
     systemPackages = with pkgs; [
+      xorg.libXext
       (st.overrideAttrs (oldAttrs: rec {
         src = fetchFromGitHub {
           owner = "jonwin1";
@@ -47,7 +51,7 @@
           owner = "jonwin1";
           repo = "slstatus-jonwin";
           rev = "main";
-          sha256 = "JqmT/Cm5lW95m3nHffjZno4QhUGlQm0SShc8ei0feEQ=";
+          sha256 = "YY3NA6UTmRjFgiAGMwMTeuXBoswbzT9MOfIUi/OcIuI=";
         };
       }))
     ];
