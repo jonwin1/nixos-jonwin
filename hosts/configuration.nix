@@ -43,7 +43,6 @@
       displayManager = {
         lightdm.enable = true;
       };
-      desktopManager.wallpaper.mode = "fill";
     };
     displayManager.autoLogin = {
       enable = true;
