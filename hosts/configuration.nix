@@ -1,11 +1,12 @@
-{ config, lib, pkgs, inputs, user, ... }:
-
+{ config, lib, pkgs, inputs, user, host, ... }:
 {
   imports = [
     ../modules
   ];
 
-  networking.hostName = "nixos";
+  programs.zsh.enable = true;
+
+  networking.hostName = "${host}";
   networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Stockholm";
@@ -24,9 +25,12 @@
 
   console.keyMap = "sv-latin1";
 
-  users.users.${user} = {
-    isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" "video" "audio" ];
+  users = {
+    defaultUserShell = pkgs.zsh;
+    users.${user} = {
+      isNormalUser = true;
+      extraGroups = [ "networkmanager" "wheel" "video" "audio" ];
+    };
   };
 
   services = {
@@ -88,10 +92,12 @@
   };
 
   environment = {
+    pathsToLink = [ "/share/zsh" ];
     systemPackages = with pkgs; [
       curl
       feh
       firefox
+      fzf
       gcc
       gimp
       light

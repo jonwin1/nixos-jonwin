@@ -1,9 +1,12 @@
 { lib, inputs, system, home-manager, user, ... }:
 
 {
-  desktop = lib.nixosSystem {
+  desktop = let
+    host = "desktop";
+  in
+  lib.nixosSystem {
     inherit system;
-    specialArgs = { inherit user inputs; };
+    specialArgs = { inherit user host inputs; };
     modules = [
       ./desktop
       ./configuration.nix
@@ -11,7 +14,7 @@
       home-manager.nixosModules.home-manager {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.extraSpecialArgs = { inherit user; };
+        home-manager.extraSpecialArgs = { inherit user host; };
         home-manager.users.${user} = {
           imports = [(import ./home.nix)] ++ [(import ./desktop/home.nix)];
         };
@@ -19,9 +22,12 @@
     ];
   };
 
-  laptop = lib.nixosSystem {
+  laptop = let
+    host = "laptop";
+  in
+  lib.nixosSystem {
     inherit system;
-    specialArgs = { inherit user inputs; };
+    specialArgs = { inherit user host inputs; };
     modules = [
       ./laptop
       ./configuration.nix
@@ -29,7 +35,7 @@
       home-manager.nixosModules.home-manager {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.extraSpecialArgs = { inherit user; };
+        home-manager.extraSpecialArgs = { inherit user host; };
         home-manager.users.${user} = {
           imports = [(import ./home.nix)] ++ [(import ./laptop/home.nix)];
         };
@@ -37,9 +43,12 @@
     ];
   };
 
-  vm = lib.nixosSystem {
+  vm = let
+    host = "vm";
+  in
+  lib.nixosSystem {
     inherit system;
-    specialArgs = { inherit user inputs; };
+    specialArgs = { inherit user host inputs; };
     modules = [
       ./vm
       ./configuration.nix
@@ -47,7 +56,7 @@
       home-manager.nixosModules.home-manager {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.extraSpecialArgs = { inherit user; };
+        home-manager.extraSpecialArgs = { inherit user host; };
         home-manager.users.${user} = {
           imports = [(import ./home.nix)] ++ [(import ./vm/home.nix)];
         };
