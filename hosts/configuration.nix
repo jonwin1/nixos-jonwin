@@ -96,7 +96,6 @@
       gcc
       gimp
       libnotify
-      light
       ripgrep
       unzip
       wget

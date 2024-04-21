@@ -25,6 +25,8 @@
     ];
   };
 
+  programs.light.enable = true;
+
   #services = {
   #  xserver = {
   #    videoDrivers = ["nvidia"];
