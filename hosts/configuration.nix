@@ -34,10 +34,6 @@
   };
 
   services = {
-    displayManager.autoLogin = {
-      enable = true;
-      user = "${user}";
-    };
     pipewire = {
       enable = true;
       alsa.enable = true;
@@ -102,7 +98,6 @@
       libnotify
       light
       ripgrep
-      unclutter-xfixes
       unzip
       wget
       xclip

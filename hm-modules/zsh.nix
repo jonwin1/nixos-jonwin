@@ -39,6 +39,10 @@
         untar = "tar -xvf";
         v = "nvim";
 
+        "..." = "../..";
+        "...." = "../../..";
+        "....." = "../../../..";
+
         clip = "xclip -selection clipboard";
 
         nix-switch = "sudo nixos-rebuild switch --flake ~/nixos-jonwin#${host}";
