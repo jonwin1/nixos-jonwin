@@ -99,6 +99,7 @@
       fzf
       gcc
       gimp
+      libnotify
       light
       ripgrep
       unclutter-xfixes
