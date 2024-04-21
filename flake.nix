@@ -13,6 +13,10 @@
       url = "github:jonwin1/dwm-jonwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    slstatus = {
+      url = "github:jonwin1/slstatus-jonwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { 

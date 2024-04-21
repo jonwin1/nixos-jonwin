@@ -46,14 +46,7 @@
           sha256 = "GjnkXYFGn4JHQaQJJveEUGlMD+xMTD1oVOVcrCJQrIc=";
         };
       }))
-      (slstatus.overrideAttrs (oldAttrs: rec {
-        src = fetchFromGitHub {
-          owner = "jonwin1";
-          repo = "slstatus-jonwin";
-          rev = "main";
-          sha256 = "YY3NA6UTmRjFgiAGMwMTeuXBoswbzT9MOfIUi/OcIuI=";
-        };
-      }))
+      inputs.slstatus.packages."x86_64-linux".default
     ];
   };
   
