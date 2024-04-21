@@ -16,6 +16,10 @@
   };
 
   services = {
+    batsignal = {
+      enable = true;
+      extraArgs = [];
+    };
     random-background = {
       enable = true;
       display = "fill";

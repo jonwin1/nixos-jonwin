@@ -34,24 +34,10 @@
   };
 
   services = {
-    xserver = {
-      enable = true;
-      xkb = {
-        layout = "se";
-        variant = "";
-      };
-      displayManager = {
-        lightdm.enable = true;
-      };
-    };
     displayManager.autoLogin = {
       enable = true;
       user = "${user}";
     };
-  };
-
-  sound.enable = true;
-  services = {
     pipewire = {
       enable = true;
       alsa.enable = true;
@@ -69,7 +55,21 @@
         '')
       ];
     };
+    safeeyes.enable = true;
+    unclutter-xfixes.enable = true;
+    xserver = {
+      enable = true;
+      xkb = {
+        layout = "se";
+        variant = "";
+      };
+      displayManager = {
+        lightdm.enable = true;
+      };
+    };
   };
+
+  sound.enable = true;
 
   security = {
     sudo.wheelNeedsPassword = false;
@@ -93,8 +93,8 @@
   environment = {
     pathsToLink = [ "/share/zsh" ];
     systemPackages = with pkgs; [
+      bc
       curl
-      feh
       firefox
       fzf
       gcc
