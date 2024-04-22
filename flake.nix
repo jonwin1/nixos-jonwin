@@ -17,6 +17,10 @@
       url = "github:jonwin1/slstatus-jonwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    st = {
+      url = "github:jonwin1/st-jonwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { 

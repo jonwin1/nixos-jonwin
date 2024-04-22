@@ -1,5 +1,4 @@
 { config, lib, pkgs, inputs, user, ... }:
-
 {
   services = {
     xserver = {
@@ -29,15 +28,6 @@
     };
     systemPackages = with pkgs; [
       xorg.libXext
-      (st.overrideAttrs (oldAttrs: rec {
-        src = fetchFromGitHub {
-          owner = "jonwin1";
-          repo = "st-jonwin";
-          rev = "main";
-          sha256 = "HbHpPBgefXNvv0fZcGVo9ygueSWGgywFIdsoEKQSPEQ=";
-        };
-        buildInputs = oldAttrs.buildInputs ++ [ harfbuzz ];
-      }))
       (dmenu.overrideAttrs (oldAttrs: rec {
         src = fetchFromGitHub {
           owner = "jonwin1";
@@ -46,6 +36,7 @@
           sha256 = "GjnkXYFGn4JHQaQJJveEUGlMD+xMTD1oVOVcrCJQrIc=";
         };
       }))
+      inputs.st.packages."x86_64-linux".default
       inputs.slstatus.packages."x86_64-linux".default
     ];
   };
