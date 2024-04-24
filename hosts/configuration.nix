@@ -90,12 +90,16 @@
     pathsToLink = [ "/share/zsh" ];
     systemPackages = with pkgs; [
       bc
+      bitwarden-cli
+      bitwarden-menu
       curl
       firefox
       fzf
       gcc
       gimp
       libnotify
+      pinentry-gtk2
+      playerctl
       ripgrep
       unzip
       wget

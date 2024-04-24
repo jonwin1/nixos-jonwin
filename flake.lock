@@ -31,11 +31,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1713644012,
-        "narHash": "sha256-Od/uU6Lz2WsrlQyNP9Sx7lFei5kiXArb1OFz+74aZxA=",
+        "lastModified": 1713979141,
+        "narHash": "sha256-cdb50rZ9THDRmKulpqwv10sop/5wFiPPWuES3C9XMs8=",
         "owner": "jonwin1",
         "repo": "dwm-jonwin",
-        "rev": "15129020c5b23f05a8d85c721ab4d564ae6f6fd1",
+        "rev": "220e5caf7bdc920a4c32d8c3a0c33aaa36d15611",
         "type": "github"
       },
       "original": {
