@@ -402,11 +402,11 @@
         "utils": "utils_3"
       },
       "locked": {
-        "lastModified": 1713805537,
-        "narHash": "sha256-KkckBHw1GAoITQq8Ba1qjt3hiCm5jmG9TAA1VttM7hY=",
+        "lastModified": 1713964134,
+        "narHash": "sha256-OF3uDJepgVnspv8mduU8QL298SKYRFESJce+U3m+6xY=",
         "owner": "jonwin1",
         "repo": "st-jonwin",
-        "rev": "b99ff9ba98f5918b7ecff87beb138c453a9cd641",
+        "rev": "09a223da52730eb3161dc7b351ce94d44adc5a54",
         "type": "github"
       },
       "original": {
