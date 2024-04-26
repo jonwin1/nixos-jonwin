@@ -25,12 +25,14 @@
 
   console.keyMap = "sv-latin1";
 
+
   users = {
     defaultUserShell = pkgs.zsh;
     users.${user} = {
       isNormalUser = true;
-      extraGroups = [ "networkmanager" "wheel" "video" "audio" ];
+      extraGroups = [ "networkmanager" "wheel" "video" "audio" "input" "uinput" ];
     };
+    groups = { uinput = {}; };
   };
 
   services = {
@@ -51,8 +53,10 @@
         '')
       ];
     };
+
     safeeyes.enable = true;
     unclutter-xfixes.enable = true;
+
     xserver = {
       enable = true;
       xkb = {

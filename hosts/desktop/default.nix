@@ -3,6 +3,8 @@
 {
   imports = [
     (import ./hardware-configuration.nix)
+    ../../modules/kmonad-module.nix
+    ../../modules/kmonad.nix
   ];
 
   boot.loader = {
