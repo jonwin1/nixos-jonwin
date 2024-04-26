@@ -31,11 +31,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1713979141,
-        "narHash": "sha256-cdb50rZ9THDRmKulpqwv10sop/5wFiPPWuES3C9XMs8=",
+        "lastModified": 1714052553,
+        "narHash": "sha256-zANFb3T5pvmpTSx7tQCVHRctK4VQ2HbR2R49+h/rpTA=",
         "owner": "jonwin1",
         "repo": "dwm-jonwin",
-        "rev": "220e5caf7bdc920a4c32d8c3a0c33aaa36d15611",
+        "rev": "8e638cb09ac08d758dc041dbe7a6c26648d6f3c0",
         "type": "github"
       },
       "original": {
@@ -381,11 +381,11 @@
         "utils": "utils_2"
       },
       "locked": {
-        "lastModified": 1713719011,
-        "narHash": "sha256-hPYqzJjGJCqieOCl51ms+jJHHmJi40yak6Wj7zMW19w=",
+        "lastModified": 1713982603,
+        "narHash": "sha256-k94Kvp8VUOoAvlf33gm+XSubkpzPbRW2pdQ8L8RCYQU=",
         "owner": "jonwin1",
         "repo": "slstatus-jonwin",
-        "rev": "adca66bafb8a794892902100fed324ca8c704182",
+        "rev": "bbe83674c8c910aa853a469ec91069f5b72d078e",
         "type": "github"
       },
       "original": {
