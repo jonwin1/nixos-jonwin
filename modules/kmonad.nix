@@ -7,6 +7,12 @@
   };
 
   services = {
+    xserver = {
+      xkb = {
+        layout = lib.mkForce "us";
+        options = "compose:ralt";
+      };
+    };
     kmonad = {
       enable = true;
       keyboards = {
@@ -16,6 +22,8 @@
             (defcfg
               input (device-file "/dev/input/by-id/usb-Logitech_PRO_Gaming_Keyboard_076D31413931-event-kbd")
               output (uinput-sink "kmonad output")
+              cmp-seq ralt
+              cmp-seq-delay 5
               fallthrough false
             )
             (defsrc
@@ -23,38 +31,41 @@
             1       2       3       4       5       6       7       8       9       0       -       =
             tab     q       w       e       r       t       u       i       o       p       [       ]
             caps    a       s       d       f       g       j       k       l       ;       '       \
-                                    c       v       b       n       m       ,
-                                                    spc
+                            x       c       v                       m       ,
+                                    lalt    spc                     ralt
             )
             (defalias
-                up (layer-toggle up)
-                down (layer-toggle down)
-                del (tap-hold-next-release 200 del @down)
-                ret (tap-hold-next-release 200 ret @up)
+              up (layer-toggle up)
+              down (layer-toggle down)
+
+              elm (tap-hold-next-release 200 esc lmet)
+              tup (tap-hold-next-release 200 tab @up)
+              rup (tap-hold-next-release 200 ret @up)
+              ddown (tap-hold-next-release 200 del @down)
             )
             (deflayer base
-            caps    1       2       3       4       5       6       7       8       9       0       rmet
-            tab     q       w       e       r       t       y       u       i       o       p       [
-            esc     a       s       d       f       g       h       j       k       l       ;       '
-            lctl    z       x       c       v       b       n       m       ,       .       /       ralt
-                                    lmet    spc     @up     @ret    bspc    @del
-                                                    @down
+            =       1       2       3       4       5       6       7       8       9       0       S-/
+            '       q       w       e       r       t       y       u       i       o       p       å
+            S-'     a       s       d       f       g       h       j       k       l       ö       ä
+            `       z       x       c       v       b       n       m       ,       .       -       ralt
+                            @elm    spc     @tup                    @rup    bspc
+                                    lalt    @down                   @ddown
             )
             (deflayer up
-            f12     f1      f2      f3      f4      f5      f6      f7      f8      f9      f10     f11
-            S-tab   Q       W       E       R       T       Y       U       I       O       P       S-[
-            S-esc   A       S       D       F       G       H       J       K       L       S-;     S-'
-            S-lctl  Z       X       C       V       B       N       M       S-,     S-.     S-/     S-ralt
-                                    S-lmet  S-spc   XX      XX      S-bspc  S-del
-                                                    XX
+            S-=     S-1     S-2     S-3     S-4     S-5     S-6     S-7     S-8     S-,     S-.     S-`
+            °       Q       W       E       R       T       Y       U       I       O       P       Å
+            ¨       A       S       D       F       G       H       J       K       L       Ö       Ä
+            ´       Z       X       C       V       B       N       M       ;       S-;     S--     S-ralt
+                            S-lmet  S-lctl  S-tab                   S-ret   S-bspc
+                                    S-lalt  XX                      S-del
             )
             (deflayer down
-            XX      102d    RA-102d RA--    S-7     S-102d  RA-]    -       S-0     \       S-2     rmet
-            tab     RA-7    S-6     S-\\    S--     RA-0 previoussong vold	volu nextsong   mute    RA-\
-            esc     S-8     RA-4    S-5     S-]     S-9     left    down    up      right playpause stop
-            lctl    RA-8    S-1     RA-2    S-3     RA-9    home    pgdn    pgup    end     ins     ralt
-                                    lmet    spc     lsft    ret     bspc    XX
-                                                    XX
+            f12     f1      f2      f3      f4      f5      f6      f7      f8      f9      f10     f11
+            XX      XX      S-[     S-]     \       XX   previoussong vold	volu nextsong   mute    caps
+            XX      XX      S-9     S-0     /       XX      left    down    up      right playpause stop
+            XX      XX      [       ]       S-\     XX      home    pgdn    pgup    end     ins     ralt
+                            lmet    spc     lsft                    ret     bspc
+                                    lalt    XX                      XX
             )
           '';
         };
