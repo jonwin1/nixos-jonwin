@@ -39,6 +39,7 @@
               down (layer-toggle down)
 
               elm (tap-hold-next-release 200 esc lmet)
+              sct (tap-hold-next-release 200 spc lctl)
               tup (tap-hold-next-release 200 tab @up)
               rup (tap-hold-next-release 200 ret @up)
               ddown (tap-hold-next-release 200 del @down)
@@ -48,7 +49,7 @@
             '       q       w       e       r       t       y       u       i       o       p       å
             S-'     a       s       d       f       g       h       j       k       l       ö       ä
             `       z       x       c       v       b       n       m       ,       .       -       ralt
-                            @elm    spc     @tup                    @rup    bspc
+                            @elm    @sct    @tup                    @rup    bspc
                                     lalt    @down                   @ddown
             )
             (deflayer up
