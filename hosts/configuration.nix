@@ -97,11 +97,13 @@
       bitwarden-cli
       bitwarden-menu
       curl
+      discord
       firefox
       fzf
       gcc
       gimp
       libnotify
+      neofetch
       pinentry-gtk2
       playerctl
       ripgrep
