@@ -40,32 +40,30 @@
 
               elm (tap-hold-next-release 200 esc lmet)
               sct (tap-hold-next-release 200 spc lctl)
-              tup (tap-hold-next-release 200 tab @up)
-              rup (tap-hold-next-release 200 ret @up)
               ddown (tap-hold-next-release 200 del @down)
             )
             (deflayer base
             =       1       2       3       4       5       6       7       8       9       0       S-/
-            '       q       w       e       r       t       y       u       i       o       p       å
-            S-'     a       s       d       f       g       h       j       k       l       ö       ä
-            `       z       x       c       v       b       n       m       ,       .       -       ralt
-                            @elm    @sct    @tup                    @rup    bspc
+            tab     q       w       e       r       t       y       u       i       o       p       å
+            '       a       s       d       f       g       h       j       k       l       ö       ä
+            ret     z       x       c       v       b       n       m       ,       .       -       ralt
+                            @elm    @sct    @up                     @up     bspc
                                     lalt    @down                   @ddown
             )
             (deflayer up
             S-=     S-1     S-2     S-3     S-4     S-5     S-6     S-7     S-8     S-,     S-.     S-`
-            °       Q       W       E       R       T       Y       U       I       O       P       Å
-            ¨       A       S       D       F       G       H       J       K       L       Ö       Ä
-            ´       Z       X       C       V       B       N       M       ;       S-;     S--     S-ralt
-                            S-lmet  S-lctl  S-tab                   S-ret   S-bspc
+            S-tab   Q       W       E       R       T       Y       U       I       O       P       Å
+            S-'     A       S       D       F       G       H       J       K       L       Ö       Ä
+            S-ret   Z       X       C       V       B       N       M       ;       S-;     S--     S-ralt
+                            S-lmet  S-lctl  XX                      XX      S-bspc
                                     S-lalt  XX                      S-del
             )
             (deflayer down
             f12     f1      f2      f3      f4      f5      f6      f7      f8      f9      f10     f11
-            XX      XX      S-[     S-]     \       XX   previoussong vold	volu nextsong   mute    caps
-            XX      XX      S-9     S-0     /       XX      left    down    up      right playpause stop
-            XX      XX      [       ]       S-\     XX      home    pgdn    pgup    end     ins     ralt
-                            lmet    spc     lsft                    ret     bspc
+            tab     XX      XX      S-[     S-]     \    previoussong vold	volu nextsong   mute    caps
+            `       XX      XX      S-9     S-0     /       left    down    up      right playpause stop
+            ret     XX      XX      [       ]       S-\     home    pgdn    pgup    end     ins     ralt
+                            lmet    spc     lsft                    rsft    bspc
                                     lalt    XX                      XX
             )
           '';
