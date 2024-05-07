@@ -28,14 +28,7 @@
     };
     systemPackages = with pkgs; [
       xorg.libXext
-      (dmenu.overrideAttrs (oldAttrs: rec {
-        src = fetchFromGitHub {
-          owner = "jonwin1";
-          repo = "dmenu-jonwin";
-          rev = "main";
-          sha256 = "GjnkXYFGn4JHQaQJJveEUGlMD+xMTD1oVOVcrCJQrIc=";
-        };
-      }))
+      inputs.dmenu.packages."x86_64-linux".default
       inputs.st.packages."x86_64-linux".default
       inputs.slstatus.packages."x86_64-linux".default
     ];
