@@ -6,6 +6,9 @@
 
   programs.zsh.enable = true;
 
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
+
   networking.hostName = "${host}";
   networking.networkmanager.enable = true;
 
@@ -25,12 +28,11 @@
 
   console.keyMap = "sv-latin1";
 
-
   users = {
     defaultUserShell = pkgs.zsh;
     users.${user} = {
       isNormalUser = true;
-      extraGroups = [ "networkmanager" "wheel" "video" "audio" "input" "uinput" ];
+      extraGroups = [ "networkmanager" "wheel" "video" "audio" "input" "uinput" "libvirtd" ];
     };
     groups = { uinput = {}; };
   };
