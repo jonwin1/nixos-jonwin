@@ -38,7 +38,6 @@
               sft (layer-toggle sft)
               nav (layer-toggle nav)
 
-              rtnv (tap-hold-next-release 200 ret @nav)
               znav (tap-hold-next-release 200 z @nav)
               -nav (tap-hold-next-release 200 - @nav)
             )
@@ -48,7 +47,7 @@
             esc     a       s       d       f       g                       h       j       k       l       ö       ä
             '       @znav   x       c       v       b                       n       m       ,       .       @-nav   del
                                             lmet    spc     @sft    @sft    bspc
-                                                    lalt    lctl    @rtnv
+                                                    lalt    ret     rctl
             )
             (deflayer sft
             S-=     S-1     S-2     S-3     S-4     S-5                     S-6     S-7     S-8     S-,     S-.     S-`
@@ -56,7 +55,7 @@
             S-esc   A       S       D       F       G                       H       J       K       L       Ö       Ä
             S-'     Z       X       C       V       B                       N       M       ;       S-;     S--     S-del
                                             S-lmet  S-spc   XX      XX      S-bspc
-                                                    S-lalt  S-lctl  S-ret
+                                                    S-lalt  S-ret   S-rctl
             )
             (deflayer nav
             f12     f1      f2      f3      f4      f5                      f6      f7      f8      f9      f10     f11
