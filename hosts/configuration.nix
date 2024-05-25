@@ -127,5 +127,10 @@
     corefonts
   ];
 
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+
   system.stateVersion = "23.11";
 }
