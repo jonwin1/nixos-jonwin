@@ -61,9 +61,11 @@
 
     xserver = {
       enable = true;
+      exportConfiguration = true;
       xkb = {
-        layout = "se";
+        layout = "us,se";
         variant = "";
+        options = "grp:caps_toggle,grp_led:caps";
       };
       displayManager = {
         lightdm.enable = true;
@@ -112,6 +114,7 @@
       unzip
       wget
       xclip
+      xdotool
       zathura
 
       inputs.nixvim.packages.${system}.default
