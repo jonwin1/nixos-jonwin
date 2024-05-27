@@ -61,14 +61,13 @@
 
     xserver = {
       enable = true;
-      exportConfiguration = true;
       xkb = {
-        layout = "us,se";
+        layout = "se";
         variant = "";
-        options = "grp:caps_toggle,grp_led:caps";
       };
       displayManager = {
         lightdm.enable = true;
+        sessionCommands = "setxkbmap se";
       };
     };
   };
