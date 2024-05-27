@@ -52,11 +52,11 @@
         "utils": "utils_2"
       },
       "locked": {
-        "lastModified": 1716457363,
-        "narHash": "sha256-owER+hSTPfABVNRQH9KkO7KOtPYQ1Rxy9x/EFqxjZGQ=",
+        "lastModified": 1716811770,
+        "narHash": "sha256-xITUzdrPTBoQekmlZ9/5t/xzl+zu2TjTGtWT+K1nVGU=",
         "owner": "jonwin1",
         "repo": "dwm-jonwin",
-        "rev": "c651eb0989209e4cc02c1a8aa235591d82897465",
+        "rev": "294f005eeba69e6765757f55da00e585aaccbdd4",
         "type": "github"
       },
       "original": {
