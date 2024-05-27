@@ -67,7 +67,6 @@
       };
       displayManager = {
         lightdm.enable = true;
-        sessionCommands = "setxkbmap se";
       };
     };
   };

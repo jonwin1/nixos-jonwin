@@ -27,6 +27,15 @@
 
   programs.light.enable = true;
 
+  services = {
+    xserver = {
+      displayManager = {
+        sessionCommands = "setxkbmap se";
+      };
+    };
+  };
+
+
   #services = {
   #  xserver = {
   #    videoDrivers = ["nvidia"];
