@@ -12,6 +12,10 @@
         source = ../backgrounds;
         recursive = true;
       };
+      ".config/bwm" = {
+        source = ../dotconfig/bwm;
+        recursive = true;
+      };
     };
   };
 
