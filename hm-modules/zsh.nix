@@ -39,6 +39,10 @@
         untar = "tar -xvf";
         v = "nvim";
 
+        cat = "bat";
+        man = "batman";
+        ripgrep = "batgrep";
+
         "..." = "../..";
         "...." = "../../..";
         "....." = "../../../..";
@@ -58,7 +62,7 @@
         gch = "git checkout";
         gchb = "git checkout -b";
         gcm = "git commit -m";
-        gd = "git diff";
+        gd = "batdiff";
         gf = "git fetch";
         gm = "git merge";
         gpl = "git pull";
@@ -81,6 +85,14 @@
           src = zsh-vi-mode;
           file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
         }
+      ];
+    };
+    bat = {
+      enable = true;
+      extraPackages = with pkgs.bat-extras; [
+        batdiff
+        batgrep
+        batman
       ];
     };
     starship = {
