@@ -36,7 +36,6 @@
         mkdir = "mkdir -vp";
         mv = "mv -iv";
         rm = "rm -rifv";
-        untar = "tar -xvf";
         v = "nvim";
 
         cat = "bat";

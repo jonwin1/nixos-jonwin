@@ -109,6 +109,7 @@
       pinentry-gtk2
       playerctl
       ripgrep
+      unp
       unzip
       wget
       xclip
