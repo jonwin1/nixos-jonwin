@@ -117,6 +117,7 @@
 
       inputs.nixvim.packages.${system}.default
     ];
+    variables = { EDITOR = "nvim"; VISUAL = "nvim"; };
   };
 
   fonts.packages = with pkgs; [
