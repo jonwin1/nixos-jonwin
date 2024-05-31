@@ -42,6 +42,12 @@
         man = "batman";
         ripgrep = "batgrep";
 
+        tp = "trash-put -v";
+        tl = "trash-list";
+        trs = "trash-restore";
+        trm = "trash-rm";
+        te = "trash-empty";
+
         "..." = "../..";
         "...." = "../../..";
         "....." = "../../../..";

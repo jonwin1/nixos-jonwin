@@ -109,6 +109,7 @@
       pinentry-gtk2
       playerctl
       ripgrep
+      trash-cli
       unp
       unzip
       wget
