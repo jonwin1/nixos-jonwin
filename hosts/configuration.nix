@@ -100,12 +100,12 @@
       bitwarden-menu
       curl
       discord
+      fastfetch
       firefox
       fzf
       gcc
       gimp
       libnotify
-      neofetch
       pinentry-gtk2
       playerctl
       ripgrep
