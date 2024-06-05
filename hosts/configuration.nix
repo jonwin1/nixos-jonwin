@@ -4,7 +4,12 @@
     ../modules
   ];
 
-  programs.zsh.enable = true;
+  programs = {
+    zsh.enable = true;
+    steam = {
+      enable = true;
+    };
+  };
 
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
