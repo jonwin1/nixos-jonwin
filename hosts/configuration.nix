@@ -110,6 +110,7 @@
       fzf
       gcc
       gimp
+      go
       libnotify
       pinentry-gtk2
       playerctl
