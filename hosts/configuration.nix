@@ -106,6 +106,7 @@
       curl
       discord
       fastfetch
+      fd
       firefox
       fzf
       gcc
