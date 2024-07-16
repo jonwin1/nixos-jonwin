@@ -76,8 +76,6 @@
     };
   };
 
-  sound.enable = true;
-
   security = {
     sudo.wheelNeedsPassword = false;
     rtkit.enable = true;

@@ -37,9 +37,6 @@
             (defalias
               sft (layer-toggle sft)
               nav (layer-toggle nav)
-
-              znav (tap-hold-next-release 200 z @nav)
-              -nav (tap-hold-next-release 200 - @nav)
             )
             (deflayer base
             S-=     1       2       3       4       5                       6       7       8       9       0       =
