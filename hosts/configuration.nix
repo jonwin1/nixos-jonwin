@@ -106,6 +106,7 @@
       fastfetch
       fd
       firefox
+      freecad
       fzf
       gcc
       gimp
