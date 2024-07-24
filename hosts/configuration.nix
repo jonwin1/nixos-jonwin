@@ -68,14 +68,6 @@
         enable = true;
         wayland.enable = true;
     };
-
-    xserver = {
-      enable = true;
-      xkb = {
-        layout = "se";
-        variant = "";
-      };
-    };
   };
 
   security = {

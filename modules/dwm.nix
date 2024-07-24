@@ -2,9 +2,14 @@
 {
   services = {
     xserver = {
+      enable = true;
       windowManager.dwm = {
         enable = true;
         package = inputs.dwm.packages."x86_64-linux".default;
+      };
+      xkb = {
+        layout = "se";
+        variant = "";
       };
     };
   };
