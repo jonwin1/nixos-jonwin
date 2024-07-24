@@ -37,16 +37,16 @@
     };
   };
 
-    systemd.user.services = {
-        set-display = {
-            script = ''
-                ${pkgs.xorg.xrandr}/bin/xrandr --output HDMI-0 --off
-                ${pkgs.xorg.xrandr}/bin/xrandr --output DP-4 --mode 3440x1440 --rate 144
-            '';
-            wantedBy = [ "graphical-session.target" ];
-            partOf = [ "graphical-session.target" ];
-        };
-    };
+#    systemd.user.services = {
+#        set-display = {
+#            script = ''
+#                ${pkgs.xorg.xrandr}/bin/xrandr --output HDMI-0 --off
+#                ${pkgs.xorg.xrandr}/bin/xrandr --output DP-4 --mode 3440x1440 --rate 144
+#            '';
+#            wantedBy = [ "graphical-session.target" ];
+#            partOf = [ "graphical-session.target" ];
+#        };
+#    };
 
   hardware = {
     graphics = {

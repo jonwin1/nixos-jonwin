@@ -64,14 +64,16 @@
     safeeyes.enable = true;
     unclutter-xfixes.enable = true;
 
+    displayManager.sddm = {
+        enable = true;
+        wayland.enable = true;
+    };
+
     xserver = {
       enable = true;
       xkb = {
         layout = "se";
         variant = "";
-      };
-      displayManager = {
-        lightdm.enable = true;
       };
     };
   };
