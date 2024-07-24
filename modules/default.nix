@@ -1,5 +1,5 @@
 {
   imports = [
-    ./dwm.nix
+    ./hyprland.nix
   ];
 }
