@@ -2,6 +2,7 @@
 {
     imports = [
         ../../hm-modules/hyprland-laptop.nix
+        ../../hm-modules/waybar-laptop.nix
     ];
     services = {
         batsignal = {
