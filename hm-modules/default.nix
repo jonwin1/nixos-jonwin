@@ -2,9 +2,11 @@
     imports = [
         ./dunst.nix
         ./git.nix
-        ./hyprland.nix
         ./qutebrowser.nix
-        ./waybar.nix
         ./zsh.nix
+
+        ./hypridle.nix
+        ./hyprland.nix
+        ./waybar.nix
     ];
 }

@@ -42,7 +42,7 @@
 
                 "cpu" = {
                     interval = 1;
-                    format = " {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}";
+                    format = " {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7} ";
                     format-icons = [
                         "<span color='#a3be8c'>▁</span>"
                         "<span color='#81a1c1'>▂</span>"
