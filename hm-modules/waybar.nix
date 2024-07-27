@@ -5,12 +5,12 @@
             mainBar = {
                 modules-left = [
                     "hyprland/workspaces"
+                    "idle_inhibitor"
                 ];
                 modules-center = [
                     "clock"
                 ];
                 modules-right = [
-                    "idle_inhibitor"
                     "cpu"
                     "temperature"
                     "memory"
@@ -19,29 +19,36 @@
                     "bluetooth"
                     "wireplumber"
                     "battery"
-                    #"custom/power"
                 ];
 
-                "battery" = {
-                    states = {
-                        warning = 20;
-                        critical = 10;
+                "clock" = {
+                    format = "{:%a %d %b %R}";
+                    tooltip-format = "<tt><small>{calendar}</small></tt>";
+                    calendar = {
+                        mode = "year";
+                        mode-mon-col = 3;
+                        weeks-pos = "right";
+                        format = {
+                            months = "<span color='#d8dee9'><b>{}</b></span>";
+                            days = "<span color='#81a1c1'><b>{}</b></span>";
+                            weeks = "<span color='#a3be8c'><b>W{}</b></span>";
+                            weekdays = "<span color='#ebcb8b'><b>{}</b></span>";
+                            today = "<span color='#bf616a'><b><u>{}</u></b></span>";
+                        };
                     };
-                    format = "{icon} {capacity}%";
-                    format-icons = ["" "" "" "" ""];
                 };
 
-                "bluetooth" = {
-                    format = "󰂯";
-                    format-disabled = "";
-                    format-off = "";
-                    format-connected = " {num_connections}";
-                    tooltip-format = "{device_enumerate}";
-                    tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
+                "idle_inhibitor" = {
+                    format = "{icon} ";
+                    format-icons = {
+                        activated = "";
+                        deactivated = "";
+                    };
+                    tooltip = false;
                 };
 
                 "cpu" = {
-                    interval = 1;
+                    interval = 5;
                     format = " {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7} ";
                     format-icons = [
                         "<span color='#a3be8c'>▁</span>"
@@ -55,58 +62,50 @@
                     ];
                 };
 
-                "clock" = {
-                    interval = 1;
-                    format = "{:%a %d %b %T}";
-                    tooltip-format = "<tt><small>{calendar}</small></tt>";
-                    calendar = {
-                        mode = "year";
-                        mode-mon-col = 3;
-                        weeks-pos = "right";
-                        on-scroll = 1;
-                        format = {
-                            months = "<span color='#d8dee9'><b>{}</b></span>";
-                            days = "<span color='#81a1c1'><b>{}</b></span>";
-                            weeks = "<span color='#a3be8c'><b>W{}</b></span>";
-                            weekdays = "<span color='#ebcb8b'><b>{}</b></span>";
-                            today = "<span color='#bf616a'><b><u>{}</u></b></span>";
-                        };
-                    };
+                "temperature" = {
+                    thermal-zone = 2;
+                    format = "{icon} {temperatureC}°C";
+                    format-icons = ["" "" "" "" ""];
+                    interval = 5;
+                    tooltip = false;
+                    critical-threshold = 80;
                 };
 
-                # "custom/power" = {
-                #     format = "󰐥";
-                #     on-click = "kitty";
-                #     tooltip = false;
-                # };
+                "memory" = {
+                    interval = 5;
+                    format = "  {percentage}%";
+                    states = {
+                        critical = 90;
+                    };
+                };
 
                 "disk" = {
                     format = "󰋊 {free}";
                     tooltip-format = "{used} used out of {total}";
-                };
-
-                "idle_inhibitor" = {
-                    format = "{icon} ";
-                    format-icons = {
-                        activated = "";
-                        deactivated = "";
+                    states = {
+                        critical = 95;
                     };
-                };
-
-                "memory" = {
-                    format = "  {percentage}%";
                 };
 
                 "network" = {
                     format-wifi = "{icon} {essid}";
-                    format-ethernet = "󰈀";
-                    format-linked = "󰌷";
-                    format-disconnected = "󰤭";
+                    format-ethernet = "󰈀 ";
+                    format-linked = "󰌷 ";
+                    format-disconnected = "󰤭 ";
                     format-icons = ["󰤯" "󰤟" "󰤢" "󰤥" "󰤨"];
+                    tooltip-format = "{ifname}: {ipaddr}/{cidr}\nSignal Strength: {signalStrength}%";
+                    on-click = "kitty nmtui";
+                    max-length = 50;
                 };
                 
-                "temperature" = {
-                    format = " {temperatureC}°C";
+                "bluetooth" = {
+                    format = "󰂯";
+                    format-disabled = "";
+                    format-off = "";
+                    format-connected = " {num_connections}";
+                    tooltip-format = "{device_enumerate}";
+                    tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
+                    on-click = "kitty bluetoothctl";
                 };
 
                 "wireplumber" = {
@@ -115,6 +114,17 @@
                     on-click = "wpctl set-mute @DEFAULT_SINK@ toggle";
                     format-icons = ["󰕿" "󰖀" "󰕾"];
                     scroll-step = 5;
+                };
+
+                "battery" = {
+                    states = {
+                        warning = 20;
+                        critical = 10;
+                    };
+                    format = "{icon} {capacity}%";
+                    format-charging = "󰂄 {capacity}%";
+                    format-icons = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
+                    tooltip-format = "{timeTo}/nPower: {power}\nHealth: {health}";
                 };
             };
         };
@@ -165,9 +175,8 @@
                 color: @warning_color;
             }
 
-            /*#custom-power,*/
-            #clock,
             #idle_inhibitor,
+            #clock,
             #cpu,
             #temperature,
             #memory,
@@ -183,37 +192,41 @@
                 margin: 5px 5px 5px 0px;
             }
 
-            #idle_inhibitor {
-                color: @success_color;
-            }
+            #network:hover,
+            #bluetooth:hover,
+            #wireplumber:hover,
             #idle_inhibitor:hover {
                 color: @theme_selected_fg_color;
                 background: alpha(@theme_selected_bg_color, 0.5);
                 border-radius: 10px;
             }
-            #idle_inhibitor.activated {
+
+            #idle_inhibitor,
+            #bluetooth.discovering,
+            #battery.charging {
+                color: @success_color;
+            }
+
+            #idle_inhibitor.activated,
+            *.warning {
                 color: @warning_color;
+            }
+
+            #network.disabled,
+            #network.disconnected,
+            #wireplumber.muted,
+            *.critical {
+                color: @error_color;
             }
 
             #wireplumber {
                 min-width: 50px;
             }
 
-            #wireplumber.muted {
-                color: @error_color;
-            }
-
-            #battery.charging {
-                color: @success_color;
-            }
             #battery.warning:not(.charging) {
                 color: @warning_color;
             }
             #battery.critical:not(.charging) {
-                color: @error_color;
-            }
-
-            #temperature.critical {
                 color: @error_color;
             }
         '';
