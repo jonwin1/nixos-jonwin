@@ -19,7 +19,7 @@
                     "bluetooth"
                     "wireplumber"
                     "battery"
-                    "custom/power"
+                    #"custom/power"
                 ];
 
                 "battery" = {
@@ -44,14 +44,14 @@
                     interval = 1;
                     format = " {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}";
                     format-icons = [
-                        "<span color='#69ff94'>▁</span>"
-                        "<span color='#2aa9ff'>▂</span>"
-                        "<span color='#f8f8f2'>▃</span>"
-                        "<span color='#f8f8f2'>▄</span>"
-                        "<span color='#ffffa5'>▅</span>"
-                        "<span color='#ffffa5'>▆</span>"
-                        "<span color='#ff9977'>▇</span>"
-                        "<span color='#dd532e'>█</span>"
+                        "<span color='#a3be8c'>▁</span>"
+                        "<span color='#81a1c1'>▂</span>"
+                        "<span color='#81a1c1'>▃</span>"
+                        "<span color='#ebcb8b'>▄</span>"
+                        "<span color='#ebcb8b'>▅</span>"
+                        "<span color='#d08770'>▆</span>"
+                        "<span color='#d08770'>▇</span>"
+                        "<span color='#bf616a'>█</span>"
                     ];
                 };
 
@@ -72,19 +72,13 @@
                             today = "<span color='#bf616a'><b><u>{}</u></b></span>";
                         };
                     };
-                    actions = {
-                        on-click-right = "mode";
-                        on-click-left = "shift_reset";
-                        on-scroll-up = "shift_up";
-                        on-scroll-down = "shift_down";
-                    };
                 };
 
-                "custom/power" = {
-                    format = "󰐥";
-                    on-click = "kitty";
-                    tooltip = false;
-                };
+                # "custom/power" = {
+                #     format = "󰐥";
+                #     on-click = "kitty";
+                #     tooltip = false;
+                # };
 
                 "disk" = {
                     format = "󰋊 {free}";
@@ -117,7 +111,7 @@
 
                 "wireplumber" = {
                     format = "{icon} {volume}%";
-                    format-muted = "󰝟";
+                    format-muted = " 󰝟 ";
                     on-click = "wpctl set-mute @DEFAULT_SINK@ toggle";
                     format-icons = ["󰕿" "󰖀" "󰕾"];
                     scroll-step = 5;
@@ -171,6 +165,7 @@
                 color: @warning_color;
             }
 
+            /*#custom-power,*/
             #clock,
             #idle_inhibitor,
             #cpu,
@@ -180,32 +175,28 @@
             #network,
             #bluetooth,
             #wireplumber,
-            #battery,
-            #custom-power {
+            #battery {
                 color: @theme_fg_color;
                 background: @theme_bg_color;
-                background-color: alpha(@theme_bg_color, 0.85);
                 border-radius: 10px;
                 padding: 0px 10px;
                 margin: 5px 5px 5px 0px;
             }
 
-            #wireplumber {
-                min-width: 50px;
+            #idle_inhibitor {
+                color: @success_color;
             }
-
-            #custom-power {
-                background-color: @theme_bg_color;
-            }
-
-            #custom-power button:hover {
+            #idle_inhibitor:hover {
                 color: @theme_selected_fg_color;
                 background: alpha(@theme_selected_bg_color, 0.5);
                 border-radius: 10px;
             }
-
             #idle_inhibitor.activated {
-                color: @success_color;
+                color: @warning_color;
+            }
+
+            #wireplumber {
+                min-width: 50px;
             }
 
             #wireplumber.muted {
