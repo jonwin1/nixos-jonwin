@@ -8,8 +8,8 @@
         username = "${user}";
         homeDirectory = "/home/${user}";
         file = {
-            "backgrounds" = {
-                source = ../backgrounds;
+            "Pictures/wallpaper.png" = {
+                source = ../wallpaper.png;
                 recursive = true;
             };
             ".config/bwm" = {
@@ -44,14 +44,14 @@
         };
     };
 
-    services = {
-        random-background = {
-            enable = true;
-            display = "fill";
-            imageDirectory = "%h/backgrounds";
-            interval = "1h";
-        };
-    };
+    # services = {
+    #     random-background = {
+    #         enable = true;
+    #         display = "fill";
+    #         imageDirectory = "%h/backgrounds";
+    #         interval = "1h";
+    #     };
+    # };
 
     programs = {
         home-manager.enable = true;

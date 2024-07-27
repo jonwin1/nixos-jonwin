@@ -84,7 +84,7 @@
             };
             
             misc = {
-                #disable_hyprland_logo = true;
+                font_family = "FiraCodeNerdFont";
                 vrr = 2;
                 # enable_swallow = true;
                 # swallow_regex = "kitty";
