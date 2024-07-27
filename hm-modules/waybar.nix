@@ -124,7 +124,7 @@
                     format = "{icon} {capacity}%";
                     format-charging = "󰂄 {capacity}%";
                     format-icons = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
-                    tooltip-format = "{timeTo}/nPower: {power}\nHealth: {health}";
+                    tooltip-format = "{timeTo}\nPower: {power} Watts\nHealth: {health}%";
                 };
             };
         };
@@ -208,14 +208,17 @@
             }
 
             #idle_inhibitor.activated,
-            *.warning {
+            battery.warning {
                 color: @warning_color;
             }
 
             #network.disabled,
             #network.disconnected,
             #wireplumber.muted,
-            *.critical {
+            #memory.critical,
+            #disk.critical,
+            #battery.critical,
+            #temperature.critical {
                 color: @error_color;
             }
 
