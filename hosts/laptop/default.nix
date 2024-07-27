@@ -5,37 +5,25 @@
         (import ./hardware-configuration.nix)
     ];
 
-    boot.loader = {
-        efi = {
-            canTouchEfiVariables = true;
-            efiSysMountPoint = "/boot";
+    boot = {
+        loader = {
+            efi = {
+                canTouchEfiVariables = true;
+                efiSysMountPoint = "/boot";
+            };
+            grub = {
+                enable = true;
+                devices = ["nodev"];
+                efiSupport = true;
+                useOSProber = true;
+                configurationLimit = 10;
+            };
+            timeout = 5;
         };
-        grub = {
-            enable = true;
-            devices = ["nodev"];
-            efiSupport = true;
-            useOSProber = true;
-            configurationLimit = 10;
-        };
-        timeout = 5;
-    };
-
-    environment = {
-        systemPackages = with pkgs; [
-        ];
+        kernelParams = ["reboot=bios"];
     };
 
     programs.light.enable = true;
-
-    services = {
-        xserver = {
-            displayManager = {
-                sessionCommands = "setxkbmap se";
-            };
-            videoDrivers = ["nvidia"];
-        };
-    };
-
 
     hardware = {
         graphics = {

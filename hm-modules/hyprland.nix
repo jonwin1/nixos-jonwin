@@ -93,13 +93,7 @@
 
             cursor = {
                 inactive_timeout = 2;
-                default_monitor = "DP-3";
             };
-
-            monitor = [
-                "DP-3, 3440x1440@144, 1920x0, 1"
-                "HDMI-A-2, 1920x1080@120, 0x0, 1"
-            ];
 
             master = {
                 special_scale_factor = 0.6;
@@ -108,11 +102,6 @@
 
             exec-once = [
                 "waybar &"
-            ];
-
-            workspace = [
-                "1, monitor:DP-3"
-                "10, monitor:HDMI-A-2"
             ];
         };
     };
