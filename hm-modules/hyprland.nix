@@ -68,6 +68,8 @@
                 gaps_in = 0;
                 gaps_out = 0;
                 layout = "master";
+                "col.inactive_border" = "0xff2e3440";
+                "col.active_border" = "0xff81a1c1";
             };
 
             decoration = {
@@ -75,17 +77,23 @@
                 drop_shadow = false;
                 dim_inactive = true;
                 dim_strength = 0.2;
+                blur = {
+                    enabled = true;
+                    size = 10;
+                };
             };
             
             misc = {
                 #disable_hyprland_logo = true;
-                enable_swallow = true;
-                swallow_regex = "kitty";
+                vrr = 2;
+                # enable_swallow = true;
+                # swallow_regex = "kitty";
+                # swallow_exception_regex = "kitty";
             };
 
             cursor = {
                 inactive_timeout = 2;
-                #default_monitor
+                default_monitor = "DP-3";
             };
 
             monitor = [
@@ -100,6 +108,10 @@
 
             exec-once = [
                 "waybar &"
+            ];
+
+            workspace = [
+                "1, monitor:DP-3"
             ];
         };
     };
