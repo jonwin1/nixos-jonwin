@@ -94,9 +94,13 @@
             ];
 
             master = {
-                special_scale_factor = 0.5;
-                mfact = 0.666;
+                special_scale_factor = 0.6;
+                mfact = 0.55;
             };
+
+            exec-once = [
+                "waybar &"
+            ];
         };
     };
 }
