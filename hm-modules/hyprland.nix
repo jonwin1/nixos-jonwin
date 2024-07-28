@@ -8,6 +8,9 @@
             bind = [
                 "$mod, W, exec, qutebrowser"
                 "$mod, S, exec, kitty"
+                "$mod, D, exec, rofi -show drun"
+                "$mod SHIFT, D, exec, rofi -show run"
+                "$mod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
 
                 # scratchpad
                 "$mod, P, togglespecialworkspace, magic"
@@ -105,6 +108,9 @@
             exec-once = [
                 "waybar"
                 "/nix/store/$(ls -la /nix/store | grep polkit-kde-agent | grep '^d' | awk '{print $9}')/libexec/polkit-kde-authentication-agent-1"
+                "wl-paste --type text --watch cliphist store"
+                "wl-paste --type image --watch cliphist store"
+                "wl-clip-persist --clipboard both"
             ];
         };
     };

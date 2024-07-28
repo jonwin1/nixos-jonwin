@@ -8,6 +8,8 @@
             kdePackages.polkit-kde-agent-1
             xdg-desktop-portal-gtk
             xdg-desktop-portal-hyprland
+            cliphist
+            wl-clip-persist
         ];
     };
 
