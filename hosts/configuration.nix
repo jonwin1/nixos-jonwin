@@ -95,6 +95,7 @@
             bc
             bitwarden-cli
             bitwarden-menu
+            cliphist
             curl
             discord
             fastfetch
@@ -105,7 +106,11 @@
             gcc
             gimp
             go
+            kdePackages.polkit-kde-agent-1
+            kdePackages.qtwayland
+            kitty
             libnotify
+            libsForQt5.qt5.qtwayland
             pinentry-gtk2
             playerctl
             ripgrep
@@ -113,8 +118,10 @@
             unp
             unzip
             wget
-            xclip
-            xdotool
+            wl-clipboard
+            wl-clip-persist
+            xdg-desktop-portal-gtk
+            xdg-desktop-portal-hyprland
             zathura
 
             inputs.nixvim.packages.${system}.default

@@ -52,8 +52,6 @@
                 "...." = "../../..";
                 "....." = "../../../..";
 
-                clip = "xclip -selection clipboard";
-
                 nix-switch = "sudo nixos-rebuild switch --flake ~/nixos-jonwin#${host}";
                 nix-switchu = "sudo nixos-rebuild switch --upgrade --flake ~/nixos-jonwin#${host}";
                 nix-update = "sudo nix flake update ~/nixos-jonwin#";
