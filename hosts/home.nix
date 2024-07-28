@@ -44,14 +44,9 @@
         };
     };
 
-    # services = {
-    #     random-background = {
-    #         enable = true;
-    #         display = "fill";
-    #         imageDirectory = "%h/backgrounds";
-    #         interval = "1h";
-    #     };
-    # };
+    services = {
+        udiskie.enable = true;
+    };
 
     programs = {
         home-manager.enable = true;

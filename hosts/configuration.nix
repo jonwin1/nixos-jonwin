@@ -62,6 +62,7 @@
         };
 
         safeeyes.enable = true;
+        udisks2.enable = true;
         unclutter-xfixes.enable = true;
 
         displayManager.sddm = {
