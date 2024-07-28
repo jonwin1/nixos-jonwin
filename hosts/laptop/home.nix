@@ -20,6 +20,7 @@
 
             monitor = [
                 "eDP-1, 2560x1600@120, 0x0, 1.25"
+                ", preferred, auto, 1"
             ];
 
             workspace = [

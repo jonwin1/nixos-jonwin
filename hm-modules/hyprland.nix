@@ -2,6 +2,58 @@
     wayland.windowManager.hyprland = {
         enable = true;
         settings = {
+            general = {
+                border_size = 2;
+                gaps_in = 0;
+                gaps_out = 0;
+                layout = "master";
+                "col.inactive_border" = "0xff2e3440";
+                "col.active_border" = "0xff81a1c1";
+                resize_on_border = true;
+            };
+
+            decoration = {
+                rounding = 5;
+                drop_shadow = false;
+                dim_inactive = true;
+                dim_strength = 0.2;
+                blur = {
+                    enabled = true;
+                    size = 8;
+                };
+            };
+            
+            misc = {
+                disable_hyprland_logo = true;
+                disable_splash_rendering = true;
+                font_family = "FiraCodeNerdFont";
+                vrr = 2;
+                # enable_swallow = true;
+                # swallow_regex = "kitty";
+                # swallow_exception_regex = "kitty";
+            };
+
+            cursor = {
+                inactive_timeout = 2;
+            };
+
+            master = {
+                special_scale_factor = 0.6;
+                mfact = 0.55;
+            };
+
+            layerrule = [
+                "blur,waybar"
+                "blur,notifications"
+            ];
+
+            exec-once = [
+                "waybar"
+                "/nix/store/$(ls -la /nix/store | grep polkit-kde-agent | grep '^d' | awk '{print $9}')/libexec/polkit-kde-authentication-agent-1"
+                "wl-paste --type text --watch cliphist store"
+                "wl-paste --type image --watch cliphist store"
+                "wl-clip-persist --clipboard both"
+            ];
 
             "$mod" = "SUPER";
 
@@ -64,53 +116,6 @@
                 ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
                 ", XF86MonBrightnessUp, exec, light -A 5"
                 ", XF86MonBrightnessDown, exec, light -U 5"
-            ];
-
-            general = {
-                border_size = 2;
-                gaps_in = 0;
-                gaps_out = 0;
-                layout = "master";
-                "col.inactive_border" = "0xff2e3440";
-                "col.active_border" = "0xff81a1c1";
-            };
-
-            decoration = {
-                rounding = 5;
-                drop_shadow = false;
-                dim_inactive = true;
-                dim_strength = 0.2;
-                blur = {
-                    enabled = true;
-                    size = 10;
-                };
-            };
-            
-            misc = {
-                disable_hyprland_logo = true;
-                disable_splash_rendering = true;
-                font_family = "FiraCodeNerdFont";
-                vrr = 2;
-                # enable_swallow = true;
-                # swallow_regex = "kitty";
-                # swallow_exception_regex = "kitty";
-            };
-
-            cursor = {
-                inactive_timeout = 2;
-            };
-
-            master = {
-                special_scale_factor = 0.6;
-                mfact = 0.55;
-            };
-
-            exec-once = [
-                "waybar"
-                "/nix/store/$(ls -la /nix/store | grep polkit-kde-agent | grep '^d' | awk '{print $9}')/libexec/polkit-kde-authentication-agent-1"
-                "wl-paste --type text --watch cliphist store"
-                "wl-paste --type image --watch cliphist store"
-                "wl-clip-persist --clipboard both"
             ];
         };
     };
