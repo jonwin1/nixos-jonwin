@@ -20,7 +20,10 @@
             };
             timeout = 5;
         };
-        kernelParams = ["reboot=bios"];
+        kernelParams = [
+            "reboot=bios"
+            "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
+        ];
     };
 
     programs.light.enable = true;
