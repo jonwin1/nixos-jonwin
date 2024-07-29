@@ -9,7 +9,6 @@
                 layout = "master";
                 "col.inactive_border" = "0xff2e3440";
                 "col.active_border" = "0xff81a1c1";
-                resize_on_border = true;
             };
 
             decoration = {
@@ -38,6 +37,7 @@
             };
 
             master = {
+                allow_small_split = true;
                 special_scale_factor = 0.6;
                 mfact = 0.55;
             };
@@ -60,13 +60,13 @@
             bind = [
                 "$mod, W, exec, qutebrowser"
                 "$mod, S, exec, kitty"
-                "$mod, D, exec, rofi -show drun"
-                "$mod SHIFT, D, exec, rofi -show run"
+                "$mod, R, exec, rofi -show drun"
+                "$mod SHIFT, R, exec, rofi -show run"
                 "$mod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
 
                 # scratchpad
-                "$mod, P, togglespecialworkspace, magic"
-                "$mod SHIFT, P, movetoworkspace, special:magic"
+                "$mod, D, togglespecialworkspace, magic"
+                "$mod SHIFT, D, movetoworkspace, special:magic"
 
                 "$mod, J, layoutmsg, cyclenext"
                 "$mod, K, layoutmsg, cycleprev"
@@ -75,11 +75,12 @@
                 "$mod, I, layoutmsg, addmaster"
                 "$mod, U, layoutmsg, removemaster"
 
+                "$mod, P, pin, active"
                 "$mod, M, fullscreen, 0"
                 "$mod SHIFT, M, fakefullscreen, "
-                "$mod SHIFT, SPACE, togglefloating, active"
+                "$mod, SPACE, togglefloating, active"
                 "$mod, Q, killactive"
-                "$mod SHIFT, Q, exit"
+                "$mod SHIFT, Q, exec, rofi-power-menu"
             ] ++ (
                 # workspaces
                 # binds $mod + [shift +] {1..10} to [move to] workspace {1..10}
@@ -116,6 +117,11 @@
                 ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
                 ", XF86MonBrightnessUp, exec, light -A 5"
                 ", XF86MonBrightnessDown, exec, light -U 5"
+            ];
+
+            bindm = [
+                "$mod, mouse:272, movewindow"
+                "$mod, mouse:273, resizewindow"
             ];
         };
     };

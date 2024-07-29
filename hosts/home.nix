@@ -23,6 +23,24 @@
             name = "BreezeX-RosePine-Linux";
             size = 24;
         };
+        packages = with pkgs; [
+            (writeShellScriptBin "rofi-power-menu" ''
+                option="Cancel\nShutdown\nRestart\nSleep\nLock"
+                selected=$(echo -e $option | rofi -dmenu -i)
+                if [ "$selected" = "Shutdown" ]; then
+                    poweroff
+                elif [ "$selected" = "Restart" ]; then
+                    reboot
+                elif [ "$selected" = "Sleep" ]; then
+                    systemctl suspend
+                elif [ "$selected" = "Lock" ]; then
+                    #hyprlock?
+                    return
+                elif [ "$selected" = "Calcel" ]; then
+                    return
+                fi
+            '')
+        ];
     };
 
     gtk = {
