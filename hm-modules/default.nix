@@ -4,6 +4,7 @@
         ./git.nix
         ./hypridle.nix
         ./hyprland.nix
+        ./hyprlock.nix
         ./hyprpaper.nix
         ./qutebrowser.nix
         ./rofi.nix

@@ -34,8 +34,7 @@
                 elif [ "$selected" = "Sleep" ]; then
                     systemctl suspend
                 elif [ "$selected" = "Lock" ]; then
-                    #hyprlock?
-                    return
+                    hyprlock
                 elif [ "$selected" = "Cancel" ]; then
                     return
                 fi
