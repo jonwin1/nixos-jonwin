@@ -21,6 +21,10 @@
                     size = 8;
                 };
             };
+
+            input = {
+                kb_options = [ "compose:ralt" ];
+            };
             
             misc = {
                 disable_hyprland_logo = true;

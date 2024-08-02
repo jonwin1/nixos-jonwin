@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ pkgs, ... }:
 {
     environment = {
         systemPackages = with pkgs; [
@@ -7,12 +7,6 @@
     };
 
     services = {
-        xserver = {
-            xkb = {
-                layout = lib.mkForce "us";
-                options = "compose:ralt";
-            };
-        };
         kmonad = {
             enable = true;
             keyboards = {
