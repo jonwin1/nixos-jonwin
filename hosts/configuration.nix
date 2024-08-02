@@ -61,9 +61,7 @@
             ];
         };
 
-        safeeyes.enable = true;
         udisks2.enable = true;
-        unclutter-xfixes.enable = true;
 
         displayManager.sddm = {
             enable = true;
@@ -99,12 +97,10 @@
             discord
             fastfetch
             fd
-            firefox
             freecad
             fzf
             gcc
             gimp
-            go
             kdePackages.polkit-kde-agent-1
             kdePackages.qtwayland
             kitty
