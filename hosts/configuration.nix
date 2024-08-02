@@ -94,8 +94,6 @@
         pathsToLink = [ "/share/zsh" ];
         systemPackages = with pkgs; [
             bc
-            bitwarden-cli
-            bitwarden-menu
             cliphist
             curl
             discord
@@ -112,7 +110,6 @@
             kitty
             libnotify
             libsForQt5.qt5.qtwayland
-            pinentry-gtk2
             playerctl
             ripgrep
             trash-cli

@@ -12,10 +12,6 @@
                 source = ../wallpaper.png;
                 recursive = true;
             };
-            ".config/bwm" = {
-                source = ../dotconfig/bwm;
-                recursive = true;
-            };
         };
         pointerCursor = {
             gtk.enable = true;
