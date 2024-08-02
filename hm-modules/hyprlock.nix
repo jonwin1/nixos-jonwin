@@ -3,6 +3,9 @@
         enable = true;
         settings = {
             general = {
+                disable_loading_bar = true;
+                hide_cursor = true;
+                grace = 10;
             };
 
             background = [
@@ -22,12 +25,14 @@
                     dots_center = true;
                     outer_color = "rgba(0, 0, 0, 0)";
                     inner_color = "rgba(0, 0, 0, 0.2)";
-                    font_color = "rgb(202, 211, 245)";
+                    font_color = "rgb(216, 222, 233)";
                     fade_on_empty = false;
-                    rounding = -1;
-                    check_color = "rgb(104, 136, 34)";
-                    placeholder_text = "<span foreground=\"##cdd6f4\">Enter Password...</span>";
+                    placeholder_text = "<i>Enter Password...</i>";
                     hide_input = false;
+                    rounding = -1;
+                    check_color = "rgb(163, 190, 140)";
+                    fail_color = "rgb(191, 97, 106)";
+                    capslock_color = "rgb(208, 135, 112)";
                     position = "0, -200";
                     halign = "center";
                     valign = "center";
@@ -38,7 +43,7 @@
                 {
                     monitor = "";
                     text = "cmd[update:1000] date +'%A, %d %B'";
-                    color = "rgba(242, 243, 244, 0.75)";
+                    color = "rgba(216, 222, 233, 0.75)";
                     font_size = 22;
                     font_family = "FiraCodeNerdFont";
                     position = "0, 300";
@@ -50,7 +55,7 @@
                 {
                     monitor = "";
                     text = "cmd[update:1000] date +\"%R\"";
-                    color = "rgba(242, 243, 244, 0.75)";
+                    color = "rgba(216, 222, 233, 0.75)";
                     font_size = 95;
                     font_family = "FiraCodeNerdFont";
                     position = "0, 200";
