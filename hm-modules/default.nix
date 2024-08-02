@@ -7,6 +7,7 @@
         ./hyprlock.nix
         ./hyprpaper.nix
         ./qutebrowser.nix
+        ./rbw.nix
         ./rofi.nix
         ./waybar.nix
         ./zsh.nix
