@@ -1,4 +1,14 @@
-{ config, lib, pkgs, inputs, user, host, ... }:
+{ pkgs, inputs, user, host, ... }:
+let
+    background-package = pkgs.stdenvNoCC.mkDerivation {
+        name = "background-image";
+        src = ../.;
+        dontUnpack = true;
+        installPhase = ''
+            cp $src/wallpaper.png $out
+        '';
+    };
+in
 {
     imports = [
         ../modules
@@ -66,6 +76,7 @@
         displayManager.sddm = {
             enable = true;
             wayland.enable = true;
+            theme = "chili";
         };
     };
 
@@ -107,6 +118,7 @@
             libsForQt5.qt5.qtwayland
             playerctl
             ripgrep
+            sddm-chili-theme
             trash-cli
             unp
             unzip
@@ -118,6 +130,16 @@
             zathura
 
             inputs.nixvim.packages.${system}.default
+
+            (
+                writeTextDir "share/sddm/themes/chili/theme.conf.user" ''
+                    [General]
+                    background=${background-package}
+
+                    ScreenWidth=2560
+                    ScreenHeight=1440
+                ''
+            )
         ];
         variables = { EDITOR = "nvim"; VISUAL = "nvim"; };
     };
