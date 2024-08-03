@@ -128,6 +128,10 @@
                 "$mod, mouse:272, movewindow"
                 "$mod, mouse:273, resizewindow"
             ];
+
+            xwayland = {
+                force_zero_scaling = true;
+            };
         };
     };
 }

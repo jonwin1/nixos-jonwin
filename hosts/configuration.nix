@@ -103,7 +103,6 @@
             gimp
             kdePackages.polkit-kde-agent-1
             kdePackages.qtwayland
-            kitty
             libnotify
             libsForQt5.qt5.qtwayland
             playerctl

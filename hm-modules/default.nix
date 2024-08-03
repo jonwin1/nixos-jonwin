@@ -6,6 +6,7 @@
         ./hyprland.nix
         ./hyprlock.nix
         ./hyprpaper.nix
+        ./kitty.nix
         ./qutebrowser.nix
         ./rbw.nix
         ./rofi.nix
