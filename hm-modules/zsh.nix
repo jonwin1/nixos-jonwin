@@ -32,7 +32,7 @@
                 cd = "z";
                 cp = "cp -riv";
                 la = "ls -lhA";
-                ll = "ls -lh";
+                l = "ls -lh";
                 mkdir = "mkdir -vp";
                 mv = "mv -iv";
                 rm = "rm -rifv";
@@ -57,6 +57,8 @@
                 nix-update = "sudo nix flake update ~/nixos-jonwin#";
                 nix-clean = "sudo nix-collect-garbage --delete-older-than 7d && nix-collect-garbage --delete-older-than 7d";
                 nix-clean-all = "sudo nix-collect-garbage && sudo nix-collect-garbage -d && nix-collect-garbage && nix-collect-garbage -d";
+
+                "nix develop" = "nix develop -c $SHELL";
 
                 ga = "git add";
                 gaa = "git add --all";
