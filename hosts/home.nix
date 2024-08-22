@@ -65,5 +65,7 @@
         home-manager.enable = true;
     };
 
+    xdg.userDirs.enable = true;
+
     home.stateVersion = "23.11";
 }
