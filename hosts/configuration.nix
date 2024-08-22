@@ -112,6 +112,7 @@ in
             fzf
             gcc
             gimp
+            grimblast
             kdePackages.polkit-kde-agent-1
             kdePackages.qtwayland
             libnotify

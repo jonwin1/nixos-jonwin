@@ -68,6 +68,10 @@
                 "$mod SHIFT, R, exec, rofi -show run"
                 "$mod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
                 "$mod, B, exec, rofi-rbw"
+                "$mod, P, exec, grimblast --notify copysave output"
+                "$mod SHIFT, P, exec, grimblast --notify copysave area"
+                "$mod ALT, P, exec, grimblast --notify copysave active"
+                "$mod CTRL, P, exec, grimblast --notify copysave screen"
 
                 # scratchpad
                 "$mod, D, togglespecialworkspace, magic"
@@ -80,7 +84,7 @@
                 "$mod, I, layoutmsg, addmaster"
                 "$mod, U, layoutmsg, removemaster"
 
-                "$mod, P, pin, active"
+                #"$mod, P, pin, active"
                 "$mod, M, fullscreen, 0"
                 "$mod SHIFT, M, fakefullscreen, "
                 "$mod, SPACE, togglefloating, active"
