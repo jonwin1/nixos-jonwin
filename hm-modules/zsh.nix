@@ -95,7 +95,7 @@
         bat = {
             enable = true;
             extraPackages = with pkgs.bat-extras; [
-                batdiff
+                #batdiff
                 batgrep
                 batman
             ];
