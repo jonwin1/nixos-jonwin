@@ -86,7 +86,7 @@
 
                 #"$mod, P, pin, active"
                 "$mod, M, fullscreen, 0"
-                "$mod SHIFT, M, fakefullscreen, "
+                "$mod SHIFT, M, fullscreenstate, 0 2"
                 "$mod, SPACE, togglefloating, active"
                 "$mod, Q, killactive"
                 "$mod SHIFT, Q, exec, rofi-power-menu"
