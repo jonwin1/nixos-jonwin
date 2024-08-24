@@ -9,22 +9,6 @@
             url = "github:jonwin1/nixvim-jonwin";
             inputs.nixpkgs.follows = "nixpkgs";
         };
-        dwm = {
-            url = "github:jonwin1/dwm-jonwin";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
-        slstatus = {
-            url = "github:jonwin1/slstatus-jonwin";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
-        st = {
-            url = "github:jonwin1/st-jonwin";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
-        dmenu = {
-            url = "github:jonwin1/dmenu-jonwin";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
     };
 
     outputs = { 
