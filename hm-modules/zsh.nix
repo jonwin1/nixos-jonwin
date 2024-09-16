@@ -35,7 +35,8 @@
                 l = "ls -lh";
                 mkdir = "mkdir -vp";
                 mv = "mv -iv";
-                rm = "rm -rifv";
+                # rm = "rm -rifv";
+		rm = "echo \"Use tp\"";
                 v = "nvim";
 
                 cat = "bat";
