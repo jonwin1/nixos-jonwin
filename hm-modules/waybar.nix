@@ -63,7 +63,7 @@
                 };
 
                 "temperature" = {
-                    thermal-zone = 2;
+                    thermal-zone = 3;
                     format = "{icon} {temperatureC}°C";
                     format-icons = ["" "" "" "" ""];
                     interval = 5;
