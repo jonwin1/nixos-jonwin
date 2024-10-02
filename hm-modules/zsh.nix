@@ -55,7 +55,7 @@
 
                 nix-switch = "sudo nixos-rebuild switch --flake ~/nixos-jonwin#${host}";
                 nix-switchu = "sudo nixos-rebuild switch --upgrade --flake ~/nixos-jonwin#${host}";
-                nix-update = "sudo nix flake update ~/nixos-jonwin#";
+                nix-update = "nix flake update ~/nixos-jonwin# --commit-lock-file";
                 nix-clean = "sudo nix-collect-garbage --delete-older-than 7d && nix-collect-garbage --delete-older-than 7d";
                 nix-clean-all = "sudo nix-collect-garbage && sudo nix-collect-garbage -d && nix-collect-garbage && nix-collect-garbage -d";
 

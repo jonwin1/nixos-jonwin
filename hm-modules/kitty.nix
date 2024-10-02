@@ -2,7 +2,7 @@
 {
     programs.kitty = {
         enable = true;
-        theme = "Nord";
+        themeFile = "Nord";
 
         font = {
             package = pkgs.fira-code-nerdfont;
