@@ -129,6 +129,7 @@ in
             xdg-desktop-portal-gtk
             xdg-desktop-portal-hyprland
             zathura
+            zip
 
             inputs.nixvim.packages.${system}.default
 
