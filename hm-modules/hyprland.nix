@@ -38,6 +38,7 @@
 
             cursor = {
                 inactive_timeout = 2;
+                no_hardware_cursors = true;
             };
 
             master = {
