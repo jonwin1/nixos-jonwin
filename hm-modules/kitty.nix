@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
     programs.kitty = {
         enable = true;
@@ -7,7 +7,7 @@
         font = {
             package = pkgs.fira-code-nerdfont;
             name = "FiraCode Nerd Font";
-            size = 11;
+            size = lib.mkDefault 11;
         };
 
         settings = {
