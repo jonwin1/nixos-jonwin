@@ -24,6 +24,11 @@
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
+  fileSystems."/home/jonwin/gamedrive" =
+    { device = "/dev/disk/by-uuid/459b8f75-aed3-47f0-9e76-b76eee6f49ae";
+      fsType = "ext4";
+    };
+
   swapDevices =
     [ { device = "/dev/disk/by-uuid/1b9e3367-01bb-48fe-9441-22c2f2d68d1f"; }
     ];
