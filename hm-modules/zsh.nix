@@ -68,7 +68,7 @@
                 gch = "git checkout";
                 gchb = "git checkout -b";
                 gcm = "git commit -m";
-                gd = "batdiff";
+                gd = "z `git rev-parse --show-toplevel` && batdiff && z -";
                 gf = "git fetch";
                 gm = "git merge";
                 gpl = "git pull";
