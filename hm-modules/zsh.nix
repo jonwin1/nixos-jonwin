@@ -68,6 +68,7 @@
                 gchb = "git checkout -b";
                 gcm = "git commit -m";
                 gd = "git diff | bat";
+                gds = "git diff --staged | bat";
                 gf = "git fetch";
                 gl = "git log --graph";
                 gm = "git merge";
