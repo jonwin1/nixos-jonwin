@@ -5,6 +5,7 @@
         (import ./hardware-configuration.nix)
         ../../modules/kmonad-module.nix
         ../../modules/kmonad.nix
+        ../../modules/foldingathome.nix
     ];
 
     boot = {
