@@ -41,7 +41,6 @@
 
                 cat = "bat";
                 man = "batman";
-                ripgrep = "batgrep";
 
                 tp = "trash-put -v";
                 tl = "trash-list";
@@ -68,7 +67,7 @@
                 gch = "git checkout";
                 gchb = "git checkout -b";
                 gcm = "git commit -m";
-                gd = "z `git rev-parse --show-toplevel` && batdiff && z -";
+                gd = "git diff | bat";
                 gf = "git fetch";
                 gm = "git merge";
                 gpl = "git pull";
@@ -96,7 +95,6 @@
         bat = {
             enable = true;
             extraPackages = with pkgs.bat-extras; [
-                batdiff
                 batgrep
                 batman
             ];
