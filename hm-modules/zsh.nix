@@ -69,9 +69,11 @@
                 gcm = "git commit -m";
                 gd = "git diff | bat";
                 gf = "git fetch";
+                gl = "git log --graph";
                 gm = "git merge";
                 gpl = "git pull";
                 gps = "git push";
+                gr = "git restore";
                 gs = "git status";
             };
             plugins = with pkgs; [
