@@ -25,6 +25,8 @@
                 path = "$HOME/.cache/zsh_history";
             };
 
+            initExtra = "zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'";
+
             shellAliases = {
                 #sudo = "sudo ";
 
