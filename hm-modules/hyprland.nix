@@ -31,9 +31,9 @@
                 disable_splash_rendering = true;
                 font_family = "FiraCodeNerdFont";
                 vrr = 2;
-                # enable_swallow = true;
-                # swallow_regex = "kitty";
-                # swallow_exception_regex = "kitty";
+                enable_swallow = true;
+                swallow_regex = "kitty";
+                swallow_exception_regex = "kitty";
             };
 
             cursor = {
@@ -44,7 +44,7 @@
             master = {
                 allow_small_split = true;
                 special_scale_factor = 0.6;
-                mfact = 0.55;
+                mfact = 0.5;
             };
 
             layerrule = [
