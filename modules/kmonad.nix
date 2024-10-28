@@ -51,7 +51,7 @@
 (deflayer nav
     f12     f1      f2      f3      f4      f5                      f6      f7      f8      f9      f10     f11
     XX      '       S-[     S-]     \       XX                 previoussong vold    volu nextsong   mute    caps
-    XX      S-'     S-9     S-0     /       XX                      left    down    up      right playpause stop
+    XX      S-'     S-9     S-0     /       XX                      XX      XX      XX      XX playpause stop
     XX      `       [       ]       S-\     XX                      home    pgdn    pgup    end     ins     ralt
                     left    right   XX      XX      XX      XX      XX      XX      down    up
                                             XX      XX      XX      XX
