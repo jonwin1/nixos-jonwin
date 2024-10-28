@@ -42,9 +42,10 @@
             };
 
             master = {
-                allow_small_split = true;
                 special_scale_factor = 0.6;
-                mfact = 0.5;
+                mfact = 0.34;
+                orientation = "center";
+                # always_center_master = true;
             };
 
             layerrule = [
