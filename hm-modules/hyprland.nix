@@ -43,9 +43,9 @@
 
             master = {
                 special_scale_factor = 0.6;
-                mfact = 0.34;
+                mfact = 0.4;
                 orientation = "center";
-                # always_center_master = true;
+                always_center_master = true;
             };
 
             layerrule = [
