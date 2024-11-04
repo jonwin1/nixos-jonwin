@@ -7,6 +7,7 @@
         ./hyprlock.nix
         ./hyprpaper.nix
         ./kitty.nix
+        ./librewolf.nix
         ./qutebrowser.nix
         ./rbw.nix
         ./rofi.nix
