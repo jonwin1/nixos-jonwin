@@ -23,7 +23,10 @@ in
 
 	hardware.steam-hardware.enable = true;
 
-    virtualisation.libvirtd.enable = true;
+    virtualisation.libvirtd = {
+        enable = true;
+        qemu.vhostUserPackages = with pkgs; [ virtiofsd ];
+    };
     programs.virt-manager.enable = true;
 
     networking.hostName = "${host}";
