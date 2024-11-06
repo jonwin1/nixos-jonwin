@@ -26,6 +26,12 @@
             workspace = [
                 "1, monitor:eDP-1, default:true"
             ];
+
+            master = {
+                mfact = lib.mkForce 0.5;
+                orientation = lib.mkForce "left";
+                always_center_master = lib.mkForce false;
+            };
         };
     };
 
