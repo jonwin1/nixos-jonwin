@@ -126,6 +126,7 @@ in
             ripgrep
             sddm-chili-theme
             trash-cli
+            tree
             unp
             unzip
             wget
