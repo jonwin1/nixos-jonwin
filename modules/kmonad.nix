@@ -1,18 +1,10 @@
-{ pkgs, ... }:
 {
-    environment = {
-        systemPackages = with pkgs; [
-            kmonad
-        ];
-    };
-
-    services = {
-        kmonad = {
-            enable = true;
-            keyboards = {
-                lgpro = {
-                    device = "/dev/input/by-id/usb-Logitech_PRO_Gaming_Keyboard_076D31413931-event-kbd";
-                    config = ''
+    services.kmonad = {
+        enable = true;
+        keyboards = {
+            lgpro = {
+                device = "/dev/input/by-id/usb-Logitech_PRO_Gaming_Keyboard_076D31413931-event-kbd";
+                config = ''
 (defcfg
     input (device-file "/dev/input/by-id/usb-Logitech_PRO_Gaming_Keyboard_076D31413931-event-kbd")
     output (uinput-sink "kmonad output")
@@ -56,8 +48,7 @@
                     left    right   XX      XX      XX      XX      XX      XX      down    up
                                             XX      XX      XX      XX
 )
-                    '';
-                };
+                '';
             };
         };
     };
