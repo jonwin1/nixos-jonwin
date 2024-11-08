@@ -6,20 +6,16 @@
                 border_size = 2;
                 gaps_in = 0;
                 gaps_out = 0;
-                layout = "master";
                 "col.inactive_border" = "0xff2e3440";
                 "col.active_border" = "0xff81a1c1";
+                layout = "master";
+                resize_on_border = true;
             };
 
             decoration = {
                 rounding = 5;
-                drop_shadow = false;
                 dim_inactive = true;
                 dim_strength = 0.2;
-                blur = {
-                    enabled = true;
-                    size = 8;
-                };
             };
 
             input = {
@@ -32,8 +28,6 @@
             };
             
             misc = {
-                disable_hyprland_logo = true;
-                disable_splash_rendering = true;
                 font_family = "FiraCodeNerdFont";
                 vrr = 2;
                 enable_swallow = true;
@@ -92,7 +86,7 @@
                 "$mod, I, layoutmsg, addmaster"
                 "$mod, U, layoutmsg, removemaster"
 
-                #"$mod, P, pin, active"
+                "$mod, A, pin, active"
                 "$mod, M, fullscreen, 0"
                 "$mod SHIFT, M, fullscreenstate, 0 2"
                 "$mod, SPACE, togglefloating, active"
@@ -101,15 +95,11 @@
             ] ++ (
                 # workspaces
                 # binds $mod + [shift +] {1..10} to [move to] workspace {1..10}
-                builtins.concatLists (builtins.genList (
-                    x: let
-                        ws = let
-                            c = (x + 1) / 10;
-                        in
-                            builtins.toString (x + 1 - (c * 10));
+                builtins.concatLists (builtins.genList (i:
+                        let ws = i + 1;
                     in [
-                        "$mod, ${ws}, workspace, ${toString (x + 1)}"
-                        "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
+                        "$mod, code:1${toString i}, workspace, ${toString ws}"
+                        "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
                     ]
                 )
                 10)
