@@ -25,6 +25,11 @@
             input = {
                 kb_options = [ "compose:ralt" ];
             };
+
+            gestures = {
+                workspace_swipe = true;
+                workspace_swipe_use_r = true;
+            };
             
             misc = {
                 disable_hyprland_logo = true;
