@@ -54,7 +54,7 @@
 
             exec-once = [
                 "waybar"
-                "/nix/store/$(ls -la /nix/store | grep polkit-kde-agent | grep '^d' | awk '{print $9}')/libexec/polkit-kde-authentication-agent-1"
+                "systemctl --user start hyprpolkitagent"
                 "wl-paste --type text --watch cliphist store"
                 "wl-paste --type image --watch cliphist store"
                 "wl-clip-persist --clipboard both"

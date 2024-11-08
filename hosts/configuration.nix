@@ -19,6 +19,7 @@ in
         steam = {
             enable = true;
         };
+        thunar.enable = true;
     };
 
 	hardware.steam-hardware.enable = true;
@@ -118,7 +119,7 @@ in
             gcc
             gimp
             grimblast
-            kdePackages.polkit-kde-agent-1
+            hyprpolkitagent
             kdePackages.qtwayland
             libnotify
             libsForQt5.qt5.qtwayland
@@ -132,8 +133,6 @@ in
             wget
             wl-clipboard
             wl-clip-persist
-            xdg-desktop-portal-gtk
-            xdg-desktop-portal-hyprland
             zathura
             zip
 
