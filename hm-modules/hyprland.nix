@@ -64,7 +64,8 @@
             "$mod" = "SUPER";
 
             bind = [
-                "$mod, W, exec, qutebrowser"
+                # "$mod, W, exec, qutebrowser"
+                "$mod, W, exec, librewolf"
                 "$mod, S, exec, kitty"
                 "$mod, R, exec, rofi -show drun"
                 "$mod SHIFT, R, exec, rofi -show run"
