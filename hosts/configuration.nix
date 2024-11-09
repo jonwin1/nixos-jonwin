@@ -15,11 +15,12 @@ in
     ];
 
     programs = {
-        zsh.enable = true;
         steam = {
             enable = true;
         };
         thunar.enable = true;
+        xfconf.enable = true;
+        zsh.enable = true;
     };
 
 	hardware.steam-hardware.enable = true;
@@ -59,6 +60,12 @@ in
     };
 
     services = {
+        displayManager.sddm = {
+            enable = true;
+            wayland.enable = true;
+            theme = "chili";
+        };
+        gvfs.enable = true;
         pipewire = {
             enable = true;
             alsa.enable = true;
@@ -76,14 +83,8 @@ in
                 '')
             ];
         };
-
+        tumbler.enable = true;
         udisks2.enable = true;
-
-        displayManager.sddm = {
-            enable = true;
-            wayland.enable = true;
-            theme = "chili";
-        };
     };
 
     security = {
