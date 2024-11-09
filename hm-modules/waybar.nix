@@ -101,8 +101,8 @@
                 
                 "bluetooth" = {
                     format = "󰂯";
-                    format-disabled = "";
-                    format-off = "";
+                    format-disabled = "󰂲";
+                    format-off = "󰂲";
                     format-connected = " {num_connections}";
                     tooltip-format = "{device_enumerate}";
                     tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
@@ -194,6 +194,7 @@
                 margin: 5px 5px 5px 0px;
             }
 
+            #disk:hover,
             #network:hover,
             #bluetooth:hover,
             #wireplumber:hover,
@@ -214,6 +215,8 @@
                 color: @warning_color;
             }
 
+            #bluetooth.disabled,
+            #bluetooth.off,
             #network.disabled,
             #network.disconnected,
             #wireplumber.muted,

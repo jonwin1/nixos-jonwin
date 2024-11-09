@@ -162,7 +162,7 @@ in
 
     hardware.bluetooth = {
         enable = true;
-        powerOnBoot = false;
+        powerOnBoot = true;
     };
 
     system.stateVersion = "23.11";
