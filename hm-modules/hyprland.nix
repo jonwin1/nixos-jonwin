@@ -59,6 +59,13 @@
                 "pin, title:(Bluetooth Devices)"
                 "noborder on, title:(Bluetooth Devices)" 
                 "dimaround on, title:(Bluetooth Devices)" 
+
+                "float, title:(nmtui)"
+                "size 600 400, title:(nmtui)"
+                "move 100%-w-10 40, title:(nmtui)"
+                "pin, title:(nmtui)"
+                "noborder on, title:(nmtui)" 
+                "dimaround on, title:(nmtui)" 
             ];
 
             exec-once = [
