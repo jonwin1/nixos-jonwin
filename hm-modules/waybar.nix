@@ -85,6 +85,7 @@
                     states = {
                         critical = 95;
                     };
+                    on-click = "thunar";
                 };
 
                 "network" = {
@@ -111,7 +112,8 @@
                 "wireplumber" = {
                     format = "{icon} {volume}%";
                     format-muted = " 󰝟 ";
-                    on-click = "wpctl set-mute @DEFAULT_SINK@ toggle";
+                    on-click = "pavucontrol";
+                    on-click-right = "wpctl set-mute @DEFAULT_SINK@ toggle";
                     format-icons = ["󰕿" "󰖀" "󰕾"];
                     scroll-step = 5;
                 };

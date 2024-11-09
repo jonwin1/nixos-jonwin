@@ -125,6 +125,7 @@ in
             kdePackages.qtwayland
             libnotify
             libsForQt5.qt5.qtwayland
+            pavucontrol
             playerctl
             ripgrep
             sddm-chili-theme

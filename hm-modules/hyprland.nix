@@ -66,6 +66,13 @@
                 "pin, title:^(nmtui_applet)$"
                 "noborder on, title:^(nmtui_applet)$" 
                 "dimaround on, title:^(nmtui_applet)$" 
+
+                "float, title:^(Volume Control)$"
+                "size 900 400, title:^(Volume Control)$"
+                "move 100%-w-10 40, title:^(Volume Control)$"
+                "pin, title:^(Volume Control)$"
+                "noborder on, title:^(Volume Control)$" 
+                "dimaround on, title:^(Volume Control)$" 
             ];
 
             exec-once = [
