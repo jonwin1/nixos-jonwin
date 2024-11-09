@@ -60,6 +60,7 @@ in
     };
 
     services = {
+        blueman.enable = true;
         displayManager.sddm = {
             enable = true;
             wayland.enable = true;
@@ -160,7 +161,7 @@ in
 
     hardware.bluetooth = {
         enable = true;
-        powerOnBoot = true;
+        powerOnBoot = false;
     };
 
     system.stateVersion = "23.11";

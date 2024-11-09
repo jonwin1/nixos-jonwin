@@ -105,7 +105,7 @@
                     format-connected = " {num_connections}";
                     tooltip-format = "{device_enumerate}";
                     tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
-                    on-click = "kitty bluetoothctl";
+                    on-click = "blueman-manager";
                 };
 
                 "wireplumber" = {

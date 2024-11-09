@@ -52,6 +52,15 @@
                 "blur,notifications"
             ];
 
+            windowrulev2 = [
+                "float, title:(Bluetooth Devices)"
+                "size 600 400, title:(Bluetooth Devices)"
+                "move 100%-w-10 40, title:(Bluetooth Devices)"
+                "pin, title:(Bluetooth Devices)"
+                "noborder on, title:(Bluetooth Devices)" 
+                "dimaround on, title:(Bluetooth Devices)" 
+            ];
+
             exec-once = [
                 "waybar"
                 "systemctl --user start hyprpolkitagent"
