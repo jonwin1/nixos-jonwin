@@ -94,7 +94,7 @@
                     format-disconnected = "󰤭 ";
                     format-icons = ["󰤯" "󰤟" "󰤢" "󰤥" "󰤨"];
                     tooltip-format = "{ifname}: {ipaddr}/{cidr}\nSignal Strength: {signalStrength}%";
-                    on-click = "kitty --title nmtui nmtui";
+                    on-click = "kitty --title nmtui_applet nmtui";
                     max-length = 50;
                 };
                 
