@@ -160,6 +160,11 @@
                 color: alpha(@theme_fg_color, 0.4);
             }
 
+            #workspaces button.visible {
+                color: @theme_bg_color;
+                background: alpha(@theme_selected_bg_color, 0.6);
+            }
+
             #workspaces button.active {
                 color: @theme_bg_color;
                 background: alpha(@theme_selected_bg_color, 0.8);
@@ -169,7 +174,7 @@
 
             #workspaces button:hover {
                 color: @theme_bg_color;
-                background: alpha(@theme_selected_bg_color, 0.5);
+                background: alpha(@theme_selected_bg_color, 0.4);
             }
 
             tooltip {
@@ -206,7 +211,7 @@
 
             #custom-exit {
                 color: @error_color;
-                margin: 0px 10px 0px 5px;
+                margin: 0px 0px 0px 5px;
                 font-size: 16px;
             }
 

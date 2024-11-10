@@ -9,11 +9,10 @@
                 "col.inactive_border" = "0xff2e3440";
                 "col.active_border" = "0xff81a1c1";
                 layout = "master";
-                resize_on_border = true;
             };
 
             decoration = {
-                rounding = 5;
+                rounding = 10;
                 dim_inactive = true;
                 dim_strength = 0.2;
             };
