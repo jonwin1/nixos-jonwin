@@ -3,6 +3,11 @@
         enable = true;
         settings = {
             mainBar = {
+                margin-top = 5;
+                margin-bottom = 0;
+                margin-left = 10;
+                margin-right = 10;
+                spacing = 0;
                 modules-left = [
                     "hyprland/workspaces"
                     "idle_inhibitor"
@@ -12,14 +17,20 @@
                 ];
                 modules-right = [
                     "cpu"
-                    "temperature"
                     "memory"
                     "disk"
                     "network"
                     "bluetooth"
                     "wireplumber"
                     "battery"
+                    "custom/exit"
                 ];
+
+                "hyprland/workspaces" = {
+                    persistent-workspaces = {
+                        "*" = 5;
+                    };
+                };
 
                 "clock" = {
                     format = "{:%a %d %b %R}";
@@ -48,48 +59,29 @@
                 };
 
                 "cpu" = {
-                    interval = 5;
-                    format = " {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7} ";
-                    format-icons = [
-                        "<span color='#a3be8c'>▁</span>"
-                        "<span color='#81a1c1'>▂</span>"
-                        "<span color='#81a1c1'>▃</span>"
-                        "<span color='#ebcb8b'>▄</span>"
-                        "<span color='#ebcb8b'>▅</span>"
-                        "<span color='#d08770'>▆</span>"
-                        "<span color='#d08770'>▇</span>"
-                        "<span color='#bf616a'>█</span>"
-                    ];
-                };
-
-                "temperature" = {
-                    thermal-zone = 3;
-                    format = "{icon} {temperatureC}°C";
-                    format-icons = ["" "" "" "" ""];
-                    interval = 5;
-                    tooltip = false;
-                    critical-threshold = 80;
-                };
-
-                "memory" = {
-                    interval = 5;
-                    format = "  {percentage}%";
+                    format = "  {usage}% ";
                     states = {
                         critical = 90;
                     };
                 };
 
+                "memory" = {
+                    format = "/   {percentage}% ";
+                    states = {
+                        critical = 80;
+                    };
+                };
+
                 "disk" = {
-                    format = "󰋊 {free}";
-                    tooltip-format = "{used} used out of {total}";
+                    format = "/ 󰋊 {percentage_used}% ";
+                    tooltip-format = "{used} / {total}";
                     states = {
                         critical = 95;
                     };
-                    on-click = "thunar";
                 };
 
                 "network" = {
-                    format-wifi = "{icon} {essid}";
+                    format-wifi = "{icon}  {essid}";
                     format-ethernet = "󰈀 ";
                     format-linked = "󰌷 ";
                     format-disconnected = "󰤭 ";
@@ -115,7 +107,7 @@
                     on-click = "pavucontrol";
                     on-click-right = "wpctl set-mute @DEFAULT_SINK@ toggle";
                     format-icons = ["󰕿" "󰖀" "󰕾"];
-                    scroll-step = 5;
+                    scroll-step = 1;
                 };
 
                 "battery" = {
@@ -126,115 +118,120 @@
                     format = "{icon} {capacity}%";
                     format-charging = "󰂄 {capacity}%";
                     format-icons = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
-                    tooltip-format = "{timeTo}\nPower: {power} Watts\nHealth: {health}%";
+                    tooltip-format = "{timeTo}\nPower: {power} Watts";
+                };
+
+                "custom/exit" = {
+                    format = " ";
+                    on-click = "rofi-power-menu";
+                    tooltip-format = "Power Menu";
                 };
             };
         };
-
         style = ''
             * {
                 border: none;
-                border-radius: 0;
+                border-radius: 15px;
                 font-family: FiraCodeNerdFont;
-                font-size: 13px;
+                font-size: 14px;
             }
 
             window#waybar {
                 color: @theme_fg_color;
-                background: alpha(@theme_bg_color, 0.5);
+                background: transparent;
+            }
+
+            #workspaces {
+                color: @theme_fg_color;
+                background: alpha(@theme_bg_color, 0.8);
+                margin: 2px 1px 3px 1px;
+                padding: 0px 1px;
+            }
+            
+            #workspaces button {
+                color: @theme_fg_color;
+                background: transparent;
+                padding: 0px 5px;
+                margin: 4px 3px;
+                transition: all 0.3s ease-in-out;
+            }
+
+            #workspaces button.empty {
+                color: alpha(@theme_fg_color, 0.4);
+            }
+
+            #workspaces button.active {
+                color: @theme_bg_color;
+                background: alpha(@theme_selected_bg_color, 0.8);
+                min-width: 30px;
+                transition: all 0.3s ease-in-out;
+            }
+
+            #workspaces button:hover {
+                color: @theme_bg_color;
+                background: alpha(@theme_selected_bg_color, 0.5);
             }
 
             tooltip {
                 color: @theme_fg_color;
                 background: alpha(@theme_bg_color, 0.9);
-                border: 1px solid alpha(@borders, 0.9);
-                border-radius: 10px;
+                padding: 15px;
+                margin: 0px;
             }
 
-            #workspaces {
-                color: @theme_fg_color;
-                background: @theme_bg_color;
-                border-radius: 10px;
-                margin: 5px;
-            }
-            
-            #workspaces button {
-                color: alpha(@theme_fg_color, 0.4);
-                background: transparent;
+            #idle_inhibitor {
+                color: @success_color;
+                font-size: 16px;
+                margin-left: 15px;
             }
 
-            #workspaces button.visible {
-                color: @theme_selected_fg_color;
-                background: alpha(@theme_selected_bg_color, 0.5);
-                border-radius: 10px;
+            #idle_inhibitor.activated {
+                color: @error_color;
             }
 
-            #workspaces button:hover {
-                color: @theme_fg_color;
-            }
-
-            #workspaces button.urgent {
-                color: @warning_color;
-            }
-
-            #idle_inhibitor,
             #clock,
-            #cpu,
             #temperature,
-            #memory,
-            #disk,
             #network,
             #bluetooth,
             #wireplumber,
             #battery {
-                color: @theme_fg_color;
-                background: @theme_bg_color;
-                border-radius: 10px;
-                padding: 0px 10px;
-                margin: 5px 5px 5px 0px;
+                background: alpha(@theme_bg_color, 0.8);
+                padding: 5px 15px 4px 15px;
+                margin: 5px 10px 5px 0px;
             }
 
-            #disk:hover,
+            #disk {
+                margin-right: 10px;
+            }
+
+            #custom-exit {
+                color: @error_color;
+                margin: 0px 10px 0px 5px;
+                font-size: 16px;
+            }
+
             #network:hover,
             #bluetooth:hover,
-            #wireplumber:hover,
-            #idle_inhibitor:hover {
-                color: @theme_selected_fg_color;
+            #wireplumber:hover {
                 background: alpha(@theme_selected_bg_color, 0.5);
-                border-radius: 10px;
+                transition: all 0.3s ease-in-out;
             }
 
-            #idle_inhibitor,
-            #bluetooth.discovering,
-            #battery.charging {
-                color: @success_color;
-            }
-
-            #idle_inhibitor.activated,
+            #battery.warning:not(.charging),
             battery.warning {
                 color: @warning_color;
             }
 
+            #battery.critical:not(.charging),
             #bluetooth.disabled,
             #bluetooth.off,
             #network.disabled,
             #network.disconnected,
             #wireplumber.muted,
+            #cpu.critical,
             #memory.critical,
             #disk.critical,
-            #battery.critical,
-            #temperature.critical {
-                color: @error_color;
-            }
-
-            #wireplumber {
-                min-width: 50px;
-            }
-
-            #battery.warning:not(.charging) {
-                color: @warning_color;
-            }
-            #battery.critical:not(.charging) {
+            #battery.critical {
                 color: @error_color;
             }
         '';

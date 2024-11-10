@@ -4,8 +4,8 @@
         settings = {
             general = {
                 border_size = 2;
-                gaps_in = 0;
-                gaps_out = 0;
+                gaps_in = 3;
+                gaps_out = 5;
                 "col.inactive_border" = "0xff2e3440";
                 "col.active_border" = "0xff81a1c1";
                 layout = "master";
@@ -50,7 +50,6 @@
             };
 
             layerrule = [
-                "blur,waybar"
                 "blur,notifications"
             ];
 
