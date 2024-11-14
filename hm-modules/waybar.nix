@@ -143,7 +143,7 @@
 
             #workspaces {
                 color: @theme_fg_color;
-                background: alpha(@theme_bg_color, 0.8);
+                background: @theme_bg_color;
                 margin: 2px 1px 3px 1px;
                 padding: 0px 1px;
             }
@@ -157,24 +157,24 @@
             }
 
             #workspaces button.empty {
-                color: alpha(@theme_fg_color, 0.4);
+                color: alpha(@theme_fg_color, 0.5);
             }
 
             #workspaces button.visible {
                 color: @theme_bg_color;
-                background: alpha(@theme_selected_bg_color, 0.6);
+                background: alpha(@theme_selected_bg_color, 0.7);
             }
 
             #workspaces button.active {
                 color: @theme_bg_color;
-                background: alpha(@theme_selected_bg_color, 0.8);
+                background: @theme_selected_bg_color;
                 min-width: 30px;
                 transition: all 0.3s ease-in-out;
             }
 
             #workspaces button:hover {
                 color: @theme_bg_color;
-                background: alpha(@theme_selected_bg_color, 0.4);
+                background: alpha(@theme_selected_bg_color, 0.5);
             }
 
             tooltip {
@@ -200,7 +200,7 @@
             #bluetooth,
             #wireplumber,
             #battery {
-                background: alpha(@theme_bg_color, 0.8);
+                background: @theme_bg_color;
                 padding: 5px 15px 4px 15px;
                 margin: 5px 10px 5px 0px;
             }
@@ -218,12 +218,12 @@
             #network:hover,
             #bluetooth:hover,
             #wireplumber:hover {
-                background: alpha(@theme_selected_bg_color, 0.5);
+                color: @theme_bg_color;
+                background: @theme_selected_bg_color;
                 transition: all 0.3s ease-in-out;
             }
 
-            #battery.warning:not(.charging),
-            battery.warning {
+            #battery.warning:not(.charging) {
                 color: @warning_color;
             }
 
@@ -235,8 +235,7 @@
             #wireplumber.muted,
             #cpu.critical,
             #memory.critical,
-            #disk.critical,
-            #battery.critical {
+            #disk.critical {
                 color: @error_color;
             }
         '';
