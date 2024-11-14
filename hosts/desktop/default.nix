@@ -3,7 +3,6 @@
 {
     imports = [
         (import ./hardware-configuration.nix)
-        ../../modules/kmonad.nix
         ../../modules/foldingathome.nix
     ];
 
