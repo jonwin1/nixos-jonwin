@@ -54,25 +54,22 @@
 
             windowrulev2 = [
                 "float, title:^(Bluetooth Devices)$"
-                "size 600 400, title:^(Bluetooth Devices)$"
+                "size 1000 500, title:^(Bluetooth Devices)$"
                 "move 100%-w-10 40, title:^(Bluetooth Devices)$"
                 "pin, title:^(Bluetooth Devices)$"
                 "noborder on, title:^(Bluetooth Devices)$" 
-                "dimaround on, title:^(Bluetooth Devices)$" 
 
                 "float, title:^(nmtui_applet)$"
-                "size 600 400, title:^(nmtui_applet)$"
+                "size 1000 500, title:^(nmtui_applet)$"
                 "move 100%-w-10 40, title:^(nmtui_applet)$"
                 "pin, title:^(nmtui_applet)$"
                 "noborder on, title:^(nmtui_applet)$" 
-                "dimaround on, title:^(nmtui_applet)$" 
 
                 "float, title:^(Volume Control)$"
-                "size 900 400, title:^(Volume Control)$"
+                "size 1000 500, title:^(Volume Control)$"
                 "move 100%-w-10 40, title:^(Volume Control)$"
                 "pin, title:^(Volume Control)$"
                 "noborder on, title:^(Volume Control)$" 
-                "dimaround on, title:^(Volume Control)$" 
             ];
 
             exec-once = [

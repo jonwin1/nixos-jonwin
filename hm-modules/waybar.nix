@@ -87,7 +87,7 @@
                     format-disconnected = "󰤭 ";
                     format-icons = ["󰤯" "󰤟" "󰤢" "󰤥" "󰤨"];
                     tooltip-format = "{ifname}: {ipaddr}/{cidr}\nSignal Strength: {signalStrength}%";
-                    on-click = "kitty --title nmtui_applet nmtui";
+                    on-click = "bash -c 'pgrep nmtui && pkill nmtui || kitty --title nmtui_applet nmtui &'";
                     max-length = 50;
                 };
                 
@@ -98,13 +98,13 @@
                     format-connected = " {num_connections}";
                     tooltip-format = "{device_enumerate}";
                     tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
-                    on-click = "blueman-manager";
+                    on-click = "bash -c 'pgrep blueman-manage && pkill blueman-manage || blueman-manager &'";
                 };
 
                 "wireplumber" = {
                     format = "{icon} {volume}%";
                     format-muted = " 󰝟 ";
-                    on-click = "pavucontrol";
+                    on-click = "bash -c 'pgrep pavucontrol && pkill pavucontrol || pavucontrol &'";
                     on-click-right = "wpctl set-mute @DEFAULT_SINK@ toggle";
                     format-icons = ["󰕿" "󰖀" "󰕾"];
                     scroll-step = 1;
