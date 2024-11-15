@@ -32,8 +32,7 @@
                 font_family = "FiraCodeNerdFont";
                 vrr = 2;
                 enable_swallow = true;
-                swallow_regex = "kitty";
-                swallow_exception_regex = "kitty";
+                swallow_regex = "^(kitty)$";
             };
 
             cursor = {
@@ -42,6 +41,7 @@
             };
 
             dwindle = {
+                pseudotile = true;
                 force_split = 2;
                 preserve_split = true;
                 special_scale_factor = 0.6;
@@ -82,34 +82,53 @@
             "$mod" = "SUPER";
 
             bind = [
-                "$mod, W, exec, /home/jonwin/nixpkgs/result/bin/zen"
-                "$mod, S, exec, kitty"
+                # Applications
+                "$mod, B, exec, /home/jonwin/nixpkgs/result/bin/zen"
+                "$mod SHIFT, B, exec, rofi-rbw"
+                "$mod, E, exec, thunar"
                 "$mod, R, exec, rofi -show drun"
                 "$mod SHIFT, R, exec, rofi -show run"
                 "$mod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
-                "$mod, B, exec, rofi-rbw"
+                "$mod, W, exec, /home/jonwin/nixpkgs/result/bin/zen"
+                "$mod, X, exec, kitty"
+                "$mod, RETURN, exec, kitty"
+
+                 # Windows & Workspaces
+                "$mod, H, movefocus, l"
+                "$mod, L, movefocus, r"
+                "$mod, K, movefocus, u"
+                "$mod, J, movefocus, d"
+
+                "$mod SHIFT, H, movewindow, l"
+                "$mod SHIFT, L, movewindow, r"
+                "$mod SHIFT, K, movewindow, u"
+                "$mod SHIFT, J, movewindow, d"
+
+                "$mod, A, pin, active"
+                "$mod, M, fullscreen, 0"
+                "$mod SHIFT, M, fullscreenstate, 0 2"
+                "$mod, Q, killactive"
+                "$mod SHIFT, Q, exec, rofi-power-menu"
+                "$mod, S, togglesplit,"
+                "$mod SHIFT, S, pseudo,"
+                "$mod, SPACE, togglefloating, active"
+
+                # Screenshot
                 "$mod, P, exec, grimblast --notify copysave output"
                 "$mod SHIFT, P, exec, grimblast --notify copysave area"
                 "$mod ALT, P, exec, grimblast --notify copysave active"
                 "$mod CTRL, P, exec, grimblast --notify copysave screen"
 
-                # scratchpad
+                # Scratchpad
                 "$mod, D, togglespecialworkspace, magic"
                 "$mod SHIFT, D, movetoworkspace, special:magic"
 
-                "$mod, J, layoutmsg, cyclenext"
-                "$mod, K, layoutmsg, cycleprev"
-                "$mod SHIFT, J, layoutmsg, swapnext"
-                "$mod SHIFT, K, layoutmsg, swapprev"
-                "$mod, I, layoutmsg, addmaster"
-                "$mod, U, layoutmsg, removemaster"
+                # Groups
+                "$mod, G, togglegroup,"
+                "$mod, TAB, changegroupactive,"
 
-                "$mod, A, pin, active"
-                "$mod, M, fullscreen, 0"
-                "$mod SHIFT, M, fullscreenstate, 0 2"
-                "$mod, SPACE, togglefloating, active"
-                "$mod, Q, killactive"
-                "$mod SHIFT, Q, exec, rofi-power-menu"
+                "$mod, mouse_down, workspace, e+1"
+                "$mod, mouse_up, workspace, e-1"
             ] ++ (
                 # workspaces
                 # binds $mod + [shift +] {1..10} to [move to] workspace {1..10}
@@ -124,8 +143,10 @@
             );
 
             binde = [
-                "$mod, H, layoutmsg, mfact -0.05"
-                "$mod, L, layoutmsg, mfact +0.05"
+                "$mod CTRL, H, resizeactive, -20 0"
+                "$mod CTRL, L, resizeactive, 20 0"
+                "$mod CTRL, K, resizeactive, 0 -20"
+                "$mod CTRL, J, resizeactive, 0 20"
             ];
 
             bindl = [
