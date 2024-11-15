@@ -8,7 +8,7 @@
                 gaps_out = 5;
                 "col.inactive_border" = "0xff2e3440";
                 "col.active_border" = "0xff81a1c1";
-                layout = "master";
+                layout = "dwindle";
             };
 
             decoration = {
@@ -41,11 +41,10 @@
                 no_hardware_cursors = true;
             };
 
-            master = {
+            dwindle = {
+                force_split = 2;
+                preserve_split = true;
                 special_scale_factor = 0.6;
-                mfact = 0.4;
-                orientation = "center";
-                always_center_master = true;
             };
 
             layerrule = [
