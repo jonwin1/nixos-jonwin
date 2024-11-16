@@ -4,6 +4,7 @@
     imports = [
         (import ./hardware-configuration.nix)
         ../../modules/foldingathome.nix
+        ../../modules/kmonad.nix
     ];
 
     boot = {
