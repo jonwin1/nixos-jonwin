@@ -89,7 +89,6 @@
                 "$mod, R, exec, rofi -show drun"
                 "$mod SHIFT, R, exec, rofi -show run"
                 "$mod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
-                "$mod, W, exec, /home/jonwin/nixpkgs/result/bin/zen"
                 "$mod, X, exec, kitty"
                 "$mod, RETURN, exec, kitty"
 
