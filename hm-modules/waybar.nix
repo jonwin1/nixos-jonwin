@@ -3,6 +3,11 @@
         enable = true;
         settings = {
             mainBar = {
+                margin-top = 5;
+                margin-bottom = 0;
+                margin-left = 10;
+                margin-right = 10;
+                spacing = 0;
                 modules-left = [
                     "hyprland/workspaces"
                     "idle_inhibitor"
@@ -12,14 +17,20 @@
                 ];
                 modules-right = [
                     "cpu"
-                    "temperature"
                     "memory"
                     "disk"
                     "network"
                     "bluetooth"
                     "wireplumber"
                     "battery"
+                    "custom/exit"
                 ];
+
+                "hyprland/workspaces" = {
+                    persistent-workspaces = {
+                        "*" = 5;
+                    };
+                };
 
                 "clock" = {
                     format = "{:%a %d %b %R}";
@@ -48,72 +59,55 @@
                 };
 
                 "cpu" = {
-                    interval = 5;
-                    format = " {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7} ";
-                    format-icons = [
-                        "<span color='#a3be8c'>▁</span>"
-                        "<span color='#81a1c1'>▂</span>"
-                        "<span color='#81a1c1'>▃</span>"
-                        "<span color='#ebcb8b'>▄</span>"
-                        "<span color='#ebcb8b'>▅</span>"
-                        "<span color='#d08770'>▆</span>"
-                        "<span color='#d08770'>▇</span>"
-                        "<span color='#bf616a'>█</span>"
-                    ];
-                };
-
-                "temperature" = {
-                    thermal-zone = 3;
-                    format = "{icon} {temperatureC}°C";
-                    format-icons = ["" "" "" "" ""];
-                    interval = 5;
-                    tooltip = false;
-                    critical-threshold = 80;
-                };
-
-                "memory" = {
-                    interval = 5;
-                    format = "  {percentage}%";
+                    format = "  {usage}% ";
                     states = {
                         critical = 90;
                     };
                 };
 
+                "memory" = {
+                    format = "/   {percentage}% ";
+                    states = {
+                        critical = 80;
+                    };
+                };
+
                 "disk" = {
-                    format = "󰋊 {free}";
-                    tooltip-format = "{used} used out of {total}";
+                    format = "/ 󰋊 {percentage_used}% ";
+                    tooltip-format = "{used} / {total}";
                     states = {
                         critical = 95;
                     };
                 };
 
                 "network" = {
-                    format-wifi = "{icon} {essid}";
+                    format-wifi = "{icon}  {essid}";
                     format-ethernet = "󰈀 ";
                     format-linked = "󰌷 ";
                     format-disconnected = "󰤭 ";
                     format-icons = ["󰤯" "󰤟" "󰤢" "󰤥" "󰤨"];
                     tooltip-format = "{ifname}: {ipaddr}/{cidr}\nSignal Strength: {signalStrength}%";
-                    on-click = "kitty nmtui";
+                    on-click = "bash -c 'pgrep nmtui && pkill nmtui || kitty --title nmtui_applet nmtui &'";
                     max-length = 50;
                 };
                 
                 "bluetooth" = {
                     format = "󰂯";
-                    format-disabled = "";
-                    format-off = "";
+                    format-disabled = "󰂲";
+                    format-off = "󰂲";
                     format-connected = " {num_connections}";
                     tooltip-format = "{device_enumerate}";
                     tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
-                    on-click = "kitty bluetoothctl";
+                    on-click = "bash -c 'pgrep blueman-manage && pkill blueman-manage || blueman-manager &'";
                 };
 
                 "wireplumber" = {
                     format = "{icon} {volume}%";
                     format-muted = " 󰝟 ";
-                    on-click = "wpctl set-mute @DEFAULT_SINK@ toggle";
+                    on-click = "bash -c 'pgrep pavucontrol && pkill pavucontrol || pavucontrol &'";
+                    on-click-right = "wpctl set-mute @DEFAULT_SINK@ toggle";
                     format-icons = ["󰕿" "󰖀" "󰕾"];
-                    scroll-step = 5;
+                    scroll-step = 1;
                 };
 
                 "battery" = {
@@ -124,112 +118,124 @@
                     format = "{icon} {capacity}%";
                     format-charging = "󰂄 {capacity}%";
                     format-icons = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
-                    tooltip-format = "{timeTo}\nPower: {power} Watts\nHealth: {health}%";
+                    tooltip-format = "{timeTo}\nPower: {power} Watts";
+                };
+
+                "custom/exit" = {
+                    format = " ";
+                    on-click = "rofi-power-menu";
+                    tooltip-format = "Power Menu";
                 };
             };
         };
-
         style = ''
             * {
                 border: none;
-                border-radius: 0;
+                border-radius: 15px;
                 font-family: FiraCodeNerdFont;
-                font-size: 13px;
+                font-size: 14px;
             }
 
             window#waybar {
                 color: @theme_fg_color;
-                background: alpha(@theme_bg_color, 0.5);
-            }
-
-            tooltip {
-                color: @theme_fg_color;
-                background: alpha(@theme_bg_color, 0.9);
-                border: 1px solid alpha(@borders, 0.9);
-                border-radius: 10px;
+                background: transparent;
             }
 
             #workspaces {
                 color: @theme_fg_color;
                 background: @theme_bg_color;
-                border-radius: 10px;
-                margin: 5px;
+                margin: 2px 1px 3px 1px;
+                padding: 0px 1px;
             }
             
             #workspaces button {
-                color: alpha(@theme_fg_color, 0.4);
+                color: @theme_fg_color;
                 background: transparent;
+                padding: 0px 5px;
+                margin: 4px 3px;
+                transition: all 0.3s ease-in-out;
+            }
+
+            #workspaces button.empty {
+                color: alpha(@theme_fg_color, 0.5);
             }
 
             #workspaces button.visible {
-                color: @theme_selected_fg_color;
-                background: alpha(@theme_selected_bg_color, 0.5);
-                border-radius: 10px;
+                color: @theme_bg_color;
+                background: alpha(@theme_selected_bg_color, 0.7);
+            }
+
+            #workspaces button.active {
+                color: @theme_bg_color;
+                background: @theme_selected_bg_color;
+                min-width: 30px;
+                transition: all 0.3s ease-in-out;
             }
 
             #workspaces button:hover {
+                color: @theme_bg_color;
+                background: alpha(@theme_selected_bg_color, 0.5);
+            }
+
+            tooltip {
                 color: @theme_fg_color;
+                background: alpha(@theme_bg_color, 0.9);
+                padding: 15px;
+                margin: 0px;
             }
 
-            #workspaces button.urgent {
-                color: @warning_color;
+            #idle_inhibitor {
+                color: @success_color;
+                font-size: 16px;
+                margin-left: 15px;
             }
 
-            #idle_inhibitor,
+            #idle_inhibitor.activated {
+                color: @error_color;
+            }
+
             #clock,
-            #cpu,
             #temperature,
-            #memory,
-            #disk,
             #network,
             #bluetooth,
             #wireplumber,
             #battery {
-                color: @theme_fg_color;
                 background: @theme_bg_color;
-                border-radius: 10px;
-                padding: 0px 10px;
-                margin: 5px 5px 5px 0px;
+                padding: 5px 15px 4px 15px;
+                margin: 5px 10px 5px 0px;
+            }
+
+            #disk {
+                margin-right: 10px;
+            }
+
+            #custom-exit {
+                color: @error_color;
+                margin: 0px 0px 0px 5px;
+                font-size: 16px;
             }
 
             #network:hover,
             #bluetooth:hover,
-            #wireplumber:hover,
-            #idle_inhibitor:hover {
-                color: @theme_selected_fg_color;
-                background: alpha(@theme_selected_bg_color, 0.5);
-                border-radius: 10px;
-            }
-
-            #idle_inhibitor,
-            #bluetooth.discovering,
-            #battery.charging {
-                color: @success_color;
-            }
-
-            #idle_inhibitor.activated,
-            battery.warning {
-                color: @warning_color;
-            }
-
-            #network.disabled,
-            #network.disconnected,
-            #wireplumber.muted,
-            #memory.critical,
-            #disk.critical,
-            #battery.critical,
-            #temperature.critical {
-                color: @error_color;
-            }
-
-            #wireplumber {
-                min-width: 50px;
+            #wireplumber:hover {
+                color: @theme_bg_color;
+                background: @theme_selected_bg_color;
+                transition: all 0.3s ease-in-out;
             }
 
             #battery.warning:not(.charging) {
                 color: @warning_color;
             }
-            #battery.critical:not(.charging) {
+
+            #battery.critical:not(.charging),
+            #bluetooth.disabled,
+            #bluetooth.off,
+            #network.disabled,
+            #network.disconnected,
+            #wireplumber.muted,
+            #cpu.critical,
+            #memory.critical,
+            #disk.critical {
                 color: @error_color;
             }
         '';

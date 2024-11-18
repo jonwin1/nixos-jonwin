@@ -15,10 +15,12 @@ in
     ];
 
     programs = {
-        zsh.enable = true;
         steam = {
             enable = true;
         };
+        thunar.enable = true;
+        xfconf.enable = true;
+        zsh.enable = true;
     };
 
 	hardware.steam-hardware.enable = true;
@@ -58,6 +60,13 @@ in
     };
 
     services = {
+        blueman.enable = true;
+        displayManager.sddm = {
+            enable = true;
+            wayland.enable = true;
+            theme = "chili";
+        };
+        gvfs.enable = true;
         pipewire = {
             enable = true;
             alsa.enable = true;
@@ -75,14 +84,8 @@ in
                 '')
             ];
         };
-
+        tumbler.enable = true;
         udisks2.enable = true;
-
-        displayManager.sddm = {
-            enable = true;
-            wayland.enable = true;
-            theme = "chili";
-        };
     };
 
     security = {
@@ -118,10 +121,11 @@ in
             gcc
             gimp
             grimblast
-            kdePackages.polkit-kde-agent-1
+            hyprpolkitagent
             kdePackages.qtwayland
             libnotify
             libsForQt5.qt5.qtwayland
+            pavucontrol
             playerctl
             ripgrep
             sddm-chili-theme
@@ -132,8 +136,6 @@ in
             wget
             wl-clipboard
             wl-clip-persist
-            xdg-desktop-portal-gtk
-            xdg-desktop-portal-hyprland
             zathura
             zip
 

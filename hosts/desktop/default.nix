@@ -3,8 +3,8 @@
 {
     imports = [
         (import ./hardware-configuration.nix)
-        ../../modules/kmonad.nix
         ../../modules/foldingathome.nix
+        ../../modules/kmonad.nix
     ];
 
     boot = {

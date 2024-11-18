@@ -2,6 +2,11 @@
 {
     wayland.windowManager.hyprland = {
         settings = {
+            input = {
+                kb_layout = "se";
+                kb_options = [ "caps:swapescape" ];
+            };
+            
             cursor = {
                 default_monitor = "DP-3";
             };
@@ -24,6 +29,18 @@
                 "9, monitor:HDMI-A-1"
                 "10, monitor:HDMI-A-1"
             ];
+        };
+    };
+    programs.waybar = {
+        settings = {
+            mainBar = {
+                "hyprland/workspaces" = {
+                    persistent-workspaces = {
+                        "DP-3" = [ 1 2 3 4 5 ];
+                        "HDMI-A-1" = [ 6 7 8 9 10 ];
+                    };
+                };
+            };
         };
     };
 }
