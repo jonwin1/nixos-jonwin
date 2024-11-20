@@ -129,6 +129,7 @@ in
             playerctl
             ripgrep
             sddm-chili-theme
+            texliveFull
             trash-cli
             tree
             unp
