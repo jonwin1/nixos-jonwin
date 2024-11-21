@@ -200,6 +200,7 @@
             #bluetooth,
             #wireplumber,
             #battery {
+                color: @theme_fg_color;
                 background: @theme_bg_color;
                 padding: 5px 15px 4px 15px;
                 margin: 5px 10px 5px 0px;
