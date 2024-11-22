@@ -122,6 +122,7 @@ in
             gimp
             grimblast
             hyprpolkitagent
+            itch
             kdePackages.qtwayland
             libnotify
             libsForQt5.qt5.qtwayland
