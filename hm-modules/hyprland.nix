@@ -18,8 +18,13 @@
             };
 
             input = {
-                kb_options = [ "compose:ralt" ];
+                kb_layout = "se";
+                kb_options = [ "compose:ralt" "caps:swapescape" ];
             };
+
+            monitor = [
+                ", highrr, auto, 1"
+            ];
 
             gestures = {
                 workspace_swipe = true;

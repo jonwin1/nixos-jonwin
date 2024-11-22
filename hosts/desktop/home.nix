@@ -2,20 +2,9 @@
 {
     wayland.windowManager.hyprland = {
         settings = {
-            input = {
-                kb_layout = "se";
-                kb_options = [ "caps:swapescape" ];
-            };
-            
             cursor = {
                 default_monitor = "DP-3";
             };
-
-            monitor = [
-                "DP-3, 3440x1440@144, 1920x0, 1"
-                "HDMI-A-1, 1920x1080@120, 0x0, 1"
-                ", preferred, auto, 1"
-            ];
 
             workspace = [
                 "1, monitor:DP-3, default:true"

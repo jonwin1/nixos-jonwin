@@ -7,7 +7,7 @@
         font = {
             package = pkgs.fira-code-nerdfont;
             name = "FiraCode Nerd Font";
-            size = lib.mkDefault 11;
+            size = 12;
         };
 
         settings = {
