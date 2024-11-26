@@ -19,7 +19,7 @@
 
             input = {
                 kb_layout = "se";
-                kb_options = [ "compose:ralt" "caps:swapescape" ];
+                kb_options = [ "caps:escape_shifted_capslock" ];
             };
 
             monitor = [
