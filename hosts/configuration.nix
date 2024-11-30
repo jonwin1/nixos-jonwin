@@ -111,7 +111,9 @@ in
         pathsToLink = [ "/share/zsh" ];
         systemPackages = with pkgs; [
             bc
+            cargo
             cliphist
+            cmake
             curl
             discord
             fastfetch
@@ -126,15 +128,19 @@ in
             kdePackages.qtwayland
             libnotify
             libsForQt5.qt5.qtwayland
+            man-pages
+            man-pages-posix
             pavucontrol
             playerctl
             ripgrep
+            rustc
             sddm-chili-theme
             texliveFull
             trash-cli
             tree
             unp
             unzip
+            valgrind
             wget
             wl-clipboard
             wl-clip-persist
@@ -183,6 +189,8 @@ in
             timeout = 5;
         };
     };
+
+    documentation.dev.enable = true;
 
     system.stateVersion = "23.11";
 }
