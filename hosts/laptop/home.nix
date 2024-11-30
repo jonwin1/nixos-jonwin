@@ -13,6 +13,10 @@
                 default_monitor = "eDP-1";
             };
 
+            monitor = [
+                "eDP-1, higrr, auto, 1.25"
+            ];
+
             workspace = [
                 "1, monitor:eDP-1, default:true"
                 "2, monitor:eDP-1"
