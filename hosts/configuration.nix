@@ -124,7 +124,7 @@ in
             gimp
             grimblast
             hyprpolkitagent
-            itch
+            # itch
             kdePackages.qtwayland
             libnotify
             libsForQt5.qt5.qtwayland
@@ -163,7 +163,7 @@ in
     };
 
     fonts.packages = with pkgs; [
-        fira-code-nerdfont
+        nerd-fonts.fira-code
         font-awesome
         corefonts
     ];
