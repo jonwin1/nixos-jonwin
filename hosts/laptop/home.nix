@@ -14,7 +14,7 @@
             };
 
             monitor = [
-                "eDP-1, higrr, auto, 1.25"
+                "eDP-1, highrr, auto, 1.25"
             ];
 
             workspace = [
