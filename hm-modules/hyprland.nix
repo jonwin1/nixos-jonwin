@@ -1,6 +1,7 @@
 {
     wayland.windowManager.hyprland = {
         enable = true;
+        systemd.enable = false;
         settings = {
             general = {
                 border_size = 2;
