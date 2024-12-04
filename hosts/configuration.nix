@@ -132,6 +132,7 @@ in
             libsForQt5.qt5.qtwayland
             man-pages
             man-pages-posix
+            openscad
             pavucontrol
             playerctl
             ripgrep
