@@ -65,6 +65,11 @@ in
             enable = true;
             wayland.enable = true;
             theme = "chili";
+            settings = {
+                General = {
+                    DefaultSession = "hyprland.desktop";
+                };
+            };
         };
         gvfs.enable = true;
         pipewire = {
