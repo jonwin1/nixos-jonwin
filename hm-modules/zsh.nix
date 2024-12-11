@@ -41,7 +41,7 @@
                 mkdir = "mkdir -vp";
                 mv = "mv -iv";
                 # rm = "rm -rifv";
-		rm = "echo \"Use tp\"";
+                rm = "echo \"Use tp\"";
                 v = "nvim";
 
                 cat = "bat";
@@ -59,7 +59,6 @@
 
                 nix-switch = "sudo nixos-rebuild switch --flake ~/nixos-jonwin#${host}";
                 nix-switchu = "sudo nixos-rebuild switch --upgrade --flake ~/nixos-jonwin#${host}";
-                nix-update = "nix flake update ~/nixos-jonwin# --commit-lock-file";
                 nix-clean = "sudo nix-collect-garbage --delete-older-than 7d && nix-collect-garbage --delete-older-than 7d";
                 nix-clean-all = "sudo nix-collect-garbage && sudo nix-collect-garbage -d && nix-collect-garbage && nix-collect-garbage -d";
 
@@ -72,8 +71,8 @@
                 gch = "git checkout";
                 gchb = "git checkout -b";
                 gcm = "git commit -m";
-                gd = "git diff | bat";
-                gds = "git diff --staged | bat";
+                gd = "git diff";
+                gds = "git diff --staged";
                 gf = "git fetch";
                 gl = "git log --graph";
                 gm = "git merge";
