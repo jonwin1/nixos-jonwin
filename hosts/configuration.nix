@@ -129,6 +129,7 @@ in
             fzf
             gcc
             gimp
+            gnumake
             grimblast
             hyprpolkitagent
             # itch
