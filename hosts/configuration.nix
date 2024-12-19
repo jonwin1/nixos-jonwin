@@ -17,6 +17,9 @@ in
     programs = {
         steam = {
             enable = true;
+            remotePlay.openFirewall = true;
+            dedicatedServer.openFirewall = true;
+            localNetworkGameTransfers.openFirewall = true;
         };
         thunar.enable = true;
         xfconf.enable = true;
