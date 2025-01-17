@@ -41,11 +41,6 @@
                 desktopName = "CrossCode";
                 exec = "/run/current-system/sw/bin/steam-run /home/jonwin/.config/itch/apps/crosscode/CrossCode";
             })
-            (makeDesktopItem {
-                name = "zen-browser";
-                desktopName = "zen-browser";
-                exec = "/home/jonwin/nixpkgs/result/bin/zen";
-            })
         ];
     };
 

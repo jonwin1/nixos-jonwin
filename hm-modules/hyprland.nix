@@ -88,7 +88,7 @@
 
             bind = [
                 # Applications
-                "$mod, B, exec, /home/jonwin/nixpkgs/result/bin/zen"
+                "$mod, B, exec, "
                 "$mod SHIFT, B, exec, rofi-rbw"
                 "$mod, E, exec, thunar"
                 "$mod, R, exec, rofi -show drun"
