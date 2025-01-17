@@ -1,6 +1,7 @@
 {
     imports = [
         ./dunst.nix
+        ./floorp.nix
         ./git.nix
         ./hypridle.nix
         ./hyprland.nix
