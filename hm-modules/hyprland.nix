@@ -88,7 +88,7 @@
 
             bind = [
                 # Applications
-                "$mod, B, exec, "
+                "$mod, B, exec, floorp"
                 "$mod SHIFT, B, exec, rofi-rbw"
                 "$mod, E, exec, thunar"
                 "$mod, R, exec, rofi -show drun"
