@@ -19,6 +19,7 @@ vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 10
 vim.g.have_nerd_font = true
 vim.opt.updatetime = 250
+vim.opt.timeoutlen = 300
 
 -- Show search and replace matches while typing
 vim.opt.incsearch = true
