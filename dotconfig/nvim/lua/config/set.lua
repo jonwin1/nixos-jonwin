@@ -36,7 +36,7 @@ vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 vim.opt.updatetime = 50
 vim.opt.timeoutlen = 300
