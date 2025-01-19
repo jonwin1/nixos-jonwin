@@ -159,8 +159,6 @@ in
             zathura
             zip
 
-            inputs.nixvim.packages.${system}.default
-
             (
                 writeTextDir "share/sddm/themes/chili/theme.conf.user" ''
                     [General]
@@ -171,7 +169,6 @@ in
                 ''
             )
         ];
-        variables = { EDITOR = "nvim"; VISUAL = "nvim"; };
     };
 
     fonts.packages = with pkgs; [
