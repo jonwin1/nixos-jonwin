@@ -42,7 +42,7 @@ vim.opt.updatetime = 50
 vim.opt.timeoutlen = 300
 
 vim.opt.list = true
-vim.opt.listchars = {  trail = "·", nbsp = "␣" }
+vim.opt.listchars = { tab = "▏ ", trail = "·", nbsp = "␣", precedes = "«", extends = "»" }
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
