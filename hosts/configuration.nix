@@ -20,6 +20,9 @@ in
             defaultEditor = true;
             viAlias = true;
             vimAlias = true;
+            withRuby = true;
+            withPython3 = true;
+            withNodeJs = true;
         };
         steam = {
             enable = true;
@@ -156,6 +159,7 @@ in
             texliveFull
             trash-cli
             tree
+            tree-sitter
             unp
             unzip
             valgrind
