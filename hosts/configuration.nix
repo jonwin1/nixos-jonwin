@@ -15,6 +15,12 @@ in
     ];
 
     programs = {
+        neovim = {
+            enable = true;
+            defaultEditor = true;
+            viAlias = true;
+            vimAlias = true;
+        };
         steam = {
             enable = true;
             remotePlay.openFirewall = true;
@@ -22,6 +28,7 @@ in
             localNetworkGameTransfers.openFirewall = true;
         };
         thunar.enable = true;
+        virt-manager.enable = true;
         xfconf.enable = true;
         zsh.enable = true;
     };
@@ -32,7 +39,6 @@ in
         enable = true;
         qemu.vhostUserPackages = with pkgs; [ virtiofsd ];
     };
-    programs.virt-manager.enable = true;
 
     networking.hostName = "${host}";
     networking.networkmanager.enable = true;

@@ -12,6 +12,10 @@
                 source = ../wallpaper.png;
                 recursive = true;
             };
+            ".config/nvim" = {
+                source = ../dotconfig/nvim;
+                recursive = true;
+            };
         };
         pointerCursor = {
             gtk.enable = true;
