@@ -15,6 +15,7 @@ in
     ];
 
     programs = {
+        lazygit.enable = true;
         neovim = {
             enable = true;
             defaultEditor = true;
