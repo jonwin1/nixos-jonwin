@@ -15,7 +15,11 @@ return {
         config = function()
             require("lspconfig").lua_ls.setup {}
 
-            vim.keymap.set("n", "<leader>f", function() vim.lsp.buf.format() end)
+            vim.keymap.set("n", "<leader>f", function() vim.lsp.buf.format() end, { desc = "Format file" })
+            vim.keymap.set("n", "<leader>j", "<cmd>cnext<CR>zz", { desc = "Go to next error" })
+            vim.keymap.set("n", "<leader>k", "<cmd>cprev<CR>zz", { desc = "Go to previous error" })
+            vim.keymap.set("n", "<leader>n", "<cmd>lnext<CR>zz", { desc = "Go to next location" })
+            vim.keymap.set("n", "<leader>p", "<cmd>lprev<CR>zz", { desc = "Go to previous location" })
         end,
     },
 }
