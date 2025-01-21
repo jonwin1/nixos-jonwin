@@ -131,6 +131,7 @@ in
             freecad
             fzf
             gcc
+            ghc
             gimp
             gnumake
             grimblast
