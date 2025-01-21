@@ -172,6 +172,7 @@ in
             zip
 
             # LSPs
+            clang-tools
             cmake-language-server
             haskell-language-server
             lua-language-server
