@@ -1,4 +1,4 @@
-{ pkgs, inputs, user, host, ... }:
+{ pkgs, user, host, ... }:
 let
     background-package = pkgs.stdenvNoCC.mkDerivation {
         name = "background-image";
@@ -170,6 +170,15 @@ in
             wl-clip-persist
             zathura
             zip
+
+            # LSPs
+            cmake-language-server
+            haskell-language-server
+            lua-language-server
+            nixd
+            sqls
+            texlab
+            typos-lsp
 
             (
                 writeTextDir "share/sddm/themes/chili/theme.conf.user" ''
