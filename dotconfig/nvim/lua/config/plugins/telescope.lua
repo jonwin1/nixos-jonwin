@@ -14,6 +14,11 @@ return {
                         height = 0.6
                     }
                 },
+                pickers = {
+                    man_pages = {
+                        sections = { "ALL" },
+                    },
+                },
                 extensions = {
                     fzf = {}
                 }
