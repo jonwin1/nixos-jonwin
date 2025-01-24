@@ -1,2 +1,10 @@
-ripgrep
+clang-tools
+cmake-language-server
+haskell-language-server
 lazygit
+lua-language-server
+nixd
+ripgrep
+sqls
+texlab
+typos-lsp
