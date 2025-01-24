@@ -1,26 +1,43 @@
 return {
     {
         "neovim/nvim-lspconfig",
+
         dependencies = {
-            "folke/lazydev.nvim",
-            ft = "lua", -- only load on lua files
-            opts = {
-                library = {
-                    -- See the configuration section for more details
-                    -- Load luvit types when the `vim.uv` word is found
-                    { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+            {
+                "folke/lazydev.nvim",
+                ft = "lua", -- only load on lua files
+                opts = {
+                    library = {
+                        -- See the configuration section for more details
+                        -- Load luvit types when the `vim.uv` word is found
+                        { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+                    },
                 },
             },
+            "saghen/blink.cmp",
         },
-        config = function()
-            require("lspconfig").clangd.setup {}
-            require("lspconfig").cmake.setup {}
-            require("lspconfig").hls.setup {}
-            require("lspconfig").lua_ls.setup {}
-            require("lspconfig").nixd.setup {}
-            require("lspconfig").sqls.setup {}
-            require("lspconfig").texlab.setup {}
-            require("lspconfig").typos_lsp.setup {}
+
+        opts = {
+            servers = {
+                clangd = {},
+                cmake = {},
+                hls = {},
+                lua_ls = {},
+                nixd = {},
+                sqls = {},
+                texlab = {},
+                typos_lsp = {},
+            }
+        },
+
+        config = function(_, opts)
+            local lspconfig = require("lspconfig")
+            for server, config in pairs(opts.servers) do
+                -- passing config.capabilities to blink.cmp merges with the capabilities in your
+                -- opts[server].capabilities, if you've defined it
+                config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
+                lspconfig[server].setup(config)
+            end
 
             vim.keymap.set("n", "<leader>f", function() vim.lsp.buf.format() end, { desc = "Format file" })
             vim.keymap.set("n", "<leader>j", "<cmd>cnext<CR>zz", { desc = "Go to next error" })
