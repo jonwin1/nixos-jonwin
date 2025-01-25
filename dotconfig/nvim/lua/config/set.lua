@@ -15,6 +15,7 @@ vim.opt.breakindent = true
 vim.opt.colorcolumn = "80"
 vim.opt.signcolumn = "yes"
 vim.opt.cursorline = true
+vim.opt.showmode = false
 vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 10
 vim.g.have_nerd_font = true
@@ -34,7 +35,7 @@ vim.opt.linebreak = true
 vim.cmd([[autocmd FileType tex set textwidth=80]])
 vim.cmd([[autocmd FileType md set textwidth=80]])
 
--- Dissable mouse
+-- Disable mouse
 vim.opt.mouse = ""
 
 -- Share clipboard with system
