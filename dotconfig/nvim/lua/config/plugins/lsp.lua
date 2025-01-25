@@ -19,7 +19,11 @@ return {
 
         opts = {
             servers = {
-                clangd = {},
+                clangd = {
+                    capabilities = {
+                        offsetEncoding = { "utf-16" },
+                    },
+                },
                 cmake = {},
                 hls = {},
                 lua_ls = {},
