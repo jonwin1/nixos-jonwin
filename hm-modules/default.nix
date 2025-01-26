@@ -5,7 +5,6 @@
         ./git.nix
         ./hypridle.nix
         ./hyprland.nix
-        ./hyprlock.nix
         ./hyprpaper.nix
         ./kitty.nix
         ./librewolf.nix
