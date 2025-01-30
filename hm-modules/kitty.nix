@@ -18,6 +18,7 @@
 
             enabled_layouts = "Grid, Fat, Tall";
             tab_bar_style = "slant";
+            background = "#1a1d23";
             background_opacity = "0.85";
             notify_on_cmd_finish = "invisible 15";
 

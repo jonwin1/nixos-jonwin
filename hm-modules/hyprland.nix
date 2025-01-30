@@ -15,6 +15,10 @@
                 rounding = 10;
                 dim_inactive = true;
                 dim_strength = 0.2;
+		blur = {
+		    size = 10;
+		    passes = 2;
+		};
             };
 
             input = {

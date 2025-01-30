@@ -1,4 +1,4 @@
-{ pkgs, inputs, user, host, ... }:
+{ pkgs, user, host, ... }:
 let
     background-package = pkgs.stdenvNoCC.mkDerivation {
         name = "background-image";
@@ -15,6 +15,15 @@ in
     ];
 
     programs = {
+        neovim = {
+            enable = true;
+            defaultEditor = true;
+            viAlias = true;
+            vimAlias = true;
+            withRuby = true;
+            withPython3 = true;
+            withNodeJs = true;
+        };
         steam = {
             enable = true;
             remotePlay.openFirewall = true;
@@ -22,6 +31,7 @@ in
             localNetworkGameTransfers.openFirewall = true;
         };
         thunar.enable = true;
+        virt-manager.enable = true;
         xfconf.enable = true;
         zsh.enable = true;
     };
@@ -32,7 +42,6 @@ in
         enable = true;
         qemu.vhostUserPackages = with pkgs; [ virtiofsd ];
     };
-    programs.virt-manager.enable = true;
 
     networking.hostName = "${host}";
     networking.networkmanager.enable = true;
@@ -142,6 +151,7 @@ in
             libsForQt5.qt5.qtwayland
             man-pages
             man-pages-posix
+            obsidian
             openscad
             pavucontrol
             playerctl
@@ -151,6 +161,7 @@ in
             texliveFull
             trash-cli
             tree
+            tree-sitter
             unp
             unzip
             valgrind
@@ -160,7 +171,15 @@ in
             zathura
             zip
 
-            inputs.nixvim.packages.${system}.default
+            # LSPs
+            clang-tools
+            cmake-language-server
+            haskell-language-server
+            lua-language-server
+            nixd
+            sqls
+            texlab
+            typos-lsp
 
             (
                 writeTextDir "share/sddm/themes/chili/theme.conf.user" ''
@@ -172,7 +191,6 @@ in
                 ''
             )
         ];
-        variables = { EDITOR = "nvim"; VISUAL = "nvim"; };
     };
 
     fonts.packages = with pkgs; [

@@ -1,5 +1,8 @@
 { ... }:
 {
+    imports = [
+        ../../hm-modules/hyprlock.nix
+    ];
     services = {
         batsignal = {
             enable = true;

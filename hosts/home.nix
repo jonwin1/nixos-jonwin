@@ -12,6 +12,10 @@
                 source = ../wallpaper.png;
                 recursive = true;
             };
+            ".config/nvim" = {
+                source = ../dotconfig/nvim;
+                recursive = true;
+            };
         };
         pointerCursor = {
             gtk.enable = true;
@@ -69,6 +73,13 @@
     };
 
     programs = {
+        lazygit = {
+            enable = true;
+            settings = {
+                gui.nerdFontsVersion = "3";
+                git.autoFetch = false;
+            };
+        };
         home-manager.enable = true;
     };
 
