@@ -53,11 +53,6 @@ return {
                     map("<leader>ca", vim.lsp.buf.code_action, "Code Action", { "n", "x" })
                     map("<leader>cr", vim.lsp.buf.rename, "Rename")
 
-                    map("<leader>j", "<cmd>cnext<CR>zz", "Go to next error")
-                    map("<leader>k", "<cmd>cprev<CR>zz", "Go to previous error")
-                    map("<leader>n", "<cmd>lnext<CR>zz", "Go to next location")
-                    map("<leader>p", "<cmd>lprev<CR>zz", "Go to previous location")
-
                     -- The following two autocommands are used to highlight references of the
                     -- word under your cursor when your cursor rests there for a little while.
                     -- When you move your cursor, the highlights will be cleared (the second autocommand).
