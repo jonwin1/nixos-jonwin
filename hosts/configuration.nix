@@ -133,6 +133,7 @@ in
             cargo
             cliphist
             cmake
+            cura-appimage
             curl
             discord
             fastfetch
