@@ -49,7 +49,7 @@ return {
                     map("gI", require("telescope.builtin").lsp_implementations, "Goto Implementation")
                     map("gr", require("telescope.builtin").lsp_references, "Goto References")
 
-                    map("<leader>f", function() vim.lsp.buf.format() end, "Format file")
+                    map("<leader>f", function() vim.lsp.buf.format() end, "Format file", { "n", "v" })
                     map("<leader>ca", vim.lsp.buf.code_action, "Code Action", { "n", "x" })
                     map("<leader>cr", vim.lsp.buf.rename, "Rename")
 
