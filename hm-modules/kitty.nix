@@ -48,7 +48,7 @@
             "alt+d" = "show_last_command_output";
 
             # Windows
-            "alt+w" = "new_window";
+            "alt+w" = "new_window_with_cwd";
             "alt+shift+w" = "close_window";
             "alt+l" = "next_window";
             "alt+h" = "previous_window";
@@ -69,7 +69,7 @@
             "alt+shift+0" = "tenth_window";
 
             # Tabs
-            "alt+t" = "new_tab";
+            "alt+t" = "new_tab_with_cwd";
             "alt+shift+t" = "close_tab";
             "alt+right" = "next_tab";
             "alt+left" = "previous_tab";
