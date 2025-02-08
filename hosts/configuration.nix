@@ -138,7 +138,7 @@ in
             discord
             fastfetch
             fd
-            freecad
+            freecad-wayland
             fzf
             gcc
             ghc
