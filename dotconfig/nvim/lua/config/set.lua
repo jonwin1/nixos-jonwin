@@ -34,6 +34,7 @@ vim.opt.smartcase = true
 vim.opt.linebreak = true
 vim.cmd([[autocmd FileType tex set textwidth=80]])
 vim.cmd([[autocmd FileType md set textwidth=80]])
+vim.opt.wrap = false
 
 -- Disable mouse
 vim.opt.mouse = ""
