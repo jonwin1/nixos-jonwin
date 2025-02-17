@@ -7,7 +7,6 @@
         ./hyprland.nix
         ./hyprpaper.nix
         ./kitty.nix
-        ./librewolf.nix
         ./rbw.nix
         ./rofi.nix
         ./waybar.nix
