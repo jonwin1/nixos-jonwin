@@ -180,6 +180,7 @@ in
             haskell-language-server
             lua-language-server
             nixd
+            python313Packages.jedi-language-server
             sqls
             texlab
             typos-lsp

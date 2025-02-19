@@ -26,6 +26,7 @@ return {
                 },
                 cmake = {},
                 hls = {},
+                jedi_language_server = {}, -- Python
                 lua_ls = {},
                 nixd = {},
                 sqls = {},
