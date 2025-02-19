@@ -157,6 +157,7 @@ in
             openscad
             pavucontrol
             playerctl
+            python3Full
             ripgrep
             rustc
             sddm-chili-theme
