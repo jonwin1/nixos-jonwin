@@ -142,6 +142,7 @@ in
             fzf
             gcc
             ghc
+            ghostty
             gimp
             gnumake
             grimblast
