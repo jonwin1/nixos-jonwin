@@ -15,10 +15,10 @@
                 rounding = 10;
                 dim_inactive = true;
                 dim_strength = 0.2;
-		blur = {
-		    size = 10;
-		    passes = 2;
-		};
+                blur = {
+                    size = 10;
+                    passes = 2;
+                };
             };
 
             input = {
@@ -34,14 +34,14 @@
                 workspace_swipe = true;
                 workspace_swipe_use_r = true;
             };
-            
+
             misc = {
                 disable_hyprland_logo = true;
                 disable_splash_rendering = true;
                 font_family = "FiraCodeNerdFont";
                 vrr = 2;
                 # enable_swallow = true;
-                # swallow_regex = "^(kitty)$";
+                # swallow_regex = "^(ghostty)$";
             };
 
             cursor = {
@@ -98,10 +98,9 @@
                 "$mod, R, exec, rofi -show drun"
                 "$mod SHIFT, R, exec, rofi -show run"
                 "$mod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
-                "$mod, X, exec, kitty"
-                "$mod, RETURN, exec, kitty"
+                "$mod, X, exec, ghostty"
 
-                 # Windows & Workspaces
+                # Windows & Workspaces
                 "$mod, H, movefocus, l"
                 "$mod, L, movefocus, r"
                 "$mod, K, movefocus, u"
@@ -138,17 +137,17 @@
                 "$mod, mouse_down, workspace, e+1"
                 "$mod, mouse_up, workspace, e-1"
             ] ++ (
-                # workspaces
-                # binds $mod + [shift +] {1..10} to [move to] workspace {1..10}
-                builtins.concatLists (builtins.genList (i:
+                    # workspaces
+                    # binds $mod + [shift +] {1..10} to [move to] workspace {1..10}
+                    builtins.concatLists (builtins.genList (i:
                         let ws = i + 1;
-                    in [
-                        "$mod, code:1${toString i}, workspace, ${toString ws}"
-                        "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
-                    ]
-                )
-                10)
-            );
+                        in [
+                            "$mod, code:1${toString i}, workspace, ${toString ws}"
+                            "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
+                        ]
+                    )
+                        10)
+                );
 
             binde = [
                 "$mod CTRL, H, resizeactive, -20 0"

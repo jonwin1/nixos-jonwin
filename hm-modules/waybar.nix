@@ -87,10 +87,10 @@
                     format-disconnected = "󰤭 ";
                     format-icons = ["󰤯" "󰤟" "󰤢" "󰤥" "󰤨"];
                     tooltip-format = "{ifname}: {ipaddr}/{cidr}\nSignal Strength: {signalStrength}%";
-                    on-click = "bash -c 'pgrep nmtui && pkill nmtui || kitty --title nmtui_applet nmtui &'";
+                    on-click = "bash -c 'pgrep nmtui && pkill nmtui || ghostty --title nmtui_applet nmtui &'";
                     max-length = 50;
                 };
-                
+
                 "bluetooth" = {
                     format = "󰂯";
                     format-disabled = "󰂲";
@@ -147,7 +147,7 @@
                 margin: 2px 1px 3px 1px;
                 padding: 0px 1px;
             }
-            
+
             #workspaces button {
                 color: @theme_fg_color;
                 background: transparent;
