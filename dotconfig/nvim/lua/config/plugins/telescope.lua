@@ -9,11 +9,6 @@ return {
 
         config = function()
             require("telescope").setup {
-                defaults = require("telescope.themes").get_ivy {
-                    layout_config = {
-                        height = 0.6
-                    }
-                },
                 pickers = {
                     man_pages = {
                         sections = { "ALL" },
