@@ -6,7 +6,7 @@
         ./hypridle.nix
         ./hyprland.nix
         ./hyprpaper.nix
-        ./kitty.nix
+        # ./kitty.nix
         ./rbw.nix
         ./rofi.nix
         ./waybar.nix

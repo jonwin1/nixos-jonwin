@@ -14,33 +14,33 @@ keybind = ctrl+shift+c=copy_to_clipboard
 keybind = ctrl+shift+v=paste_from_clipboard
 
 ## Fontsize
-keybind = ctrl+zero=reset_font_size
-keybind = ctrl+plus=increase_font_size:1
-keybind = ctrl+minus=decrease_font_size:1
+keybind = ctrl+shift+zero=reset_font_size
+keybind = ctrl+shift+plus=increase_font_size:1
+keybind = ctrl+shift+minus=decrease_font_size:1
 
 ## Scrolling
-keybind = ctrl+u=scroll_page_up
-keybind = ctrl+d=scroll_page_down
-keybind = ctrl+alt+u=jump_to_prompt:-1
-keybind = ctrl+alt+d=jump_to_prompt:1
+keybind = ctrl+alt+u=scroll_page_up
+keybind = ctrl+alt+d=scroll_page_down
+keybind = ctrl+alt+n=jump_to_prompt:-1
+keybind = ctrl+alt+p=jump_to_prompt:1
 
 # Splits
-keybind = ctrl+s=new_split:auto
-keybind = ctrl+q=close_window
-keybind = ctrl+k=goto_split:up
-keybind = ctrl+j=goto_split:down
-keybind = ctrl+h=goto_split:left
-keybind = ctrl+l=goto_split:right
+keybind = ctrl+shift+s=new_split:auto
+keybind = ctrl+shift+q=close_window
+keybind = ctrl+shift+k=goto_split:up
+keybind = ctrl+shift+j=goto_split:down
+keybind = ctrl+shift+h=goto_split:left
+keybind = ctrl+shift+l=goto_split:right
 
-keybind = ctrl+shift+k=resize_split:up,10
-keybind = ctrl+shift+j=resize_split:down,10
-keybind = ctrl+shift+h=resize_split:left,10
-keybind = ctrl+shift+l=resize_split:right,10
-keybind = ctrl+shift+equal=equalize_splits
+keybind = ctrl+alt+k=resize_split:up,10
+keybind = ctrl+alt+j=resize_split:down,10
+keybind = ctrl+alt+h=resize_split:left,10
+keybind = ctrl+alt+l=resize_split:right,10
+keybind = ctrl+alt+equal=equalize_splits
 
 # Tabs
-keybind = ctrl+t=new_tab
-keybind = ctrl+w=close_tab
+keybind = ctrl+shift+t=new_tab
+keybind = ctrl+shift+w=close_tab
 
 keybind = alt+one=goto_tab:1
 keybind = alt+two=goto_tab:2
