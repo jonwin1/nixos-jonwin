@@ -16,6 +16,10 @@
                 source = ../dotconfig/nvim;
                 recursive = true;
             };
+            ".config/ghostty" = {
+                source = ../dotconfig/ghostty;
+                recursive = true;
+            };
         };
         pointerCursor = {
             gtk.enable = true;
