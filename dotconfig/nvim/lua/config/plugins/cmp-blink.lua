@@ -15,6 +15,11 @@ return {
             -- 'default' for mappings similar to built-in completion
             keymap = { preset = 'default' },
 
+            -- Disable cmdline
+            cmdline = {
+                enabled = false
+            },
+
             appearance = {
                 -- Sets the fallback highlight groups to nvim-cmp's highlight groups
                 use_nvim_cmp_as_default = true,
