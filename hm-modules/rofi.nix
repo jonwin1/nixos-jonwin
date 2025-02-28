@@ -3,7 +3,7 @@
     programs.rofi = {
         enable = true;
         package = pkgs.rofi-wayland;
-        font = "FiraCodeNerdFont 12";
+        font = "FiraCode Nerd Font 12";
         location = "center";
         theme = let
             # Use `mkLiteral` for string-like values that should show without

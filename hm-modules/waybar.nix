@@ -132,7 +132,7 @@
             * {
                 border: none;
                 border-radius: 15px;
-                font-family: FiraCodeNerdFont;
+                font-family: FiraCode Nerd Font;
                 font-size: 14px;
             }
 

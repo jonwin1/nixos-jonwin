@@ -45,7 +45,7 @@
                     text = "cmd[update:1000] date +'%A, %d %B'";
                     color = "rgba(216, 222, 233, 0.75)";
                     font_size = 22;
-                    font_family = "FiraCodeNerdFont";
+                    font_family = "FiraCode Nerd Font";
                     position = "0, 300";
                     halign = "center";
                     valign = "center";
@@ -57,7 +57,7 @@
                     text = "cmd[update:1000] date +\"%R\"";
                     color = "rgba(216, 222, 233, 0.75)";
                     font_size = 95;
-                    font_family = "FiraCodeNerdFont";
+                    font_family = "FiraCode Nerd Font";
                     position = "0, 200";
                     halign = "center";
                     valign = "center";

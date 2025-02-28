@@ -1,5 +1,7 @@
 background-opacity = 0.8
 
+font-family = FiraCode Nerd Font
+
 # Keybinds
 keybind = clear
 keybind = shift+alt+n=new_window

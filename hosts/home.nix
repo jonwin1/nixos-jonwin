@@ -66,7 +66,7 @@
         };
 
         font = {
-            name = "FiraCodeNerdFont";
+            name = "FiraCode Nerd Font";
             size = 12;
         };
     };

@@ -38,7 +38,7 @@
             misc = {
                 disable_hyprland_logo = true;
                 disable_splash_rendering = true;
-                font_family = "FiraCodeNerdFont";
+                font_family = "FiraCode Nerd Font";
                 vrr = 2;
                 # enable_swallow = true;
                 # swallow_regex = "^(ghostty)$";
