@@ -1,46 +1,44 @@
-# Run `ghostty +show-config --default --docs` to view a list of
-# all available config options and their default values.
-# Additionally, each config option is also explained in detail
-# on Ghostty's website, at https://ghostty.org/docs/config.
-
 background-opacity = 0.8
 
 # Keybinds
-keybind=clear
-keybind = ctrl+shift+n=new_window
-keybind = ctrl+enter=toggle_fullscreen
-keybind = ctrl+shift+enter=toggle_split_zoom
+keybind = clear
+keybind = shift+alt+n=new_window
+
+keybind = alt+c=copy_to_clipboard
 keybind = ctrl+shift+c=copy_to_clipboard
+keybind = alt+v=paste_from_clipboard
 keybind = ctrl+shift+v=paste_from_clipboard
 
 ## Fontsize
-keybind = ctrl+shift+zero=reset_font_size
-keybind = ctrl+shift+plus=increase_font_size:1
-keybind = ctrl+shift+minus=decrease_font_size:1
+keybind = alt+zero=reset_font_size
+keybind = alt+plus=increase_font_size:1
+keybind = alt+minus=decrease_font_size:1
 
 ## Scrolling
-keybind = ctrl+alt+u=scroll_page_up
-keybind = ctrl+alt+d=scroll_page_down
-keybind = ctrl+alt+n=jump_to_prompt:-1
-keybind = ctrl+alt+p=jump_to_prompt:1
+keybind = alt+u=scroll_page_up
+keybind = alt+d=scroll_page_down
+keybind = alt+n=jump_to_prompt:1
+keybind = alt+p=jump_to_prompt:-1
 
 # Splits
-keybind = ctrl+shift+s=new_split:auto
-keybind = ctrl+shift+q=close_window
-keybind = ctrl+shift+k=goto_split:up
-keybind = ctrl+shift+j=goto_split:down
-keybind = ctrl+shift+h=goto_split:left
-keybind = ctrl+shift+l=goto_split:right
+keybind = alt+s=new_split:auto
+keybind = alt+q=close_window
+keybind = alt+enter=toggle_split_zoom
 
-keybind = ctrl+alt+k=resize_split:up,10
-keybind = ctrl+alt+j=resize_split:down,10
-keybind = ctrl+alt+h=resize_split:left,10
-keybind = ctrl+alt+l=resize_split:right,10
-keybind = ctrl+alt+equal=equalize_splits
+keybind = alt+k=goto_split:up
+keybind = alt+j=goto_split:down
+keybind = alt+h=goto_split:left
+keybind = alt+l=goto_split:right
+
+keybind = shift+alt+k=resize_split:up,10
+keybind = shift+alt+j=resize_split:down,10
+keybind = shift+alt+h=resize_split:left,10
+keybind = shift+alt+l=resize_split:right,10
+keybind = shift+alt+equal=equalize_splits
 
 # Tabs
-keybind = ctrl+shift+t=new_tab
-keybind = ctrl+shift+w=close_tab
+keybind = alt+t=new_tab
+keybind = alt+w=close_tab
 
 keybind = alt+one=goto_tab:1
 keybind = alt+two=goto_tab:2
