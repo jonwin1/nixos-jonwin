@@ -145,6 +145,7 @@ in
             ghostty
             gimp
             gnumake
+            go
             grimblast
             hyprpolkitagent
             # itch
@@ -177,6 +178,7 @@ in
             # LSPs
             clang-tools
             cmake-language-server
+            gopls
             haskell-language-server
             lua-language-server
             nixd

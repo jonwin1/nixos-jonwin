@@ -25,6 +25,7 @@ return {
                     },
                 },
                 cmake = {},
+                gopls = {},
                 hls = {},
                 jedi_language_server = {}, -- Python
                 lua_ls = {},
