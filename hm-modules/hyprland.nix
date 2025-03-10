@@ -68,7 +68,7 @@
                 "noborder on, title:^(Bluetooth Devices)$" 
 
                 "float, title:^(nmtui_applet)$"
-                "size 1000 500, title:^(nmtui_applet)$"
+                "size 800 480, title:^(nmtui_applet)$"
                 "move 100%-w-5 45, title:^(nmtui_applet)$"
                 "pin, title:^(nmtui_applet)$"
                 "noborder on, title:^(nmtui_applet)$" 

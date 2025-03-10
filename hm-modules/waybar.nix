@@ -87,7 +87,7 @@
                     format-disconnected = "󰤭 ";
                     format-icons = ["󰤯" "󰤟" "󰤢" "󰤥" "󰤨"];
                     tooltip-format = "{ifname}: {ipaddr}/{cidr}\nSignal Strength: {signalStrength}%";
-                    on-click = "bash -c 'pgrep nmtui && pkill nmtui || ghostty --title nmtui_applet nmtui &'";
+                    on-click = "bash -c 'pgrep nmtui && pkill nmtui || ghostty --title=nmtui_applet -e nmtui &'";
                     max-length = 50;
                 };
 
