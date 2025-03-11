@@ -1,4 +1,5 @@
-background-opacity = 0.8
+theme = tokyonight_moon
+# background-opacity = 0.8
 
 font-family = FiraCode Nerd Font
 
