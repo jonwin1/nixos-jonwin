@@ -3,16 +3,16 @@
         enable = true;
         settings = {
             general = {
-                border_size = 2;
-                gaps_in = 3;
-                gaps_out = 5;
+                border_size = 1;
+                gaps_in = 0;
+                gaps_out = 0;
                 "col.inactive_border" = "0xff2e3440";
                 "col.active_border" = "0xff81a1c1";
                 layout = "dwindle";
             };
 
             decoration = {
-                rounding = 10;
+                rounding = 5;
                 dim_inactive = true;
                 dim_strength = 0.2;
                 blur = {
