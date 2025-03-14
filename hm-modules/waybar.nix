@@ -13,7 +13,9 @@
                     "idle_inhibitor"
                 ];
                 modules-center = [
+                    "clock#date"
                     "clock"
+                    "custom/pomodoro"
                 ];
                 modules-right = [
                     "cpu"
@@ -32,8 +34,8 @@
                     };
                 };
 
-                "clock" = {
-                    format = "{:%a %d %b %R}";
+                "clock#date" = {
+                    format = "{:%a %d %b}";
                     tooltip-format = "<tt><small>{calendar}</small></tt>";
                     calendar = {
                         mode = "year";
@@ -47,6 +49,19 @@
                             today = "<span color='#bf616a'><b><u>{}</u></b></span>";
                         };
                     };
+                };
+
+                "clock" = {
+                    format = "{:%R}";
+                    tooltip = false;
+                };
+
+                "custom/pomodoro" = {
+                    format = "{}";
+                    signal = 10;
+                    return-type = "json";
+                    exec = "cat /home/jonwin/go-pomodoro/log";
+                    on-click = "bash -c 'pgrep pomodoro && pkill pomodoro || /home/jonwin/go-pomodoro/pomodoro &'";
                 };
 
                 "idle_inhibitor" = {
@@ -194,7 +209,9 @@
                 color: @error_color;
             }
 
+            #clock.date,
             #clock,
+            #custom-pomodoro,
             #temperature,
             #network,
             #bluetooth,
@@ -216,6 +233,7 @@
                 font-size: 16px;
             }
 
+            #custom-pomodoro:hover,
             #network:hover,
             #bluetooth:hover,
             #wireplumber:hover {
