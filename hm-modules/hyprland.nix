@@ -15,10 +15,6 @@
                 rounding = 5;
                 dim_inactive = true;
                 dim_strength = 0.2;
-                blur = {
-                    size = 10;
-                    passes = 2;
-                };
             };
 
             input = {
@@ -55,10 +51,6 @@
                 preserve_split = true;
                 special_scale_factor = 0.6;
             };
-
-            layerrule = [
-                "blur,notifications"
-            ];
 
             windowrulev2 = [
                 "float, title:^(Bluetooth Devices)$"
