@@ -6,6 +6,11 @@
                 default_monitor = "DP-3";
             };
 
+            monitor = [
+                "DP-3, 3440x1440@144, 0x0, 1"
+                "HDMI-A-1, 3840x2160@60, auto-left, 1"
+            ];
+
             workspace = [
                 "1, monitor:DP-3, default:true"
                 "2, monitor:DP-3"
