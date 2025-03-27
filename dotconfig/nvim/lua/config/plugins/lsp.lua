@@ -29,7 +29,11 @@ return {
                 hls = {},
                 jedi_language_server = {}, -- Python
                 lua_ls = {},
-                nixd = {},
+                nixd = {
+                    formatting = {
+                        command = { "nixfmt" },
+                    },
+                },
                 sqls = {},
                 texlab = {},
                 typos_lsp = {},

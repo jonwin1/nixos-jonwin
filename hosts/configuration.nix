@@ -182,6 +182,7 @@ in
             haskell-language-server
             lua-language-server
             nixd
+            nixfmt-rfc-style
             python313Packages.jedi-language-server
             sqls
             texlab
