@@ -36,10 +36,31 @@
         "type": "github"
       }
     },
+    "pomodoro": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1743156713,
+        "narHash": "sha256-V42YDSherQHRjUzdLY9sXpzXQqaDJnsmsT/hDCr2YnA=",
+        "owner": "jonwin1",
+        "repo": "go-pomodoro",
+        "rev": "074be7095b1a3ea1e0e8a3cc66633a3914b59cb9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jonwin1",
+        "repo": "go-pomodoro",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "pomodoro": "pomodoro"
       }
     }
   },
