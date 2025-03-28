@@ -1,4 +1,4 @@
-{ pkgs, user, host, ... }:
+{ pkgs, inputs, user, host, ... }:
 let
     background-package = pkgs.stdenvNoCC.mkDerivation {
         name = "background-image";
@@ -148,6 +148,7 @@ in
             go
             grimblast
             hyprpolkitagent
+            inputs.pomodoro.packages.${system}.default
             # itch
             kdePackages.qtwayland
             libnotify

@@ -5,13 +5,17 @@
             url = "github:nix-community/home-manager";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+        pomodoro = {
+            url = "github:jonwin1/go-pomodoro";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
     };
 
     outputs = { 
         self,
         nixpkgs,
         home-manager,
-        ... 
+        ...
         } @ inputs:
         let
             system = "x86_64-linux";

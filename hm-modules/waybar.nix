@@ -60,8 +60,8 @@
                     format = "{}";
                     signal = 10;
                     return-type = "json";
-                    exec = "cat /home/jonwin/go-pomodoro/log";
-                    on-click = "bash -c 'pgrep pomodoro && pkill pomodoro || /home/jonwin/go-pomodoro/pomodoro &'";
+                    exec = "cat $HOME/.local/share/pomodoro/output.txt";
+                    on-click = "bash -c 'pgrep pomodoro && pkill pomodoro || pomodoro &'";
                 };
 
                 "idle_inhibitor" = {
