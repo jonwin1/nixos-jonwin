@@ -47,7 +47,7 @@
                 cat = "bat";
                 man = "batman";
 
-                tp = "trash-put -v";
+                tp = "trash -v";
                 tl = "trash-list";
                 te = "trash-empty";
 
