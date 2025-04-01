@@ -131,9 +131,7 @@ in
         pathsToLink = [ "/share/zsh" ];
         systemPackages = with pkgs; [
             bc
-            cargo
             cliphist
-            cmake
             cura-appimage
             curl
             discord
@@ -141,12 +139,8 @@ in
             fd
             freecad-wayland
             fzf
-            gcc
-            ghc
             ghostty
             gimp
-            gnumake
-            go
             grimblast
             hyprpolkitagent
             inputs.pomodoro.packages.${system}.default
@@ -160,17 +154,13 @@ in
             openscad
             pavucontrol
             playerctl
-            python3Full
             ripgrep
-            rustc
             sddm-chili-theme
-            texliveFull
             trash-cli
             tree
             tree-sitter
             unp
             unzip
-            valgrind
             wget
             wl-clipboard
             wl-clip-persist
@@ -178,16 +168,9 @@ in
             zip
 
             # LSPs
-            clang-tools
-            cmake-language-server
-            gopls
-            haskell-language-server
             lua-language-server
             nixd
             nixfmt-rfc-style
-            python313Packages.jedi-language-server
-            sqls
-            texlab
             typos-lsp
 
             (
