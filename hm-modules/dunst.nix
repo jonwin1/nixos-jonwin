@@ -4,8 +4,7 @@
         settings = {
             global = {
                 ### General ###
-                monitor = 0;
-                follow = "none";
+                follow = "keyboard";
 
                 font = "FiraCode Nerd Font 10";
                 sort = "yes";
