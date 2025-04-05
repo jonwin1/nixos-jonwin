@@ -37,6 +37,13 @@ in
         zsh.enable = true;
     };
 
+    xdg.mime = {
+        enable = true;
+        defaultApplications = {
+            "inode/directory" = "thunar.desktop";
+        };
+    };
+
 	hardware.steam-hardware.enable = true;
 
     virtualisation.libvirtd = {
