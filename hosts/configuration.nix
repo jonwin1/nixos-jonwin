@@ -146,8 +146,10 @@ in
             fd
             freecad-wayland
             fzf
+            gcc
             ghostty
             gimp
+            gnumake
             grimblast
             hyprpolkitagent
             inputs.pomodoro.packages.${system}.default
