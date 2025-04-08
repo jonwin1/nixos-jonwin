@@ -9,6 +9,7 @@
         # ./kitty.nix
         ./rbw.nix
         ./rofi.nix
+        ./vscode.nix
         ./waybar.nix
         ./zsh.nix
     ];
