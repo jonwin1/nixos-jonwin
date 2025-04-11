@@ -12,6 +12,11 @@
         "owner": "nix-community",
         "repo": "home-manager",
         "rev": "da624eaad0fefd4dac002e1f09d300d150c20483",
+        "lastModified": 1744380363,
+        "narHash": "sha256-cXjAUuAfQDPSLSsckZuTioQ986iqSPTzx8D7dLAcC+Q=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "e43c6bcb101ba3301522439c459288c4a248f624",
         "type": "github"
       },
       "original": {
