@@ -1,7 +1,9 @@
 {
-    imports = [
-        ./docker.nix
-        ./hyprland.nix
-        ./postgresql.nix
-    ];
+  imports = [
+    # ./docker.nix
+    # ./foldingathome.nix
+    ./hyprland.nix
+    # ./kmonad.nix
+    # ./postgresql.nix
+  ];
 }
