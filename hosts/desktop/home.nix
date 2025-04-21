@@ -8,7 +8,7 @@
 
             monitor = [
                 "DP-1, 3440x1440@144, 0x0, 1"
-                "HDMI-A-1, 3840x2160@120, auto-left, 1, bitdepth, 10, cm, hdr, sdrbrightness, 1.2, vrr, 1"
+                "HDMI-A-1, 3840x2160@120, auto-left, 1"#, bitdepth, 10, cm, hdr, sdrbrightness, 1.2, vrr, 1"
             ];
 
             workspace = [
