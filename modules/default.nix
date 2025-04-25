@@ -1,6 +1,6 @@
 {
   imports = [
-    # ./docker.nix
+    ./docker.nix
     # ./foldingathome.nix
     ./hyprland.nix
     # ./kmonad.nix
