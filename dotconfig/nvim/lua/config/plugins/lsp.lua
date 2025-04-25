@@ -24,16 +24,14 @@ return {
                         offsetEncoding = { "utf-16" },
                     },
                 },
-                cmake = {},
                 gopls = {},
-                hls = {},
-                jedi_language_server = {}, -- Python
                 lua_ls = {},
                 nixd = {
                     formatting = {
                         command = { "nixfmt" },
                     },
                 },
+                pyright = {},
                 sqls = {},
                 texlab = {},
                 typos_lsp = {},
