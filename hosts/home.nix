@@ -12,10 +12,6 @@
                 source = ../wallpaper.png;
                 recursive = true;
             };
-            ".config/nvim" = {
-                source = ../dotconfig/nvim;
-                recursive = true;
-            };
             ".config/ghostty" = {
                 source = ../dotconfig/ghostty;
                 recursive = true;

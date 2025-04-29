@@ -8,6 +8,7 @@
     ./hyprpaper.nix
     # ./kitty.nix
     # ./librewolf.nix
+    ./neovim.nix
     # ./qutebrowser.nix
     ./rbw.nix
     ./rofi.nix

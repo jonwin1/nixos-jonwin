@@ -16,15 +16,6 @@ in
 
     programs = {
         direnv.enable = true;
-        neovim = {
-            enable = true;
-            defaultEditor = true;
-            viAlias = true;
-            vimAlias = true;
-            withRuby = true;
-            withPython3 = true;
-            withNodeJs = true;
-        };
         steam = {
             enable = true;
             remotePlay.openFirewall = true;
@@ -175,12 +166,6 @@ in
             wl-clip-persist
             zathura
             zip
-
-            # LSPs
-            lua-language-server
-            nixd
-            nixfmt-rfc-style
-            typos-lsp
 
             (
                 writeTextDir "share/sddm/themes/chili/theme.conf.user" ''
