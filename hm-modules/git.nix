@@ -7,8 +7,8 @@
         extraConfig = {
             init.defaultBranch = "main";
             push.autoSetupRemote = true;
-            pull.rebase = true;
-            rerere.enabled = true;
+            # pull.rebase = true;
+            # rerere.enabled = true;
         };
     };
 }
