@@ -66,8 +66,8 @@
                 gaa = "git add --all";
                 gb = "git branch";
                 gc = "git commit";
-                gch = "git checkout";
-                gchb = "git checkout -b";
+                # gch = "git checkout";
+                # gchb = "git checkout -b";
                 gcm = "git commit -m";
                 gd = "git diff";
                 gds = "git diff --staged";
@@ -78,6 +78,8 @@
                 gps = "git push";
                 gr = "git restore";
                 gs = "git status";
+                gsw = "git switch";
+                gswc = "git switch -c";
             };
             plugins = with pkgs; [
                 {
