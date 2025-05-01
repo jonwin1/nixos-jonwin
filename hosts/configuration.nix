@@ -21,6 +21,9 @@ in
             remotePlay.openFirewall = true;
             dedicatedServer.openFirewall = true;
             localNetworkGameTransfers.openFirewall = true;
+            gamescopeSession = {
+                enable = true;
+            };
         };
         thunar.enable = true;
         virt-manager.enable = true;
@@ -166,6 +169,10 @@ in
             wl-clip-persist
             zathura
             zip
+
+            (python3.withPackages (python-pkgs: with python-pkgs; [
+                ds4drv
+            ]))
 
             (
                 writeTextDir "share/sddm/themes/chili/theme.conf.user" ''
