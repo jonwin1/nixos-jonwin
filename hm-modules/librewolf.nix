@@ -1,6 +1,6 @@
 {
-    programs.librewolf = {
-        enable = true;
-        settings = {};
-    };
+  programs.librewolf = {
+    enable = true;
+    settings = { };
+  };
 }

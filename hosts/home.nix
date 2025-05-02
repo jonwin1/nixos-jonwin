@@ -1,89 +1,87 @@
 { user, pkgs, ... }:
 {
-    imports = [
-        ../hm-modules
+  imports = [ ../hm-modules ];
+
+  home = {
+    username = "${user}";
+    homeDirectory = "/home/${user}";
+    file = {
+      "Pictures/wallpaper.png" = {
+        source = ../wallpaper.png;
+        recursive = true;
+      };
+      ".config/ghostty" = {
+        source = ../dotconfig/ghostty;
+        recursive = true;
+      };
+    };
+    pointerCursor = {
+      gtk.enable = true;
+      package = pkgs.rose-pine-cursor;
+      name = "BreezeX-RosePine-Linux";
+      size = 24;
+    };
+    packages = with pkgs; [
+      (writeShellScriptBin "rofi-power-menu" ''
+        option="Cancel\nShutdown\nReboot\nSleep\nLock"
+        selected=$(echo -e $option | rofi -dmenu -i)
+        if [ "$selected" = "Shutdown" ]; then
+            poweroff
+        elif [ "$selected" = "Reboot" ]; then
+            reboot
+        elif [ "$selected" = "Sleep" ]; then
+            systemctl suspend
+        elif [ "$selected" = "Lock" ]; then
+            hyprlock
+        elif [ "$selected" = "Cancel" ]; then
+            return
+        fi
+      '')
+
+      (makeDesktopItem {
+        name = "CrossCode";
+        desktopName = "CrossCode";
+        exec = "/run/current-system/sw/bin/steam-run /home/jonwin/.config/itch/apps/crosscode/CrossCode";
+      })
     ];
+  };
 
-    home = {
-        username = "${user}";
-        homeDirectory = "/home/${user}";
-        file = {
-            "Pictures/wallpaper.png" = {
-                source = ../wallpaper.png;
-                recursive = true;
-            };
-            ".config/ghostty" = {
-                source = ../dotconfig/ghostty;
-                recursive = true;
-            };
-        };
-        pointerCursor = {
-            gtk.enable = true;
-            package = pkgs.rose-pine-cursor;
-            name = "BreezeX-RosePine-Linux";
-            size = 24;
-        };
-        packages = with pkgs; [
-            (writeShellScriptBin "rofi-power-menu" ''
-                option="Cancel\nShutdown\nReboot\nSleep\nLock"
-                selected=$(echo -e $option | rofi -dmenu -i)
-                if [ "$selected" = "Shutdown" ]; then
-                    poweroff
-                elif [ "$selected" = "Reboot" ]; then
-                    reboot
-                elif [ "$selected" = "Sleep" ]; then
-                    systemctl suspend
-                elif [ "$selected" = "Lock" ]; then
-                    hyprlock
-                elif [ "$selected" = "Cancel" ]; then
-                    return
-                fi
-            '')
+  gtk = {
+    enable = true;
 
-            (makeDesktopItem {
-                name = "CrossCode";
-                desktopName = "CrossCode";
-                exec = "/run/current-system/sw/bin/steam-run /home/jonwin/.config/itch/apps/crosscode/CrossCode";
-            })
-        ];
+    theme = {
+      package = pkgs.nordic;
+      name = "Nordic";
     };
 
-    gtk = {
-        enable = true;
-
-        theme = {
-            package = pkgs.nordic;
-            name = "Nordic";
-        };
-
-        iconTheme = {
-            package = pkgs.nordzy-icon-theme;
-            name = "Nordzy";
-        };
-
-        font = {
-            name = "FiraCode Nerd Font";
-            size = 12;
-        };
+    iconTheme = {
+      package = pkgs.nordzy-icon-theme;
+      name = "Nordzy";
     };
 
-    services = {
-        blueman-applet.enable = true;
-        udiskie.enable = true;
+    font = {
+      name = "FiraCode Nerd Font";
+      size = 12;
     };
+  };
 
-    programs = {
-        lazygit = {
-            enable = true;
-            settings = {
-                gui.nerdFontsVersion = "3";
-                git.autoFetch = false;
-            };
-        };
-        home-manager.enable = true;
+  services = {
+    blueman-applet.enable = true;
+    udiskie.enable = true;
+  };
+
+  programs = {
+    lazygit = {
+      enable = true;
+      settings = {
+        gui.nerdFontsVersion = "3";
+        git.autoFetch = false;
+      };
     };
+    home-manager.enable = true;
+  };
 
-    xdg.userDirs.enable = true;
+  xdg.userDirs.enable = true;
 
-    home.stateVersion = "23.11";
+  home.stateVersion = "23.11";
 }

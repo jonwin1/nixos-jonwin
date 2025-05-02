@@ -1,7 +1,7 @@
 {
-	services.foldingathome = {
-		enable = true;
-		user = "Jonwin";
-		team = 37451;
-	};
+  services.foldingathome = {
+    enable = true;
+    user = "Jonwin";
+    team = 37451;
+  };
 }

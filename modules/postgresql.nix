@@ -1,8 +1,8 @@
-{ pkgs, ...}:
+{ pkgs, ... }:
 {
-    services.postgresql = {
-        enable = true;
-        package = pkgs.postgresql;
-        ensureDatabases = [ "mydatabase" ];
-    };
+  services.postgresql = {
+    enable = true;
+    package = pkgs.postgresql;
+    ensureDatabases = [ "mydatabase" ];
+  };
 }
