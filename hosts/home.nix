@@ -8,7 +8,9 @@
     file = {
       "Pictures/wallpaper.png" = {
         source = ../wallpaper.png;
-        recursive = true;
+      };
+      "Pictures/logo.png" = {
+        source = ../logo.png;
       };
       ".config/ghostty" = {
         source = ../dotconfig/ghostty;
