@@ -25,7 +25,6 @@
           "bluetooth"
           "wireplumber"
           "battery"
-          "custom/exit"
         ];
 
         "hyprland/workspaces" = {
@@ -157,12 +156,6 @@
           ];
           tooltip-format = "{timeTo}\nPower: {power} Watts";
         };
-
-        "custom/exit" = {
-          format = " ";
-          on-click = "rofi-power-menu";
-          tooltip-format = "Power Menu";
-        };
       };
     };
     style = ''
@@ -247,12 +240,6 @@
 
       #disk {
           margin-right: 10px;
-      }
-
-      #custom-exit {
-          color: @error_color;
-          margin: 0px 0px 0px 5px;
-          font-size: 16px;
       }
 
       #custom-pomodoro:hover,
