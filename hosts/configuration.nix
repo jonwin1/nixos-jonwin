@@ -178,6 +178,7 @@ in
       openscad
       pavucontrol
       playerctl
+      ranger
       ripgrep
       sddm-chili-theme
       trash-cli
