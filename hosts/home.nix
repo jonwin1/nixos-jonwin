@@ -16,6 +16,10 @@
         source = ../dotconfig/ghostty;
         recursive = true;
       };
+      ".config/scripts" = {
+        source = ../dotconfig/scripts;
+        recursive = true;
+      };
     };
     pointerCursor = {
       gtk.enable = true;
