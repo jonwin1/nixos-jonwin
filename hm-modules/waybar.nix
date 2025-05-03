@@ -240,6 +240,10 @@
       #tray {
       }
 
+      #tray menu * {
+          padding: 0px 5px;
+      }
+
       #wireplumber {
       }
 
