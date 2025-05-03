@@ -3,11 +3,7 @@
     enable = true;
     settings = {
       mainBar = {
-        margin-top = 5;
-        margin-bottom = 0;
-        margin-left = 10;
-        margin-right = 10;
-        spacing = 0;
+        height = 25;
         modules-left = [
           "hyprland/workspaces"
           "idle_inhibitor"
@@ -27,9 +23,15 @@
         ];
 
         "hyprland/workspaces" = {
-          persistent-workspaces = {
-            "*" = 5;
+        };
+
+        "idle_inhibitor" = {
+          format = "{icon} ";
+          format-icons = {
+            activated = "";
+            deactivated = "";
           };
+          tooltip = false;
         };
 
         "clock#date" = {
@@ -60,31 +62,22 @@
           on-click = "bash -c 'pgrep pomodoro && pkill pomodoro || pomodoro &'";
         };
 
-        "idle_inhibitor" = {
-          format = "{icon} ";
-          format-icons = {
-            activated = "";
-            deactivated = "";
-          };
-          tooltip = false;
-        };
-
         "cpu" = {
-          format = "  {usage}% ";
+          format = "  {usage}%";
           states = {
             critical = 90;
           };
         };
 
         "memory" = {
-          format = "/   {percentage}% ";
+          format = "  {percentage}%";
           states = {
             critical = 80;
           };
         };
 
         "disk" = {
-          format = "/ 󰋊 {percentage_used}% ";
+          format = "󰋊 {percentage_used}%";
           tooltip-format = "{used} / {total}";
           states = {
             critical = 95;
@@ -93,7 +86,7 @@
 
         "tray" = {
           icon-size = 16;
-          spacing = 10;
+          spacing = 15;
         };
 
         "wireplumber" = {
@@ -134,105 +127,123 @@
       };
     };
     style = ''
+      /* -----------------------------------------------------------------------------
+       * Base styles
+       * -------------------------------------------------------------------------- */
+
+      /* Everything */
       * {
           border: none;
-          border-radius: 15px;
+          border-radius: 0;
+          min-height: 0;
+          margin: 0;
+          padding: 0;
           font-family: FiraCode Nerd Font;
           font-size: 14px;
       }
 
+      /* The whole bar */
       window#waybar {
-          color: @theme_fg_color;
-          background: transparent;
+          color: white;
+          background: #292e42;
       }
 
-      #workspaces {
-          color: @theme_fg_color;
-          background: @theme_bg_color;
-          margin: 2px 1px 3px 1px;
-          padding: 0px 1px;
-      }
-
-      #workspaces button {
-          color: @theme_fg_color;
-          background: transparent;
-          padding: 0px 5px;
-          margin: 4px 3px;
-          transition: all 0.3s ease-in-out;
-      }
-
-      #workspaces button.empty {
-          color: alpha(@theme_fg_color, 0.5);
-      }
-
-      #workspaces button.visible {
-          color: @theme_bg_color;
-          background: alpha(@theme_selected_bg_color, 0.7);
-      }
-
-      #workspaces button.active {
-          color: @theme_bg_color;
-          background: @theme_selected_bg_color;
-          min-width: 30px;
-          transition: all 0.3s ease-in-out;
-      }
-
-      #workspaces button:hover {
-          color: @theme_bg_color;
-          background: alpha(@theme_selected_bg_color, 0.5);
-      }
-
-      tooltip {
-          color: @theme_fg_color;
-          background: alpha(@theme_bg_color, 0.9);
-          padding: 15px;
-          margin: 0px;
-      }
-
-      #idle_inhibitor {
-          color: @success_color;
-          font-size: 16px;
-          margin-left: 15px;
-      }
-
-      #idle_inhibitor.activated {
-          color: @error_color;
-      }
-
+      /* Each module */
+      #idle_inhibitor,
       #clock.date,
       #clock,
       #custom-pomodoro,
+      #cpu,
+      #memory,
+      #disk,
       #tray,
       #wireplumber,
       #battery {
-          color: @theme_fg_color;
-          background: @theme_bg_color;
-          padding: 5px 15px 4px 15px;
-          margin: 5px 10px 5px 0px;
+        padding-left: 10px;
+        padding-right: 10px;
       }
 
-      #disk {
-          margin-right: 10px;
-      }
-
-      #tray > widget:hover,
+      /* Hover */
+      #workspaces button:hover,
       #custom-pomodoro:hover,
+      #tray > widget:hover,
       #wireplumber:hover {
-          color: @theme_bg_color;
-          background: @theme_selected_bg_color;
-          transition: all 0.3s ease-in-out;
+          background-color: #394b70;
       }
 
+      /* Warning */
+      #idle_inhibitor.activated,
       #battery.warning:not(.charging) {
-          color: @warning_color;
+          color: #ff9e64;
       }
 
+      /* Critical */
       #battery.critical:not(.charging),
       #wireplumber.muted,
       #cpu.critical,
       #memory.critical,
       #disk.critical {
-          color: @error_color;
+          color: #c53b53;
+      }
+
+      /* -----------------------------------------------------------------------------
+       * Module styles
+       * -------------------------------------------------------------------------- */
+
+      #workspaces button {
+          border-top: 2px solid transparent;
+          padding-left: 10px;
+          padding-right: 10px;
+      }
+
+      #workspaces button.active {
+          border-color: #7aa2f7;
+          color: white;
+          background-color: #394b70;
+      }
+
+      #workspaces button.urgent {
+          border-color: #ffc777;
+          color: #ff9e64;
+      }
+
+      tooltip {
+          color: white;
+          background: #292e42;
+          padding: 15px;
+          margin: 0px;
+      }
+
+      #idle_inhibitor {
+          color: #7aa2f7;
+      }
+
+      #clock.date {
+      }
+
+      #clock {
+        font-family: FiraCode Nerd Font Bold;
+      }
+
+      #custom-pomodoro {
+      }
+
+      #cpu {
+      }
+
+      #memory {
+      }
+
+      #disk {
+      }
+
+      #tray {
+      }
+
+      #wireplumber {
+      }
+
+      #battery {
       }
     '';
   };
