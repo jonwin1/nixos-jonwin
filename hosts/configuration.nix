@@ -35,10 +35,17 @@ in
     zsh.enable = true;
   };
 
-  xdg.mime = {
-    enable = true;
-    defaultApplications = {
-      "inode/directory" = "thunar.desktop";
+  xdg = {
+    mime = {
+      enable = true;
+      defaultApplications = {
+        "inode/directory" = "thunar.desktop";
+      };
+    };
+
+    portal = {
+      enable = true;
+      extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
     };
   };
 
