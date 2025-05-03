@@ -62,7 +62,7 @@
 
     iconTheme = {
       package = pkgs.nordzy-icon-theme;
-      name = "Nordzy";
+      name = "Nordzy-dark";
     };
 
     font = {

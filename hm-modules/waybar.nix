@@ -21,8 +21,7 @@
           "cpu"
           "memory"
           "disk"
-          "network"
-          "bluetooth"
+          "tray"
           "wireplumber"
           "battery"
         ];
@@ -39,11 +38,9 @@
           calendar = {
             mode = "year";
             mode-mon-col = 3;
-            weeks-pos = "right";
             format = {
               months = "<span color='#d8dee9'><b>{}</b></span>";
               days = "<span color='#81a1c1'><b>{}</b></span>";
-              weeks = "<span color='#a3be8c'><b>W{}</b></span>";
               weekdays = "<span color='#ebcb8b'><b>{}</b></span>";
               today = "<span color='#bf616a'><b><u>{}</u></b></span>";
             };
@@ -94,31 +91,9 @@
           };
         };
 
-        "network" = {
-          format-wifi = "{icon}  {essid}";
-          format-ethernet = "󰈀 ";
-          format-linked = "󰌷 ";
-          format-disconnected = "󰤭 ";
-          format-icons = [
-            "󰤯"
-            "󰤟"
-            "󰤢"
-            "󰤥"
-            "󰤨"
-          ];
-          tooltip-format = "{ifname}: {ipaddr}/{cidr}\nSignal Strength: {signalStrength}%";
-          on-click = "bash -c 'pgrep nmtui && pkill nmtui || ghostty --title=nmtui_applet -e nmtui &'";
-          max-length = 50;
-        };
-
-        "bluetooth" = {
-          format = "󰂯";
-          format-disabled = "󰂲";
-          format-off = "󰂲";
-          format-connected = " {num_connections}";
-          tooltip-format = "{device_enumerate}";
-          tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
-          on-click = "bash -c 'pgrep blueman-manage && pkill blueman-manage || blueman-manager &'";
+        "tray" = {
+          icon-size = 16;
+          spacing = 10;
         };
 
         "wireplumber" = {
@@ -227,9 +202,7 @@
       #clock.date,
       #clock,
       #custom-pomodoro,
-      #temperature,
-      #network,
-      #bluetooth,
+      #tray,
       #wireplumber,
       #battery {
           color: @theme_fg_color;
@@ -242,9 +215,8 @@
           margin-right: 10px;
       }
 
+      #tray > widget:hover,
       #custom-pomodoro:hover,
-      #network:hover,
-      #bluetooth:hover,
       #wireplumber:hover {
           color: @theme_bg_color;
           background: @theme_selected_bg_color;
@@ -256,10 +228,6 @@
       }
 
       #battery.critical:not(.charging),
-      #bluetooth.disabled,
-      #bluetooth.off,
-      #network.disabled,
-      #network.disconnected,
       #wireplumber.muted,
       #cpu.critical,
       #memory.critical,

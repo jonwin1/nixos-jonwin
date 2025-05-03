@@ -20,6 +20,7 @@ in
 
   programs = {
     direnv.enable = true;
+    nm-applet.enable = true;
     steam = {
       enable = true;
       remotePlay.openFirewall = true;

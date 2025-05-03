@@ -52,16 +52,10 @@
 
       windowrulev2 = [
         "float, title:^(Bluetooth Devices)$"
-        "size 1000 500, title:^(Bluetooth Devices)$"
+        "size 600 400, title:^(Bluetooth Devices)$"
         "move 100%-w-5 45, title:^(Bluetooth Devices)$"
         "pin, title:^(Bluetooth Devices)$"
         "noborder on, title:^(Bluetooth Devices)$"
-
-        "float, title:^(nmtui_applet)$"
-        "size 800 480, title:^(nmtui_applet)$"
-        "move 100%-w-5 45, title:^(nmtui_applet)$"
-        "pin, title:^(nmtui_applet)$"
-        "noborder on, title:^(nmtui_applet)$"
 
         "float, title:^(Volume Control)$"
         "size 1000 500, title:^(Volume Control)$"
