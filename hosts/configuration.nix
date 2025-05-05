@@ -190,6 +190,7 @@ in
       wget
       wl-clipboard
       wl-clip-persist
+      wlrctl
       zathura
       zip
 
