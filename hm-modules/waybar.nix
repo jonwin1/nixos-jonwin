@@ -23,6 +23,12 @@
         ];
 
         "hyprland/workspaces" = {
+          format = "{icon}";
+          format-icons = {
+            "11" = "󰈹";
+            "12" = "";
+            "15" = "";
+          };
         };
 
         "idle_inhibitor" = {
