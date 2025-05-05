@@ -14,6 +14,7 @@
     packages = with pkgs; [
       clang-tools
       gopls
+      jq
       lua-language-server
       nixd
       nixfmt-rfc-style
