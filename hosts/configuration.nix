@@ -171,6 +171,7 @@ in
       inputs.pomodoro.packages.${system}.default
       # itch
       kdePackages.qtwayland
+      ladybird
       libnotify
       libsForQt5.qt5.qtwayland
       man-pages
