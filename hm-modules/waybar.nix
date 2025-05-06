@@ -23,11 +23,11 @@
         ];
 
         "hyprland/workspaces" = {
-          format = "{icon}";
+          format = "{name}: {icon}";
           format-icons = {
-            "11" = "󰈹";
-            "12" = "";
-            "15" = "";
+            "1" = "󰈹";
+            "2" = "";
+            "9" = "";
           };
         };
 
