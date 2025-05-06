@@ -14,6 +14,7 @@
     packages = with pkgs; [
       clang-tools
       gopls
+      hyprls
       jq
       lua-language-server
       nixd

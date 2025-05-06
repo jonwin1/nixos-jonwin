@@ -25,6 +25,7 @@ return {
                     },
                 },
                 gopls = {},
+                hyprls = {},
                 lua_ls = {},
                 nixd = {
                     formatting = {
