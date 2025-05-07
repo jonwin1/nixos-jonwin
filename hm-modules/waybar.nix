@@ -42,17 +42,18 @@
 
         "clock#date" = {
           format = "{:%a %d %b}";
-          tooltip-format = "<tt><small>{calendar}</small></tt>";
-          calendar = {
-            mode = "year";
-            mode-mon-col = 3;
-            format = {
-              months = "<span color='#d8dee9'><b>{}</b></span>";
-              days = "<span color='#81a1c1'><b>{}</b></span>";
-              weekdays = "<span color='#ebcb8b'><b>{}</b></span>";
-              today = "<span color='#bf616a'><b><u>{}</u></b></span>";
-            };
-          };
+          tooltip = false;
+          # tooltip-format = "<tt><small>{calendar}</small></tt>";
+          # calendar = {
+          #   mode = "year";
+          #   mode-mon-col = 3;
+          #   format = {
+          #     months = "<span color='#d8dee9'><b>{}</b></span>";
+          #     days = "<span color='#81a1c1'><b>{}</b></span>";
+          #     weekdays = "<span color='#ebcb8b'><b>{}</b></span>";
+          #     today = "<span color='#bf616a'><b><u>{}</u></b></span>";
+          #   };
+          # };
         };
 
         "clock" = {
