@@ -134,6 +134,21 @@
       };
     };
     style = ''
+      @define-color black #1b1d2b;
+      @define-color red #ff757f;
+      @define-color green #c3e88d;
+      @define-color yellow #ffc777;
+      @define-color blue #82aaff;
+      @define-color purple #c099ff;
+      @define-color cyan #86e1fc;
+      @define-color gray2 #828bb8;
+      @define-color gray1 #444a73;
+
+      @define-color background #222436;
+      @define-color foreground #c8d3f5;
+      @define-color selection-background #2d3f76;
+      @define-color selection-foreground #c8d3f5;
+
       /* -----------------------------------------------------------------------------
        * Base styles
        * -------------------------------------------------------------------------- */
