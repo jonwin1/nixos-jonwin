@@ -23,11 +23,45 @@
         ];
 
         "hyprland/workspaces" = {
-          format = "{name}: {icon}";
+          all-outputs = true;
+          move-to-monitor = true;
+
+          format = "{icon} {windows}";
           format-icons = {
-            "1" = "󰈹";
-            "2" = "";
-            "9" = "";
+            "1" = "󰎤";
+            "2" = "󰎧";
+            "3" = "󰎪";
+            "4" = "󰎭";
+            "5" = "󰎱";
+            "6" = "󰎳";
+            "7" = "󰎶";
+            "8" = "󰎹";
+            "9" = "󰎼";
+            "10" = "󰽽";
+            "urgent" = "󱨇";
+            "default" = "";
+            "empty" = "󱓼";
+          };
+
+          window-rewrite-default = "";
+          window-rewrite = {
+            "class<Bitwarden>" = "󰞀";
+            "class<.blueman-manager-wrapped>" = "";
+            "class<code>" = "󰨞";
+            "class<discord>" = "󰙯";
+            "class<firefox>" = "";
+            "class<floorp>" = "";
+            "class<foot>" = "";
+            "class<.*ghostty>" = "";
+            "class<Github Desktop>" = "󰊤";
+            "class<kitty>" = "";
+            "class<pavucontrol>" = "";
+            "class<Spotify>" = "";
+            "class<steam>" = "";
+            "class<thunar>" = "󰉋";
+            "class<virt-manager>" = "󰢹";
+            "class<Youtube Music>" = "";
+            "title<Steam>" = "";
           };
         };
 
