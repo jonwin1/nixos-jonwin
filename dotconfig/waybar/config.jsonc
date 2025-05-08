@@ -68,14 +68,18 @@
 	"cpu": {
 		"format": "  {usage}%",
 		"states": {
-			"critical": 90,
+			"low": 30,
+			"medium": 60,
+			"high": 90,
 		},
 	},
 
 	"memory": {
 		"format": "  {percentage}%",
 		"states": {
-			"critical": 80,
+			"low": 30,
+			"medium": 60,
+			"high": 90,
 		},
 	},
 
@@ -83,7 +87,9 @@
 		"format": "󰋊 {percentage_used}%",
 		"tooltip-format": "{used} / {total}",
 		"states": {
-			"critical": 95,
+			"low": 70,
+			"medium": 80,
+			"high": 90,
 		},
 	},
 
