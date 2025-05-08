@@ -177,8 +177,8 @@
 
       /* The whole bar */
       window#waybar {
-          color: white;
-          background: #292e42;
+          color: @foreground;
+          background: @background;
       }
 
       /* Each module */
@@ -201,13 +201,13 @@
       #custom-pomodoro:hover,
       #tray > widget:hover,
       #wireplumber:hover {
-          background-color: #394b70;
+          background-color: @selection-background;
       }
 
       /* Warning */
       #idle_inhibitor.activated,
       #battery.warning:not(.charging) {
-          color: #ff9e64;
+          color: @yellow;
       }
 
       /* Critical */
@@ -216,7 +216,7 @@
       #cpu.critical,
       #memory.critical,
       #disk.critical {
-          color: #c53b53;
+          color: @red;
       }
 
       /* -----------------------------------------------------------------------------
@@ -224,7 +224,7 @@
        * -------------------------------------------------------------------------- */
 
       #workspaces * {
-        font-size: 18;
+        font-size: 18px;
       }
 
       #workspaces button {
@@ -234,32 +234,33 @@
       }
 
       #workspaces button.active {
-          border-color: #7aa2f7;
+          border-color: @blue;
           color: white;
-          background-color: #394b70;
+          background-color: @selection-background;
       }
 
       #workspaces button.urgent {
-          border-color: #ffc777;
-          color: #ff9e64;
+          border-color: @yellow;
+          color: @foreground;
       }
 
       tooltip {
           color: white;
-          background: #292e42;
+          background: @background;
           padding: 15px;
           margin: 0px;
       }
 
       #idle_inhibitor {
-          color: #7aa2f7;
+          color: @blue;
       }
 
       #clock.date {
+        font-weight: Normal;
       }
 
       #clock {
-        font-family: FiraCode Nerd Font Bold;
+        font-weight: Bold;
       }
 
       #custom-pomodoro {
