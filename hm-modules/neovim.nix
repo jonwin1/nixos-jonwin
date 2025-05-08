@@ -22,6 +22,7 @@
       pyright
       sqls
       texlab
+      typescript-language-server
       typos-lsp
     ];
 

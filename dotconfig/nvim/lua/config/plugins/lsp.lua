@@ -35,6 +35,7 @@ return {
                 pyright = {},
                 sqls = {},
                 texlab = {},
+                ts_ls = {},
                 typos_lsp = {},
             }
         },
