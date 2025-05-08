@@ -26,10 +26,10 @@
           all-outputs = true;
           move-to-monitor = true;
 
-          format = "{icon} {windows}";
+          format = "{icon}";
           format-icons = {
-            "1" = "󰎤";
-            "2" = "󰎧";
+            "1" = "󰖟";
+            "2" = "";
             "3" = "󰎪";
             "4" = "󰎭";
             "5" = "󰎱";
@@ -37,31 +37,8 @@
             "7" = "󰎶";
             "8" = "󰎹";
             "9" = "󰎼";
-            "10" = "󰽽";
-            "urgent" = "󱨇";
+            "10" = "󰙯";
             "default" = "";
-            "empty" = "󱓼";
-          };
-
-          window-rewrite-default = "";
-          window-rewrite = {
-            "class<Bitwarden>" = "󰞀";
-            "class<.blueman-manager-wrapped>" = "";
-            "class<code>" = "󰨞";
-            "class<discord>" = "󰙯";
-            "class<firefox>" = "";
-            "class<floorp>" = "";
-            "class<foot>" = "";
-            "class<.*ghostty>" = "";
-            "class<Github Desktop>" = "󰊤";
-            "class<kitty>" = "";
-            "class<pavucontrol>" = "";
-            "class<Spotify>" = "";
-            "class<steam>" = "";
-            "class<thunar>" = "󰉋";
-            "class<virt-manager>" = "󰢹";
-            "class<Youtube Music>" = "";
-            "title<Steam>" = "";
           };
         };
 
@@ -245,6 +222,10 @@
       /* -----------------------------------------------------------------------------
        * Module styles
        * -------------------------------------------------------------------------- */
+
+      #workspaces * {
+        font-size: 18;
+      }
 
       #workspaces button {
           border-top: 2px solid transparent;
