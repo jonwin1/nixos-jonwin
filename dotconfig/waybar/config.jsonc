@@ -21,11 +21,11 @@
 	"hyprland/workspaces": {
 		"all-outputs": true,
 		"move-to-monitor": true,
-
+		"show-special": true,
 		"format": "{icon}",
 		"format-icons": {
-			"1": "󰖟",
-			"2": "",
+			"1": "󰎤",
+			"2": "󰎧",
 			"3": "󰎪",
 			"4": "󰎭",
 			"5": "󰎱",
@@ -33,7 +33,10 @@
 			"7": "󰎶",
 			"8": "󰎹",
 			"9": "󰎼",
-			"10": "󰙯",
+			"10": "󰽽",
+			"11": "󰖟",
+			"12": "",
+			"discord": "󰙯",
 			"default": "",
 		},
 	},
