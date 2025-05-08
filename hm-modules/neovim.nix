@@ -24,6 +24,7 @@
       texlab
       typescript-language-server
       typos-lsp
+      vscode-langservers-extracted # css
     ];
 
     file = {

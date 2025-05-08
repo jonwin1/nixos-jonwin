@@ -24,6 +24,7 @@ return {
                         offsetEncoding = { "utf-16" },
                     },
                 },
+                cssls = {},
                 gopls = {},
                 hyprls = {},
                 lua_ls = {},
