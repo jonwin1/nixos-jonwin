@@ -1,0 +1,130 @@
+{
+	"height": 25,
+	"modules-left": [
+		"hyprland/workspaces",
+		"idle_inhibitor",
+	],
+	"modules-center": [
+		"clock#date",
+		"clock",
+		"custom/pomodoro",
+	],
+	"modules-right": [
+		"cpu",
+		"memory",
+		"disk",
+		"tray",
+		"wireplumber",
+		"battery",
+	],
+
+	"hyprland/workspaces": {
+		"all-outputs": true,
+		"move-to-monitor": true,
+
+		"format": "{icon}",
+		"format-icons": {
+			"1": "󰖟",
+			"2": "",
+			"3": "󰎪",
+			"4": "󰎭",
+			"5": "󰎱",
+			"6": "󰎳",
+			"7": "󰎶",
+			"8": "󰎹",
+			"9": "󰎼",
+			"10": "󰙯",
+			"default": "",
+		},
+	},
+
+	"idle_inhibitor": {
+		"format": "{icon} ",
+		"format-icons": {
+			"activated": "",
+			"deactivated": "",
+		},
+		"tooltip": false,
+	},
+
+	"clock#date": {
+		"format": "{:%a %d %b}",
+		"tooltip": false,
+	},
+
+	"clock": {
+		"format": "{:%R}",
+		"tooltip": false,
+	},
+
+	"custom/pomodoro": {
+		"format": "{}",
+		"signal": 10,
+		"return-type": "json",
+		"exec": "cat $HOME/.local/share/pomodoro/output.txt",
+		"on-click": "bash -c 'pgrep pomodoro && pkill pomodoro || pomodoro &'",
+	},
+
+	"cpu": {
+		"format": "  {usage}%",
+		"states": {
+			"critical": 90,
+		},
+	},
+
+	"memory": {
+		"format": "  {percentage}%",
+		"states": {
+			"critical": 80,
+		},
+	},
+
+	"disk": {
+		"format": "󰋊 {percentage_used}%",
+		"tooltip-format": "{used} / {total}",
+		"states": {
+			"critical": 95,
+		},
+	},
+
+	"tray": {
+		"icon-size": 16,
+		"spacing": 15,
+	},
+
+	"wireplumber": {
+		"format": "{icon} {volume}%",
+		"format-muted": " 󰝟 ",
+		"on-click": "bash -c 'pgrep pavucontrol && pkill pavucontrol || pavucontrol &'",
+		"on-click-right": "wpctl set-mute @DEFAULT_SINK@ toggle",
+		"format-icons": [
+			"󰕿",
+			"󰖀",
+			"󰕾",
+		],
+		"scroll-step": 1,
+	},
+
+	"battery": {
+		"states": {
+			"warning": 20,
+			"critical": 10,
+		},
+		"format": "{icon} {capacity}%",
+		"format-charging": "󰂄 {capacity}%",
+		"format-icons": [
+			"󰂎",
+			"󰁺",
+			"󰁻",
+			"󰁼",
+			"󰁽",
+			"󰁾",
+			"󰁿",
+			"󰂀",
+			"󰂁",
+			"󰂂",
+			"󰁹",
+		],
+		"tooltip-format": "{timeTo}\nPower: {power} Watts",
+	},
+}

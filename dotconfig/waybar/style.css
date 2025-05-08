@@ -1,0 +1,135 @@
+@define-color black #1b1d2b;
+@define-color red #ff757f;
+@define-color green #c3e88d;
+@define-color yellow #ffc777;
+@define-color blue #82aaff;
+@define-color purple #c099ff;
+@define-color cyan #86e1fc;
+@define-color gray2 #828bb8;
+@define-color gray1 #444a73;
+
+@define-color background #222436;
+@define-color foreground #c8d3f5;
+@define-color selection-background #2d3f76;
+@define-color selection-foreground #c8d3f5;
+
+/* -----------------------------------------------------------------------------
+ * Base styles
+ * -------------------------------------------------------------------------- */
+
+/* Everything */
+* {
+	border: none;
+	border-radius: 0;
+	min-height: 0;
+	margin: 0;
+	padding: 0;
+	font-family: FiraCode Nerd Font;
+	font-size: 14px;
+}
+
+/* The whole bar */
+window#waybar {
+	color: @foreground;
+	background: @background;
+}
+
+/* Each module */
+#idle_inhibitor,
+#clock.date,
+#clock,
+#custom-pomodoro,
+#cpu,
+#memory,
+#disk,
+#tray,
+#wireplumber,
+#battery {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+/* Hover */
+#workspaces button:hover,
+#custom-pomodoro:hover,
+#tray>widget:hover,
+#wireplumber:hover {
+	background-color: @selection-background;
+}
+
+/* Warning */
+#idle_inhibitor.activated,
+#battery.warning:not(.charging) {
+	color: @yellow;
+}
+
+/* Critical */
+#battery.critical:not(.charging),
+#wireplumber.muted,
+#cpu.critical,
+#memory.critical,
+#disk.critical {
+	color: @red;
+}
+
+/* -----------------------------------------------------------------------------
+ * Module styles
+ * -------------------------------------------------------------------------- */
+
+#workspaces * {
+	font-size: 18px;
+}
+
+#workspaces button {
+	border-top: 2px solid transparent;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#workspaces button.active {
+	border-color: @blue;
+	color: white;
+	background-color: @selection-background;
+}
+
+#workspaces button.urgent {
+	border-color: @yellow;
+	color: @foreground;
+}
+
+tooltip {
+	color: white;
+	background: @background;
+	padding: 15px;
+	margin: 0px;
+}
+
+#idle_inhibitor {
+	color: @blue;
+}
+
+#clock.date {
+	font-weight: Normal;
+}
+
+#clock {
+	font-weight: Bold;
+}
+
+#custom-pomodoro {}
+
+#cpu {}
+
+#memory {}
+
+#disk {}
+
+#tray {}
+
+#tray menu * {
+	padding: 0px 5px;
+}
+
+#wireplumber {}
+
+#battery {}
