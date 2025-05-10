@@ -7,10 +7,6 @@
     ../../modules/kmonad.nix
   ];
 
-  boot = {
-    kernelParams = [ "nvidia.NVreg_PreserveVideoMemoryAllocations=1" ];
-  };
-
   services = {
     displayManager.autoLogin = {
       enable = true;
@@ -28,11 +24,7 @@
     };
     nvidia = {
       modesetting.enable = true;
-      powerManagement.enable = true;
-      powerManagement.finegrained = false;
-      open = false;
-      nvidiaSettings = true;
-      package = config.boot.kernelPackages.nvidiaPackages.stable;
+      open = true;
     };
   };
 }
