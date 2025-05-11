@@ -11,6 +11,11 @@
       modesetting.enable = true;
       open = true;
 
+      powerManagement = {
+        enable = true;
+        finegrained = true;
+      };
+
       prime = {
         offload = {
           enable = true;
