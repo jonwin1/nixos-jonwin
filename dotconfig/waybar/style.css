@@ -104,15 +104,18 @@ window#waybar {
 	color: @purple;
 }
 
+/* visible on other monitor */
 #workspaces button.visible {
-	color: @blue;
+	color: @blue
 }
 
-#workspaces button.hosting-monitor {
+/* visible on this monitor */
+#workspaces button.hosting-monitor.visible {
 	color: @cyan;
 }
 
-#workspaces button.active {
+/* active and on this monitor */
+#workspaces button.hosting-monitor.active {
 	color: @green;
 }
 
