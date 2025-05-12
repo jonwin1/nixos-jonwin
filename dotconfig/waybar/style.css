@@ -74,14 +74,12 @@ window#waybar {
 }
 
 #idle_inhibitor.activated,
-#battery.warning:not(.charging),
 #cpu.medium,
 #memory.medium,
 #disk.medium {
 	color: @yellow;
 }
 
-#battery.critical:not(.charging),
 #wireplumber.muted,
 #cpu.high,
 #memory.high,
@@ -121,8 +119,7 @@ tooltip {
 	margin: 0px;
 }
 
-#idle_inhibitor {
-}
+#idle_inhibitor {}
 
 #clock.date {
 	font-weight: Normal;
@@ -149,3 +146,13 @@ tooltip {
 #wireplumber {}
 
 #battery {}
+
+#battery.warning:not(.charging) {
+	color: @foreground;
+	background: @yellow;
+}
+
+#battery.critical:not(.charging) {
+	color: @foreground;
+	background: @red;
+}
