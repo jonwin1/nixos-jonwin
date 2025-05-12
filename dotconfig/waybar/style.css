@@ -100,8 +100,16 @@ window#waybar {
 	padding-right: 10px;
 }
 
+#workspaces button.special {
+	color: @purple;
+}
+
 #workspaces button.visible {
 	color: @blue;
+}
+
+#workspaces button.hosting-monitor {
+	color: @cyan;
 }
 
 #workspaces button.active {
