@@ -156,7 +156,10 @@ tooltip {
 
 #wireplumber {}
 
-#battery {}
+#battery {
+	color: @foreground;
+	background: @background;
+}
 
 #battery.warning:not(.charging) {
 	color: @background;
