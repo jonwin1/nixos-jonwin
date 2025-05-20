@@ -7,7 +7,7 @@ return {
         "rcarriga/nvim-notify",
     },
 
-    opts = {
+    require("noice").setup({
         messages = {
             view_search = false,
         },
@@ -15,5 +15,5 @@ return {
             command_palette = true,
             lsp_doc_border = true,
         },
-    }
+    })
 }
