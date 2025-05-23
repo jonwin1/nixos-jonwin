@@ -5,5 +5,6 @@
     ./hyprland.nix
     # ./kmonad.nix
     # ./postgresql.nix
+    ./yubikey.nix
   ];
 }
