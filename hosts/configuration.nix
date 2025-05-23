@@ -127,8 +127,6 @@ in
     };
     tumbler.enable = true;
     udisks2.enable = true;
-
-    flatpak.enable = true;
   };
 
   security = {
