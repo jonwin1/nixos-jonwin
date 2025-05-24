@@ -175,6 +175,7 @@ in
       man-pages-posix
       obsidian
       openscad
+      p7zip
       pavucontrol
       playerctl
       ranger
@@ -184,6 +185,7 @@ in
       tree
       tree-sitter
       unp
+      unrar
       unzip
       wget
       wl-clipboard
