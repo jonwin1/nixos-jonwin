@@ -192,6 +192,7 @@ in
       wl-clipboard
       wl-clip-persist
       wlrctl
+      xfce.xfce4-settings
       zathura
       zip
 
