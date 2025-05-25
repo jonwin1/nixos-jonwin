@@ -29,6 +29,7 @@ in
       gamescopeSession = {
         enable = true;
       };
+      protontricks.enable = true;
     };
     thunar.enable = true;
     virt-manager.enable = true;
