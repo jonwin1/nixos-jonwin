@@ -180,7 +180,7 @@ in
       openscad
       pavucontrol
       playerctl
-      ranger
+      yazi
       ripgrep
       sddm-chili-theme
       trash-cli
