@@ -41,6 +41,9 @@ in
       enable = true;
       defaultApplications = {
         "inode/directory" = "thunar.desktop";
+        "application/pdf" = "org.pwmt.zathura.desktop";
+        "image/png" = "gimp.desktop";
+        "image/jpeg" = "gimp.desktop";
       };
     };
 
