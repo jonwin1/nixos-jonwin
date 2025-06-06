@@ -8,10 +8,6 @@
   ];
 
   services = {
-    displayManager.autoLogin = {
-      enable = true;
-      user = "${user}";
-    };
     xserver = {
       videoDrivers = [ "nvidia" ];
     };

@@ -29,6 +29,7 @@ in
       gamescopeSession = {
         enable = true;
       };
+      protontricks.enable = true;
     };
     thunar.enable = true;
     virt-manager.enable = true;
@@ -130,12 +131,9 @@ in
     };
     tumbler.enable = true;
     udisks2.enable = true;
-
-    flatpak.enable = true;
   };
 
   security = {
-    sudo.wheelNeedsPassword = false;
     rtkit.enable = true;
   };
 
@@ -181,6 +179,7 @@ in
       man-pages-posix
       obsidian
       openscad
+      p7zip
       pavucontrol
       playerctl
       yazi
@@ -190,11 +189,13 @@ in
       tree
       tree-sitter
       unp
+      unrar
       unzip
       wget
       wl-clipboard
       wl-clip-persist
       wlrctl
+      xfce.xfce4-settings
       zathura
       zip
 
