@@ -1,9 +1,8 @@
 {
   programs.git = {
     enable = true;
-    lfs.enable = true;
-    # userName = "jonwin1";
-    # userEmail = "jonatan.wincent@gmail.com";
+    userName = "Jonatan Wincent";
+    userEmail = "jonatan.wincent@proton.me";
     extraConfig = {
       init.defaultBranch = "main";
       push.autoSetupRemote = true;

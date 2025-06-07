@@ -1,9 +1,9 @@
-{ ... }:
-
+{ stateVersion, ... }:
 {
   imports = [
-    (import ./hardware-configuration.nix)
+    ./hardware-configuration.nix
     ./nvidia.nix
+    ../../nixos/modules
   ];
 
   boot = {
@@ -38,4 +38,7 @@
       enable32Bit = true;
     };
   };
+
+  nixpkgs.config.allowUnfree = true;
+  system.stateVersion = stateVersion;
 }

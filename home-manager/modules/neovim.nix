@@ -29,7 +29,7 @@
 
     file = {
       ".config/nvim" = {
-        source = ../dotconfig/nvim;
+        source = ../../dotconfig/nvim;
         recursive = true;
       };
     };

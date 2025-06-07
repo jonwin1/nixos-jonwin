@@ -124,4 +124,21 @@
         };
       };
   };
+  home.packages = with pkgs; [
+    (writeShellScriptBin "rofi-power-menu" ''
+      option="Cancel\nShutdown\nReboot\nSleep\nLock"
+      selected=$(echo -e $option | rofi -dmenu -i)
+      if [ "$selected" = "Shutdown" ]; then
+          poweroff
+      elif [ "$selected" = "Reboot" ]; then
+          reboot
+      elif [ "$selected" = "Sleep" ]; then
+          systemctl suspend
+      elif [ "$selected" = "Lock" ]; then
+          hyprlock
+      elif [ "$selected" = "Cancel" ]; then
+          return
+      fi
+    '')
+  ];
 }

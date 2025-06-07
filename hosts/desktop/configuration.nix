@@ -1,10 +1,11 @@
-{ config, user, ... }:
+{ pkgs, stateVersion, ... }:
 
 {
   imports = [
-    (import ./hardware-configuration.nix)
-    ../../modules/foldingathome.nix
-    ../../modules/kmonad.nix
+    ./hardware-configuration.nix
+    ../../nixos/modules
+    ../../nixos/modules/foldingathome.nix
+    ../../nixos/modules/kmonad.nix
   ];
 
   services = {
@@ -27,4 +28,8 @@
       };
     };
   };
+
+  environment.systemPackages = with pkgs; [home-manager];
+  nixpkgs.config.allowUnfree = true;
+  system.stateVersion = stateVersion;
 }

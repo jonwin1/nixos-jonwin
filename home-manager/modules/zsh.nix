@@ -1,4 +1,4 @@
-{ pkgs, host, ... }:
+{ pkgs, ... }:
 {
   programs = {
     zsh = {
@@ -15,8 +15,8 @@
 
       history = {
         share = true;
-        save = 1000;
-        size = 1000;
+        save = 10000;
+        size = 10000;
         extended = true;
         ignoreDups = true;
         ignoreAllDups = true;
@@ -30,9 +30,13 @@
         zstyle ':completion:*' list-colors "$\{(s.:.)LS_COLORS}"
       '';
 
-      shellAliases = {
-        #sudo = "sudo ";
+      initExtra = ''
+        if uwsm check may-start > /dev/null && uwsm select; then
+          exec systemd-cat -t uwsm_start uwsm start default
+        fi
+      '';
 
+      shellAliases = {
         c = "clear";
         cd = "z";
         cp = "cp -riv";
@@ -55,7 +59,7 @@
         "...." = "../../..";
         "....." = "../../../..";
 
-        nix-switch = "sudo nixos-rebuild switch --flake ~/nixos-jonwin#${host}";
+        nix-switch = "sudo nixos-rebuild switch --flake ~/nixos-jonwin#desktop";
         nix-clean = "sudo nix-collect-garbage --delete-older-than 7d && nix-collect-garbage --delete-older-than 7d";
         nix-clean-all = "sudo nix-collect-garbage && sudo nix-collect-garbage -d && nix-collect-garbage && nix-collect-garbage -d";
 

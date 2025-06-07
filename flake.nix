@@ -1,10 +1,15 @@
 {
+  description = "My system configuration";
+
   inputs = {
+
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     pomodoro = {
       url = "github:jonwin1/go-pomodoro";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -20,26 +25,56 @@
     }@inputs:
     let
       system = "x86_64-linux";
+      stateVersion = "23.11";
+      homeStateVersion = "23.11";
       user = "jonwin";
 
-      pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-      };
+      hosts = [
+        {
+          hostname = "desktop";
+        }
+        {
+          hostname = "laptop";
+        }
+      ];
 
-      lib = nixpkgs.lib;
+      makeSystem =
+        { hostname }:
+        nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = {
+            inherit
+              inputs
+              stateVersion
+              hostname
+              user
+              ;
+          };
+          modules = [
+            ./hosts/${hostname}/configuration.nix
+          ];
+        };
     in
     {
-      nixosConfigurations = (
-        import ./hosts {
-          inherit (nixpkgs) lib;
-          inherit
-            inputs
-            user
-            system
-            home-manager
-            ;
+      nixosConfigurations = nixpkgs.lib.foldl' (
+        configs: host:
+        configs
+        // {
+          "${host.hostname}" = makeSystem {
+            inherit (host) hostname;
+          };
         }
-      );
+      ) { } hosts;
+
+      homeConfigurations.${user} = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.${system};
+        extraSpecialArgs = {
+          inherit inputs homeStateVersion user;
+        };
+
+        modules = [
+          ./home-manager/home.nix
+        ];
+      };
     };
 }
