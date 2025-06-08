@@ -12,7 +12,7 @@ Welcome to my NixOS configuration.
 - 🐚 **Zsh + Starship**: Efficient shell setup with lots of aliases.
 - 👻 **Ghostty**: Fast and feature-rich terminal emulator.
 - ✍️ **Neovim**: The best editor.
-- 🔑 **Yubikey Login**: Fast and secure authentication with Yubikeys.
+- 🔑 **YubiKey Login**: Fast and secure authentication with YubiKeys.
 
 ## 🚀 Installation
 
@@ -59,8 +59,8 @@ To get started with this setup, follow these steps:
     nano home-manager/modules/default.nix
     ```
 
-8. **Add a Yubikey or disable the module**  
-   See [NixOS Wiki - Yubikey PAM U2F](https://wiki.nixos.org/wiki/Yubikey#pam_u2f) or edit `nixos/modules/default.nix` accordingly.
+8. **Add a YubiKey or disable the module**  
+   See [NixOS Wiki - YubiKey PAM U2F](https://wiki.nixos.org/wiki/Yubikey#pam_u2f) or edit `nixos/modules/default.nix` accordingly.
 
 9. **Edit the `flake.nix` file**  
 
