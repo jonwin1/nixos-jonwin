@@ -4,9 +4,13 @@
     systemd.enable = true;
   };
 
-  home.file.".config/waybar" = {
-    source = ../../dotconfig/waybar;
-    recursive = true;
+  home.file = {
+    ".config/waybar/config.jsonc" = {
+      source = ./config.jsonc;
+    };
+    ".config/waybar/style.css" = {
+      source = ./style.css;
+    };
   };
 
   services = {

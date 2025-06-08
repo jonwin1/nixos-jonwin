@@ -1,22 +1,22 @@
 {
   imports = [
-    ./batsignal.nix
+    # ./batsignal.nix
     ./cross-code.nix
     ./dunst.nix
     ./floorp.nix
-    ./ghostty.nix
+    ./ghostty
     ./git.nix
-    ./hyprland
+    ./hypr
     # ./kitty.nix
     ./lazygit.nix
     # ./librewolf.nix
-    ./neovim.nix
+    ./neovim
     # ./qutebrowser.nix
     ./rbw.nix
     ./rofi.nix
     ./style.nix
     # ./vscode.nix
-    ./waybar.nix
+    ./waybar
     ./zsh.nix
   ];
 }

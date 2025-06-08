@@ -5,8 +5,8 @@
       ghostty
     ];
 
-    file.".config/ghostty" = {
-      source = ../../dotconfig/ghostty;
+    file.".config/ghostty/config" = {
+      source = ./config;
       recursive = true;
     };
   };
