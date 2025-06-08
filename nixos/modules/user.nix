@@ -8,7 +8,6 @@
       isNormalUser = true;
       extraGroups = [
         "wheel"
-        "networkmanager"
       ];
     };
   };
