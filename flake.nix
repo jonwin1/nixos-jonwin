@@ -25,56 +25,47 @@
     }@inputs:
     let
       system = "x86_64-linux";
-      stateVersion = "23.11";
-      homeStateVersion = "23.11";
       user = "jonwin";
-
       hosts = [
-        {
-          hostname = "desktop";
-        }
-        {
-          hostname = "laptop";
-        }
+        { hostname = "desktop"; }
+        { hostname = "laptop"; }
       ];
 
+      # Helper function to create a NixOS configuration given a hostname.
       makeSystem =
         { hostname }:
         nixpkgs.lib.nixosSystem {
           inherit system;
-          specialArgs = {
-            inherit
-              inputs
-              stateVersion
-              hostname
-              user
-              ;
-          };
-          modules = [
-            ./hosts/${hostname}/configuration.nix
-          ];
+          specialArgs = { inherit inputs user hostname; };
+          modules = [ ./nixos/${hostname}/configuration.nix ];
+        };
+
+      # Helper function to create a Home Manager configuration given a hostname.
+      makeHome =
+        { hostname }:
+        home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.${system};
+          extraSpecialArgs = { inherit inputs user hostname; };
+          modules = [ ./home-manager/${hostname}/home.nix ];
         };
     in
     {
+      # Create a set of NixOS configurations, one per host.
       nixosConfigurations = nixpkgs.lib.foldl' (
         configs: host:
         configs
         // {
-          "${host.hostname}" = makeSystem {
-            inherit (host) hostname;
-          };
+          "${host.hostname}" = makeSystem { inherit (host) hostname; };
         }
       ) { } hosts;
 
-      homeConfigurations.${user} = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${system};
-        extraSpecialArgs = {
-          inherit inputs homeStateVersion user;
-        };
-
-        modules = [
-          ./home-manager/home.nix
-        ];
-      };
+      # Create a set of Home Manager configurations, one per host.
+      homeConfigurations = nixpkgs.lib.foldl' (
+        configs: host:
+        configs
+        // {
+          "${user}@${host.hostname}" = makeHome { inherit (host) hostname; };
+        }
+      ) { } hosts;
     };
 }
