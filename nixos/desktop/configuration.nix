@@ -1,5 +1,3 @@
-{ pkgs, ... }:
-
 {
   imports = [
     ./hardware-configuration.nix
@@ -29,7 +27,6 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [home-manager];
   nixpkgs.config.allowUnfree = true;
   system.stateVersion = "23.11";
 }

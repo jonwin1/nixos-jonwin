@@ -7,13 +7,8 @@
     users.${user} = {
       isNormalUser = true;
       extraGroups = [
-        "audio"
-        "input"
-        "libvirtd"
-        "networkmanager"
-        "uinput"
-        "video"
         "wheel"
+        "networkmanager"
       ];
     };
   };
