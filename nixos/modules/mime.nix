@@ -1,6 +1,6 @@
 {
   xdg.mime.defaultApplications = {
-    "inode/directory" = "yazi";
+    # "inode/directory" = "";
     "application/pdf" = "org.pwmt.zathura.desktop";
     "image/png" = "gimp.desktop";
     "image/jpeg" = "gimp.desktop";

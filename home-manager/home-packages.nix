@@ -30,7 +30,6 @@
     wl-clipboard
     wl-clip-persist
     wlrctl
-    yazi
 
     # Unzip everything
     p7zip
