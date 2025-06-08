@@ -23,19 +23,21 @@
     fzf
     grimblast
     inputs.pomodoro.packages.${system}.default
-    p7zip
     playerctl
     ripgrep
     trash-cli
     tree
-    unp
-    unrar
-    unzip
     wget
     wl-clipboard
     wl-clip-persist
     wlrctl
     yazi
+
+    # Unzip everything
+    p7zip
+    unp
+    unrar
+    unzip
     zip
 
     # Coding

@@ -1,8 +1,10 @@
 { user, ... }:
 {
   imports = [
-    ../modules
     ../home-packages.nix
+    ../modules
+    ../modules/batsignal.nix
+    ../modules/cross-code.nix
   ];
 
   home = {

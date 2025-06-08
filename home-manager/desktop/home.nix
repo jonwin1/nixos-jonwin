@@ -1,8 +1,8 @@
 { user, ... }:
 {
   imports = [
-    ../modules
     ../home-packages.nix
+    ../modules
   ];
 
   home = {
