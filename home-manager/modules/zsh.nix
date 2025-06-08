@@ -37,14 +37,12 @@
 
       shellAliases = {
         c = "clear";
-        cd = "z";
         cp = "cp -riv";
         la = "ls -lhA";
         l = "ls -lh";
         mkdir = "mkdir -vp";
         mv = "mv -iv";
-        # rm = "rm -rifv";
-        rm = "echo \"Use tp\"";
+        rm = "rm -rifv";
         v = "nvim";
 
         cat = "bat";
@@ -58,10 +56,9 @@
         "...." = "../../..";
         "....." = "../../../..";
 
-        nix-switch = "sudo nixos-rebuild switch --flake ~/nixos-jonwin#desktop";
-        nix-clean = "sudo nix-collect-garbage --delete-older-than 7d && nix-collect-garbage --delete-older-than 7d";
-        nix-clean-all = "sudo nix-collect-garbage && sudo nix-collect-garbage -d && nix-collect-garbage && nix-collect-garbage -d";
-
+        # nix-switch = "sudo nixos-rebuild switch --flake ~/nixos-jonwin#desktop";
+        # nix-clean = "sudo nix-collect-garbage --delete-older-than 7d && nix-collect-garbage --delete-older-than 7d";
+        # nix-clean-all = "sudo nix-collect-garbage && sudo nix-collect-garbage -d && nix-collect-garbage && nix-collect-garbage -d";
         ndev = "nix develop -c $SHELL";
 
         lg = "lazygit";
@@ -69,8 +66,6 @@
         gaa = "git add --all";
         gb = "git branch";
         gc = "git commit";
-        # gch = "git checkout";
-        # gchb = "git checkout -b";
         gcm = "git commit -m";
         gd = "git diff";
         gds = "git diff --staged";
@@ -82,7 +77,6 @@
         gr = "git restore";
         gs = "git status";
         gsw = "git switch";
-        gswc = "git switch -c";
       };
       plugins = with pkgs; [
         {

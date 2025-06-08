@@ -12,6 +12,7 @@
     ./locale.nix
     ./mime.nix
     ./networking.nix
+    ./nh.nix
     ./nix.nix
     # ./postgresql.nix
     ./steam.nix
