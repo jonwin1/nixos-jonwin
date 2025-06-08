@@ -23,7 +23,6 @@
     fzf
     grimblast
     inputs.pomodoro.packages.${system}.default
-    playerctl
     ripgrep
     trash-cli
     tree
