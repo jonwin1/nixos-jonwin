@@ -1,12 +1,15 @@
 {
   virtualisation.docker = {
-    enable = true;
+    enable = false; # Use rootless instead
     rootless = {
       enable = true;
       setSocketVariable = true;
     };
-  };
-  systemd.user.services.docker = {
-    enable = true;
+    daemon.settings = {
+      pruning = {
+        enabled = true;
+        interval = "7d";
+      };
+    };
   };
 }
