@@ -4,6 +4,7 @@
 
   home.packages = with pkgs; [
     # Desktop apps
+    android-studio
     cura-appimage
     discord
     freecad-wayland
