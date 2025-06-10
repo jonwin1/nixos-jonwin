@@ -73,8 +73,7 @@ To get started with this setup, follow these steps:
 3. **Copy one of the host configurations to set up your own**
 
     ```bash
-    cp -r nixos/desktop nixos/<your_hostname>
-    cp -r home-manager/desktop home-manager/<your_hostname>
+    cp -r config/desktop config/<your_hostname>
     ```
 
 4. **Put your `hardware-configuration.nix` file there**
@@ -84,61 +83,48 @@ To get started with this setup, follow these steps:
     ```
 
 5. **Edit the configuration files as needed**
-   - `nixos/<your_hostname>/`
-   - `home-manager/<your_hostname>/`
-   - `home-manager/home-packages.nix`
+    See [File Structure](#-file-structure) below for an overview of where to find what.
+    You might for example what to set you git name and email or change the name
+    and logo on the hyprlock screen.
 
-6. **Edit `home-manager/modules/git.nix`**
+6. **Add a YubiKey or disable the module**
+   See [NixOS Wiki - YubiKey PAM U2F](https://wiki.nixos.org/wiki/Yubikey#pam_u2f)
+   or remove the module from `config/common/modules.nix`.
 
-    ```bash
-    nano home-manager/modules/git.nix
-    ```
-
-7. **Edit `default.nix` files**
-
-    ```bash
-    nano nixos/modules/default.nix
-    nano home-manager/modules/default.nix
-    ```
-
-8. **Add a YubiKey or disable the module**
-   See [NixOS Wiki - YubiKey PAM U2F](https://wiki.nixos.org/wiki/Yubikey#pam_u2f) or edit `nixos/modules/default.nix` accordingly.
-
-9. **Edit the `flake.nix` file**
+7. **Edit the `flake.nix` file**
 
     ```diff
     ...
     let
-      system = "x86_64-linux";
-    --  user = "jonwin";
-    ++  user = "<your_username>";
       hosts = [
-    --    { hostname = "desktop"; }
-    --    { hostname = "laptop"; }
-    ++    { hostname = "<your_hostname>"; }
+    --  {
+    --    user = "jonwin";
+    --    hostname = "desktop";
+    --    system = "x86_64-linux";
+    --  }
+    --  {
+    --    user = "jonwin";
+    --    hostname = "laptop";
+    --    system = "x86_64-linux";
+    --  }
+    ++  {
+    ++    user = "<your_username>";
+    ++    hostname = "<your_hostname>";
+    ++    system = "x86_64-linux";
+    ++  }
       ];
     ...
     ```
 
-10. **Rebuild**
+8. **Rebuild**
 
     ```bash
-    cd nixos-jonwin
     git add .
     sudo nixos-rebuild switch --flake .#<hostname>
     # or, if you're installing on a fresh system:
     sudo nixos-install --flake .#<hostname>
-    home-manager switch --flake .
-    ```
 
-    After the first install, `nh` (Nix Helper) is installed and you can rebuild with:
-
-    ```bash
-    nh os switch .
-    nh home switch .
-    ```
-
-    See [nix-community/nh](https://github.com/nix-community/nh) for more options.
+9. **Wallpaper** Add a file `~/Pictures/wallpaper.png` to set the wallpaper.
 
 ## 📂 File Structure
 
