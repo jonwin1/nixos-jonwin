@@ -102,20 +102,19 @@ To get started with this setup, follow these steps:
 
 ```markdown
 📂 .
-┣ ❄️ flake.nix
-┣ 📂 hosts/
-┃ ┣ 📂 <hostname>/
-┃ ┃ ┣ ❄️ configuration.nix
-┃ ┃ ┣ ❄️ hardware-configuration.nix
-┃ ┃ ┣ ❄️ modules.nix
-┃ ┃ ┗ ❄️ packages.nix
-┃ ┗ 📂 common/
-┃   ┣ ❄️ configuration.nix
-┃   ┣ ❄️ modules.nix
-┃   ┗ ❄️ packages.nix
-┗ 📂 modules/
-  ┣ 📂 hypr/
-  ┗ …
+┣ ❄️ flake.nix (Main entry point for the NixOS flake)
+┣ 📂 config/ (Host-specific configurations)
+┃ ┣ 📂 common/ (Shared settings for all hosts)
+┃ ┃ ┣ ❄️ configuration.nix (Shared config options)
+┃ ┃ ┣ ❄️ modules.nix (Shared module imports)
+┃ ┃ ┗ ❄️ packages.nix (Shared packages)
+┃ ┗ 📂 <hostname>/ (Settings for a specific machine)
+┃   ┣ ❄️ configuration.nix (Host-specific config options)
+┃   ┣ ❄️ hardware-configuration.nix
+┃   ┣ ❄️ modules.nix (Host-specific module imports)
+┃   ┗ ❄️ packages.nix (Host-specific packages)
+┗ 📂 modules/ (Reusable custom modules)
+  ┗ … (e.g. window manager, shell, applications)
 ```
 
 ## 🤝 Contributions
