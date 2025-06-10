@@ -1,5 +1,0 @@
-{
-  programs.floorp = {
-    enable = true;
-  };
-}

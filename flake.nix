@@ -2,7 +2,6 @@
   description = "My system configuration";
 
   inputs = {
-
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
@@ -24,29 +23,45 @@
       ...
     }@inputs:
     let
-      system = "x86_64-linux";
-      user = "jonwin";
       hosts = [
-        { hostname = "desktop"; }
-        { hostname = "laptop"; }
+        {
+          user = "jonwin";
+          hostname = "desktop";
+          system = "x86_64-linux";
+        }
+        {
+          user = "jonwin";
+          hostname = "laptop";
+          system = "x86_64-linux";
+        }
       ];
 
-      # Helper function to create a NixOS configuration given a hostname.
+      # Helper function to create a NixOS configuration.
       makeSystem =
-        { hostname }:
+        {
+          user,
+          hostname,
+          system,
+        }:
         nixpkgs.lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit inputs user hostname; };
-          modules = [ ./nixos/${hostname}/configuration.nix ];
-        };
+          specialArgs = { inherit user hostname inputs; };
+          modules = [
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = { inherit user hostname inputs; };
+            }
 
-      # Helper function to create a Home Manager configuration given a hostname.
-      makeHome =
-        { hostname }:
-        home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.${system};
-          extraSpecialArgs = { inherit inputs user hostname; };
-          modules = [ ./home-manager/${hostname}/home.nix ];
+            ./hosts/common/configuration.nix
+            ./hosts/common/modules.nix
+            ./hosts/common/packages.nix
+            ./hosts/${hostname}/configuration.nix
+            ./hosts/${hostname}/hardware-configuration.nix
+            ./hosts/${hostname}/modules.nix
+            ./hosts/${hostname}/packages.nix
+          ];
         };
     in
     {
@@ -55,16 +70,7 @@
         configs: host:
         configs
         // {
-          "${host.hostname}" = makeSystem { inherit (host) hostname; };
-        }
-      ) { } hosts;
-
-      # Create a set of Home Manager configurations, one per host.
-      homeConfigurations = nixpkgs.lib.foldl' (
-        configs: host:
-        configs
-        // {
-          "${user}@${host.hostname}" = makeHome { inherit (host) hostname; };
+          "${host.hostname}" = makeSystem { inherit (host) user hostname system; };
         }
       ) { } hosts;
     };
