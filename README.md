@@ -103,19 +103,19 @@ To get started with this setup, follow these steps:
 ```markdown
 📂 .
 ┣ ❄️ flake.nix
-┣ 📂 home-manager/
+┣ 📂 hosts/
 ┃ ┣ 📂 <hostname>/
-┃ ┃ ┣ ❄️ home.nix
-┃ ┃ ┗ ❄️ local-packages.nix
-┃ ┣ ❄️ home-packages.nix
-┃ ┗ 📂 modules/
-┃   ┗ …
-┗ 📂 nixos/
-  ┣ 📂 <hostname>/
-  ┃ ┣ ❄️ configuration.nix
-  ┃ ┗ ❄️ hardware-configuration.nix
-  ┗ 📂 modules/
-    ┗ …
+┃ ┃ ┣ ❄️ configuration.nix
+┃ ┃ ┣ ❄️ hardware-configuration.nix
+┃ ┃ ┣ ❄️ modules.nix
+┃ ┃ ┗ ❄️ packages.nix
+┃ ┗ 📂 common/
+┃   ┣ ❄️ configuration.nix
+┃   ┣ ❄️ modules.nix
+┃   ┗ ❄️ packages.nix
+┗ 📂 modules/
+  ┣ 📂 hypr/
+  ┗ …
 ```
 
 ## 🤝 Contributions
