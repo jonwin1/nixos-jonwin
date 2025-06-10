@@ -2,7 +2,6 @@
   description = "My system configuration";
 
   inputs = {
-
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
@@ -24,28 +23,43 @@
       ...
     }@inputs:
     let
-      system = "x86_64-linux";
-      user = "jonwin";
       hosts = [
-        { hostname = "desktop"; }
-        { hostname = "laptop"; }
+        {
+          user = "jonwin";
+          hostname = "desktop";
+          system = "x86_64-linux";
+        }
+        {
+          user = "jonwin";
+          hostname = "laptop";
+          system = "x86_64-linux";
+        }
       ];
 
-      # Helper function to create a NixOS configuration given a hostname.
+      # Helper function to create a NixOS configuration.
       makeSystem =
-        { hostname }:
+        {
+          user,
+          hostname,
+          system,
+        }:
         nixpkgs.lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit inputs user hostname; };
+          specialArgs = { inherit user hostname inputs; };
           modules = [
-            ./nixos/${hostname}/configuration.nix
+            ./hosts/common/configuration.nix
+            ./hosts/common/modules.nix
+            ./hosts/common/packages.nix
+            ./hosts/${hostname}/configuration.nix
+            ./hosts/${hostname}/hardware-configuration.nix
+            ./hosts/${hostname}/modules.nix
+            ./hosts/${hostname}/packages.nix
 
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = { inherit inputs user hostname; };
-              home-manager.users.${user} = import ./home-manager/${hostname}/home.nix;
+              home-manager.extraSpecialArgs = { inherit user hostname inputs; };
             }
           ];
         };
@@ -56,7 +70,7 @@
         configs: host:
         configs
         // {
-          "${host.hostname}" = makeSystem { inherit (host) hostname; };
+          "${host.hostname}" = makeSystem { inherit (host) user hostname system; };
         }
       ) { } hosts;
     };
