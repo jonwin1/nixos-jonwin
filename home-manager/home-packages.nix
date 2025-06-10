@@ -1,10 +1,7 @@
 { pkgs, inputs, ... }:
 {
-  nixpkgs.config.allowUnfree = true;
-
   home.packages = with pkgs; [
     # Desktop apps
-    android-studio
     cura-appimage
     discord
     freecad-wayland
