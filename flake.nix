@@ -47,6 +47,13 @@
           inherit system;
           specialArgs = { inherit user hostname inputs; };
           modules = [
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = { inherit user hostname inputs; };
+            }
+
             ./hosts/common/configuration.nix
             ./hosts/common/modules.nix
             ./hosts/common/packages.nix
@@ -54,13 +61,6 @@
             ./hosts/${hostname}/hardware-configuration.nix
             ./hosts/${hostname}/modules.nix
             ./hosts/${hostname}/packages.nix
-
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = { inherit user hostname inputs; };
-            }
           ];
         };
     in
