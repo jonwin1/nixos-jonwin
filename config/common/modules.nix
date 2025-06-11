@@ -31,6 +31,7 @@
     # ../../modules/vscode.nix
     ../../modules/waybar
     ../../modules/yubikey.nix
+    ../../modules/zen-browser.nix
     ../../modules/zsh.nix
   ];
 }
