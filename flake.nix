@@ -54,13 +54,13 @@
               home-manager.extraSpecialArgs = { inherit user hostname inputs; };
             }
 
-            ./hosts/common/configuration.nix
-            ./hosts/common/modules.nix
-            ./hosts/common/packages.nix
-            ./hosts/${hostname}/configuration.nix
-            ./hosts/${hostname}/hardware-configuration.nix
-            ./hosts/${hostname}/modules.nix
-            ./hosts/${hostname}/packages.nix
+            ./config/common/configuration.nix
+            ./config/common/modules.nix
+            ./config/common/packages.nix
+            ./config/${hostname}/configuration.nix
+            ./config/${hostname}/hardware-configuration.nix
+            ./config/${hostname}/modules.nix
+            ./config/${hostname}/packages.nix
           ];
         };
     in
