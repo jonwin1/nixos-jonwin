@@ -1,37 +1,47 @@
 { pkgs, user, ... }:
-# https://github.com/XNM1/linux-nixos-hyprland-config-dotfiles/blob/main/nixos/yubikey.nix
-# FIXME: Don't forget to create an authorization mapping file for your user (https://wiki.nixos.org/wiki/Yubikey)
+# FIXME: Don't forget to create an authorization mapping for your user (https://wiki.nixos.org/wiki/Yubikey#pam_u2f)
 {
+  environment = {
+    systemPackages = with pkgs; [
+      yubioath-flutter
+    ];
+  };
+
   services = {
+    # Auto login on first TTY (I exec-once hyprlock in hyprland).
     getty.autologinUser = user;
     getty.autologinOnce = true;
+
+    pcscd.enable = true; # Required by yubioath-flutter.
     udev.packages = [ pkgs.yubikey-personalization ];
   };
 
-  programs = {
-    ssh.startAgent = true;
-  };
+  security.pam = {
+    u2f = {
+      enable = true;
+      settings.cue = true;
+      control = "sufficient";
+    };
 
-  environment.systemPackages = with pkgs; [
-    yubikey-manager
-  ];
-
-  security = {
-    pam = {
-      u2f = {
-        enable = true;
-        settings.cue = true;
-        control = "sufficient";
+    services = {
+      hyprlock = {
+        u2fAuth = true; # Enable YubiKey login.
+        unixAuth = false; # Disable password login.
       };
-      services = {
-        hyprlock.u2fAuth = true;
-        login.u2fAuth = true;
-        sudo.u2fAuth = true;
+
+      login = {
+        u2fAuth = true;
+        unixAuth = false;
+      };
+
+      sudo = {
+        u2fAuth = true;
+        unixAuth = false;
       };
     };
   };
 
-  # Lock the screen when key is unplugged
+  # Lock the screen when key is unplugged.
   services.udev.extraRules = ''
     ACTION=="remove",\
      ENV{ID_BUS}=="usb",\
