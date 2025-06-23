@@ -10,11 +10,11 @@
 		"custom/pomodoro",
 	],
 	"modules-right": [
+		"tray",
+		"wireplumber",
 		"cpu",
 		"memory",
 		"disk",
-		"tray",
-		"wireplumber",
 		"battery",
 	],
 
@@ -97,12 +97,13 @@
 
 	"tray": {
 		"icon-size": 16,
-		"spacing": 15,
+		"spacing": 0,
 	},
 
 	"wireplumber": {
-		"format": "{icon} {volume}%",
-		"format-muted": " 󰝟 ",
+		"format": "{icon}",
+		"format-muted": "󰝟",
+		"tooltip-format": "{node_name}\nVolume: {volume}%",
 		"on-click": "bash -c 'pgrep pavucontrol && pkill pavucontrol || pavucontrol &'",
 		"on-click-right": "wpctl set-mute @DEFAULT_SINK@ toggle",
 		"format-icons": [
@@ -110,7 +111,7 @@
 			"󰖀",
 			"󰕾",
 		],
-		"scroll-step": 1,
+		"scroll-step": 5,
 	},
 
 	"battery": {
