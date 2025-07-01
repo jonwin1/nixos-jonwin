@@ -15,7 +15,6 @@
     ../../modules/ghostty
     ../../modules/git.nix
     ../../modules/hypr
-    # ../../modules/kmonad.nix
     ../../modules/lazygit.nix
     ../../modules/locale.nix
     ../../modules/mime.nix
