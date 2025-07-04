@@ -37,8 +37,6 @@
     zip
 
     # Coding
-    gcc
-    gnumake
     tree-sitter
 
     # WM/DE
