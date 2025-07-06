@@ -56,10 +56,13 @@
         history_length = 20;
 
         ### Misc/Advanced ###
+        dmenu = "rofi -dmenu";
         browser = "/usr/bin/xdg-open";
 
         ### mouse
-        mouse_left_click = "close_current";
+        mouse_left_click = "do_action, close_current";
+        mouse_middle_click = "open_url";
+        mouse_right_click = "context";
       };
 
       urgency_low = {
