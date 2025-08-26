@@ -1,116 +1,125 @@
-{ pkgs, user, hostname, ... }:
 {
-  home-manager.users.${user}.programs = {
-    zsh = {
-      enable = true;
-      dotDir = ".config/zsh";
+  pkgs,
+  user,
+  hostname,
+  ...
+}:
+{
+  home-manager.users.${user} =
+    { config, ... }:
+    {
+      programs = {
+        zsh = {
+          enable = true;
+          dotDir = "${config.xdg.configHome}/zsh";
 
-      autocd = true;
-      autosuggestion.enable = true;
-      enableCompletion = true;
-      historySubstringSearch.enable = true;
-      syntaxHighlighting.enable = true;
+          autocd = true;
+          autosuggestion.enable = true;
+          enableCompletion = true;
+          historySubstringSearch.enable = true;
+          syntaxHighlighting.enable = true;
 
-      defaultKeymap = "viins";
+          defaultKeymap = "viins";
 
-      history = {
-        share = true;
-        save = 10000;
-        size = 10000;
-        extended = true;
-        ignoreDups = true;
-        ignoreAllDups = true;
-        ignoreSpace = true;
-        expireDuplicatesFirst = true;
-        path = "$HOME/.cache/zsh_history";
+          history = {
+            share = true;
+            save = 10000;
+            size = 10000;
+            extended = true;
+            ignoreDups = true;
+            ignoreAllDups = true;
+            ignoreSpace = true;
+            expireDuplicatesFirst = true;
+            path = "$HOME/.cache/zsh_history";
+          };
+
+          initContent = ''
+            zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+            zstyle ':completion:*' list-colors "$\{(s.:.)LS_COLORS}"
+
+            # Start Hyprland UWSM
+            if uwsm check may-start; then
+              exec uwsm start hyprland-uwsm.desktop
+            fi
+          '';
+
+          shellAliases = {
+            c = "clear";
+            cp = "cp -riv";
+            la = "ls -lhA";
+            l = "ls -lh";
+            mkdir = "mkdir -vp";
+            mv = "mv -iv";
+            rm = "rm -rifv";
+            v = "nvim";
+
+            cat = "bat";
+            man = "batman";
+
+            tp = "trash -v";
+            tl = "trash-list";
+            te = "trash-empty";
+
+            "..." = "../..";
+            "...." = "../../..";
+            "....." = "../../../..";
+
+            nix-switch = "sudo nixos-rebuild switch --flake ~/nixos-jonwin#${hostname}";
+            nix-clean = "sudo nix-collect-garbage -d && nix-collect-garbage -d";
+            ndev = "nix develop -c $SHELL";
+
+            lg = "lazygit";
+            ga = "git add";
+            gaa = "git add --all";
+            gb = "git branch";
+            gc = "git commit";
+            gcm = "git commit -m";
+            gd = "git diff";
+            gds = "git diff --staged";
+            gf = "git fetch";
+            gl = "git log --graph";
+            gm = "git merge";
+            gpl = "git pull";
+            gps = "git push";
+            gr = "git restore";
+            gs = "git status";
+            gsw = "git switch";
+          };
+          plugins = with pkgs; [
+            {
+              name = "zsh-fzf-tab";
+              src = zsh-fzf-tab;
+              file = "share/fzf-tab/fzf-tab.plugin.zsh";
+            }
+            {
+              name = "zsh-nix-shell";
+              src = zsh-nix-shell;
+              file = "share/zsh-nix-shell/nix-shell.plugin.zsh";
+            }
+            {
+              name = "zsh-vi-mode";
+              src = zsh-vi-mode;
+              file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
+            }
+          ];
+        };
+        bat = {
+          enable = true;
+          extraPackages = with pkgs.bat-extras; [
+            batgrep
+            batman
+          ];
+        };
+        starship = {
+          enable = true;
+          enableZshIntegration = true;
+        };
+        zoxide = {
+          enable = true;
+          enableZshIntegration = true;
+        };
       };
-
-      initContent = ''
-        zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-        zstyle ':completion:*' list-colors "$\{(s.:.)LS_COLORS}"
-
-        # Start Hyprland UWSM
-        if uwsm check may-start; then
-          exec uwsm start hyprland-uwsm.desktop
-        fi
-      '';
-
-      shellAliases = {
-        c = "clear";
-        cp = "cp -riv";
-        la = "ls -lhA";
-        l = "ls -lh";
-        mkdir = "mkdir -vp";
-        mv = "mv -iv";
-        rm = "rm -rifv";
-        v = "nvim";
-
-        cat = "bat";
-        man = "batman";
-
-        tp = "trash -v";
-        tl = "trash-list";
-        te = "trash-empty";
-
-        "..." = "../..";
-        "...." = "../../..";
-        "....." = "../../../..";
-
-        nix-switch = "sudo nixos-rebuild switch --flake ~/nixos-jonwin#${hostname}";
-        nix-clean = "sudo nix-collect-garbage -d && nix-collect-garbage -d";
-        ndev = "nix develop -c $SHELL";
-
-        lg = "lazygit";
-        ga = "git add";
-        gaa = "git add --all";
-        gb = "git branch";
-        gc = "git commit";
-        gcm = "git commit -m";
-        gd = "git diff";
-        gds = "git diff --staged";
-        gf = "git fetch";
-        gl = "git log --graph";
-        gm = "git merge";
-        gpl = "git pull";
-        gps = "git push";
-        gr = "git restore";
-        gs = "git status";
-        gsw = "git switch";
-      };
-      plugins = with pkgs; [
-        {
-          name = "zsh-fzf-tab";
-          src = zsh-fzf-tab;
-          file = "share/fzf-tab/fzf-tab.plugin.zsh";
-        }
-        {
-          name = "zsh-nix-shell";
-          src = zsh-nix-shell;
-          file = "share/zsh-nix-shell/nix-shell.plugin.zsh";
-        }
-        {
-          name = "zsh-vi-mode";
-          src = zsh-vi-mode;
-          file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
-        }
-      ];
     };
-    bat = {
-      enable = true;
-      extraPackages = with pkgs.bat-extras; [
-        batgrep
-        batman
-      ];
-    };
-    starship = {
-      enable = true;
-      enableZshIntegration = true;
-    };
-    zoxide = {
-      enable = true;
-      enableZshIntegration = true;
-    };
-  };
 
   programs.direnv.enable = true;
 }
