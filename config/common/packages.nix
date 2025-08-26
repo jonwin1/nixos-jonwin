@@ -7,8 +7,8 @@
     freecad-wayland
     gimp
     ladybird
-    obsidian
-    openscad
+    #obsidian
+    #openscad
     pavucontrol
     zathura
 

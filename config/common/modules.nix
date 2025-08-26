@@ -7,9 +7,9 @@
     ../../modules/boot.nix
     ../../modules/clean.nix
     # ../../modules/cross-code.nix
-    ../../modules/docker.nix
+    # ../../modules/docker.nix
     ../../modules/dunst.nix
-    ../../modules/floorp.nix
+    # ../../modules/floorp.nix
     # ../../modules/foldingathome.nix
     ../../modules/fonts.nix
     ../../modules/ghostty
