@@ -1,10 +1,16 @@
-{ pkgs, user, ... }:
+{
+  user,
+  pkgs,
+  config,
+  ...
+}:
 {
   stylix = {
     enable = true;
 
     image = ../wallpaper.png;
     # polarity = "dark";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-city-terminal-dark.yaml";
 
     cursor = {
       package = pkgs.rose-pine-cursor;
@@ -13,40 +19,29 @@
     };
 
     fonts = {
-      # font = {
-      #   name = "FiraCode Nerd Font";
-      #   size = 12;
-      # };
-      # noto-fonts noto-fonts-emoji nerd-fonts.caskaydia-mono
-      serif = {
-        # noto serif
-        package = pkgs.dejavu_fonts;
-        name = "DejaVu Serif";
-      };
-
-      sansSerif = {
-        # noto sans
-        package = pkgs.dejavu_fonts;
-        name = "DejaVu Sans";
-      };
-
       monospace = {
-        # caskaydia mono nerf font
-        package = pkgs.dejavu_fonts;
-        name = "DejaVu Sans Mono";
+        package = pkgs.nerd-fonts.fira-code;
+        name = "FiraCode Nerd Font";
       };
+
+      serif = config.stylix.fonts.monospace;
+      sansSerif = config.stylix.fonts.monospace;
 
       emoji = {
         package = pkgs.noto-fonts-emoji;
         name = "Noto Color Emoji";
       };
     };
+  };
 
-    icons = {
-      # enable = true;
-      # package = pkgs.nordzy-icon-theme;
-      # dark = "Nordzy-dark";
-      # light = "";
+  home-manager.users.${user} = {
+    gtk = {
+      enable = true;
+
+      iconTheme = {
+        package = pkgs.nordzy-icon-theme;
+        name = "Nordzy-dark";
+      };
     };
   };
 }

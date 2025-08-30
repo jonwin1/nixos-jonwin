@@ -3,6 +3,6 @@
     ./idle
     ./land
     ./lock
-    ./paper.nix
+    # ./paper.nix
   ];
 }
