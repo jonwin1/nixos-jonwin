@@ -10,7 +10,7 @@
       programs.rofi = {
         enable = true;
         package = pkgs.rofi-wayland;
-        font = "FiraCode Nerd Font 12";
+        # font = "FiraCode Nerd Font 12";
         location = "center";
         theme =
           let
@@ -33,8 +33,8 @@
               fg1 = mkLiteral "#4c566a";
               ac = mkLiteral "#81A1C1";
 
-              background-color = mkLiteral "transparent";
-              text-color = mkLiteral "@fg0";
+              # background-color = mkLiteral "transparent";
+              # text-color = mkLiteral "@fg0";
 
               margin = 0;
               padding = 0;
@@ -46,9 +46,9 @@
               width = 640;
 
               border-radius = 24;
-              border-color = mkLiteral "@ac";
+              # border-color = mkLiteral "@ac";
 
-              background-color = mkLiteral "@bg0";
+              # background-color = mkLiteral "@bg0";
             };
 
             "mainbox" = {
@@ -56,10 +56,10 @@
             };
 
             "inputbar" = {
-              background-color = mkLiteral "@bg1";
+              # background-color = mkLiteral "@bg1";
 
               border = mkLiteral "2px";
-              border-color = mkLiteral "@ac";
+              # border-color = mkLiteral "@ac";
               border-radius = mkLiteral "16px";
 
               padding = mkLiteral "8px 16px";
@@ -72,15 +72,15 @@
 
             "entry" = {
               placeholder = "Search";
-              placeholder-color = mkLiteral "@fg1";
+              # placeholder-color = mkLiteral "@fg1";
             };
 
             "message" = {
               margin = mkLiteral "8px 0 0";
               border = mkLiteral "2px";
               border-radius = mkLiteral "16px";
-              border-color = mkLiteral "@ac";
-              background-color = mkLiteral "@bg1";
+              # border-color = mkLiteral "@ac";
+              # background-color = mkLiteral "@bg1";
             };
 
             "textbox" = {
@@ -88,7 +88,7 @@
             };
 
             "listview" = {
-              background-color = mkLiteral "transparent";
+              # background-color = mkLiteral "transparent";
               margin = mkLiteral "12px 0 0";
               lines = 8;
               columns = 1;
@@ -102,23 +102,23 @@
             };
 
             "element selected" = {
-              text-color = mkLiteral "@bg1";
+              # text-color = mkLiteral "@bg1";
             };
 
             "element normal active" = {
-              text-color = mkLiteral "@ac";
+              # text-color = mkLiteral "@ac";
             };
 
             "element alternate active" = {
-              text-color = mkLiteral "@ac";
+              # text-color = mkLiteral "@ac";
             };
 
             "element selected normal" = {
-              background-color = mkLiteral "@ac";
+              # background-color = mkLiteral "@ac";
             };
 
             "element selected active" = {
-              background-color = mkLiteral "@ac";
+              # background-color = mkLiteral "@ac";
             };
 
             "element-icon" = {
@@ -127,7 +127,7 @@
             };
 
             "element-text" = {
-              text-color = mkLiteral "inherit";
+              # text-color = mkLiteral "inherit";
             };
           };
       };

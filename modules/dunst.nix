@@ -7,7 +7,7 @@
         ### General ###
         follow = "keyboard";
 
-        font = "FiraCode Nerd Font 10";
+        # font = "FiraCode Nerd Font 10";
         sort = "yes";
         indicate_hidden = "yes";
         idle_threshold = 120;
@@ -22,9 +22,9 @@
         corner_radius = 10;
         corners = "all";
         frame_width = 2;
-        frame_color = "#81a1c1";
+        # frame_color = "#81a1c1";
         separator_height = 2;
-        separator_color = "frame";
+        # separator_color = "frame";
         padding = 8;
         horizontal_padding = 8;
 
@@ -66,22 +66,22 @@
       };
 
       urgency_low = {
-        background = "#2e3440";
-        foreground = "#d8dee9";
+        # background = "#2e3440";
+        # foreground = "#d8dee9";
         timeout = 10;
       };
 
       urgency_normal = {
-        background = "#4c566a";
-        foreground = "#eceff4";
+        # background = "#4c566a";
+        # foreground = "#eceff4";
         timeout = 10;
         override_pause_level = 30;
       };
 
       urgency_critical = {
-        background = "#bf616a";
-        foreground = "#eceff4";
-        frame_color = "#bf616a";
+        # background = "#bf616a";
+        # foreground = "#eceff4";
+        # frame_color = "#bf616a";
         timeout = 0;
         override_pause_level = 60;
       };

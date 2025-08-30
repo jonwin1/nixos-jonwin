@@ -5,9 +5,9 @@
       enable = true;
     };
     home.file = {
-      ".config/hypr/hyprlock.conf" = {
-        source = ./hyprlock.conf;
-      };
+      # ".config/hypr/hyprlock.conf" = {
+      #   source = ./hyprlock.conf;
+      # };
       "Pictures/logo.png" = {
         source = ./logo.png;
       };
