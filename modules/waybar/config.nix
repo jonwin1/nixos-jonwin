@@ -14,7 +14,7 @@
         # "custom/pomodoro"
       ];
       modules-right = [
-        "group/tray-expander"
+        "tray"
         "cpu"
         "memory"
         "disk"
@@ -42,13 +42,6 @@
           scratchpad = "";
           discord = "󰙯";
         };
-        persistent-workspaces = {
-          "1" = [ ];
-          "2" = [ ];
-          "3" = [ ];
-          "4" = [ ];
-          "5" = [ ];
-        };
       };
 
       idle_inhibitor = {
@@ -67,29 +60,12 @@
       };
 
       # "custom/pomodoro": {
-      # 	"format": "{}",
-      # 	"signal": 10,
-      # 	"return-type": "json",
-      # 	"exec": "cat $HOME/.local/share/pomodoro/output.txt",
-      # 	"on-click": "bash -c 'pgrep pomodoro && pkill pomodoro || pomodoro &'",
+      #   "format": "{}",
+      #   "signal": 10,
+      #   "return-type": "json",
+      #   "exec": "cat $HOME/.local/share/pomodoro/output.txt",
+      #   "on-click": "bash -c 'pgrep pomodoro && pkill pomodoro || pomodoro &'",
       # },
-
-      "group/tray-expander" = {
-        orientation = "inherit";
-        drawer = {
-          children-class = "tray-group-item";
-          click-to-reveal = true;
-        };
-        modules = [
-          "custom/expand-icon"
-          "tray"
-        ];
-      };
-
-      "custom/expand-icon" = {
-        format = "";
-        tooltip = false;
-      };
 
       tray = {
         icon-size = 14;

@@ -5,10 +5,10 @@
     programs.waybar.style = lib.concatStrings [
       ''
         * {
-        	border: none;
-        	border-radius: 0;
-        	min-height: 0;
-          font-size: 14px;
+          border: none;
+          border-radius: 0;
+          min-height: 0;
+          font-size: 12pt;
         }
 
         window#waybar, tooltip {
@@ -22,26 +22,22 @@
 
         #workspaces button {
           all: initial;
-          font-size: 18px;
+          font-size: 18pt;
           padding-left: 8px;
           padding-right: 10px;
           color: @base05;
         }
 
+        #workspaces button.visible {
+          color: @base0B; /* Green */
+        }
+
         #workspaces button.active {
-        	color: @base0D; /* Blue */
+          color: @base0D; /* Blue */
         }
 
         #workspaces button.urgent {
           color: @base0A; /* Yellow */
-        }
-
-        #workspaces button.empty {
-          opacity: 0.5;
-        }
-
-        #workspaces button.hosting-monitor.visible {
-          background: @base02;
         }
 
         #idle_inhibitor,
@@ -55,10 +51,6 @@
           margin: 0 7.5px;
         }
 
-        #custom-expand-icon {
-          margin-right: 7px;
-        }
-
         tooltip {
           padding: 2px;
         }
@@ -66,35 +58,29 @@
         #cpu,
         #memory,
         #disk {
-        	color: @base0D; /* Blue */
+          color: @base0D; /* Blue */
         }
 
         #cpu.low,
         #memory.low,
         #disk.low {
-        	color: @base0B; /* Green */
+          color: @base0B; /* Green */
         }
 
         #idle_inhibitor.activated,
         #cpu.medium,
         #memory.medium,
-        #disk.medium {
-        	color: @base0A; /* Yellow */
+        #disk.medium,
+        #battery.warning:not(.charging) {
+          color: @base0A; /* Yellow */
         }
 
         #wireplumber.muted,
         #cpu.high,
         #memory.high,
-        #disk.high {
-        	color: @base08; /* Red */
-        }
-
-        #battery.warning:not(.charging) {
-        	color: @base0A;
-        }
-
+        #disk.high,
         #battery.critical:not(.charging) {
-        	color: @base08;
+          color: @base08; /* Red */
         }
       ''
     ];
