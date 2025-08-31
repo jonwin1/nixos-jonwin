@@ -78,6 +78,7 @@
         orientation = "inherit";
         drawer = {
           children-class = "tray-group-item";
+          click-to-reveal = true;
         };
         modules = [
           "custom/expand-icon"
@@ -86,7 +87,7 @@
       };
 
       "custom/expand-icon" = {
-        format = " ";
+        format = "";
         tooltip = false;
       };
 
