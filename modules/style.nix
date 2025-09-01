@@ -40,6 +40,10 @@
   };
 
   home-manager.users.${user} = {
+    stylix = {
+      targets.zen-browser.profileNames = [ "default" ];
+    };
+
     gtk = {
       enable = true;
 
