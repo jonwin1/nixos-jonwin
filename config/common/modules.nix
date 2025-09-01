@@ -11,7 +11,6 @@
     ../../modules/dunst.nix
     # ../../modules/floorp.nix
     # ../../modules/foldingathome.nix
-    ../../modules/fonts.nix
     ../../modules/ghostty
     ../../modules/git.nix
     ../../modules/hypr
