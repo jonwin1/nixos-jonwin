@@ -9,7 +9,6 @@
     # ../../modules/cross-code.nix
     # ../../modules/docker.nix
     ../../modules/dunst.nix
-    # ../../modules/floorp.nix
     # ../../modules/foldingathome.nix
     ../../modules/ghostty.nix
     ../../modules/git.nix
