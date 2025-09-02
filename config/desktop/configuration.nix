@@ -1,4 +1,7 @@
 {
+  # Fix grub and splash screen stretch
+  boot.loader.grub.gfxmodeEfi = "3440x1440";
+
   services = {
     xserver = {
       videoDrivers = [ "nvidia" ];
