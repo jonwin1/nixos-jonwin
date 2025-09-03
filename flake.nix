@@ -9,6 +9,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nvf = {
+      url = "github:NotAShelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     pomodoro = {
       url = "github:jonwin1/go-pomodoro";
       inputs.nixpkgs.follows = "nixpkgs";
