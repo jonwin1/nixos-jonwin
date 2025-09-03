@@ -1,10 +1,5 @@
-{
-  pkgs,
-  user,
-  inputs,
-  ...
-}: {
-  home-manager.users.${user} = {
+{user, ...}: {
+  home-manager.users.${user} = {inputs, ...}: {
     imports = [
       inputs.nvf.homeManagerModules.default
     ];
@@ -75,7 +70,6 @@
           git = {
             enable = true;
             gitsigns.enable = true;
-            # gitsigns.codeActions.enable = false;
           };
 
           dashboard.alpha.enable = true;
@@ -119,25 +113,6 @@
           comments.comment-nvim.enable = true;
         };
       };
-    };
-
-    home = {
-      packages = with pkgs; [
-        gcc
-        clang-tools
-        gopls
-        hyprls
-        jq
-        lua-language-server
-        nixd
-        nixfmt-rfc-style
-        pyright
-        sqls
-        texlab
-        typescript-language-server
-        typos-lsp
-        vscode-langservers-extracted # css
-      ];
     };
   };
 }
