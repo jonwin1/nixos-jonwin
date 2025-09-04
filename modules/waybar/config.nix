@@ -1,5 +1,4 @@
-{ user, ... }:
-{
+{user, ...}: {
   home-manager.users.${user}.programs.waybar.settings = [
     {
       height = 25;
@@ -54,8 +53,8 @@
       };
 
       clock = {
-        format = "{:%A %H:%M}";
-        format-alt = "{:%d %B W%V %Y}";
+        format = "{:L%e %b %H.%M}";
+        format-alt = "{:L%A v.%V %F}";
         tooltip = false;
       };
 
