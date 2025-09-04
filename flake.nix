@@ -14,6 +14,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nvf = {
+      url = "github:NotAShelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     pomodoro = {
       url = "github:jonwin1/go-pomodoro";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -30,7 +35,6 @@
       self,
       nixpkgs,
       home-manager,
-      stylix,
       ...
     }@inputs:
     let
@@ -65,7 +69,7 @@
               home-manager.extraSpecialArgs = { inherit user hostname inputs; };
             }
 
-            stylix.nixosModules.stylix
+            inputs.stylix.nixosModules.stylix
 
             ./config/common/configuration.nix
             ./config/common/modules.nix

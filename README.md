@@ -11,7 +11,7 @@ Welcome to my NixOS configuration.
 - 🏠 **Home Manager Integration**: Manage user-specific configurations with ease.
 - 🐚 **Zsh + Starship**: Efficient shell setup with lots of aliases.
 - 👻 **Ghostty**: Fast and feature-rich terminal emulator.
-- ✍️ **Neovim**: The best editor.
+- ✍️ **Neovim**: With simple configuration through [nvf](https://github.com/NotAShelf/nvf).
 - 🔑 **YubiKey Login**: Fast and secure authentication with YubiKeys.
 - ✨ **Stylix**: Unified system theming.
 
