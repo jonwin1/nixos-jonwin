@@ -13,6 +13,7 @@ Welcome to my NixOS configuration.
 - 👻 **Ghostty**: Fast and feature-rich terminal emulator.
 - ✍️ **Neovim**: The best editor.
 - 🔑 **YubiKey Login**: Fast and secure authentication with YubiKeys.
+- ✨ **Stylix**: Unified system theming.
 
 ## 📝 Notes
 
