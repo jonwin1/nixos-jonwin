@@ -18,7 +18,7 @@
     ../../modules/lazygit.nix
     ../../modules/locale.nix
     ../../modules/mime.nix
-    ../../modules/nvf-nvim.nix
+    ../../modules/nvim
     ../../modules/networking.nix
     # ../../modules/postgresql.nix
     ../../modules/rbw.nix
