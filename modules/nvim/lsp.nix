@@ -27,5 +27,8 @@
       nix.enable = true;
       python.enable = true;
     };
+
+    autocomplete.nvim-cmp.enable = true;
+    snippets.luasnip.enable = true;
   };
 }

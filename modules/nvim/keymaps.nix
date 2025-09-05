@@ -60,5 +60,11 @@
       action = "<CMD>Oil<CR>";
       desc = "Open parent directory [Oil]";
     }
+    {
+      key = "<leader>u";
+      mode = "n";
+      action = "<CMD>UndotreeToggle<CR>";
+      desc = "Toggle Undotree";
+    }
   ];
 }

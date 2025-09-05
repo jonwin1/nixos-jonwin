@@ -1,13 +1,10 @@
 {user, ...}: {
-  home-manager.users.${user} = {
-    inputs,
-    pkgs,
-    ...
-  }: {
+  home-manager.users.${user} = {inputs, ...}: {
     imports = [
       inputs.nvf.homeManagerModules.default
       ./options.nix
       ./keymaps.nix
+      ./snacks.nix
       ./autocmds.nix
       ./lsp.nix
     ];
@@ -19,19 +16,19 @@
           viAlias = true;
           vimAlias = true;
 
-          autocomplete.nvim-cmp.enable = true;
           autopairs.nvim-autopairs.enable = true;
+          comments.comment-nvim.enable = true;
+          statusline.lualine.enable = true;
+          telescope.enable = true;
 
           binds = {
             hardtime-nvim.enable = true;
             whichKey.enable = true;
           };
 
-          comments.comment-nvim.enable = true;
-          dashboard.dashboard-nvim.enable = true;
-
           git = {
             enable = true;
+            git-conflict.enable = true;
             gitsigns.enable = true;
           };
 
@@ -45,11 +42,6 @@
           notes = {
             todo-comments.enable = true;
           };
-
-          notify.nvim-notify.enable = true;
-          snippets.luasnip.enable = true;
-          statusline.lualine.enable = true;
-          telescope.enable = true;
 
           terminal = {
             toggleterm = {
@@ -66,18 +58,26 @@
           ui = {
             borders.enable = true;
             colorizer.enable = true;
-            noice.enable = true;
+
+            noice = {
+              enable = true;
+              setupOpts = {
+                messages.view_search = false;
+              };
+            };
+
             smartcolumn = {
               enable = true;
-              setupOpts.colorcolumn = "80";
+              setupOpts = {
+                colorcolumn = "80";
+                disabled_filetypes = [
+                  "snacks_dashboard"
+                ];
+              };
             };
           };
 
           utility = {
-            images = {
-              img-clip.enable = true;
-            };
-
             oil-nvim.enable = true;
             preview.markdownPreview.enable = true;
             sleuth.enable = true;
@@ -87,9 +87,11 @@
 
           visuals = {
             fidget-nvim.enable = true;
-            highlight-undo.enable = true;
             indent-blankline.enable = true;
-            nvim-cursorline.enable = true;
+            nvim-cursorline = {
+              enable = true;
+              setupOpts.cursorword.enable = true;
+            };
             nvim-web-devicons.enable = true;
           };
         };
