@@ -1,4 +1,8 @@
-{user, ...}: {
+{
+  user,
+  pkgs,
+  ...
+}: {
   home-manager.users.${user} = {inputs, ...}: {
     imports = [
       inputs.nvf.homeManagerModules.default
@@ -7,6 +11,11 @@
       ./snacks.nix
       ./autocmds.nix
       ./lsp.nix
+      ./neowiki.nix
+    ];
+
+    home.packages = with pkgs; [
+      gcc
     ];
 
     programs.nvf = {
@@ -35,7 +44,10 @@
           navigation = {
             harpoon = {
               enable = true;
-              mappings.file4 = "<C-ö>";
+              mappings = {
+                listMarks = "<C-h>";
+                file4 = "<C-ö>";
+              };
             };
           };
 
