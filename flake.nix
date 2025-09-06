@@ -80,6 +80,7 @@
           ./config/${hostname}/hardware-configuration.nix
           ./config/${hostname}/modules.nix
           ./config/${hostname}/packages.nix
+          ./config/${hostname}/hyprland.nix
         ];
       };
   in {

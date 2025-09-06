@@ -1,5 +1,4 @@
-{ hostname, user, ... }:
-{
+{user, ...}: {
   programs.hyprland = {
     enable = true;
     withUWSM = true;
@@ -17,15 +16,19 @@
     wayland.windowManager.hyprland = {
       enable = true;
       systemd.enable = false;
-      extraConfig = ''
-        ${builtins.readFile ./hyprland.conf}
-      '';
-    };
-
-    home.file = {
-      ".config/hypr/hyprland-host.conf" = {
-        source = ./hyprland-${hostname}.conf;
+      settings = {
+        monitor = [
+          ", preferred, auto, 1"
+        ];
       };
     };
+
+    imports = [
+      ./autostart.nix
+      ./bindings.nix
+      ./input.nix
+      ./looknfeel.nix
+      ./rules.nix
+    ];
   };
 }

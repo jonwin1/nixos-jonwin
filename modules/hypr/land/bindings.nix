@@ -1,0 +1,110 @@
+{
+  wayland.windowManager.hyprland.settings = {
+    bind = [
+      # Switch to workspace
+      "SUPER, 1, workspace, 1"
+      "SUPER, 2, workspace, 2"
+      "SUPER, 3, workspace, 3"
+      "SUPER, 4, workspace, 4"
+      "SUPER, 5, workspace, 5"
+      "SUPER, 6, workspace, 6"
+      "SUPER, 7, workspace, 7"
+      "SUPER, 8, workspace, 8"
+      "SUPER, 9, workspace, 9"
+      "SUPER, 0, workspace, 10"
+
+      # Bring workspace to current monitor
+      "SUPER CTRL, 1, focusworkspaceoncurrentmonitor, 1"
+      "SUPER CTRL, 2, focusworkspaceoncurrentmonitor, 2"
+      "SUPER CTRL, 3, focusworkspaceoncurrentmonitor, 3"
+      "SUPER CTRL, 4, focusworkspaceoncurrentmonitor, 4"
+      "SUPER CTRL, 5, focusworkspaceoncurrentmonitor, 5"
+      "SUPER CTRL, 6, focusworkspaceoncurrentmonitor, 6"
+      "SUPER CTRL, 7, focusworkspaceoncurrentmonitor, 7"
+      "SUPER CTRL, 8, focusworkspaceoncurrentmonitor, 8"
+      "SUPER CTRL, 9, focusworkspaceoncurrentmonitor, 9"
+      "SUPER CTRL, 0, focusworkspaceoncurrentmonitor, 10"
+
+      # Move active window to workspace
+      "SUPER SHIFT, 1, movetoworkspace, 1"
+      "SUPER SHIFT, 2, movetoworkspace, 2"
+      "SUPER SHIFT, 3, movetoworkspace, 3"
+      "SUPER SHIFT, 4, movetoworkspace, 4"
+      "SUPER SHIFT, 5, movetoworkspace, 5"
+      "SUPER SHIFT, 6, movetoworkspace, 6"
+      "SUPER SHIFT, 7, movetoworkspace, 7"
+      "SUPER SHIFT, 8, movetoworkspace, 8"
+      "SUPER SHIFT, 9, movetoworkspace, 9"
+      "SUPER SHIFT, 0, movetoworkspace, 10"
+
+      # Move focus
+      "SUPER, H, movefocus, l"
+      "SUPER, L, movefocus, r"
+      "SUPER, K, movefocus, u"
+      "SUPER, J, movefocus, d"
+
+      # Move active window
+      "SUPER SHIFT, H, movewindow, l"
+      "SUPER SHIFT, L, movewindow, r"
+      "SUPER SHIFT, K, movewindow, u"
+      "SUPER SHIFT, J, movewindow, d"
+
+      # Applications
+      "SUPER, B, exec, zen-beta"
+      "SUPER, X, exec, ghostty"
+      "SUPER, N, exec, ghostty -e nvim"
+      "SUPER, R, exec, pkill rofi || rofi -show drun"
+      "SUPER SHIFT, R, exec, pkill rofi || rofi -show run"
+      "SUPER, V, exec, pkill rofi || cliphist list | rofi -dmenu | cliphist decode | wl-copy"
+
+      # Special Workspaces
+      "SUPER, D, togglespecialworkspace, discord"
+      "SUPER, D, exec, hyprctl clients | grep class:.discord || discord"
+
+      "SUPER, T, togglespecialworkspace, scratchpad"
+      "SUPER SHIFT, T, movetoworkspace, spacial:scratchpad"
+
+      # Misc
+      "SUPER, P, pin, active"
+      "SUPER, W, toggleswallow"
+      "SUPER, M, fullscreen, 0"
+      "SUPER SHIFT, M, fullscreenstate, 0 2"
+      "SUPER, Q, killactive"
+      "SUPER SHIFT, Q, exec, rofi-power-menu"
+      "SUPER, S, togglesplit,"
+      "SUPER, SPACE, togglefloating, active"
+
+      # Screenshot
+      ", Print, exec, grimblast --notify copysave output"
+      "SHIFT, Print, exec, grimblast --notify copysave area"
+
+      # Groups
+      "SUPER, G, togglegroup,"
+      "SUPER, TAB, changegroupactive,"
+    ];
+
+    binde = [
+      # Resize active window
+      "SUPER CTRL, H, resizeactive, -20 0"
+      "SUPER CTRL, L, resizeactive, 20 0"
+      "SUPER CTRL, K, resizeactive, 0 -20"
+      "SUPER CTRL, J, resizeactive, 0 20"
+    ];
+
+    bindl = [
+      ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+      ", XF86AudioPrev, exec, playerctl previous"
+      ", XF86AudioNext, exec, playerctl next"
+      ", XF86AudioPause, exec, playerctl pause"
+      ", XF86AudioPlay, exec, playerctl play-pause"
+      ", XF86AudioStop, exec, playerctl stop"
+    ];
+
+    bindel = [
+      ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
+      ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+      ", XF86MonBrightnessUp, exec, light -A 5"
+      ", XF86MonBrightnessDown, exec, light -U 5"
+    ];
+  };
+}
