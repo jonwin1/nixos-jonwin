@@ -1,6 +1,6 @@
 {
   imports = [
-    ./idle
+    ./idle.nix
     ./land
     ./lock
   ];
