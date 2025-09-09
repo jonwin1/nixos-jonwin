@@ -1,5 +1,8 @@
-{ user, lib, ... }:
 {
+  user,
+  lib,
+  ...
+}: {
   home-manager.users.${user} = {
     stylix.targets.waybar.addCss = false;
     programs.waybar.style = lib.concatStrings [
@@ -12,7 +15,7 @@
         }
 
         window#waybar, tooltip {
-            background: @base00;
+            background: alpha(@base00, 0.9);
             color: @base05;
         }
 

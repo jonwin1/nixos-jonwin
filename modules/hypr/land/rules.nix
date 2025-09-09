@@ -4,6 +4,10 @@
       "suppressevent maximize, class:.*"
       "stayfocused, class:(Pinentry)"
 
+      # Remove opacity for some applications
+      "opacity 1 override 0.97 override, class:(zen|zen-beta|steam)"
+      "opacity 1 override, title:(.*)(- YouTube)(.*)"
+
       # "Applets"
       "float, title:^(Bluetooth Devices)$"
       "size 600 400, title:^(Bluetooth Devices)$"
@@ -19,6 +23,11 @@
       "size 50% 50%, class:(.*jetbrains.*)$, title:^$,floating:1"
       "noinitialfocus, class:^(.*jetbrains.*)$, title:^\\s$"
       "nofocus, class:^(.*jetbrains.*)$, title:^\\s$"
+    ];
+
+    layerrule = [
+      "blur, waybar"
+      "ignorealpha, waybar"
     ];
   };
 }

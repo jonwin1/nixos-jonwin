@@ -8,8 +8,10 @@
     };
 
     decoration = {
-      shadow.enabled = false;
-      blur.enabled = false;
+      rounding = 2;
+      active_opacity = 0.97;
+      inactive_opacity = 0.93;
+      blur.size = 4;
     };
     animations.enabled = false;
 
