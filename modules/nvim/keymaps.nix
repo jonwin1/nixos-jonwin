@@ -55,12 +55,6 @@
       desc = "Indent while keeping selection";
     }
     {
-      key = "-";
-      mode = "n";
-      action = "<CMD>Oil<CR>";
-      desc = "Open parent directory [Oil]";
-    }
-    {
       key = "<leader>u";
       mode = "n";
       action = "<CMD>UndotreeToggle<CR>";
