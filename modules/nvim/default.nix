@@ -20,6 +20,7 @@
 
     programs.nvf = {
       enable = true;
+      defaultEditor = true;
       settings = {
         vim = {
           viAlias = true;
