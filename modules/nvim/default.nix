@@ -99,7 +99,6 @@
 
           visuals = {
             fidget-nvim.enable = true;
-            indent-blankline.enable = true;
             nvim-cursorline = {
               enable = true;
               setupOpts.cursorword.enable = true;

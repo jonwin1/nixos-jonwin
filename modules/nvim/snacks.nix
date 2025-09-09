@@ -35,6 +35,10 @@
 
         gitbrowse = {enabled = true;};
         image = {enabled = true;};
+        indent = {
+          enabled = true;
+          animate.enabled = false;
+        };
         zen = {enabled = true;};
       };
     };
