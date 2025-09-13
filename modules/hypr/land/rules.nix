@@ -5,7 +5,7 @@
       "stayfocused, class:(Pinentry)"
 
       # Remove opacity for some applications
-      "opacity 1 override 0.97 override, class:(zen|zen-beta|steam)"
+      "opacity 1 override 0.95 override, class:(zen|zen-beta|steam)"
       "opacity 1 override, title:(.*)(- YouTube)(.*)"
 
       # "Applets"

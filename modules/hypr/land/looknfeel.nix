@@ -9,8 +9,8 @@
 
     decoration = {
       rounding = 2;
-      active_opacity = 0.97;
-      inactive_opacity = 0.93;
+      active_opacity = 0.95;
+      inactive_opacity = 0.9;
       blur.size = 4;
     };
     animations.enabled = false;
