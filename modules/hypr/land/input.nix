@@ -12,10 +12,6 @@
       };
     };
 
-    gestures = {
-      workspace_swipe = false;
-    };
-
     cursor = {
       inactive_timeout = 2;
     };
