@@ -20,6 +20,7 @@
       "pin, title:^(Volume Control)$"
 
       # Jetbrains
+      "opacity 1 override, class:^(.*jetbrains.*)$"
       "size 50% 50%, class:(.*jetbrains.*)$, title:^$,floating:1"
       "noinitialfocus, class:^(.*jetbrains.*)$, title:^\\s$"
       "nofocus, class:^(.*jetbrains.*)$, title:^\\s$"
