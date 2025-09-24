@@ -85,10 +85,10 @@
 
     binde = [
       # Resize active window
-      "SUPER CTRL, H, resizeactive, -20 0"
-      "SUPER CTRL, L, resizeactive, 20 0"
-      "SUPER CTRL, K, resizeactive, 0 -20"
-      "SUPER CTRL, J, resizeactive, 0 20"
+      "SUPER CTRL, H, resizeactive, -50 0"
+      "SUPER CTRL, L, resizeactive, 50 0"
+      "SUPER CTRL, K, resizeactive, 0 -50"
+      "SUPER CTRL, J, resizeactive, 0 50"
     ];
 
     bindl = [
