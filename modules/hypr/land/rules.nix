@@ -20,10 +20,14 @@
       "pin, title:^(Volume Control)$"
 
       # Jetbrains
+      # https://github.com/hyprwm/Hyprland/issues/1947#issuecomment-2690914693
       "opacity 1 override, class:^(.*jetbrains.*)$"
-      "size 50% 50%, class:(.*jetbrains.*)$, title:^$,floating:1"
-      "noinitialfocus, class:^(.*jetbrains.*)$, title:^\\s$"
-      "nofocus, class:^(.*jetbrains.*)$, title:^\\s$"
+      "focusonactivate on,class:^(jetbrains-.*)$"
+      "dimaround,class:^(jetbrains-.*)$,floating:1,title:^(?!win)"
+      "center,class:^(jetbrains-.*)$,floating:1,title:^(?!win)"
+      "noanim,class:^(jetbrains-.*)$,title:^(win.*)$"
+      "noinitialfocus,class:^(jetbrains-.*)$,title:^(win.*)$"
+      "rounding 0,class:^(jetbrains-.*)$,title:^(win.*)$"
     ];
 
     layerrule = [
