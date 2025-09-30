@@ -1,4 +1,4 @@
-{
+{user, ...}: {
   wayland.windowManager.hyprland.settings = {
     bind = [
       # Switch to workspace
@@ -64,9 +64,12 @@
       "SUPER, T, togglespecialworkspace, scratchpad"
       "SUPER SHIFT, T, movetoworkspace, spacial:scratchpad"
 
+      "SUPER, W, togglespecialworkspace, wiki"
+      "SUPER, W, exec, hyprctl clients | grep tags:.wiki || ghostty --working-directory=/home/${user}/wiki --command=\"hyprctl dispatch tagwindow +wiki && nvim index.md\""
+
       # Misc
       "SUPER, P, pin, active"
-      "SUPER, W, toggleswallow"
+      "SUPER SHIFT, S, toggleswallow"
       "SUPER, M, fullscreen, 0"
       "SUPER SHIFT, M, fullscreenstate, 0 2"
       "SUPER, Q, killactive"
