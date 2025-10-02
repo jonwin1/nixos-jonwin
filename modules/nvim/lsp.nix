@@ -27,7 +27,11 @@
       python.enable = true;
     };
 
-    autocomplete.nvim-cmp.enable = true;
+    autocomplete.nvim-cmp = {
+      enable = true;
+      mappings.confirm = null;
+      setupOpts.completion.completeopt = "menu,menuone,noselect";
+    };
     snippets.luasnip.enable = true;
   };
 }
