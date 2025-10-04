@@ -83,6 +83,7 @@
 
       memory = {
         format = " ";
+        tooltip-format = "Mem: {used:0.1f}/{total:0.1f} GiB ({percentage}%)\nSwp: {swapUsed:0.1f}/{swapTotal:0.1f} GiB ({swapPercentage}%)";
         states = {
           low = 30;
           medium = 60;
@@ -92,6 +93,8 @@
 
       disk = {
         format = "󰋊";
+        tooltip-format = "{path}: {specific_used:0.1f}/{specific_total:0.1f} GiB ({percentage_used}%)";
+        unit = "GiB";
         states = {
           low = 70;
           medium = 80;
