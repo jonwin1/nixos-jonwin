@@ -58,6 +58,10 @@
           padding: 2px;
         }
 
+        tooltip label {
+          color: @base05;
+        }
+
         #cpu,
         #memory,
         #disk {
