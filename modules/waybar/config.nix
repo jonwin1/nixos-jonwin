@@ -53,8 +53,8 @@
       };
 
       clock = {
-        format = "{:L%e %b %H.%M}";
-        format-alt = "{:L%A v.%V %F}";
+        format = "{:L%a %e %b %H.%M}";
+        format-alt = "{:L%F v.%V}";
         tooltip = false;
       };
 
