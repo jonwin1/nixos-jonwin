@@ -75,13 +75,14 @@
 
       "custom/temps" = {
         exec = "~/.config/waybar/scripts/temps.sh";
-        interval = 10;
+        interval = 5;
         return-type = "json";
         tooltip = true;
       };
 
       cpu = {
         format = "󰍛";
+        interval = 5;
         states = {
           low = 30;
           medium = 60;
@@ -92,6 +93,7 @@
       memory = {
         format = " ";
         tooltip-format = "Mem: {used:0.1f}/{total:0.1f} GiB ({percentage}%)\nSwp: {swapUsed:0.1f}/{swapTotal:0.1f} GiB ({swapPercentage}%)";
+        interval = 5;
         states = {
           low = 30;
           medium = 60;
@@ -103,6 +105,7 @@
         format = "󰋊";
         tooltip-format = "{path}: {specific_used:0.1f}/{specific_total:0.1f} GiB ({percentage_used}%)";
         unit = "GiB";
+        interval = 5;
         states = {
           low = 70;
           medium = 80;
@@ -156,6 +159,7 @@
         };
         tooltip-format-discharging = "{timeTo}\n{power:>1.0f}W↓ {capacity}%";
         tooltip-format-charging = "{timeTo}\n{power:>1.0f}W↑ {capacity}%";
+        interval = 5;
         states = {
           warning = 20;
           critical = 10;
