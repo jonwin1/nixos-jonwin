@@ -74,7 +74,6 @@
 
       cpu = {
         format = "󰍛";
-        on-click = "ghostty -e btop";
         states = {
           low = 30;
           medium = 60;
@@ -84,7 +83,6 @@
 
       memory = {
         format = " ";
-        on-click = "ghostty -e btop";
         states = {
           low = 30;
           medium = 60;
@@ -94,7 +92,6 @@
 
       disk = {
         format = "󰋊";
-        on-click = "ghostty -e btop";
         states = {
           low = 70;
           medium = 80;
