@@ -14,6 +14,7 @@
       ];
       modules-right = [
         "tray"
+        "custom/temps"
         "cpu"
         "memory"
         "disk"
@@ -70,6 +71,13 @@
       tray = {
         icon-size = 14;
         spacing = 12;
+      };
+
+      "custom/temps" = {
+        exec = "~/.config/waybar/scripts/temps.sh";
+        interval = 10;
+        return-type = "json";
+        tooltip = true;
       };
 
       cpu = {

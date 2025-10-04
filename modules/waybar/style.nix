@@ -45,6 +45,7 @@
 
         #idle_inhibitor,
         #tray,
+        #custom-temps,
         #cpu,
         #memory,
         #disk,
@@ -62,12 +63,14 @@
           color: @base05;
         }
 
+        #custom-temps.cool,
         #cpu,
         #memory,
         #disk {
           color: @base0D; /* Blue */
         }
 
+        #custom-temps.warm,
         #cpu.low,
         #memory.low,
         #disk.low {
@@ -75,6 +78,7 @@
         }
 
         #idle_inhibitor.activated,
+        #custom-temps.hot,
         #cpu.medium,
         #memory.medium,
         #disk.medium,
@@ -83,6 +87,7 @@
         }
 
         #wireplumber.muted,
+        #custom-temps.critical,
         #cpu.high,
         #memory.high,
         #disk.high,
