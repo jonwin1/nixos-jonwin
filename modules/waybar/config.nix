@@ -40,6 +40,7 @@
           "10" = "󰽽";
           scratchpad = "";
           discord = "󰙯";
+          wiki = "󰎞";
         };
       };
 
