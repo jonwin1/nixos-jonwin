@@ -30,8 +30,11 @@
 
     autocomplete.nvim-cmp = {
       enable = true;
-      mappings.confirm = null;
-      setupOpts.completion.completeopt = "menu,menuone,noselect";
+      mappings = {
+        confirm = "<C-y>";
+        next = "<C-n>";
+        previous = "<C-p>";
+      };
     };
     snippets.luasnip.enable = true;
   };
