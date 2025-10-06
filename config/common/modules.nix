@@ -25,7 +25,7 @@
     ../../modules/style.nix
     ../../modules/user.nix
     ../../modules/virtualization.nix
-    # ../../modules/vscode.nix
+    ../../modules/vscode.nix
     ../../modules/waybar
     ../../modules/yubikey.nix
     ../../modules/zen-browser.nix

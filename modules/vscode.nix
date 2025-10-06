@@ -4,7 +4,7 @@
     enable = true;
     package = pkgs.vscodium;
     profiles.default.extensions = with pkgs.vscode-extensions; [
-      asvetliakov.vscode-neovim
+      ms-toolsai.jupyter
       jnoortheen.nix-ide
       ms-python.python
       llvm-vs-code-extensions.vscode-clangd
