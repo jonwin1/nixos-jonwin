@@ -1,7 +1,15 @@
 #!/usr/bin/env bash
 
 # Get CPU package temp
-cpu_temp=$(sensors 2>/dev/null | awk '/Package id 0:/ {gsub(/\+|°C/, "", $4); print int($4)}')
+# Try several common sensor labels in order
+cpu_temp=$(sensors 2>/dev/null | awk '
+    /Package id 0:/   {gsub(/\+|°C/, "", $4); print int($4); exit}
+    /Tctl:/           {gsub(/\+|°C/, "", $2); print int($2); exit}
+    /Tdie:/           {gsub(/\+|°C/, "", $2); print int($2); exit}
+')
+
+# If still empty, set to 0 (to avoid JSON error)
+cpu_temp=${cpu_temp:-0}
 
 # Get GPU temp
 if command -v nvidia-smi &>/dev/null; then
