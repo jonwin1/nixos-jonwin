@@ -62,6 +62,7 @@
       "SUPER, D, exec, hyprctl clients | grep class:.discord || discord"
 
       "SUPER, T, togglespecialworkspace, scratchpad"
+      "SUPER, T, exec, hyprctl clients | grep tags:.scratchpad || ghostty --initial-command=\"hyprctl dispatch tagwindow +scratchpad && zsh\""
       "SUPER SHIFT, T, movetoworkspace, spacial:scratchpad"
 
       "SUPER, W, togglespecialworkspace, wiki"
