@@ -12,6 +12,13 @@
       username = user;
       homeDirectory = "/home/${user}";
       stateVersion = "23.11";
+
+      file = {
+        ".config/scripts" = {
+          source = ../../scripts;
+          recursive = true;
+        };
+      };
     };
   };
 

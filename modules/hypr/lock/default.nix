@@ -84,10 +84,6 @@
       "Pictures/logo.png" = {
         source = ./logo.png;
       };
-      ".config/scripts" = {
-        source = ./scripts;
-        recursive = true;
-      };
     };
   };
 
