@@ -23,6 +23,7 @@
     ../../modules/rofi.nix
     ../../modules/steam.nix
     ../../modules/style.nix
+    ../../modules/swayosd
     ../../modules/user.nix
     ../../modules/virtualization.nix
     ../../modules/vscode.nix
