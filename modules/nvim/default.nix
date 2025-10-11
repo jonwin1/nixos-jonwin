@@ -26,7 +26,6 @@
           viAlias = true;
           vimAlias = true;
 
-          autopairs.nvim-autopairs.enable = true;
           comments.comment-nvim.enable = true;
           statusline.lualine.enable = true;
           telescope.enable = true;
