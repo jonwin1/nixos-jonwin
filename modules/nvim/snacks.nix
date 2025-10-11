@@ -33,32 +33,13 @@
           ];
         };
 
-        gitbrowse = {enabled = true;};
         image = {enabled = true;};
         indent = {
           enabled = true;
           animate.enabled = false;
         };
-        zen = {enabled = true;};
       };
     };
-
-    keymaps = [
-      {
-        key = "<leader>gb";
-        mode = "n";
-        lua = true;
-        action = "function() Snacks.gitbrowse() end";
-        desc = "Open git repo in browser";
-      }
-      {
-        key = "<leader>z";
-        mode = "n";
-        lua = true;
-        action = "function() Snacks.zen() end";
-        desc = "Toggle zen mode";
-      }
-    ];
   };
 
   home.packages = with pkgs; [

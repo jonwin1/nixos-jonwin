@@ -12,6 +12,7 @@
       ./autocmds.nix
       ./lsp.nix
       ./neowiki.nix
+      ./zenmode.nix
     ];
 
     home.packages = with pkgs; [
