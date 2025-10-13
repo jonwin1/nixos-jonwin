@@ -8,7 +8,6 @@
       jnoortheen.nix-ide
       ms-python.python
       llvm-vs-code-extensions.vscode-clangd
-      enkia.tokyo-night
     ];
   };
 }
