@@ -72,9 +72,11 @@
       "SUPER, P, pin, active"
       "SUPER SHIFT, S, toggleswallow"
       "SUPER, M, fullscreen, 0"
+      "SUPER ALT, M, fullscreen, 1"
       "SUPER SHIFT, M, fullscreenstate, 0 2"
       "SUPER, Q, killactive"
       "SUPER SHIFT, Q, exec, rofi-power-menu"
+      ", XF86PowerOff, exec, rofi-power-menu"
       "SUPER, S, togglesplit,"
       "SUPER, SPACE, togglefloating, active"
 
