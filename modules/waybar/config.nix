@@ -17,7 +17,7 @@
         "custom/temps"
         "cpu"
         "memory"
-        "disk"
+        "custom/disk"
         "wireplumber"
         "battery"
       ];
@@ -101,16 +101,11 @@
         };
       };
 
-      disk = {
-        format = "󰋊";
-        tooltip-format = "{path}: {specific_used:0.1f}/{specific_total:0.1f} GiB ({percentage_used}%)";
-        unit = "GiB";
+      "custom/disk" = {
+        exec = "~/.config/waybar/scripts/disk_info.sh";
         interval = 5;
-        states = {
-          low = 70;
-          medium = 80;
-          high = 90;
-        };
+        return-type = "json";
+        tooltip = true;
       };
 
       wireplumber = {

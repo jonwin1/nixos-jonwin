@@ -48,7 +48,7 @@
         #custom-temps,
         #cpu,
         #memory,
-        #disk,
+        #custom-disk,
         #wireplumber,
         #battery {
           min-width: 12px;
@@ -66,14 +66,14 @@
         #custom-temps.cool,
         #cpu,
         #memory,
-        #disk {
+        #custom-disk {
           color: @base0D; /* Blue */
         }
 
         #custom-temps.warm,
         #cpu.low,
         #memory.low,
-        #disk.low {
+        #custom-disk.low {
           color: @base0B; /* Green */
         }
 
@@ -81,7 +81,7 @@
         #custom-temps.hot,
         #cpu.medium,
         #memory.medium,
-        #disk.medium,
+        #custom-disk.medium,
         #battery.warning:not(.charging) {
           color: @base0A; /* Yellow */
         }
@@ -90,7 +90,7 @@
         #custom-temps.critical,
         #cpu.high,
         #memory.high,
-        #disk.high,
+        #custom-disk.high,
         #battery.critical:not(.charging) {
           color: @base08; /* Red */
         }
