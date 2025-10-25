@@ -66,11 +66,10 @@
       "SUPER SHIFT, T, movetoworkspace, spacial:scratchpad"
 
       "SUPER, W, togglespecialworkspace, wiki"
-      "SUPER, W, exec, hyprctl clients | grep tags:.wiki || ghostty --working-directory=/home/${user}/wiki --command=\"hyprctl dispatch tagwindow +wiki && nvim index.md\""
+      "SUPER, W, exec, hyprctl clients | grep tags:.wiki || ghostty --working-directory=/home/${user}/wiki --initial-command=\"hyprctl dispatch tagwindow +wiki && nvim index.md\""
 
       # Misc
       "SUPER, P, pin, active"
-      "SUPER SHIFT, S, toggleswallow"
       "SUPER, M, fullscreen, 0"
       "SUPER ALT, M, fullscreen, 1"
       "SUPER SHIFT, M, fullscreenstate, 0 2"

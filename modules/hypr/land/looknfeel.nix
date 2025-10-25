@@ -28,9 +28,6 @@
 
       vrr = 2;
 
-      enable_swallow = true;
-      swallow_regex = ".*ghostty";
-
       middle_click_paste = false;
       mouse_move_focuses_monitor = false;
     };
