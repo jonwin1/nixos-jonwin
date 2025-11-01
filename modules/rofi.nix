@@ -44,21 +44,23 @@
 
       home.packages = with pkgs; [
         (writeShellScriptBin "rofi-power-menu" ''
-          option="Cancel\nShutdown\nReboot\nSuspend\nHibernate\nLock"
-          selected=$(echo -e $option | rofi -dmenu -i)
-          if [ "$selected" = "Shutdown" ]; then
-              poweroff
-          elif [ "$selected" = "Reboot" ]; then
-              reboot
-          elif [ "$selected" = "Suspend" ]; then
-              systemctl suspend
-          elif [ "$selected" = "Hibernate" ]; then
-              systemctl hibernate
-          elif [ "$selected" = "Lock" ]; then
-              hyprlock
-          elif [ "$selected" = "Cancel" ]; then
-              return
-          fi
+          options="󰜺    Cancel
+              Shutdown
+              Reboot
+          󰤄    Suspend
+              Hibernate
+              Lock"
+
+          choice="$(printf "%s\n" "$options" | rofi -dmenu -i)"
+
+          case "$choice" in
+              "󰜺    Cancel") return ;;
+              "    Shutdown") systemctl poweroff ;;
+              "    Reboot") systemctl reboot ;;
+              "󰤄    Suspend") systemctl suspend ;;
+              "    Hibernate") systemctl hibernate ;;
+              "    Lock") hyprlock ;;
+          esac
         '')
       ];
     };
