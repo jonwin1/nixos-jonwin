@@ -24,6 +24,7 @@
     ripgrep
     trash-cli
     tree
+    viu
     wget
     wl-clipboard
     wl-clip-persist
