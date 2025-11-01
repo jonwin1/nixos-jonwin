@@ -62,6 +62,43 @@
               "    Lock") hyprlock ;;
           esac
         '')
+
+        (writeShellScriptBin "rofi-system-menu" ''
+          toggle_idle() {
+            if pgrep -x hypridle >/dev/null; then
+              systemctl --user stop hypridle.service
+              notify-send "Idle Inhibitor" "Disabled"
+            else
+              systemctl --user start hypridle.service
+              notify-send "Idle Inhibitor" "Enabled"
+            fi
+          }
+
+          toggle_hyprsunset() {
+            CURRENT_TEMP=$(hyprctl hyprsunset temperature 2>/dev/null | grep -oE '[0-9]+')
+
+            if [[ $CURRENT_TEMP == 6000 ]]; then
+              hyprctl hyprsunset temperature 5000
+              hyprctl hyprsunset gamma 80
+              notify-send "Nightlight enabled"
+            else
+              hyprctl hyprsunset temperature 6000
+              hyprctl hyprsunset gamma 100
+              notify-send "Nightlight disabled"
+            fi
+          }
+
+          # --- Menu entries ---
+          entries="    Idle inhibitor toggle
+          󰖔    Nightlight toggle"
+
+          chosen=$(printf "%s" "$entries" | rofi -dmenu -i)
+
+          case "$chosen" in
+              *Idle*) toggle_idle ;;
+              *Nightlight*) toggle_hyprsunset ;;
+          esac
+        '')
       ];
     };
 }
