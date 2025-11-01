@@ -43,7 +43,7 @@
           color: @base0A; /* Yellow */
         }
 
-        #idle_inhibitor,
+        #custom-status_icons,
         #tray,
         #custom-temps,
         #cpu,
@@ -77,7 +77,7 @@
           color: @base0B; /* Green */
         }
 
-        #idle_inhibitor.activated,
+        #custom-status_icons,
         #custom-temps.hot,
         #cpu.medium,
         #memory.medium,

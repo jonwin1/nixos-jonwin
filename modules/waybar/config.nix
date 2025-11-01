@@ -6,10 +6,10 @@
 
       modules-left = [
         "hyprland/workspaces"
-        "idle_inhibitor"
       ];
       modules-center = [
         "clock"
+        "custom/status_icons"
         # "custom/pomodoro"
       ];
       modules-right = [
@@ -45,12 +45,9 @@
         };
       };
 
-      idle_inhibitor = {
-        format = "{icon} ";
-        format-icons = {
-          activated = "";
-          deactivated = "";
-        };
+      "custom/status_icons" = {
+        exec = "~/.config/waybar/scripts/status_icons.sh";
+        interval = 5;
         tooltip = false;
       };
 
