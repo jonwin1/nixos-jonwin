@@ -2,7 +2,7 @@
 
 OUT=""
 
-if pgrep -x hypridle >/dev/null; then
+if ! pgrep -x hypridle >/dev/null; then
     OUT+="  "
 fi
 

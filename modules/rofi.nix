@@ -66,10 +66,10 @@
         toggle_idle() {
           if pgrep -x hypridle >/dev/null; then
             systemctl --user stop hypridle.service
-            notify-send "Idle Inhibitor" "Disabled"
+            notify-send "Idle Inhibitor" "Enabled"
           else
             systemctl --user start hypridle.service
-            notify-send "Idle Inhibitor" "Enabled"
+            notify-send "Idle Inhibitor" "Disabled"
           fi
         }
 
