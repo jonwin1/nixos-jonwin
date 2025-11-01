@@ -76,8 +76,9 @@
       "SUPER, Q, killactive"
       "SUPER SHIFT, Q, exec, rofi-power-menu"
       ", XF86PowerOff, exec, rofi-power-menu"
+      "SUPER, SPACE, exec, rofi-system-menu"
       "SUPER, S, togglesplit,"
-      "SUPER, SPACE, togglefloating, active"
+      "SUPER, F, togglefloating, active"
 
       # Screenshot
       ", Print, exec, grimblast --notify copysave output"
