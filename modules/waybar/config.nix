@@ -14,18 +14,16 @@
       ];
       modules-right = [
         "tray"
+        "wireplumber"
         "custom/temps"
         "cpu"
         "memory"
         "custom/disk"
-        "wireplumber"
         "battery"
       ];
 
       "hyprland/workspaces" = {
         show-special = true;
-        on-click = "activate";
-
         format = "{icon}";
         format-icons = {
           default = "";

@@ -3,7 +3,7 @@
 OUT=""
 
 if pgrep -x hypridle >/dev/null; then
-  OUT+="  " 
+    OUT+="  "
 fi
 
 echo "$OUT"
