@@ -15,6 +15,8 @@
 
       scrolloff = 10;
       sidescrolloff = 10;
+
+      wrap = false;
     };
   };
 }
