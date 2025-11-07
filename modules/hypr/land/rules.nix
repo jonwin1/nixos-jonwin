@@ -27,6 +27,9 @@
       "noanim,class:^(jetbrains-.*)$,title:^(win.*)$"
       "noinitialfocus,class:^(jetbrains-.*)$,title:^(win.*)$"
       "rounding 0,class:^(jetbrains-.*)$,title:^(win.*)$"
+
+      # Fixes FreeCAD drag and drop
+      "noinitialfocus, class:FreeCAD"
     ];
 
     layerrule = [
