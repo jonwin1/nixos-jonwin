@@ -29,7 +29,6 @@
       vrr = 2;
 
       middle_click_paste = false;
-      mouse_move_focuses_monitor = false;
     };
 
     xwayland = {
