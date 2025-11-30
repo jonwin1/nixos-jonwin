@@ -28,10 +28,8 @@
       };
 
       monospace = {
-        # package = pkgs.nerd-fonts.fira-code;
-        # name = "FiraCode Nerd Font";
-        package = pkgs.nerd-fonts.caskaydia-mono;
-        name = "CaskaydiaModo Nerd Font";
+        package = pkgs.nerd-fonts.fira-code;
+        name = "FiraCode Nerd Font";
       };
 
       emoji = {
