@@ -6,6 +6,7 @@
       "wl-paste --type image --watch cliphist store"
       "wl-clip-persist --clipboard both"
       "pidof hyprlock || hyprlock"
+      "uwsm-app -- zmkbatx"
     ];
   };
 }
