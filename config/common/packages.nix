@@ -24,7 +24,7 @@
     fd
     fzf
     grimblast
-    inputs.pomodoro.packages.${system}.default
+    inputs.pomodoro.packages.${stdenv.hostPlatform.system}.default
     ripgrep
     trash-cli
     tree
