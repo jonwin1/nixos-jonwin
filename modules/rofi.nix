@@ -89,13 +89,18 @@
 
         # --- Menu entries ---
         entries="    Idle inhibitor toggle
-        󰖔    Nightlight toggle"
+        󰖔    Nightlight toggle
+            Wifi
+        󰂯    Bluetooth
+        "
 
         chosen=$(printf "%s" "$entries" | rofi -dmenu -i)
 
         case "$chosen" in
           *Idle*) toggle_idle ;;
           *Nightlight*) toggle_hyprsunset ;;
+          *Wifi*) launch-floating-tui impala ;;
+          *Bluetooth*) launch-floating-tui bluetui ;;
         esac
       '')
     ];

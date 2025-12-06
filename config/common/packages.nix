@@ -1,5 +1,9 @@
-{ pkgs, user, inputs, ... }:
 {
+  pkgs,
+  user,
+  inputs,
+  ...
+}: {
   home-manager.users.${user}.home.packages = with pkgs; [
     # Desktop apps
     cura-appimage
@@ -48,5 +52,12 @@
     xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland
     zmkBATx
+
+    # Custom
+    (writeShellScriptBin "launch-floating-tui" ''
+      exec setsid uwsm-app -- ghostty \
+        --class="se.jonwin.floating.$(basename "$1")" \
+        --command="$*"
+    '')
   ];
 }

@@ -7,6 +7,10 @@
       "opacity 1 override 0.95 override, class:(zen|zen-beta|steam)"
       "opacity 1 override, title:(.*)(- YouTube)(.*)"
 
+      "float,class:^(se\.jonwin\.floating\..*)$"
+      "center,class:^(se\.jonwin\.floating\..*)$"
+      "size 875 600,class:^(se\.jonwin\.floating\..*)$"
+
       # "Applets"
       "float, title:^(Volume Control)$"
       "size 1000 500, title:^(Volume Control)$"
