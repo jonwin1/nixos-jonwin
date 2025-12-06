@@ -53,8 +53,8 @@
       "SUPER, B, exec, zen-beta"
       "SUPER, X, exec, ghostty"
       "SUPER, N, exec, ghostty -e nvim"
-      "SUPER, R, exec, pkill rofi || rofi -show drun"
-      "SUPER SHIFT, R, exec, pkill rofi || rofi -show run"
+      "SUPER, R, exec, pkill rofi || rofi -show drun -run-command 'uwsm-app -- {cmd}'"
+      "SUPER SHIFT, R, exec, pkill rofi || rofi -show run -run-command 'uwsm-app -- {cmd}'"
       "SUPER, V, exec, pkill rofi || cliphist list | rofi -dmenu | cliphist decode | wl-copy"
 
       # Special Workspaces
