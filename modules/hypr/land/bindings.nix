@@ -50,23 +50,23 @@
       "SUPER SHIFT, J, movewindow, d"
 
       # Applications
-      "SUPER, B, exec, zen-beta"
-      "SUPER, X, exec, ghostty"
-      "SUPER, N, exec, ghostty -e nvim"
+      "SUPER, B, exec, uwsm-app -- zen-beta"
+      "SUPER, X, exec, uwsm-app -- ghostty"
+      "SUPER, N, exec, uwsm-app -- ghostty -e nvim"
       "SUPER, R, exec, pkill rofi || rofi -show drun -run-command 'uwsm-app -- {cmd}'"
       "SUPER SHIFT, R, exec, pkill rofi || rofi -show run -run-command 'uwsm-app -- {cmd}'"
       "SUPER, V, exec, pkill rofi || cliphist list | rofi -dmenu | cliphist decode | wl-copy"
 
       # Special Workspaces
       "SUPER, D, togglespecialworkspace, discord"
-      "SUPER, D, exec, hyprctl clients | grep class:.discord || discord"
+      "SUPER, D, exec, hyprctl clients | grep class:.discord || uwsm-app -- discord"
 
       "SUPER, T, togglespecialworkspace, scratchpad"
-      "SUPER, T, exec, hyprctl clients | grep tags:.scratchpad || ghostty --initial-command=\"hyprctl dispatch tagwindow +scratchpad && zsh\""
+      "SUPER, T, exec, hyprctl clients | grep tags:.scratchpad || uwsm-app -- ghostty --initial-command=\"hyprctl dispatch tagwindow +scratchpad && zsh\""
       "SUPER SHIFT, T, movetoworkspace, spacial:scratchpad"
 
       "SUPER, W, togglespecialworkspace, wiki"
-      "SUPER, W, exec, hyprctl clients | grep tags:.wiki || ghostty --working-directory=/home/${user}/wiki --initial-command=\"hyprctl dispatch tagwindow +wiki && nvim index.md\""
+      "SUPER, W, exec, hyprctl clients | grep tags:.wiki || uwsm-app -- ghostty --working-directory=/home/${user}/wiki --initial-command=\"hyprctl dispatch tagwindow +wiki && nvim index.md\""
 
       # Misc
       "SUPER, P, pin, active"
