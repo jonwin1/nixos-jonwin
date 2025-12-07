@@ -14,6 +14,8 @@
       ];
       modules-right = [
         "tray"
+        "network"
+        "bluetooth"
         "wireplumber"
         "custom/temps"
         "cpu"
@@ -66,6 +68,29 @@
       tray = {
         icon-size = 14;
         spacing = 12;
+      };
+
+      network = {
+        format-icons = ["󰤯" "󰤟" "󰤢" "󰤥" "󰤨"];
+        format = "{icon}";
+        format-wifi = "{icon}";
+        format-ethernet = "󰈀";
+        format-disconnected = "󰤮";
+        tooltip-format-wifi = "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}";
+        tooltip-format-ethernet = "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}";
+        tooltip-format-disconnected = "Disconnected";
+      };
+
+      bluetooth = {
+        format-disabled = "󰂲";
+        format-off = "󰂲";
+        format-on = "";
+        format-connected = "󰂱";
+        format-no-controller = "";
+        tooltip-format = "No connected devices";
+        tooltip-format-connected = "{device_enumerate}";
+        tooltip-format-enumerate-connected = "{device_alias}";
+        tooltip-format-enumerate-connected-battery = "{device_alias}\t{device_battery_percentage}%";
       };
 
       "custom/temps" = {

@@ -49,6 +49,8 @@
         #cpu,
         #memory,
         #custom-disk,
+        #network,
+        #bluetooth,
         #wireplumber,
         #battery {
           min-width: 12px;
