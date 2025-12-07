@@ -1,6 +1,6 @@
 {
   imports = [
-    ../../modules/android.nix
+    # ../../modules/android.nix
     ../../modules/audio.nix
     # ../../modules/batsignal.nix
     ../../modules/bluetooth.nix
@@ -26,7 +26,7 @@
     ../../modules/swayosd
     ../../modules/user.nix
     ../../modules/virtualization.nix
-    ../../modules/vscode.nix
+    # ../../modules/vscode.nix
     ../../modules/waybar
     ../../modules/yubikey.nix
     ../../modules/zen-browser.nix
