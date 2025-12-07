@@ -9,7 +9,7 @@
 
       "float,class:^(se\.jonwin\.floating\..*)$"
       "center,class:^(se\.jonwin\.floating\..*)$"
-      "size 875 600,class:^(se\.jonwin\.floating\..*)$"
+      "size 1400 800,class:^(se\.jonwin\.floating\..*)$"
 
       # "Applets"
       "float, title:^(Volume Control)$"
