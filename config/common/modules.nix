@@ -2,7 +2,7 @@
   imports = [
     # ../../modules/android.nix
     ../../modules/audio.nix
-    # ../../modules/batsignal.nix
+    ../../modules/battery.nix
     ../../modules/bluetooth.nix
     ../../modules/boot.nix
     ../../modules/clean.nix

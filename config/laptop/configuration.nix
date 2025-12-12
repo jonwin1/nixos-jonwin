@@ -8,6 +8,7 @@
     ./powerManagement.nix
   ];
 
+  jonwin.hasBattery = true;
   nvidiaConfig.enable = lib.mkDefault false;
   batteryMode.enable = lib.mkDefault true;
 
