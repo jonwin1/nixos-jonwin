@@ -73,14 +73,10 @@
 
           inputs.stylix.nixosModules.stylix
 
-          ./config/common/configuration.nix
-          ./config/common/modules.nix
-          ./config/common/packages.nix
-          ./config/${hostname}/configuration.nix
-          ./config/${hostname}/hardware-configuration.nix
-          ./config/${hostname}/modules.nix
-          ./config/${hostname}/packages.nix
-          ./config/${hostname}/hyprland.nix
+          ./config/configuration.nix
+          ./config/packages.nix
+          ./config/${hostname}
+          ./modules
         ];
       };
   in {

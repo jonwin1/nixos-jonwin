@@ -62,6 +62,7 @@ Welcome to my NixOS configuration.
 To get started with this setup, follow these steps:
 
 1. **Install NixOS**
+
    If you haven’t already installed NixOS, follow the [NixOS Installation Guide](https://nixos.org/manual/nixos/stable/#sec-installation) for detailed instructions.
 
 2. **Clone the Repository**
@@ -84,13 +85,15 @@ To get started with this setup, follow these steps:
     ```
 
 5. **Edit the configuration files as needed**
+
     See [File Structure](#-file-structure) below for an overview of where to find what.
     You might for example what to set you git name and email or change the name
     and logo on the hyprlock screen.
 
 6. **Add a YubiKey or disable the module**
+
    See [NixOS Wiki - YubiKey PAM U2F](https://wiki.nixos.org/wiki/Yubikey#pam_u2f)
-   or remove the module from `config/common/modules.nix`.
+   or remove the module from `modules/default.nix`.
 
 7. **Edit the `flake.nix` file**
 
@@ -125,25 +128,29 @@ To get started with this setup, follow these steps:
     # or, if you're installing on a fresh system:
     sudo nixos-install --flake .#<hostname>
 
-9. **Wallpaper** Add a file `~/Pictures/wallpaper.png` to set the wallpaper.
+9. **Wallpaper**
+
+    Replace `wallpaper.png` to change the wallpaper.
 
 ## 📂 File Structure
 
 ```markdown
 📂 .
 ┣ ❄️ flake.nix (Main entry point for the NixOS flake)
+┣ 🖼️ wallpaper.png (Change this to change wallpaper on next rebuild)
 ┣ 📂 config/ (Host and shared configuration files)
-┃ ┣ 📂 common/ (Shared settings for all hosts)
-┃ ┃ ┣ ❄️ configuration.nix (Shared config options)
-┃ ┃ ┣ ❄️ modules.nix (Shared module imports)
-┃ ┃ ┗ ❄️ packages.nix (Shared packages)
+┃ ┣ ❄️ configuration.nix (Shared config options)
+┃ ┣ ❄️ packages.nix (Shared packages)
 ┃ ┗ 📂 <hostname>/ (Settings for a specific machine)
 ┃   ┣ ❄️ configuration.nix (Host-specific config options)
 ┃   ┣ ❄️ hardware-configuration.nix (Hardware configuration for this host)
-┃   ┣ ❄️ modules.nix (Host-specific module imports)
-┃   ┗ ❄️ packages.nix (Host-specific packages)
-┗ 📂 modules/ (Reusable custom modules)
-  ┗ … (e.g. window manager, shell, applications)
+┃   ┣ ❄️ default.nix (Host-specific module imports)
+┃   ┣ ❄️ packages.nix (Host-specific packages)
+┃   ┗ 📂 modules/ (Host-specific nix modules)
+┣ 📂 modules/ (Reusable nix modules)
+┃ ┣ ❄️ default.nix (Default module imports)
+┃ ┗ … (e.g. window manager, shell, applications)
+┗ 📂 scripts/
 ```
 
 ## 🤝 Contributions

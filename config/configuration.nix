@@ -15,7 +15,7 @@
 
       file = {
         ".config/scripts" = {
-          source = ../../scripts;
+          source = ../scripts;
           recursive = true;
         };
       };
