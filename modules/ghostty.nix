@@ -56,4 +56,8 @@
       ];
     };
   };
+
+  environment.sessionVariables = {
+    GTK_IM_MODULE = "simple"; # Fix dead keys (`^~'")
+  };
 }
