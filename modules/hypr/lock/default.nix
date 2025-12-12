@@ -1,5 +1,9 @@
-{ user, ... }:
 {
+  config,
+  lib,
+  user,
+  ...
+}: {
   home-manager.users.${user} = {
     programs.hyprlock = {
       enable = true;
@@ -30,45 +34,47 @@
           fail_text = "\$FAIL";
         };
 
-        label = [
-          {
-            # Battery
-            text = "cmd[update:1000] echo \"\$(~/.config/scripts/battery-status)\"";
-            font_size = 16;
-            position = "-20, -10";
-            halign = "right";
-            valign = "top";
-          }
-          {
-            # Date
-            text = "cmd[update:1000] date +'%A, %d %B'";
-            font_size = 22;
-            halign = "center";
-            valign = "top";
-            position = "0, -160";
-          }
-          {
-            # Time
-            text = "cmd[update:1000] date +'%R'";
-            font_size = 95;
-            halign = "center";
-            valign = "top";
-            position = "0, -200";
-          }
-          {
-            # Name
-            text = "Jonatan Wincent";
-            font_size = 18;
-            position = "0, -125";
-          }
-          {
-            # E-mail
-            text = "jonatan.wincent@proton.me";
-            font_size = 14;
-            position = "0, -150";
-          }
-
-        ];
+        label =
+          lib.optionals config.jonwin.hasBattery [
+            {
+              # Battery
+              text = "cmd[update:1000] echo \"\$(~/.config/scripts/battery-status)\"";
+              font_size = 16;
+              position = "-20, -10";
+              halign = "right";
+              valign = "top";
+            }
+          ]
+          ++ [
+            {
+              # Date
+              text = "cmd[update:1000] date +'%A, %d %B'";
+              font_size = 22;
+              halign = "center";
+              valign = "top";
+              position = "0, -160";
+            }
+            {
+              # Time
+              text = "cmd[update:1000] date +'%R'";
+              font_size = 95;
+              halign = "center";
+              valign = "top";
+              position = "0, -200";
+            }
+            {
+              # Name
+              text = "Jonatan Wincent";
+              font_size = 18;
+              position = "0, -125";
+            }
+            {
+              # E-mail
+              text = "jonatan.wincent@proton.me";
+              font_size = 14;
+              position = "0, -150";
+            }
+          ];
 
         # User Avatar
         image = {
@@ -87,5 +93,5 @@
     };
   };
 
-  security.pam.services.hyprlock = { };
+  security.pam.services.hyprlock = {};
 }
