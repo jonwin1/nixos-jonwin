@@ -1,4 +1,9 @@
-{user, ...}: {
+{
+  config,
+  lib,
+  user,
+  ...
+}: {
   home-manager.users.${user}.programs.waybar.settings = [
     {
       height = 25;
@@ -7,22 +12,25 @@
       modules-left = [
         "hyprland/workspaces"
       ];
+
       modules-center = [
         "clock"
         "custom/status_icons"
         # "custom/pomodoro"
       ];
-      modules-right = [
-        "tray"
-        "network"
-        "bluetooth"
-        "wireplumber"
-        "custom/temps"
-        "cpu"
-        "memory"
-        "custom/disk"
-        "battery"
-      ];
+
+      modules-right =
+        [
+          "tray"
+          "network"
+          "bluetooth"
+          "wireplumber"
+          "custom/temps"
+          "cpu"
+          "memory"
+          "custom/disk"
+        ]
+        ++ lib.optionals config.jonwin.hasBattery ["battery"];
 
       "hyprland/workspaces" = {
         show-special = true;
@@ -142,7 +150,7 @@
         tooltip-format = "{node_name}\nVolume: {volume}%";
       };
 
-      battery = {
+      battery = lib.mkIf config.jonwin.hasBattery {
         format = "{icon}";
         format-charging = "{icon}";
         format-full = "󰂅";
