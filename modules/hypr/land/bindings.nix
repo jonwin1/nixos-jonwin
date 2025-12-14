@@ -85,8 +85,27 @@
       "SHIFT, Print, exec, grimblast --notify copysave area"
 
       # Groups
-      "SUPER, G, togglegroup,"
-      "SUPER, TAB, changegroupactive,"
+      "SUPER, G, togglegroup"
+      "SUPER ALT, G, moveoutofgroup"
+
+      "SUPER ALT, H, moveintogroup, l"
+      "SUPER ALT, L, moveintogroup, r"
+      "SUPER ALT, K, moveintogroup, u"
+      "SUPER ALT, J, moveintogroup, d"
+
+      "SUPER ALT, TAB, changegroupactive, f"
+      "SUPER ALT SHIFT, TAB, changegroupactive, b"
+
+      "SUPER ALT, 1, changegroupactive, 1"
+      "SUPER ALT, 2, changegroupactive, 2"
+      "SUPER ALT, 3, changegroupactive, 3"
+      "SUPER ALT, 4, changegroupactive, 4"
+      "SUPER ALT, 5, changegroupactive, 5"
+      "SUPER ALT, 6, changegroupactive, 6"
+      "SUPER ALT, 7, changegroupactive, 7"
+      "SUPER ALT, 8, changegroupactive, 8"
+      "SUPER ALT, 9, changegroupactive, 9"
+      "SUPER ALT, 0, changegroupactive, 10"
     ];
 
     binde = [
@@ -115,6 +134,11 @@
 
       ", XF86MonBrightnessUp, exec, swayosd-client --brightness raise"
       ", XF86MonBrightnessDown, exec, swayosd-client --brightness lower"
+    ];
+
+    bindm = [
+      "SUPER, mouse:272, movewindow"
+      "SUPER, mouse:273, resizewindow"
     ];
   };
 }
