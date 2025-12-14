@@ -15,6 +15,25 @@
     };
     animations.enabled = false;
 
+    group = {
+      groupbar = {
+        font_size = 12;
+        font_family = "monospace";
+        font_weight_active = "ultraheavy";
+        font_weight_inactive = "normal";
+
+        height = 22;
+        indicator_height = 0;
+        indicator_gap = 0;
+        gaps_in = 0;
+        gaps_out = 0;
+
+        gradients = true;
+        gradient_rounding = 2;
+        gradient_round_only_edges = true;
+      };
+    };
+
     dwindle = {
       force_split = 2;
       preserve_split = true;
