@@ -4,18 +4,17 @@
       "stayfocused, class:(Pinentry)"
 
       # Remove opacity for some applications
-      "opacity 1 override 0.95 override, class:(zen|zen-beta|steam)"
+      "opacity 1 override 0.95 override, class:(zen|zen-beta|steam|chrom.*)"
       "opacity 1 override, title:(.*)(- YouTube)(.*)"
 
-      "float,class:^(se\.jonwin\.floating\..*)$"
-      "center,class:^(se\.jonwin\.floating\..*)$"
-      "size 1400 800,class:^(se\.jonwin\.floating\..*)$"
+      # Floating windows
+      "float, tag:floating-window"
+      "center, tag:floating-window"
+      "size 1400 800, tag:floating-window"
 
-      # "Applets"
-      "float, title:^(Volume Control)$"
-      "size 1000 500, title:^(Volume Control)$"
-      "move 100%-w-5 25, title:^(Volume Control)$"
-      "pin, title:^(Volume Control)$"
+      "tag +floating-window, class:(se.jonwin.impala|se.jonwin.bluetui)"
+      "tag +floating-window, title:^(Open.*Files?|Open [F|f]older.*|Save.*Files?|Save.*As|Save|All Files|.*wants to [open|save].*|[C|c]hoose.*|.*file to save.*)"
+      "tag +floating-window, title:^(Volume Control)$"
 
       # Jetbrains
       # https://github.com/hyprwm/Hyprland/issues/1947#issuecomment-2690914693

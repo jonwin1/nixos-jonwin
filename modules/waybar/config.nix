@@ -145,7 +145,6 @@
           "󰕾"
         ];
         scroll-step = 5;
-        on-click = "bash -c 'pgrep pavucontrol && pkill pavucontrol || pavucontrol &'";
         on-click-right = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
         tooltip-format = "{node_name}\nVolume: {volume}%";
       };

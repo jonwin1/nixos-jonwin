@@ -90,6 +90,7 @@
         # --- Menu entries ---
         entries="    Idle inhibitor toggle
         󰖔    Nightlight toggle
+            Audio
             Wifi
         󰂯    Bluetooth
         "
@@ -99,8 +100,9 @@
         case "$chosen" in
           *Idle*) toggle_idle ;;
           *Nightlight*) toggle_hyprsunset ;;
-          *Wifi*) launch-floating-tui impala ;;
-          *Bluetooth*) launch-floating-tui bluetui ;;
+          *Audio*) jonwin-launch-or-focus pavucontrol ;;
+          *Wifi*) jonwin-launch-or-focus-tui impala ;;
+          *Bluetooth*) jonwin-launch-or-focus-tui bluetui ;;
         esac
       '')
     ];
