@@ -77,6 +77,7 @@
           ./config/packages.nix
           ./config/${hostname}
           ./modules
+          ./bin
         ];
       };
   in {

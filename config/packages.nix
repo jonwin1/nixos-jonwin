@@ -24,7 +24,6 @@
     fastfetch
     fd
     fzf
-    grimblast
     inputs.pomodoro.packages.${stdenv.hostPlatform.system}.default
     jq
     ripgrep

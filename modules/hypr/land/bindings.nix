@@ -81,8 +81,8 @@
       "SUPER, F, togglefloating, active"
 
       # Screenshot
-      ", Print, exec, grimblast --notify copysave output"
-      "SHIFT, Print, exec, grimblast --notify copysave area"
+      ", Print, exec, jonwin-cmd-screenshot fullscreen save"
+      "SHIFT, Print, exec, jonwin-cmd-screenshot smart slurp"
 
       # Groups
       "SUPER, G, togglegroup"
