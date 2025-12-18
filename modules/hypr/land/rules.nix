@@ -6,6 +6,7 @@
       # Remove opacity for some applications
       "opacity 1 override 0.95 override, class:(zen|zen-beta|steam|chrom.*)"
       "opacity 1 override, title:(.*)(- YouTube)(.*)"
+      "opacity 1 override, class:(org.freecad.FreeCAD)"
 
       # Floating windows
       "float, tag:floating-window"
