@@ -12,6 +12,20 @@ pkill slurp && exit 0
 MODE="${1:-smart}"
 PROCESSING="${2:-slurp}"
 
+# accounting for portrait/transformed displays
+JQ_MONITOR_GEO='
+  def format_geo:
+    .x as $x | .y as $y |
+    (.width / .scale | floor) as $w |
+    (.height / .scale | floor) as $h |
+    .transform as $t |
+    if $t == 1 or $t == 3 then
+      "\($x),\($y) \($h)x\($w)"
+    else
+      "\($x),\($y) \($w)x\($h)"
+    end;
+'
+
 get_active_workspace() {
   hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .activeWorkspace.id'
 }
@@ -20,7 +34,7 @@ get_rectangles() {
   local ws="$1"
   [[ -z "$ws" ]] && ws=$(get_active_workspace)
   # Workspace location and resolution
-  hyprctl monitors -j | jq -r --arg ws "$ws" '.[] | select(.activeWorkspace.id == ($ws | tonumber)) | "\(.x),\(.y) \((.width / .scale) | floor)x\((.height / .scale) | floor)"'
+  hyprctl monitors -j | jq -r --arg ws "$ws" "${JQ_MONITOR_GEO} .[] | select(.activeWorkspace.id == (\$ws | tonumber)) | format_geo"
   # Client locations and resolutions
   hyprctl clients -j | jq -r --arg ws "$ws" '.[] | select(.workspace.id == ($ws | tonumber)) | "\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"'
 }
@@ -58,7 +72,7 @@ case "$MODE" in
     kill $PID 2>/dev/null
     ;;
   fullscreen)
-    SELECTION=$(hyprctl monitors -j | jq -r '.[] | select(.focused == true) | "\(.x),\(.y) \((.width / .scale) | floor)x\((.height / .scale) | floor)"')
+    SELECTION=$(hyprctl monitors -j | jq -r "${JQ_MONITOR_GEO} .[] | select(.focused == true) | format_geo")
     ;;
   smart|*)
     active_workspace_local="${ACTIVE_WORKSPACE:-$(get_active_workspace)}"
