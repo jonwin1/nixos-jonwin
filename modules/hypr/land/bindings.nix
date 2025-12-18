@@ -66,7 +66,7 @@
       "SUPER SHIFT, T, movetoworkspace, spacial:scratchpad"
 
       "SUPER, W, togglespecialworkspace, wiki"
-      "SUPER, W, exec, hyprctl clients | grep tags:.wiki || uwsm-app -- ghostty --working-directory=/home/${user}/wiki --initial-command=\"hyprctl dispatch tagwindow +wiki && nvim index.md\""
+      "SUPER, W, exec, hyprctl clients | grep tags:.wiki || uwsm-app -- ghostty --working-directory=/home/${user}/wiki --initial-command=\"hyprctl dispatch tagwindow +wiki && nvim index.md && lazygit\""
 
       # Misc
       "SUPER, P, pin, active"
