@@ -131,8 +131,7 @@ case "$PROCESSING" in
     grim -g "$SELECTION" - |
       satty --filename - \
       --output-filename "$FILE" \
-      --early-exit \
-      --actions-on-enter save-to-clipboard \
+      --actions-on-enter save-to-clipboard,exit \
       --save-after-copy \
       --copy-command 'wl-copy'
     ;;
