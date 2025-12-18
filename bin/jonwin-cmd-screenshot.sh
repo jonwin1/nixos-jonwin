@@ -60,13 +60,13 @@ ACTIVE_WORKSPACE=$(get_active_workspace 2>/dev/null)
 # Select based on mode
 case "$MODE" in
   region)
-    wayfreeze & PID=$!
+    hyprpicker -r -z >/dev/null 2>&1 & PID=$!
     sleep .1
     SELECTION=$(slurp 2>/dev/null)
     kill $PID 2>/dev/null
     ;;
   windows)
-    wayfreeze & PID=$!
+    hyprpicker -r -z >/dev/null 2>&1 & PID=$!
     sleep .1
     SELECTION=$(get_rectangles "$ACTIVE_WORKSPACE" | slurp -r 2>/dev/null)
     kill $PID 2>/dev/null
@@ -79,7 +79,7 @@ case "$MODE" in
     RECTS=$(get_rectangles "$active_workspace_local")
     [[ -n "$active_workspace_local" ]] && FS_RECT=$(get_fullscreen_rect "$active_workspace_local")
 
-    wayfreeze & PID=$!
+    hyprpicker -r -z >/dev/null 2>&1 & PID=$!
     sleep .1
 
     if [[ -n "$FS_RECT" ]]; then

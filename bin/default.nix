@@ -7,7 +7,7 @@
     grim
     slurp
     satty
-    wayfreeze # TODO: replace with hyprpicker
+    hyprpicker
     (writeScriptBin "jonwin-cmd-screenshot" (builtins.readFile ./jonwin-cmd-screenshot.sh))
   ];
 }
