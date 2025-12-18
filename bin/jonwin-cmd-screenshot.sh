@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Based on omarcy-cmd-screenshot
+# https://github.com/basecamp/omarchy/blob/32592e2e285b5c9af6d38724be319c4fbef6e221/bin/omarchy-cmd-screenshot#L4
+
 OUTPUT_DIR="$HOME/Pictures"
 
 if [[ ! -d "$OUTPUT_DIR" ]]; then
