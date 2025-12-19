@@ -13,7 +13,7 @@
       "center, tag:floating-window"
       "size 1500 1000, tag:floating-window"
 
-      "tag +floating-window, class:(se.jonwin.impala|se.jonwin.bluetui|com.gabm.satty)"
+      "tag +floating-window, class:(se.jonwin.nmtui|se.jonwin.bluetui|com.gabm.satty)"
       "tag +floating-window, title:^(Open.*Files?|Open [F|f]older.*|Save.*Files?|Save.*As|Save|All Files|.*wants to [open|save].*|[C|c]hoose.*|.*file to save.*)"
       "tag +floating-window, title:^(Volume Control)$"
 

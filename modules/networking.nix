@@ -1,11 +1,14 @@
-{ user, pkgs, hostname, ... }:
 {
+  user,
+  hostname,
+  ...
+}: {
   networking = {
     hostName = hostname;
-    wireless.iwd.enable = true;
+    networkmanager.enable = true;
   };
 
-  home-manager.users.${user}.home.packages = with pkgs; [
-    impala
+  users.users.${user}.extraGroups = [
+    "networkmanager"
   ];
 }

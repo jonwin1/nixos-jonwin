@@ -101,7 +101,7 @@
           *Idle*) toggle_idle ;;
           *Nightlight*) toggle_hyprsunset ;;
           *Audio*) jonwin-launch-or-focus pavucontrol ;;
-          *Wifi*) jonwin-launch-or-focus-tui impala ;;
+          *Wifi*) jonwin-launch-or-focus-tui nmtui ;;
           *Bluetooth*) jonwin-launch-or-focus-tui bluetui ;;
         esac
       '')
