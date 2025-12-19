@@ -30,6 +30,7 @@
     ./waybar
     ./yubikey.nix
     ./zen-browser.nix
+    # ./zmkBATx.nix
     ./zsh.nix
   ];
 }

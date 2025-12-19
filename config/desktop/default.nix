@@ -9,5 +9,6 @@
 
     # Global modules
     ../../modules/foldingathome.nix
+    ../../modules/zmkBATx.nix
   ];
 }

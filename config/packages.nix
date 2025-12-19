@@ -65,7 +65,6 @@ in {
     libsForQt5.qt5.qtwayland
     xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland
-    zmkBATx
 
     # launch commands (heavily inspired by the omarchy-launch commands)
 
