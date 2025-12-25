@@ -11,7 +11,7 @@
       # Floating windows
       "float, tag:floating-window"
       "center, tag:floating-window"
-      "size 1500 1000, tag:floating-window"
+      "size (monitor_w/3) (monitor_h/3), tag:floating-window"
 
       "tag +floating-window, class:(se.jonwin.nmtui|se.jonwin.bluetui|com.gabm.satty)"
       "tag +floating-window, title:^(Open.*Files?|Open [F|f]older.*|Save.*Files?|Save.*As|Save|All Files|.*wants to [open|save].*|[C|c]hoose.*|.*file to save.*)"
