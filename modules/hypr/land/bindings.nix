@@ -57,6 +57,9 @@
       "SUPER SHIFT, R, exec, pkill rofi || rofi -show run -run-command 'uwsm-app -- {cmd}'"
       "SUPER, V, exec, pkill rofi || cliphist list | rofi -dmenu | cliphist decode | wl-copy"
 
+      # Webapps
+      "SUPER, C, exec, jonwin-launch-webapp https://chatgpt.com/"
+
       # Special Workspaces
       "SUPER, D, togglespecialworkspace, discord"
       "SUPER, D, exec, hyprctl clients | grep class:.discord || uwsm-app -- discord"
