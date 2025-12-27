@@ -79,7 +79,7 @@
       "SUPER, Q, killactive"
       "SUPER SHIFT, Q, exec, rofi-power-menu"
       ", XF86PowerOff, exec, rofi-power-menu"
-      "SUPER, SPACE, exec, rofi-system-menu"
+      "SUPER, SPACE, exec, jwmenu ~/.config/jwmenu/system.toml"
       "SUPER, S, togglesplit,"
       "SUPER, F, togglefloating, active"
 

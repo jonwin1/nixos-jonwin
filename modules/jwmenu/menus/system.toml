@@ -1,0 +1,25 @@
+[config]
+label = "root"
+
+[[config.menu]]
+label = "    Toggle"
+
+[[config.menu.submenu]]
+label = "    Idle inhibitor"
+command = "jonwin-toggle-idle-inhibitor"
+
+[[config.menu.submenu]]
+label = "󰖔    Nightlight"
+command = "jonwin-toggle-nightlight"
+
+[[config.menu]]
+label = "    Audio"
+command = "jonwin-launch-or-focus pavucontrol"
+
+[[config.menu]]
+label = "    Wifi"
+command = "jonwin-launch-or-focus-tui nmtui"
+
+[[config.menu]]
+label = "󰂯    Bluetooth"
+command = "jonwin-launch-or-focus-tui bluetui"

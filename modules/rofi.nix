@@ -61,25 +61,6 @@
           "    Lock") hyprlock ;;
         esac
       '')
-
-      (writeShellScriptBin "rofi-system-menu" ''
-        entries="    Idle inhibitor toggle
-        󰖔    Nightlight toggle
-            Audio
-            Wifi
-        󰂯    Bluetooth
-        "
-
-        chosen=$(printf "%s" "$entries" | rofi -dmenu -i)
-
-        case "$chosen" in
-          *Idle*) jonwin-toggle-idle-inhibitor ;;
-          *Nightlight*) jonwin-toggle-nightlight ;;
-          *Audio*) jonwin-launch-or-focus pavucontrol ;;
-          *Wifi*) jonwin-launch-or-focus-tui nmtui ;;
-          *Bluetooth*) jonwin-launch-or-focus-tui bluetui ;;
-        esac
-      '')
     ];
   };
 }
