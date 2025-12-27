@@ -2,7 +2,7 @@
 label = "System Menu"
 
 [[config.menu]]
-label = "    Toggle"
+label = "    Toggle →"
 
 [[config.menu.submenu]]
 label = "    Idle inhibitor"
@@ -17,7 +17,7 @@ label = "    Audio"
 command = "jonwin-launch-or-focus pavucontrol"
 
 [[config.menu]]
-label = "    Wifi"
+label = "    Network"
 command = "jonwin-launch-or-focus-tui nmtui"
 
 [[config.menu]]
