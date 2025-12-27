@@ -1,5 +1,5 @@
 [config]
-label = "root"
+label = "System Menu"
 
 [[config.menu]]
 label = "    Toggle"

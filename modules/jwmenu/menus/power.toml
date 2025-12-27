@@ -1,0 +1,26 @@
+[config]
+label = "Power Menu"
+
+[[config.menu]]
+label = "󰜺    Cancel"
+command = "return"
+
+[[config.menu]]
+label = "    Shutdown"
+command = "systemctl poweroff"
+
+[[config.menu]]
+label = "    Reboot"
+command = "systemctl reboot"
+
+[[config.menu]]
+label = "󰤄    Suspend"
+command = "systemctl suspend"
+
+[[config.menu]]
+label = "    Hibernate"
+command = "systemctl hibernate"
+
+[[config.menu]]
+label = "    Lock"
+command = "hyprlock"

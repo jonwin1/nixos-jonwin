@@ -1,4 +1,5 @@
-{user, ...}: {
+{ user, ... }:
+{
   wayland.windowManager.hyprland.settings = {
     bind = [
       # Switch to workspace
@@ -77,8 +78,8 @@
       "SUPER ALT, M, fullscreen, 1"
       "SUPER SHIFT, M, fullscreenstate, 0 2"
       "SUPER, Q, killactive"
-      "SUPER SHIFT, Q, exec, rofi-power-menu"
-      ", XF86PowerOff, exec, rofi-power-menu"
+      "SUPER SHIFT, Q, exec, jwmenu ~/.config/jwmenu/power.toml"
+      ", XF86PowerOff, exec, jwmenu ~/.config/jwmenu/power.toml"
       "SUPER, SPACE, exec, jwmenu ~/.config/jwmenu/system.toml"
       "SUPER, S, togglesplit,"
       "SUPER, F, togglefloating, active"
