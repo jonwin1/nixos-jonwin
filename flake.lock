@@ -218,6 +218,26 @@
         "type": "github"
       }
     },
+    "jwmenu": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1766765815,
+        "narHash": "sha256-l7MPYY1jIxG9OXh2c3XPzova02k6vsXj5wNwyQdK5sM=",
+        "owner": "jonwin1",
+        "repo": "jwmenu",
+        "rev": "90a26678c2a338b62b2b4a8c7e7bdde3f9f9038e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jonwin1",
+        "repo": "jwmenu",
+        "type": "github"
+      }
+    },
     "mnw": {
       "locked": {
         "lastModified": 1758834834,
@@ -372,6 +392,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "jwmenu": "jwmenu",
         "neowiki-nvim": "neowiki-nvim",
         "nixpkgs": "nixpkgs",
         "nvf": "nvf",

@@ -13,6 +13,7 @@
     ./ghostty.nix
     ./git.nix
     ./hypr
+    ./jwmenu
     ./lazygit.nix
     ./locale.nix
     ./mime.nix

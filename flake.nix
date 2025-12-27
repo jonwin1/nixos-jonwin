@@ -9,13 +9,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    stylix = {
-      url = "github:nix-community/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nvf = {
-      url = "github:NotAShelf/nvf";
+    jwmenu = {
+      url = "github:jonwin1/jwmenu";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -24,8 +19,18 @@
       flake = false;
     };
 
+    nvf = {
+      url = "github:NotAShelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     pomodoro = {
       url = "github:jonwin1/go-pomodoro";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    stylix = {
+      url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
