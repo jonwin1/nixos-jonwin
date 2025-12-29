@@ -10,6 +10,7 @@
       ".config/swayosd/config.toml".text = ''
         [server]
         max_volume = 100
+        show_percentage = true
       '';
 
       ".config/swayosd/style.css".text = ''
