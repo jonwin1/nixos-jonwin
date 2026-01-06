@@ -60,6 +60,7 @@
 
       # Webapps
       "SUPER, C, exec, jonwin-launch-webapp https://chatgpt.com/"
+      "SUPER, Y, exec, jonwin-launch-or-focus-webapp chrome-music.youtube.com__-Default https://music.youtube.com/"
 
       # Special Workspaces
       "SUPER, D, togglespecialworkspace, discord"
