@@ -3,7 +3,7 @@ label = "Power Menu"
 
 [[config.menu]]
 label = "󰜺    Cancel"
-command = "return"
+command = ""
 
 [[config.menu]]
 label = "    Shutdown"
