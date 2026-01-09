@@ -79,6 +79,7 @@
       };
 
       network = {
+        interval = 5;
         format-icons = ["󰤯" "󰤟" "󰤢" "󰤥" "󰤨"];
         format = "{icon}";
         format-wifi = "{icon}";
