@@ -1,39 +1,41 @@
 {
   wayland.windowManager.hyprland.settings = {
     windowrule = [
-      "stayfocused, class:(Pinentry)"
+      # Pinentry stays focused
+      "match:class Pinentry, stay_focused on"
 
       # Remove opacity for some applications
-      "opacity 1 override 0.95 override, class:(zen|zen-beta|steam|chrom.*)"
-      "opacity 1 override, title:(.*)(- YouTube)(.*)"
-      "opacity 1 override, class:(org.freecad.FreeCAD)"
+      "match:class (FreeCAD|steam|qemu), opacity 1 override"
 
       # Floating windows
-      "float, tag:floating-window"
-      "center, tag:floating-window"
-      "size (monitor_w/3) (monitor_h/3), tag:floating-window"
+      "match:tag floating-window, float on"
+      "match:tag floating-window, center on"
+      "match:tag floating-window, size (monitor_w*0.5) (monitor_h*0.5)"
 
-      "tag +floating-window, class:(se.jonwin.nmtui|se.jonwin.bluetui|com.gabm.satty)"
-      "tag +floating-window, title:^(Open.*Files?|Open [F|f]older.*|Save.*Files?|Save.*As|Save|All Files|.*wants to [open|save].*|[C|c]hoose.*|.*file to save.*)"
-      "tag +floating-window, title:^(Volume Control)$"
-
-      # Jetbrains
-      # https://github.com/hyprwm/Hyprland/issues/1947#issuecomment-2690914693
-      "opacity 1 override, class:^(.*jetbrains.*)$"
-      "focusonactivate on,class:^(jetbrains-.*)$"
-      "dimaround,class:^(jetbrains-.*)$,floating:1,title:^(?!win)"
-      "center,class:^(jetbrains-.*)$,floating:1,title:^(?!win)"
-      "noanim,class:^(jetbrains-.*)$,title:^(win.*)$"
-      "noinitialfocus,class:^(jetbrains-.*)$,title:^(win.*)$"
-      "rounding 0,class:^(jetbrains-.*)$,title:^(win.*)$"
+      "match:class (se.jonwin.nmtui|se.jonwin.bluetui|com.gabm.satty), tag +floating-window"
+      "match:title (Open.*Files?|Open [F|f]older.*|Save.*Files?|Save.*As|Save|All Files|.*wants to (open|save).*|[C|c]hoose.*|.*file to save.*), tag +floating-window"
+      "match:title Volume Control, tag +floating-window"
 
       # Fixes FreeCAD drag and drop
-      "noinitialfocus, class:FreeCAD"
+      "match:class FreeCAD, no_initial_focus on"
+
+      # ---------- Browsers ----------
+
+      # Browser types
+      "tag +chromium-based-browser, match:class ((google-)?[cC]hrom(e|ium).*|[bB]rave-browser|[mM]icrosoft-edge|Vivaldi-stable|helium)"
+      "tag +firefox-based-browser, match:class ([fF]irefox|zen|zen-beta|librewolf)"
+
+      # Less opacity for browsers
+      "opacity 1 override 0.97 override, match:tag chromium-based-browser"
+      "opacity 1 override 0.97 override, match:tag firefox-based-browser"
+
+      # No opacity on video sites
+      "opacity 1 override, match:title (.* - YouTube .*)"
     ];
 
     layerrule = [
-      "blur, waybar"
-      "ignorealpha, waybar"
+      "blur on, match:namespace waybar"
+      "ignore_alpha 0, match:namespace waybar"
     ];
   };
 }
