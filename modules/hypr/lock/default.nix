@@ -12,12 +12,10 @@
         # https://github.com/FireDrop6000/hyprland-mydots/blob/master/.config/hypr/hyprlock.conf
         # https://github.com/XNM1/linux-nixos-hyprland-config-dotfiles/blob/main/home/.config/hypr/hyprlock.conf
 
-        general = {
-          immediate_render = true;
-        };
-
         background = {
-          blur_passes = 2;
+          path = "screenshot";
+          blur_passes = 3;
+          blur_size = 10;
           brightness = 0.5;
         };
 
