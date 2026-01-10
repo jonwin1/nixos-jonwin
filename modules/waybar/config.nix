@@ -84,10 +84,13 @@
         format = "{icon}";
         format-wifi = "{icon}";
         format-ethernet = "󰈀";
+        format-linked = "󰌷";
         format-disconnected = "󰤮";
+        format-disabled = "󰤮";
         tooltip-format-wifi = "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}";
         tooltip-format-ethernet = "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}";
         tooltip-format-disconnected = "Disconnected";
+        tooltip-format-disabled = "Disabled";
       };
 
       bluetooth = {

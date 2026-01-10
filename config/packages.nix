@@ -27,6 +27,7 @@ in {
     obsidian
     #openscad
     pavucontrol
+    protonvpn-gui
     zathura
 
     # CLI tools
