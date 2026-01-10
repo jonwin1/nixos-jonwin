@@ -130,14 +130,17 @@ To get started with this setup, follow these steps:
 
 9. **Wallpaper**
 
-    Replace `wallpaper.png` to change the wallpaper.
+    Put wallpapers in ```~/Pictures/wallpaper/```, if there are multiple images
+    in the directory they will be cycled through on an interval.
+    [This](https://github.com/dharmx/walls) is a good place to find multiple
+    wallpapers that fit a theme.
+
 
 ## 📂 File Structure
 
 ```markdown
 📂 .
 ┣ ❄️ flake.nix (Main entry point for the NixOS flake)
-┣ 🖼️ wallpaper.png (Change this to change wallpaper on next rebuild)
 ┣ 📂 config/ (Host and shared configuration files)
 ┃ ┣ ❄️ configuration.nix (Shared config options)
 ┃ ┣ ❄️ packages.nix (Shared packages)
@@ -155,8 +158,11 @@ To get started with this setup, follow these steps:
 
 ## 🤝 Contributions
 
-Feel free to fork the repository and submit pull requests if you'd like to contribute improvements. Open issues if you encounter any problems with the config or have ideas for new features.
+Feel free to fork the repository and submit pull requests if you'd like to
+contribute improvements. Open issues if you encounter any problems with the
+config or have ideas for new features.
 
 ## 📜 License
 
-This project is licensed under the GPL-3.0 License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the GPL-3.0 License. See the [LICENSE](LICENSE)
+file for details.
