@@ -78,6 +78,7 @@
 
           inputs.stylix.nixosModules.stylix
 
+          ./config/options.nix
           ./config/configuration.nix
           ./config/packages.nix
           ./config/${hostname}
