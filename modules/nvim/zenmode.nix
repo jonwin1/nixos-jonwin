@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs.nvf.settings.vim = {
     lazy.plugins = {
       "zen-mode.nvim" = {

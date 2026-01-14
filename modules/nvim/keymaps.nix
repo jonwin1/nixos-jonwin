@@ -38,7 +38,10 @@
     }
     {
       key = "<leader>d";
-      mode = ["n" "v"];
+      mode = [
+        "n"
+        "v"
+      ];
       action = "\"_d";
       desc = "Delete without saving to clipboard";
     }

@@ -2,12 +2,14 @@
   inputs,
   pkgs,
   ...
-}: let
+}:
+let
   neowiki-source = pkgs.vimUtils.buildVimPlugin {
     name = "neowiki.nvim";
     src = inputs.neowiki-nvim;
   };
-in {
+in
+{
   programs.nvf.settings.vim = {
     extraPlugins = {
       neowiki = {

@@ -1,14 +1,17 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs.nvf.settings.vim = {
     utility.snacks-nvim = {
       enable = true;
       setupOpts = {
-        bigfile = {enabled = true;};
+        bigfile = {
+          enabled = true;
+        };
 
         dashboard = {
           enabled = true;
           sections = [
-            {section = "header";}
+            { section = "header"; }
             {
               icon = " ";
               title = "Keymaps";
@@ -33,7 +36,9 @@
           ];
         };
 
-        image = {enabled = true;};
+        image = {
+          enabled = true;
+        };
         indent = {
           enabled = true;
           animate.enabled = false;

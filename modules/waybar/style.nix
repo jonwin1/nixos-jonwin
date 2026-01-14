@@ -2,7 +2,8 @@
   user,
   lib,
   ...
-}: {
+}:
+{
   home-manager.users.${user} = {
     stylix.targets.waybar.addCss = false;
     programs.waybar.style = lib.concatStrings [

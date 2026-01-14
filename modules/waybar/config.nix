@@ -3,7 +3,8 @@
   lib,
   user,
   ...
-}: {
+}:
+{
   home-manager.users.${user}.programs.waybar.settings = [
     {
       inherit (config.jonwin.waybar) output;
@@ -21,18 +22,17 @@
         # "custom/pomodoro"
       ];
 
-      modules-right =
-        [
-          "tray"
-          "network"
-          "bluetooth"
-          "wireplumber"
-          "custom/temps"
-          "cpu"
-          "memory"
-          "custom/disk"
-        ]
-        ++ lib.optionals config.jonwin.hasBattery ["battery"];
+      modules-right = [
+        "tray"
+        "network"
+        "bluetooth"
+        "wireplumber"
+        "custom/temps"
+        "cpu"
+        "memory"
+        "custom/disk"
+      ]
+      ++ lib.optionals config.jonwin.hasBattery [ "battery" ];
 
       "hyprland/workspaces" = {
         show-special = true;
@@ -82,7 +82,13 @@
 
       network = {
         interval = 5;
-        format-icons = ["󰤯" "󰤟" "󰤢" "󰤥" "󰤨"];
+        format-icons = [
+          "󰤯"
+          "󰤟"
+          "󰤢"
+          "󰤥"
+          "󰤨"
+        ];
         format = "{icon}";
         format-wifi = "{icon}";
         format-ethernet = "󰈀";

@@ -3,7 +3,8 @@
   lib,
   user,
   ...
-}: {
+}:
+{
   home-manager.users.${user} = {
     programs.hyprlock = {
       enable = true;
@@ -91,5 +92,5 @@
     };
   };
 
-  security.pam.services.hyprlock = {};
+  security.pam.services.hyprlock = { };
 }

@@ -3,19 +3,20 @@
   lib,
   pkgs,
   ...
-}: let
+}:
+let
   cfg = config.nvidiaConfig;
-in {
-  options.nvidiaConfig.enable =
-    lib.mkEnableOption "Enable NVIDIA GPU";
+in
+{
+  options.nvidiaConfig.enable = lib.mkEnableOption "Enable NVIDIA GPU";
 
   config = lib.mkIf cfg.enable {
-    services.xserver.videoDrivers = ["nvidia"];
+    services.xserver.videoDrivers = [ "nvidia" ];
     hardware = {
       graphics = {
         enable = true;
         enable32Bit = true;
-        extraPackages = with pkgs; [nvidia-vaapi-driver];
+        extraPackages = with pkgs; [ nvidia-vaapi-driver ];
       };
 
       nvidia = {

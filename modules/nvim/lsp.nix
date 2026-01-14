@@ -7,7 +7,10 @@
 
     spellcheck = {
       enable = true;
-      languages = ["en" "sv"];
+      languages = [
+        "en"
+        "sv"
+      ];
       programmingWordlist.enable = true;
     };
 

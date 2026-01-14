@@ -2,11 +2,12 @@
   config,
   lib,
   ...
-}: let
+}:
+let
   cfg = config.batteryMode;
-in {
-  options.batteryMode.enable =
-    lib.mkEnableOption "Laptop power-saving mode";
+in
+{
+  options.batteryMode.enable = lib.mkEnableOption "Laptop power-saving mode";
 
   config = lib.mkIf cfg.enable {
     powerManagement = {
