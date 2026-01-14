@@ -1,7 +1,9 @@
-{user, ...}: let
+{ user, ... }:
+let
   primary = "AOC U34G2G4R3 0x0000326C";
   tv = "Samsung Electric Company QCQ90S 0x01000E00";
-in {
+in
+{
   home-manager.users.${user} = {
     wayland.windowManager.hyprland.settings = {
       cursor = {
@@ -19,4 +21,6 @@ in {
       ];
     };
   };
+
+  jonwin.waybar.output = [ "DP-1" ];
 }

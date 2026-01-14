@@ -19,6 +19,7 @@
     ./mime.nix
     ./nvim
     ./networking.nix
+    ./options.nix
     # ./postgresql.nix
     ./rbw.nix
     ./rofi.nix

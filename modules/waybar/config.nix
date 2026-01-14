@@ -6,6 +6,8 @@
 }: {
   home-manager.users.${user}.programs.waybar.settings = [
     {
+      inherit (config.jonwin.waybar) output;
+
       height = 25;
       spacing = 0;
 
