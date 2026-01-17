@@ -8,7 +8,7 @@
   };
 
   services = {
-    # Auto login on first TTY (I exec-once hyprlock in hyprland).
+    # Auto login on first TTY
     getty.autologinUser = user;
     getty.autologinOnce = true;
 

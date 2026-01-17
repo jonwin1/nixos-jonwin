@@ -10,6 +10,7 @@
     ./modules/powerManagement.nix
 
     # Global modules
+    ../../modules/boot-encrypted.nix
     ../../modules/cross-code.nix
   ];
 }

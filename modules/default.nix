@@ -4,7 +4,8 @@
     ./audio.nix
     ./battery.nix
     ./bluetooth.nix
-    ./boot.nix
+    # ./boot.nix
+    # ./boot-encrypted.nix
     ./clean.nix
     # ./cross-code.nix
     # ./docker.nix
