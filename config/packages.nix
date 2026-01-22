@@ -30,7 +30,7 @@ in
     #openscad
     pavucontrol
     protonvpn-gui
-    zathura
+    kdePackages.okular
 
     # CLI tools
     bc
