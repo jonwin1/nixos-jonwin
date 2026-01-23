@@ -12,7 +12,7 @@
       "match:tag floating-window, center on"
       "match:tag floating-window, size (monitor_w*0.5) (monitor_h*0.5)"
 
-      "match:class (se.jonwin.nmtui|se.jonwin.bluetui|com.gabm.satty), tag +floating-window"
+      "match:class (se.jonwin.nmtui|se.jonwin.bluetui|com.gabm.satty|thunar|com.yubico.yubioath), tag +floating-window"
       "match:title (Open.*Files?|Open [F|f]older.*|Save.*Files?|Save.*As|Save|All Files|.*wants to (open|save).*|[C|c]hoose.*|.*file to save.*), tag +floating-window"
       "match:title Volume Control, tag +floating-window"
 

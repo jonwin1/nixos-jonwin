@@ -26,6 +26,7 @@
     ./steam.nix
     ./style.nix
     ./swayosd
+    ./thunar.nix
     ./user.nix
     ./virtualization.nix
     # ./vscode.nix

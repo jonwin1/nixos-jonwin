@@ -54,6 +54,9 @@
       "SUPER, B, exec, uwsm-app -- zen-beta"
       "SUPER, X, exec, uwsm-app -- ghostty"
       "SUPER, N, exec, uwsm-app -- ghostty -e nvim"
+      "SUPER, E, exec, uwsm-app -- thunar"
+      "SUPER, U, exec, uwsm-app -- yubioath-flutter"
+
       "SUPER, R, exec, pkill rofi || rofi -show drun -run-command 'uwsm-app -- {cmd}'"
       "SUPER SHIFT, R, exec, pkill rofi || rofi -show run -run-command 'uwsm-app -- {cmd}'"
       "SUPER, V, exec, pkill rofi || cliphist list | rofi -dmenu | cliphist decode | wl-copy"
