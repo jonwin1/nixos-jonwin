@@ -25,5 +25,7 @@
       builtins.readFile ./jonwin-toggle-idle-inhibitor.sh
     ))
     (writeScriptBin "jonwin-toggle-nightlight" (builtins.readFile ./jonwin-toggle-nightlight.sh))
+
+    (writeScriptBin "jonwin-wiki" (builtins.readFile ./jonwin-wiki.sh))
   ];
 }
