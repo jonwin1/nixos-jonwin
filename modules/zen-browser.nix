@@ -47,6 +47,11 @@
               URLTemplate = "https://home-manager-options.extranix.com/?query={searchTerms}&release=master";
               Alias = "@hmopt";
             }
+            {
+              Name = "Arch Wiki";
+              URLTemplate = "https://wiki.archlinux.org/index.php?search={searchTerms}";
+              Alias = "@arch";
+            }
           ];
         };
       };
