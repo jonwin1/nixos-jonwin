@@ -5,7 +5,7 @@
       "match:class Pinentry, stay_focused on"
 
       # Remove opacity for some applications
-      "match:class (FreeCAD|steam|qemu|gimp), opacity 1 override"
+      "match:class (FreeCAD|steam|qemu|gimp|.virt-manager-wrapped), opacity 1 override"
 
       # Floating windows
       "match:tag floating-window, float on"
