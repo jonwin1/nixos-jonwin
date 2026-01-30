@@ -22,5 +22,5 @@ in
     };
   };
 
-  jonwin.waybar.output = [ "DP-1" ];
+  jonwin.waybar.output = "!HDMI-A-1";
 }

@@ -13,6 +13,4 @@
       ];
     };
   };
-
-  jonwin.waybar.output = [ "eDP-1" ];
 }

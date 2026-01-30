@@ -1,16 +1,25 @@
 { lib, ... }:
+let
+  inherit (lib) literalExpression mkOption types;
+in
 {
-  options.jonwin = {
-    hasBattery = lib.mkOption {
-      type = lib.types.bool;
+  options.jonwin = with types; {
+    hasBattery = mkOption {
+      type = bool;
       default = false;
       description = "Whether this machine has a battery.";
     };
 
-    waybar.output = lib.mkOption {
-      type = lib.types.listOf lib.types.str;
-      default = [ ];
-      description = "Waybar outputs where the bar should appear.";
+    waybar.output = mkOption {
+      type = nullOr (either str (listOf str));
+      default = null;
+      example = literalExpression ''
+        [ "DP-1" "!DP-2" "!DP-3" ]
+      '';
+      description = ''
+        Specifies on which screen this bar will be displayed.
+        Exclamation mark(!) can be used to exclude specific output.
+      '';
     };
   };
 }
