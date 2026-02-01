@@ -38,7 +38,7 @@
         show-special = true;
         format = "{icon}";
         format-icons = {
-          default = "";
+          default = "󰞋";
           "1" = "󰎤";
           "2" = "󰎧";
           "3" = "󰎪";
@@ -49,9 +49,10 @@
           "8" = "󰎹";
           "9" = "󰎼";
           "10" = "󰽽";
-          scratchpad = "";
+          scratchpad = "󰏬";
           discord = "󰙯";
-          wiki = "󰎞";
+          music = "󰎄";
+          wiki = "󰈚";
         };
       };
 

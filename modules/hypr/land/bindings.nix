@@ -64,18 +64,13 @@
       # Webapps
       "SUPER, C, exec, jonwin-launch-webapp https://chatgpt.com/"
 
-      # Special Workspaces
+      # Special Workspaces (see workspace rules)
+      "SUPER, D, togglespecialworkspace, discord"
+      "SUPER, W, togglespecialworkspace, wiki"
       "SUPER, Y, togglespecialworkspace, music"
 
-      "SUPER, D, togglespecialworkspace, discord"
-      "SUPER, D, exec, hyprctl clients | grep class:.discord || uwsm-app -- discord"
-
       "SUPER, T, togglespecialworkspace, scratchpad"
-      "SUPER, T, exec, hyprctl clients | grep tags:.scratchpad || uwsm-app -- ghostty --initial-command=\"hyprctl dispatch tagwindow +scratchpad && zsh\""
-      "SUPER SHIFT, T, movetoworkspace, spacial:scratchpad"
-
-      "SUPER, W, togglespecialworkspace, wiki"
-      "SUPER, W, exec, hyprctl clients | grep tags:.wiki || uwsm-app -- ghostty --working-directory=/home/${user}/wiki --initial-command=\"jonwin-wiki\""
+      "SUPER SHIFT, T, movetoworkspace, special:scratchpad"
 
       # Misc
       "SUPER, P, pin, active"

@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-hyprctl dispatch tagwindow +wiki >/dev/null
-
 echo "Pulling latest changes…"
 git pull --rebase --autostash
 

@@ -1,3 +1,4 @@
+{ user, ... }:
 {
   wayland.windowManager.hyprland.settings = {
     windowrule = [
@@ -39,7 +40,10 @@
     ];
 
     workspace = [
+      "special:discord, on-created-empty:uwsm-app -- discord"
       "special:music, on-created-empty:jonwin-launch-webapp https://music.youtube.com/"
+      "special:scratchpad, on-created-empty:uwsm-app -- ghostty"
+      "special:wiki, on-created-empty:uwsm-app -- ghostty --working-directory=/home/${user}/wiki --initial-command=\"jonwin-wiki\""
     ];
   };
 }
