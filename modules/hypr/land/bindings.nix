@@ -63,9 +63,10 @@
 
       # Webapps
       "SUPER, C, exec, jonwin-launch-webapp https://chatgpt.com/"
-      "SUPER, Y, exec, jonwin-launch-or-focus-webapp chrome-music.youtube.com__-Default https://music.youtube.com/"
 
       # Special Workspaces
+      "SUPER, Y, togglespecialworkspace, music"
+
       "SUPER, D, togglespecialworkspace, discord"
       "SUPER, D, exec, hyprctl clients | grep class:.discord || uwsm-app -- discord"
 

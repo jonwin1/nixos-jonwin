@@ -37,5 +37,9 @@
       "blur on, match:namespace waybar"
       "ignore_alpha 0, match:namespace waybar"
     ];
+
+    workspace = [
+      "special:music, on-created-empty:jonwin-launch-webapp https://music.youtube.com/"
+    ];
   };
 }
