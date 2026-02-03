@@ -2,6 +2,7 @@
 {
   home-manager.users.${user}.programs.ghostty = {
     enable = true;
+    enableZshIntegration = true;
     clearDefaultKeybinds = true;
 
     settings = {

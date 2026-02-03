@@ -52,7 +52,7 @@
 
       # Applications
       "SUPER, B, exec, uwsm-app -- zen-beta"
-      "SUPER, X, exec, uwsm-app -- ghostty"
+      "SUPER, X, exec, uwsm-app -- ghostty +new-window"
       "SUPER, N, exec, uwsm-app -- ghostty -e nvim"
       "SUPER, E, exec, uwsm-app -- thunar"
       "SUPER, U, exec, uwsm-app -- yubioath-flutter"
