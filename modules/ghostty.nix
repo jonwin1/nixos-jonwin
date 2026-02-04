@@ -6,6 +6,8 @@
     clearDefaultKeybinds = true;
 
     settings = {
+      shell-integration-features = "ssh-terminfo,ssh-env";
+
       keybind = [
         "alt+space=toggle_command_palette"
         "alt+r=prompt_surface_title"
