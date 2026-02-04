@@ -36,11 +36,6 @@
           initContent = ''
             zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
             zstyle ':completion:*' list-colors "$\{(s.:.)LS_COLORS}"
-
-            # Start Hyprland UWSM
-            if uwsm check may-start; then
-              exec uwsm start hyprland-uwsm.desktop
-            fi
           '';
 
           shellAliases = {

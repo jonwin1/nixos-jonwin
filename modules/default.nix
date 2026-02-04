@@ -8,6 +8,7 @@
     # ./boot-encrypted.nix
     ./clean.nix
     # ./cross-code.nix
+    ./displayManager.nix
     # ./docker.nix
     ./dunst.nix
     # ./foldingathome.nix

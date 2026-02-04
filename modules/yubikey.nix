@@ -8,10 +8,6 @@
   };
 
   services = {
-    # Auto login on first TTY
-    getty.autologinUser = user;
-    getty.autologinOnce = true;
-
     pcscd.enable = true; # Required by yubioath-flutter.
     udev.packages = [ pkgs.yubikey-personalization ];
   };
