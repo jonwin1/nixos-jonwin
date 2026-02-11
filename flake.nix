@@ -14,13 +14,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    neowiki-nvim = {
-      url = "github:echaya/neowiki.nvim";
-      flake = false;
-    };
-
     nvf = {
-      url = "github:NotAShelf/nvf";
+      url = "github:jonwin1/nvf-config";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

@@ -104,6 +104,7 @@
       "inputs": {
         "nixpkgs-lib": [
           "nvf",
+          "nvf",
           "nixpkgs"
         ]
       },
@@ -257,6 +258,7 @@
       "inputs": {
         "nixpkgs": [
           "nvf",
+          "nvf",
           "nixpkgs"
         ]
       },
@@ -275,7 +277,7 @@
         "type": "github"
       }
     },
-    "neowiki-nvim": {
+    "neowiki": {
       "flake": false,
       "locked": {
         "lastModified": 1769688296,
@@ -298,6 +300,22 @@
         "owner": "nixos",
         "repo": "nixpkgs",
         "rev": "e6eae2ee2110f3d31110d5c222cd395303343b08",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1769461804,
+        "narHash": "sha256-msG8SU5WsBUfVVa/9RPLaymvi5bI8edTavbIq3vRlhI=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "bfc1b8a4574108ceef22f02bafcf6611380c100d",
         "type": "github"
       },
       "original": {
@@ -334,25 +352,45 @@
     },
     "nvf": {
       "inputs": {
+        "neowiki": "neowiki",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "nvf": "nvf_2"
+      },
+      "locked": {
+        "lastModified": 1770817726,
+        "narHash": "sha256-xsA2tO/Nr0RHhzV+WEfCHmVQQ5MYibsJy5icjU7mRrI=",
+        "owner": "jonwin1",
+        "repo": "nvf-config",
+        "rev": "86f408dd3bd6a57979d187c8409e196f8f4a4244",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jonwin1",
+        "repo": "nvf-config",
+        "type": "github"
+      }
+    },
+    "nvf_2": {
+      "inputs": {
         "flake-compat": "flake-compat",
         "flake-parts": "flake-parts",
         "mnw": "mnw",
         "ndg": "ndg",
-        "nixpkgs": [
-          "nixpkgs"
-        ],
+        "nixpkgs": "nixpkgs_2",
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1770130359,
-        "narHash": "sha256-IfoT9oaeIE6XjXprMORG2qZFzGGZ0v6wJcOlQRdlpvY=",
-        "owner": "NotAShelf",
+        "lastModified": 1770490142,
+        "narHash": "sha256-EhoRszCPTjGRp5kcRqluPNrS2fzL+Rj4HMSFvX4vNqs=",
+        "owner": "notashelf",
         "repo": "nvf",
-        "rev": "92854bd0eaaa06914afba345741c372439b8e335",
+        "rev": "074fcde9b433224db5056d28b3bf596c1332642f",
         "type": "github"
       },
       "original": {
-        "owner": "NotAShelf",
+        "owner": "notashelf",
         "repo": "nvf",
         "type": "github"
       }
@@ -381,7 +419,6 @@
       "inputs": {
         "home-manager": "home-manager",
         "jwmenu": "jwmenu",
-        "neowiki-nvim": "neowiki-nvim",
         "nixpkgs": "nixpkgs",
         "nvf": "nvf",
         "pomodoro": "pomodoro",

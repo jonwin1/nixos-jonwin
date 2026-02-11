@@ -19,7 +19,6 @@
     ./lazygit.nix
     ./locale.nix
     ./mime.nix
-    ./nvim
     ./networking.nix
     # ./postgresql.nix
     ./rbw.nix
