@@ -1,0 +1,46 @@
+name: Weekly Flake Update
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 17 * * FRI"  # Fridays at 18 (CET) or 19 (CEST)
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v25
+        with:
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+      - name: Update flake
+        run: |
+          nix flake update --commit-lock-file
+
+      - name: Build desktop
+        run: nix build .#nixosConfigurations.desktop.config.system.build.toplevel
+
+      - name: Build laptop
+        run: nix build .#nixosConfigurations.laptop.config.system.build.toplevel
+
+      - name: Push
+        run: |
+          if [ "$(git rev-list --count HEAD ^origin/main)" -gt 0 ]; then
+            git push
+          else
+            echo "No changes to push"
+          fi
