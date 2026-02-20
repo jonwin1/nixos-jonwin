@@ -64,7 +64,8 @@
             "...." = "../../..";
             "....." = "../../../..";
 
-            nix-switch = "sudo nixos-rebuild switch --flake ~/nixos-jonwin#${hostname}";
+            nix-rs = "sudo nixos-rebuild switch --flake github:jonwin1/nixos-jonwin#${hostname}";
+            nix-rs-dev = "sudo nixos-rebuild switch --flake ~/nixos-jonwin#${hostname}";
             nix-clean = "sudo nix-collect-garbage -d && nix-collect-garbage -d";
             ndev = "nix develop -c $SHELL";
 
