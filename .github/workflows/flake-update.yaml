@@ -32,10 +32,10 @@ jobs:
           nix flake update --commit-lock-file
 
       - name: Build desktop
-        run: nix build .#nixosConfigurations.desktop.config.system.build.toplevel -L
+        run: nix build .#nixosConfigurations.desktop.config.system.build.toplevel
 
       - name: Build laptop
-        run: nix build .#nixosConfigurations.laptop.config.system.build.toplevel -L
+        run: nix build .#nixosConfigurations.laptop.config.system.build.toplevel
 
       - name: Push
         run: |
