@@ -14,8 +14,6 @@
     ];
   };
 
-  programs.light.enable = true;
-
   specialisation = {
     # Enable the dedicated GPU and increase frame rate
     nvidia.configuration = {
