@@ -10,6 +10,6 @@
     # Global modules
     ../../modules/boot.nix
     ../../modules/foldingathome.nix
-    ../../modules/zmkBATx.nix
+    ../../modules/zmkbatx.nix
   ];
 }
