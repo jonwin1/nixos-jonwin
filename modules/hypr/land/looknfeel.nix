@@ -34,11 +34,14 @@
       };
     };
 
+    layout = {
+      single_window_aspect_ratio = "4 3";
+    };
+
     dwindle = {
       force_split = 2;
       preserve_split = true;
       special_scale_factor = 0.8;
-      single_window_aspect_ratio = "4 3";
     };
 
     misc = {
