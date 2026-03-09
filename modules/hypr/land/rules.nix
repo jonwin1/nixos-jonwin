@@ -6,7 +6,7 @@
       "match:class Pinentry, stay_focused on"
 
       # Remove opacity for some applications
-      "match:class (FreeCAD|steam|qemu|gimp|.virt-manager-wrapped), opacity 1 override"
+      "match:class (org.freecad.FreeCAD|UltiMaker-Cura|steam|qemu|gimp|.virt-manager-wrapped), opacity 1 override"
 
       # Floating windows
       "match:tag floating-window, float on"
@@ -18,7 +18,7 @@
       "match:title Volume Control, tag +floating-window"
 
       # Fixes FreeCAD drag and drop
-      "match:class FreeCAD, no_initial_focus on"
+      "match:class org.freecad.FreeCAD, no_initial_focus on"
 
       # ---------- Browsers ----------
 
