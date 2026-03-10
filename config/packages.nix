@@ -26,8 +26,7 @@ in
     freecadWayland
     gimp
     ladybird
-    obsidian
-    #openscad
+    openscad
     pavucontrol
     protonvpn-gui
     kdePackages.okular
@@ -57,9 +56,6 @@ in
     unrar
     unzip
     zip
-
-    # Coding
-    tree-sitter
 
     # WM/DE
     hyprpolkitagent
