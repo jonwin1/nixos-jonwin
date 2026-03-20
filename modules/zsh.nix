@@ -64,9 +64,8 @@
             "...." = "../../..";
             "....." = "../../../..";
 
-            nix-rs = "sudo nixos-rebuild switch --flake github:jonwin1/nixos-jonwin#${hostname}";
-            nix-rs-dev = "sudo nixos-rebuild switch --flake ~/nixos-jonwin#${hostname}";
-            nix-clean = "sudo nix-collect-garbage -d && nix-collect-garbage -d";
+            nix-rs = "sudo nixos-rebuild switch --flake ~/nixos-jonwin#${hostname}";
+            nix-rsr = "sudo nixos-rebuild switch --flake github:jonwin1/nixos-jonwin#${hostname}";
             ndev = "nix develop -c $SHELL";
 
             lg = "lazygit";
