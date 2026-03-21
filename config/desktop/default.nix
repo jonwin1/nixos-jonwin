@@ -8,7 +8,8 @@
     ./modules/hyprland.nix
 
     # Global modules
-    ../../modules/boot-encrypted.nix
+    ../../modules/boot.nix
+    ../../modules/fde.nix
     ../../modules/foldingathome.nix
     ../../modules/zmkbatx.nix
   ];
