@@ -4,7 +4,11 @@
   ...
 }:
 {
-  jonwin.hasBattery = true;
+  jonwin = {
+    bootPart = "/dev/nvme0n1p1";
+    luksPart = "/dev/nvme0n1p5";
+    hasBattery = true;
+  };
   nvidiaConfig.enable = lib.mkDefault false;
   batteryMode.enable = lib.mkDefault true;
 

@@ -1,4 +1,9 @@
 {
+  jonwin = {
+    bootPart = "/dev/nvme0n1p1";
+    luksPart = "/dev/nvme0n1p2";
+  };
+
   # Fix grub and splash screen stretch
   boot.loader.grub.gfxmodeEfi = "3440x1440";
 
