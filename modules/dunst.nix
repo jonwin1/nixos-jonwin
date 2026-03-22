@@ -19,7 +19,7 @@
 
         ### Text ###
         markup = "full";
-        format = "<b>%s</b>\n%b";
+        format = "<b>%s</b>\\n%b";
         alignment = "center";
 
         ### Misc/Advanced ###
