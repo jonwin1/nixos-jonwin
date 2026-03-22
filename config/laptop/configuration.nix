@@ -6,8 +6,8 @@
 {
   jonwin = {
     fde = {
-      bootPart = "/dev/nvme0n1p1";
-      luksPart = "/dev/nvme0n1p5";
+      bootPart = "/dev/disk/by-uuid/C76D-1B1B";
+      luksPart = "/dev/disk/by-uuid/c56e7844-9fb1-4f5a-bc3e-c20bb51e00cc";
     };
     hasBattery = true;
   };

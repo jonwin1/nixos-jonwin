@@ -3,13 +3,13 @@
   options.jonwin.fde = with lib.types; {
     bootPart = lib.mkOption {
       type = str;
-      example = "/dev/nvme0n1p1";
+      example = "/dev/disk/by-uuid/ABCD-1234";
       description = "The system boot partition";
     };
 
     luksPart = lib.mkOption {
       type = str;
-      example = "/dev/nvme0n1p2";
+      example = "/dev/disk/by-uuid/1234-ABCD";
       description = "The LUKS partition";
     };
   };

@@ -1,7 +1,7 @@
 {
   jonwin.fde = {
-    bootPart = "/dev/nvme0n1p1";
-    luksPart = "/dev/nvme0n1p2";
+    bootPart = "/dev/disk/by-uuid/656B-823E";
+    luksPart = "/dev/disk/by-uuid/5ab82597-4ada-4acf-a429-5c9132e7ce03";
   };
 
   # Fix grub and splash screen stretch
