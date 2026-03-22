@@ -12,18 +12,18 @@
         listener = [
           { # Dim screen
             timeout = 240; # 4min
-            on-timeout = "brightnessctl -s set 10";
-            on-resume = "brightnessctl -r";
+            on-timeout = "brightnessctl -sd amdgpu_bl2 set 10%";
+            on-resume = "brightnessctl -rd amdgpu_bl2";
           }
           { # Turn off keyboard backlight
-            timeout = 240; # 4min
+            timeout = 210; # 3.5min
             on-timeout = "brightnessctl -sd platform::kbd_backlight set 0";
             on-resume = "brightnessctl -rd platform::kbd_backlight";
           }
           { # Screen off
             timeout = 300; # 5min
             on-timeout = "hyprctl dispatch dpms off";
-            on-resume = "hyprctl dispatch dpms on && brightnessctl -r";
+            on-resume = "brightnessctl -r && hyprctl dispatch dpms on";
           }
           { # Suspend if locked
             timeout = 900; # 15min
