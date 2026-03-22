@@ -4,9 +4,11 @@
   ...
 }:
 {
-  jonwin.fde = {
-    bootPart = "/dev/nvme0n1p1";
-    luksPart = "/dev/nvme0n1p5";
+  jonwin = {
+    fde = {
+      bootPart = "/dev/nvme0n1p1";
+      luksPart = "/dev/nvme0n1p5";
+    };
     hasBattery = true;
   };
   nvidiaConfig.enable = lib.mkDefault false;
