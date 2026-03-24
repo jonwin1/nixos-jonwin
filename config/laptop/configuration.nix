@@ -10,6 +10,8 @@
       luksPart = "/dev/disk/by-uuid/c56e7844-9fb1-4f5a-bc3e-c20bb51e00cc";
     };
     hasBattery = true;
+    backlight = "amdgpu_bl2";
+    kbdBacklight = "platform::kbd_backlight";
   };
   nvidiaConfig.enable = lib.mkDefault false;
   batteryMode.enable = lib.mkDefault true;
