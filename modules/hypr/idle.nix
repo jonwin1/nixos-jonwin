@@ -32,16 +32,16 @@
           {
             # Dim screen
             timeout = 240; # 4min
-            on-timeout = "brightnessctl -sd " ++ config.jonwin.backlight ++ " set 10%";
-            on-resume = "brightnessctl -rd " ++ config.jonwin.backlight;
+            on-timeout = "brightnessctl -sd ${config.jonwin.backlight} set 10%";
+            on-resume = "brightnessctl -rd ${config.jonwin.backlight}";
           }
         ]
         ++ lib.optionals (config.jonwin.kbdBacklight != null) [
           {
             # Turn off keyboard backlight
             timeout = 210; # 3.5min
-            on-timeout = "brightnessctl -sd " ++ config.jonwin.kbdBacklight ++ " set 0";
-            on-resume = "brightnessctl -rd " ++ config.jonwin.kbdBacklight;
+            on-timeout = "brightnessctl -sd ${config.jonwin.kbdBacklight} set 0";
+            on-resume = "brightnessctl -rd ${config.jonwin.kbdBacklight}";
           }
         ];
       };
