@@ -13,6 +13,7 @@ Welcome to my NixOS configuration.
 - 👻 **Ghostty**: Fast and feature-rich terminal emulator.
 - ✍️ **Neovim**: With simple configuration through [nvf](https://github.com/NotAShelf/nvf).
 - 🔑 **YubiKey Login**: Fast and secure authentication with YubiKeys.
+- 💾 **Full Disk Encryption**: [YubiKey-based FDE](https://jonwin.se/posts/yubikey-fde/) for secure and convenient unlock.
 - ✨ **Stylix**: Unified system theming.
 
 ## 📝 Notes
@@ -58,6 +59,11 @@ Welcome to my NixOS configuration.
 
 
 ## 🚀 Installation
+
+> As of march 2026 I have migrated both my hosts to using full disk encryption,
+> which requires [this](https://jonwin.se/posts/yubikey-fde/) more advanced
+> setup process. The below steps should still work, but the disk encryption
+> module (`fde.nix`) must be removed from the host's imports.
 
 To get started with this setup, follow these steps:
 
