@@ -35,7 +35,7 @@
     };
 
     layout = {
-      single_window_aspect_ratio = "4 3";
+      single_window_aspect_ratio = "16 9";
     };
 
     dwindle = {
