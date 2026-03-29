@@ -11,7 +11,6 @@
 
     # Global modules
     ../../modules/boot.nix
-    ../../modules/fde.nix
     ../../modules/cross-code.nix
   ];
 }

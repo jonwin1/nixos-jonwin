@@ -1,16 +1,16 @@
 {
   boot = {
+    initrd = {
+      systemd.enable = true;
+      luks.devices."encrypted".crypttabExtraOpts = [ "fido2-device=auto" ];
+    };
     loader = {
-      efi = {
-        canTouchEfiVariables = true;
-        efiSysMountPoint = "/boot";
-      };
+      efi.canTouchEfiVariables = true;
       grub = {
         enable = true;
-        devices = [ "nodev" ];
         efiSupport = true;
+        device = "nodev";
         useOSProber = true;
-        configurationLimit = 10;
         timeoutStyle = "hidden";
       };
       timeout = 1;

@@ -63,7 +63,7 @@ Welcome to my NixOS configuration.
 > As of march 2026 I have migrated both my hosts to using full disk encryption,
 > which requires [this](https://jonwin.se/posts/yubikey-fde/) more advanced
 > setup process. The below steps should still work, but the disk encryption
-> module (`fde.nix`) must be removed from the host's imports.
+> options must be removed from the options.
 
 To get started with this setup, follow these steps:
 

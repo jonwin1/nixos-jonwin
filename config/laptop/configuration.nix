@@ -5,10 +5,6 @@
 }:
 {
   jonwin = {
-    fde = {
-      bootPart = "/dev/disk/by-uuid/C76D-1B1B";
-      luksPart = "/dev/disk/by-uuid/c56e7844-9fb1-4f5a-bc3e-c20bb51e00cc";
-    };
     hasBattery = true;
     backlight = "amdgpu_bl2";
     kbdBacklight = "platform::kbd_backlight";

@@ -9,7 +9,6 @@
 
     # Global modules
     ../../modules/boot.nix
-    ../../modules/fde.nix
     ../../modules/foldingathome.nix
     ../../modules/zmkbatx.nix
   ];
