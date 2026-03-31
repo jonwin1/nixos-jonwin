@@ -9,24 +9,24 @@
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ ];
+  boot.initrd.kernelModules = [ "dm-snapshot" ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/mapper/encrypted";
+    { device = "/dev/mapper/partitions-root";
       fsType = "ext4";
     };
-
-  boot.initrd.luks.devices."encrypted".device = "/dev/disk/by-uuid/483d3dbf-1f55-49fb-b2dc-d0f9d77412eb";
 
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/656B-823E";
       fsType = "vfat";
-      options = [ "fmask=0022" "dmask=0022" ];
+      options = [ "fmask=0077" "dmask=0077" ];
     };
 
-  swapDevices = [ ];
+  swapDevices =
+    [ { device = "/dev/mapper/partitions-swap"; }
+    ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
