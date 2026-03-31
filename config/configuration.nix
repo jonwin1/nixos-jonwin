@@ -1,7 +1,7 @@
 { user, ... }:
 {
   nixpkgs.config.allowUnfree = true;
-  system.stateVersion = "23.11";
+  system.stateVersion = "26.05";
 
   nix.settings.experimental-features = [
     "nix-command"
@@ -12,7 +12,7 @@
     home = {
       username = user;
       homeDirectory = "/home/${user}";
-      stateVersion = "23.11";
+      stateVersion = "26.05";
 
       file = {
         ".config/scripts" = {
