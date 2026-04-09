@@ -28,7 +28,7 @@ in
     ladybird
     openscad
     pavucontrol
-    protonvpn-gui
+    proton-vpn
     kdePackages.okular
 
     # CLI tools
