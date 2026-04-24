@@ -12,7 +12,7 @@ in
 
       monitor = [
         "desc:${primary}, 3440x1440@144, 0x0, 1"
-        "desc:${tv}, 3840x2160@120, auto-left, 1"
+        "desc:${tv}, 1920x1080@120, auto-left, 1"
       ];
 
       workspace = [
