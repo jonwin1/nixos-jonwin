@@ -8,6 +8,7 @@
     hasBattery = true;
     backlight = "amdgpu_bl2";
     kbdBacklight = "platform::kbd_backlight";
+    luksPart = "/dev/disk/by-uuid/b210ba96-0c19-400b-93f1-0ef35d6ddef7";
   };
   nvidiaConfig.enable = lib.mkDefault false;
   batteryMode.enable = lib.mkDefault true;
