@@ -1,6 +1,6 @@
 {
   imports = [
-    # ./android.nix
+    ./android.nix
     ./audio.nix
     ./battery.nix
     ./bluetooth.nix

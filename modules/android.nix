@@ -11,6 +11,7 @@
     home.packages = with pkgs; [
       android-studio
       android-tools
+      genymotion
     ];
 
     wayland.windowManager.hyprland.settings.windowrule = [
