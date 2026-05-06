@@ -357,11 +357,11 @@
         "nvf": "nvf_2"
       },
       "locked": {
-        "lastModified": 1778248752,
-        "narHash": "sha256-yaaycLOWBIIlwkClnODqARj3iAO72pZ1A0GEzdrRnX0=",
+        "lastModified": 1778085376,
+        "narHash": "sha256-v83aHuwxclxnG4QbIopVqzXw4ePTVSY1JNyRyS/b6DM=",
         "owner": "jonwin1",
         "repo": "nvf-config",
-        "rev": "d78d362b5177db039115f7c7f14f62bd9a730cc3",
+        "rev": "0d5c530fdbf2915f6bff433da57519b81eeed424",
         "type": "github"
       },
       "original": {
@@ -380,11 +380,11 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1778049651,
-        "narHash": "sha256-EC5pBiLcP/EVmYWldJRNfkChCqF9rkeTnTs8t9Cs+ZY=",
+        "lastModified": 1777837065,
+        "narHash": "sha256-uRD6a4uNno3SsAw0E0E6xqbiK7pX63Ad1F37q5fyz9g=",
         "owner": "notashelf",
         "repo": "nvf",
-        "rev": "88dbbad1f44efe3d2c18903e2c7542452f7bdfd6",
+        "rev": "7ec206a5d9a7d5d27900d81a6bb382823902276d",
         "type": "github"
       },
       "original": {
