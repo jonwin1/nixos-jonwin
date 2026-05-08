@@ -33,6 +33,7 @@ in
 
     # CLI tools
     bc
+    btop
     cliphist
     curl
     fastfetch
