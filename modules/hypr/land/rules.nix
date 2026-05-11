@@ -23,12 +23,10 @@
       # ---------- Browsers ----------
 
       # Browser types
-      "tag +chromium-based-browser, match:class ((google-)?[cC]hrom(e|ium).*|[bB]rave-browser|[mM]icrosoft-edge|Vivaldi-stable|helium)"
-      "tag +firefox-based-browser, match:class ([fF]irefox|zen|zen-beta|librewolf)"
+      "tag +browser, match:class ([fF]irefox|zen|zen-beta|librewolf|[lL]adybird)"
 
       # Less opacity for browsers
-      "opacity 1 override 0.97 override, match:tag chromium-based-browser"
-      "opacity 1 override 0.97 override, match:tag firefox-based-browser"
+      "opacity 1 override 0.97 override, match:tag browser"
 
       # No opacity on video sites
       "opacity 1 override, match:title (.* - YouTube .*)"

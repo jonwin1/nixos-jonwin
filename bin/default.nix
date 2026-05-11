@@ -18,7 +18,6 @@
       builtins.readFile ./jonwin-launch-or-focus-webapp.sh
     ))
     (writeScriptBin "jonwin-launch-tui" (builtins.readFile ./jonwin-launch-tui.sh))
-    chromium
     (writeScriptBin "jonwin-launch-webapp" (builtins.readFile ./jonwin-launch-webapp.sh))
 
     (writeScriptBin "jonwin-toggle-idle-inhibitor" (
