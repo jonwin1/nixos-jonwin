@@ -16,6 +16,7 @@
   home-manager.users.${user} = {
     wayland.windowManager.hyprland = {
       enable = true;
+      configType = "hyprlang";
       systemd.enable = false;
       settings = {
         monitor = [

@@ -81,7 +81,7 @@
       "SUPER SHIFT, Q, exec, jwmenu ~/.config/jwmenu/power.toml"
       ", XF86PowerOff, exec, jwmenu ~/.config/jwmenu/power.toml"
       "SUPER, SPACE, exec, jwmenu ~/.config/jwmenu/system.toml"
-      "SUPER, S, togglesplit,"
+      "SUPER, S, layoutmsg, togglesplit,"
       "SUPER, F, togglefloating, active"
 
       # Screenshot
