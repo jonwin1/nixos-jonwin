@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-exec setsid uwsm-app -- zen-beta "$1" "${@:2}"
+exec setsid uwsm-app -- zen-beta --new-window "$1" "${@:2}"
