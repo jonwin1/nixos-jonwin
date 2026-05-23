@@ -47,7 +47,10 @@
         systemd.enable = true;
         luks.devices.encrypted = {
           device = config.jonwin.luksPart;
-          crypttabExtraOpts = [ "fido2-device=auto" ];
+          crypttabExtraOpts = [
+            "fido2-device=auto"
+            "token-timeout=0"
+          ];
         };
       };
     })
