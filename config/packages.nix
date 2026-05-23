@@ -25,7 +25,7 @@ in
     discord
     freecadWayland
     gimp
-    ladybird
+    # ladybird
     openscad
     pavucontrol
     proton-vpn
