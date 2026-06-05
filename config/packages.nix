@@ -66,4 +66,6 @@ in
     xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland
   ];
+
+  programs.zoom-us.enable = true;
 }
