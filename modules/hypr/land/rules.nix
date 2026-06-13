@@ -20,6 +20,10 @@
       # Fixes FreeCAD drag and drop
       "match:class org.freecad.FreeCAD, no_initial_focus on"
 
+      # zoom.us
+      "match:class zoom, float on"
+      "match:class zoom, no_initial_focus on"
+
       # ---------- Browsers ----------
 
       # Browser types
