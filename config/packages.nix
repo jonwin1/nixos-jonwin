@@ -62,7 +62,7 @@ in
     hyprpolkitagent
     kdePackages.qtwayland
     libnotify
-    libsForQt5.qt5.qtwayland
+    qt5.qtwayland
     xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland
   ];
