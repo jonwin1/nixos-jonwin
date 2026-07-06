@@ -83,13 +83,7 @@
 
       network = {
         interval = 5;
-        format-icons = [
-          "󰤯"
-          "󰤟"
-          "󰤢"
-          "󰤥"
-          "󰤨"
-        ];
+        format-icons = [ "󰤯" "󰤟" "󰤢" "󰤥" "󰤨" ];
         format = "{icon}";
         format-wifi = "{icon}";
         format-ethernet = "󰈀";
@@ -152,53 +146,36 @@
       wireplumber = {
         format = "{icon}";
         format-muted = "󰝟";
-        format-icons = [
-          "󰕿"
-          "󰖀"
-          "󰕾"
-        ];
+        format-icons = [ "󰕿" "󰖀" "󰕾" ];
         scroll-step = 5;
         on-click-right = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
         tooltip-format = "{node_name}\nVolume: {volume}%";
       };
 
       battery = lib.mkIf config.jonwin.hasBattery {
-        format = "{icon}";
-        format-charging = "{icon}";
-        format-full = "󰂅";
-        format-icons = {
-          charging = [
-            "󰢜"
-            "󰂆"
-            "󰂇"
-            "󰂈"
-            "󰢝"
-            "󰂉"
-            "󰢞"
-            "󰂊"
-            "󰂋"
-            "󰂅"
-          ];
-          default = [
-            "󰁺"
-            "󰁻"
-            "󰁼"
-            "󰁽"
-            "󰁾"
-            "󰁿"
-            "󰂀"
-            "󰂁"
-            "󰂂"
-            "󰁹"
-          ];
-        };
-        tooltip-format-discharging = "{timeTo}\n{power:>1.0f}W↓ {capacity}%";
-        tooltip-format-charging = "{timeTo}\n{power:>1.0f}W↑ {capacity}%";
-        interval = 5;
+        smooth-power = true;
+
         states = {
           warning = 20;
           critical = 10;
         };
+
+        events = {
+          on-discharging-warning = "notify-send -u normal -t 30000 'Low Battery' 'Battery under 20%'";
+          on-discharging-critical = "notify-send -u critical 'Very Low Battery' 'Battery under 10%'";
+          on-charging-100 = "notify-send -u low 'Battery Full'";
+        };
+
+        format = "{icon}";
+        format-charging = "{icon}";
+        format-full = "󰂅";
+        format-icons = {
+          charging = [ "󰢟" "󰢜" "󰂆" "󰂇" "󰂈" "󰢝" "󰂉" "󰢞" "󰂊" "󰂋" "󰂅" ];
+          default = [ "󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
+        };
+
+        tooltip-format-discharging = "{timeTo}\n{power:>1.0f}W↓ {capacity}%";
+        tooltip-format-charging = "{timeTo}\n{power:>1.0f}W↑ {capacity}%";
       };
     }
   ];

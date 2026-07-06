@@ -2,7 +2,6 @@
   imports = [
     ./android.nix
     ./audio.nix
-    ./battery.nix
     ./bluetooth.nix
     # ./boot.nix
     # ./boot-encrypted.nix
