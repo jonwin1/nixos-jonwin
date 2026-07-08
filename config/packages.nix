@@ -25,6 +25,7 @@ in
     discord
     freecadWayland
     gimp
+    heroic
     # ladybird
     openscad
     pavucontrol
