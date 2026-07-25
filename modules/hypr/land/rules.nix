@@ -34,6 +34,13 @@
 
       # No opacity on video sites
       "opacity 1 override, match:title (.* - YouTube .*)"
+
+      # Picture-in-Picture
+      "match:title Picture-in-Picture, float on"
+      "match:title Picture-in-Picture, size (monitor_w/3) (monitor_w/3/16*9)"
+      "match:title Picture-in-Picture, move (monitor_w-window_w-2) (0+27)"
+      "match:title Picture-in-Picture, no_initial_focus on"
+      "match:title Picture-in-Picture, pin on"
     ];
 
     layerrule = [
