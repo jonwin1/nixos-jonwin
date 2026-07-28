@@ -1,5 +1,7 @@
 # ❄️ NixOS Jonwin
 
+> ⚠️ **This readme file is not up-to-date and this is a development branch!** ⚠️
+
 Welcome to my NixOS configuration.
 
 ![screenshot](./screenshots/screenshot1.png)
