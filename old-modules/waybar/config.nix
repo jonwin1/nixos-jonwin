@@ -83,7 +83,13 @@
 
       network = {
         interval = 5;
-        format-icons = [ "󰤯" "󰤟" "󰤢" "󰤥" "󰤨" ];
+        format-icons = [
+          "󰤯"
+          "󰤟"
+          "󰤢"
+          "󰤥"
+          "󰤨"
+        ];
         format = "{icon}";
         format-wifi = "{icon}";
         format-ethernet = "󰈀";
@@ -146,7 +152,11 @@
       wireplumber = {
         format = "{icon}";
         format-muted = "󰝟";
-        format-icons = [ "󰕿" "󰖀" "󰕾" ];
+        format-icons = [
+          "󰕿"
+          "󰖀"
+          "󰕾"
+        ];
         scroll-step = 5;
         on-click-right = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
         tooltip-format = "{node_name}\nVolume: {volume}%";
@@ -170,8 +180,32 @@
         format-charging = "{icon}";
         format-full = "󰂅";
         format-icons = {
-          charging = [ "󰢟" "󰢜" "󰂆" "󰂇" "󰂈" "󰢝" "󰂉" "󰢞" "󰂊" "󰂋" "󰂅" ];
-          default = [ "󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
+          charging = [
+            "󰢟"
+            "󰢜"
+            "󰂆"
+            "󰂇"
+            "󰂈"
+            "󰢝"
+            "󰂉"
+            "󰢞"
+            "󰂊"
+            "󰂋"
+            "󰂅"
+          ];
+          default = [
+            "󰂎"
+            "󰁺"
+            "󰁻"
+            "󰁼"
+            "󰁽"
+            "󰁾"
+            "󰁿"
+            "󰂀"
+            "󰂁"
+            "󰂂"
+            "󰁹"
+          ];
         };
 
         tooltip-format-discharging = "{timeTo}\n{power:>1.0f}W↓ {capacity}%";
