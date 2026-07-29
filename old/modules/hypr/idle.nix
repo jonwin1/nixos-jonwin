@@ -1,6 +1,5 @@
 {
   user,
-  pkgs,
   lib,
   config,
   ...
@@ -46,10 +45,5 @@
         ];
       };
     };
-    home.packages =
-      with pkgs;
-      lib.optionals (config.jonwin.backlight != null || config.jonwin.kbdBacklight != null) [
-        brightnessctl
-      ];
   };
 }

@@ -4,14 +4,17 @@
   ...
 }:
 {
-  jonwin = {
-    hasBattery = true;
+  my = {
     backlight = "amdgpu_bl2";
     kbdBacklight = "platform::kbd_backlight";
     luksPart = "/dev/disk/by-uuid/b210ba96-0c19-400b-93f1-0ef35d6ddef7";
+    powerSaving = lib.mkDefault true;
   };
-  nvidiaConfig.enable = lib.mkDefault false;
-  batteryMode.enable = lib.mkDefault true;
+
+  jonwin = {
+    hasBattery = true;
+  };
+  nvidiaConfig.enable = lib.mkDefault false; # instead don't import nvidiaDrivers
 
   boot = {
     kernelParams = [
@@ -22,7 +25,7 @@
   specialisation = {
     # Enable the dedicated GPU and increase frame rate
     nvidia.configuration = {
-      nvidiaConfig.enable = true;
+      nvidiaConfig.enable = true; # import inputs.nixosModules.nvidiaDrivers
 
       home-manager.users.${user} = {
         wayland.windowManager.hyprland.settings.monitor = [

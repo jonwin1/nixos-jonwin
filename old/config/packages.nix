@@ -28,7 +28,6 @@ in
     heroic
     # ladybird
     openscad
-    pavucontrol
     proton-vpn
     kdePackages.okular
 
