@@ -1,0 +1,148 @@
+{ self, ... }: {
+  flake.nixosModules.zsh = { pkgs, config, ... }: {
+    programs = {
+      direnv.enable = true;
+      zsh.enable = true;
+    };
+
+    users.defaultUserShell = pkgs.zsh;
+
+    home-manager.users.${config.my.username}.imports = [
+      self.homeModules.zsh
+      self.homeModules.git
+      # self.homeModules.lazygit
+      # self.homeModules.nvim
+    ];
+  };
+
+  flake.homeModules.zsh = { pkgs, config, my, ... }: {
+    programs = {
+      zsh = {
+        enable = true;
+        dotDir = "${config.xdg.configHome}/zsh";
+
+        autocd = true;
+        autosuggestion.enable = true;
+        enableCompletion = true;
+        historySubstringSearch.enable = true;
+        syntaxHighlighting.enable = true;
+
+        defaultKeymap = "viins";
+
+        history = {
+          share = true;
+          save = 10000;
+          size = 10000;
+          extended = true;
+          ignoreDups = true;
+          ignoreAllDups = true;
+          ignoreSpace = true;
+          expireDuplicatesFirst = true;
+          path = "$HOME/.cache/zsh_history";
+        };
+
+        initContent = ''
+          zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+          zstyle ':completion:*' list-colors "$\{(s.:.)LS_COLORS}"
+        '';
+
+        shellAliases = {
+          c = "clear";
+          cp = "cp -riv";
+
+          l = "eza --long --group-directories-first";
+          la = "eza --long --group-directories-first --almost-all";
+          ll = "eza --long --reverse --sort=size --total-size";
+          lt = "eza --long --group-directories-first --tree --level=2";
+          lta = "eza --long --group-directories-first --tree";
+
+          mkdir = "mkdir -vp";
+          mv = "mv -iv";
+          rm = "rm -rifv";
+          v = "nvim";
+
+          cat = "bat";
+          man = "batman";
+
+          tp = "trash -v";
+          tl = "trash-list";
+          te = "trash-empty";
+
+          "..." = "../..";
+          "...." = "../../..";
+          "....." = "../../../..";
+
+          nix-rs = "sudo nixos-rebuild switch --flake ~/nixos-jonwin#${my.hostname}";
+          nix-rsr = "sudo nixos-rebuild switch --flake github:jonwin1/nixos-jonwin#${my.hostname}";
+          ndev = "nix develop -c $SHELL";
+
+          lg = "lazygit";
+          ga = "git add";
+          gaa = "git add --all";
+          gb = "git branch";
+          gc = "git commit";
+          gcm = "git commit -m";
+          gd = "git diff";
+          gds = "git diff --staged";
+          gf = "git fetch";
+          gl = "git log --graph";
+          gm = "git merge";
+          gpl = "git pull";
+          gps = "git push";
+          gr = "git restore";
+          gs = "git status";
+          gsw = "git switch";
+        };
+
+        plugins = with pkgs; [
+          {
+            name = "zsh-fzf-tab";
+            src = zsh-fzf-tab;
+            file = "share/fzf-tab/fzf-tab.plugin.zsh";
+          }
+          {
+            name = "zsh-nix-shell";
+            src = zsh-nix-shell;
+            file = "share/zsh-nix-shell/nix-shell.plugin.zsh";
+          }
+          {
+            name = "zsh-vi-mode";
+            src = zsh-vi-mode;
+            file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
+          }
+        ];
+      };
+
+      bat = {
+        enable = true;
+        extraPackages = with pkgs.bat-extras; [
+          batgrep
+          batman
+        ];
+      };
+
+      starship = {
+        enable = true;
+        enableZshIntegration = true;
+      };
+
+      zoxide = {
+        enable = true;
+        enableZshIntegration = true;
+      };
+
+      eza = {
+        enable = true;
+        enableZshIntegration = true;
+        colors = "auto";
+        icons = "auto";
+        git = true;
+      };
+    };
+
+    home.packages = with pkgs; [
+      fzf
+      trash-cli
+    ];
+  };
+}

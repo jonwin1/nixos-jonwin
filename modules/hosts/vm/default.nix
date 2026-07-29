@@ -9,6 +9,7 @@
         self.nixosModules.vmHome
 
         self.nixosModules.core
+        self.nixosModules.zsh
       ];
     };
 

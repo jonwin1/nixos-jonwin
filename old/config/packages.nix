@@ -33,12 +33,10 @@ in
 
     # CLI tools
     btop
-    fzf
     inputs.nvf.packages.${stdenv.hostPlatform.system}.default
     inputs.pomodoro.packages.${stdenv.hostPlatform.system}.default
     jq
     ripgrep
-    trash-cli
 
     cliphist
     wl-clipboard
