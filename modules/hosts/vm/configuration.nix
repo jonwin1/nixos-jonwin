@@ -1,16 +1,9 @@
 {
-  flake.nixosModules.vmConfiguration = { pkgs, ... }: {
+  flake.nixosModules.vmConfiguration = {
     my.username = "jonwin";
     my.hostname = "nixos";
 
-    environment.systemPackages = with pkgs; [
-      nixfmt-tree
-      tree
-      vim
-    ];
-
     services.openssh.enable = true;
-
     security.sudo.wheelNeedsPassword = false;
   };
 }

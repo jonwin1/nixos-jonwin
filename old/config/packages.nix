@@ -33,36 +33,23 @@ in
     kdePackages.okular
 
     # CLI tools
-    bc
     btop
-    cliphist
-    curl
-    fastfetch
-    fd
     fzf
     inputs.nvf.packages.${stdenv.hostPlatform.system}.default
     inputs.pomodoro.packages.${stdenv.hostPlatform.system}.default
     jq
     ripgrep
     trash-cli
-    tree
-    viu
-    wget
+
+    cliphist
     wl-clipboard
     wl-clip-persist
-    wlrctl
 
-    # Unzip everything
-    p7zip
-    unp
-    unrar
-    unzip
-    zip
+    wlrctl
 
     # WM/DE
     hyprpolkitagent
     kdePackages.qtwayland
-    libnotify
     qt5.qtwayland
     xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland

@@ -1,13 +1,5 @@
 { user, ... }:
 {
-  nixpkgs.config.allowUnfree = true;
-  system.stateVersion = "26.05";
-
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-
   home-manager.users.${user} = {
     home = {
       username = user;
