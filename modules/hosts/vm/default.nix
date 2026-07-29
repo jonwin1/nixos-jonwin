@@ -5,6 +5,7 @@
       self.nixosModules.vmHardware
 
       self.nixosModules.core
+      self.nixosModules.git
     ];
   };
 }
