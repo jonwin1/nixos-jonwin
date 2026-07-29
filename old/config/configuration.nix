@@ -2,10 +2,6 @@
 {
   home-manager.users.${user} = {
     home = {
-      username = user;
-      homeDirectory = "/home/${user}";
-      stateVersion = "26.05";
-
       file = {
         ".config/scripts" = {
           source = ../scripts;

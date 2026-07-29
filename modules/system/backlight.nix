@@ -1,4 +1,4 @@
-{ self, inputs, ... }: {
+{
   flake.nixosModules.backlight = { pkgs, lib, ... }: {
     options.my = {
       backlight = lib.mkOption {
