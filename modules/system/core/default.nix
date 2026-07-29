@@ -3,6 +3,7 @@
     imports = [
       self.nixosModules.boot
       self.nixosModules.corePackages
+      self.nixosModules.gc
       self.nixosModules.locale
       self.nixosModules.network
       self.nixosModules.user
