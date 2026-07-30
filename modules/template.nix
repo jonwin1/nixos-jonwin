@@ -1,4 +1,4 @@
-{ self, inputs, ... }: {
+{ self, ... }: {
   flake.nixosModules.MODULE = { config, ... }: {
     imports = [
       self.nixosModules.user
