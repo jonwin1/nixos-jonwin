@@ -1,11 +1,8 @@
 { self, ... }: {
   flake.nixosModules.zsh = { pkgs, config, ... }: {
-    programs = {
-      direnv.enable = true;
-      zsh.enable = true;
-    };
-
-    users.defaultUserShell = pkgs.zsh;
+    imports = [
+      self.nixosModules.user
+    ];
 
     home-manager.users.${config.my.username}.imports = [
       self.homeModules.zsh
@@ -13,6 +10,13 @@
       # self.homeModules.lazygit
       # self.homeModules.nvim
     ];
+
+    programs = {
+      direnv.enable = true;
+      zsh.enable = true;
+    };
+
+    users.defaultUserShell = pkgs.zsh;
   };
 
   flake.homeModules.zsh =

@@ -2,6 +2,7 @@
   flake.nixosModules.myHomeManager = { config, ... }: {
     imports = [
       inputs.home-manager.nixosModules.default
+      self.nixosModules.user
     ];
 
     home-manager = {

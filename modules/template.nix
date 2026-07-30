@@ -1,7 +1,7 @@
 { self, inputs, ... }: {
   flake.nixosModules.MODULE = { config, ... }: {
     imports = [
-      self.nixosModules.OTHERMODULE
+      self.nixosModules.user
     ];
 
     home-manager.users.${config.my.username}.imports = [

@@ -1,5 +1,9 @@
-{
+{ self, ... }: {
   flake.nixosModules.sddm = { config, ... }: {
+    imports = [
+      self.nixosModules.user
+    ];
+
     services.displayManager = {
       sddm = {
         enable = true;
