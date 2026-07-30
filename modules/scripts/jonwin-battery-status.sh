@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 status="$(cat /sys/class/power_supply/BAT0/status)"
 level="$(cat /sys/class/power_supply/BAT0/capacity)"

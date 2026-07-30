@@ -123,7 +123,7 @@
       bindl = [
         ", XF86AudioMute, exec, swayosd-client --output-volume mute-toggle"
         ", XF86AudioMicMute, exec, swayosd-client --input-volume mute-toggle"
-        "ALT, XF86AudioMute, exec, ~/.config/scripts/cmd-audio-switch"
+        "ALT, XF86AudioMute, exec, jonwin-audio-switch"
 
         ", XF86AudioNext, exec, swayosd-client --playerctl next"
         ", XF86AudioPrev, exec, swayosd-client --playerctl previous"

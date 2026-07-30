@@ -48,7 +48,7 @@
             lib.optionals hasBattery [
               {
                 # Battery
-                text = "cmd[update:1000] echo \"\$(~/.config/scripts/battery-status)\"";
+                text = "cmd[update:1000] echo \"\$(jonwin-battery-status)\"";
                 font_size = 16;
                 position = "-20, -10";
                 halign = "right";
