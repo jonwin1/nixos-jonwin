@@ -8,9 +8,9 @@
   };
 
   flake.homeModules.hyprlock =
-    { lib, options, ... }:
+    { lib, my, ... }:
     let
-      hasBattery = lib.hasAttrByPath [ "my" "hasBattery" ] options;
+      hasBattery = lib.hasAttrByPath [ "hasBattery" ] my;
     in
     {
       programs.hyprlock = {

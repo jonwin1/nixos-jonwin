@@ -23,12 +23,11 @@
   flake.homeModules.waybar =
     {
       lib,
-      options,
       my,
       ...
     }:
     let
-      hasBattery = lib.hasAttrByPath [ "my" "hasBattery" ] options;
+      hasBattery = lib.hasAttrByPath [ "hasBattery" ] my;
     in
     {
       programs.waybar.settings = [
