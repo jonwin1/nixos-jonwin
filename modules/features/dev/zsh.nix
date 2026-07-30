@@ -2,13 +2,11 @@
   flake.nixosModules.zsh = { pkgs, config, ... }: {
     imports = [
       self.nixosModules.user
+      self.nixosModules.git
     ];
 
     home-manager.users.${config.my.username}.imports = [
       self.homeModules.zsh
-      self.homeModules.git
-      # self.homeModules.lazygit
-      # self.homeModules.nvim
     ];
 
     programs = {

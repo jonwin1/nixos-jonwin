@@ -9,6 +9,7 @@
 
         self.nixosModules.core
         self.nixosModules.git
+        self.nixosModules.lazygit
         self.nixosModules.zsh
       ];
     };
