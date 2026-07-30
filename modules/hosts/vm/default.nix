@@ -6,16 +6,10 @@
         self.nixosModules.vmHardware
 
         self.nixosModules.myHomeManager
-        self.nixosModules.vmHome
 
         self.nixosModules.core
+        self.nixosModules.git
         self.nixosModules.zsh
-      ];
-    };
-
-    nixosModules.vmHome = { config, ... }: {
-      home-manager.users.${config.my.username}.imports = [
-        self.homeModules.git
       ];
     };
   };

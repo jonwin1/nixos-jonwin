@@ -5,17 +5,13 @@
     ];
 
     home-manager.users.${config.my.username}.imports = [
-      self.homeModules.HOMEMODULE
+      self.homeModules.MODULE
     ];
 
     # NixOS options
   };
 
-  flake.homeModules.HOMEMODULE = { pkgs, ... }: {
-    imports = [
-      self.homeModules.OTHERHOMEMODULE
-    ];
-
+  flake.homeModules.MODULE = { pkgs, ... }: {
     # Home Manager options
   };
 }
