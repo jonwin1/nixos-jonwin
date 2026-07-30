@@ -1,6 +1,16 @@
-{ user, ... }:
-{
-  home-manager.users.${user} =
+{ self, ... }: {
+  flake.nixosModules.swayosd = { config, ... }: {
+    imports = [
+      self.nixosModules.user
+      self.nixosModules.stylix
+    ];
+
+    home-manager.users.${config.my.username}.imports = [
+      self.homeModules.swayosd
+    ];
+  };
+
+  flake.homeModules.swayosd =
     { config, ... }:
     let
       colors = config.lib.stylix.colors;

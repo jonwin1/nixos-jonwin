@@ -1,16 +1,16 @@
 { self, inputs, ... }: {
   flake = {
     nixosConfigurations.vm = inputs.nixpkgs.lib.nixosSystem {
-      modules = [
-        self.nixosModules.vmConfiguration
-        self.nixosModules.vmHardware
+      modules = with self.nixosModules; [
+        vmConfiguration
+        vmHardware
 
-        self.nixosModules.myHomeManager
+        myHomeManager
 
-        self.nixosModules.core
-        self.nixosModules.git
-        self.nixosModules.lazygit
-        self.nixosModules.zsh
+        core
+        git
+        lazygit
+        zsh
       ];
     };
   };
