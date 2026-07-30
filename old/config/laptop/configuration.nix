@@ -8,12 +8,10 @@
     backlight = "amdgpu_bl2";
     kbdBacklight = "platform::kbd_backlight";
     luksPart = "/dev/disk/by-uuid/b210ba96-0c19-400b-93f1-0ef35d6ddef7";
-    powerSaving = lib.mkDefault true;
+    powerSaving = lib.mkDefault true; # already default enabled on import
+    hasBattery = true; # default enabled on import
   };
 
-  jonwin = {
-    hasBattery = true;
-  };
   nvidiaConfig.enable = lib.mkDefault false; # instead don't import nvidiaDrivers
 
   boot = {

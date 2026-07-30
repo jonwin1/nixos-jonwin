@@ -46,6 +46,7 @@
 
   flake.homeModules.stylix = { pkgs, ... }: {
     stylix = {
+      targets.waybar.addCss = false;
       targets.zen-browser.profileNames = [ "default" ];
     };
 
