@@ -1,9 +1,5 @@
-{ self, ... }: {
+{
   flake.nixosModules.docker = { config, ... }: {
-    imports = [
-      self.nixosModules.user
-    ];
-
     virtualisation.docker = {
       enable = true;
     };

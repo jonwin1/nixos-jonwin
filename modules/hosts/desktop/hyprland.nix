@@ -1,18 +1,11 @@
 { self, ... }: {
   flake.nixosModules.desktopHyprland = { config, ... }: {
-    imports = [
-      self.nixosModules.user
-    ];
-
     home-manager.users.${config.my.username}.imports = [
       self.homeModules.desktopHyprland
     ];
-
-    # NixOS options
   };
 
   flake.homeModules.desktopHyprland =
-    { pkgs, ... }:
     let
       primary = "AOC U34G2G4R3 0x0000326C";
       tv = "Samsung Electric Company QCQ90S 0x01000E00";

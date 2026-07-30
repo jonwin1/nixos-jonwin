@@ -1,9 +1,8 @@
-{ self, ... }: {
+{
   flake.nixosModules.nvidiaPrime = { lib, config, ... }: {
     options.my = {
       nvidiaBusId = lib.mkOption {
         type = lib.types.str;
-        default = "";
         example = "PCI:1:0:0";
         description = ''
           See hardware.nvidia.prime.nvidiaBusId.
@@ -30,10 +29,6 @@
     };
 
     config = {
-      imports = [
-        self.nixosModules.nvidiaDriver
-      ];
-
       hardware = {
         nvidia = {
           prime = {

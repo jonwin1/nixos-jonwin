@@ -11,7 +11,7 @@
         foldingathome
         hypr
         luks-fido2
-        nvidiaDriver
+        nvidiaDrivers
         steam
         waybar
         yubikey

@@ -1,9 +1,5 @@
 { self, ... }: {
   flake.nixosModules.zmkbatx = { config, ... }: {
-    imports = [
-      self.nixosModules.user
-    ];
-
     home-manager.users.${config.my.username}.imports = [
       self.homeModules.zmkbatx
     ];

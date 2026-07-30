@@ -14,7 +14,7 @@
       swayosd
       thunar
       virtualization
-      zen-browser
+      zenBrowser
     ];
 
     home-manager.users.${config.my.username}.imports = [

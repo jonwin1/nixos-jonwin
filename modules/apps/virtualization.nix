@@ -1,9 +1,5 @@
-{ self, ... }: {
+{
   flake.nixosModules.virtualization = { pkgs, config, ... }: {
-    imports = [
-      self.nixosModules.user
-    ];
-
     programs.virt-manager.enable = true;
 
     virtualisation.libvirtd = {

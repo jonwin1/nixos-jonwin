@@ -1,9 +1,5 @@
 { self, inputs, ... }: {
   flake.nixosModules.zenBrowser = { config, ... }: {
-    imports = [
-      self.nixosModules.user
-    ];
-
     home-manager.users.${config.my.username}.imports = [
       self.homeModules.zenBrowser
     ];

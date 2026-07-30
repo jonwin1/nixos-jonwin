@@ -19,10 +19,13 @@
 
       # Enable the dedicated GPU and increase frame rate
       specialisation.nvidia.configuration = {
-        import = [
+        imports = [
           self.nixosModules.nvidiaDrivers
           self.nixosModules.nvidiaPrime
         ];
+
+        my.amdgpuBusId = "PCI:5:0:0";
+        my.nvidiaBusId = "PCI:1:0:0";
 
         home-manager.users.${config.my.username} = {
           wayland.windowManager.hyprland.settings.monitor = [

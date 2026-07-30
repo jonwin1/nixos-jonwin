@@ -1,10 +1,5 @@
 { self, ... }: {
   flake.nixosModules.hypridleBacklight = { config, ... }: {
-    imports = [
-      self.nixosModules.user
-      self.nixosModules.backlight
-    ];
-
     home-manager.users.${config.my.username}.imports = [
       self.homeModules.hypridleBacklight
     ];

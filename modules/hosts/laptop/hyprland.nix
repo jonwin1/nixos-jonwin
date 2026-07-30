@@ -1,9 +1,5 @@
 { self, ... }: {
   flake.nixosModules.laptopHyprland = { config, ... }: {
-    imports = [
-      self.nixosModules.user
-    ];
-
     home-manager.users.${config.my.username}.imports = [
       self.homeModules.laptopHyprland
     ];

@@ -1,13 +1,5 @@
-{ self, ... }: {
-  flake.nixosModules.waybar = { lib, config, ... }: {
-    imports = [
-      self.nixosModules.user
-    ];
-
-    config.home-manager.users.${config.my.username}.imports = [
-      self.homeModules.waybar
-    ];
-
+{
+  flake.nixosModules.waybar = { lib, ... }: {
     options.my =
       let
         inherit (lib) literalExpression mkOption types;

@@ -1,10 +1,5 @@
 { self, ... }: {
   flake.nixosModules.swayosd = { config, ... }: {
-    imports = [
-      self.nixosModules.user
-      self.nixosModules.stylix
-    ];
-
     home-manager.users.${config.my.username}.imports = [
       self.homeModules.swayosd
     ];

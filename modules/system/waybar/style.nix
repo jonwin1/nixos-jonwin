@@ -1,14 +1,4 @@
-{ self, ... }: {
-  flake.nixosModules.waybar = { config, ... }: {
-    imports = [
-      self.nixosModules.user
-    ];
-
-    home-manager.users.${config.my.username}.imports = [
-      self.homeModules.waybar
-    ];
-  };
-
+{
   flake.homeModules.waybar = { lib, ... }: {
     programs.waybar.style = lib.concatStrings [
       ''

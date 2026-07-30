@@ -1,9 +1,5 @@
-{ self, ... }: {
+{
   flake.nixosModules.network = { lib, config, ... }: {
-    imports = [
-      self.nixosModules.user
-    ];
-
     options.my.hostname = lib.mkOption {
       type = lib.types.str;
     };

@@ -1,10 +1,5 @@
 { self, ... }: {
   flake.nixosModules.ghostty = { config, ... }: {
-    imports = [
-      self.nixosModules.zsh
-      self.nixosModules.user
-    ];
-
     home-manager.users.${config.my.username}.imports = [
       self.homeModules.ghostty
     ];

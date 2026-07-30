@@ -1,7 +1,6 @@
 { self, inputs, ... }: {
   flake.nixosModules.stylix = { pkgs, config, ... }: {
     imports = [
-      self.nixosModules.user
       inputs.stylix.nixosModules.stylix
     ];
 
