@@ -193,6 +193,26 @@
         "type": "github"
       }
     },
+    "jwmenu": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1767888838,
+        "narHash": "sha256-qzmvfcu7trerZmgMmWP6mGvYuSZs+VErNqPDeUX3wTo=",
+        "owner": "jonwin1",
+        "repo": "jwmenu",
+        "rev": "4fee9659ddad123bed48df18df30a2c716f9892a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jonwin1",
+        "repo": "jwmenu",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1785318670,
@@ -254,6 +274,7 @@
         "flake-parts": "flake-parts",
         "home-manager": "home-manager",
         "import-tree": "import-tree",
+        "jwmenu": "jwmenu",
         "nixpkgs": "nixpkgs",
         "stylix": "stylix",
         "zen-browser": "zen-browser"
