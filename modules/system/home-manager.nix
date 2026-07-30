@@ -10,7 +10,6 @@
       useUserPackages = true;
 
       extraSpecialArgs = {
-        inherit inputs;
         inherit (config) my;
       };
 

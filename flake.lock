@@ -84,6 +84,22 @@
         "type": "github"
       }
     },
+    "flake-compat": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1777699697,
+        "narHash": "sha256-Eg9b/rq/ECYwNwEXs5i9wHyhxNI0JrYx2srdI2uZMaQ=",
+        "ref": "refs/heads/main",
+        "rev": "382052b74656a369c5408822af3f2501e9b1af81",
+        "revCount": 94,
+        "type": "git",
+        "url": "https://git.lix.systems/lix-project/flake-compat.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.lix.systems/lix-project/flake-compat.git"
+      }
+    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": "nixpkgs-lib"
@@ -213,6 +229,37 @@
         "type": "github"
       }
     },
+    "mnw": {
+      "locked": {
+        "lastModified": 1780772958,
+        "narHash": "sha256-VKKe8r4pwCGWZ3Yr9CPN129R4S3CKLSrlYqdYz3vKpM=",
+        "owner": "Gerg-L",
+        "repo": "mnw",
+        "rev": "0871dbf63a53610c95db04439ed8ea4d6ec9c160",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Gerg-L",
+        "repo": "mnw",
+        "type": "github"
+      }
+    },
+    "neowiki": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1777377189,
+        "narHash": "sha256-nqPZaJLUc4J0vliLUB9nYbqzatTeXjD9rw+nqjdDlBg=",
+        "owner": "echaya",
+        "repo": "neowiki.nvim",
+        "rev": "85dddf6057b07d4d6772b2f90e754a18e958a865",
+        "type": "github"
+      },
+      "original": {
+        "owner": "echaya",
+        "repo": "neowiki.nvim",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1785318670,
@@ -244,6 +291,19 @@
         "type": "github"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1783148766,
+        "narHash": "sha256-H9+N+GFtsbVC8ZniHliChM7ndizxtqVZs6bnGOLM3WQ=",
+        "rev": "a50de1b7d8a586adc18d2395c19de7d6058e6030",
+        "type": "tarball",
+        "url": "https://releases.nixos.org/nixos/26.05/nixos-26.05.4193.a50de1b7d8a5/nixexprs.tar.xz?lastModified=1783148766&rev=a50de1b7d8a586adc18d2395c19de7d6058e6030"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://channels.nixos.org/nixos-26.05/nixexprs.tar.xz"
+      }
+    },
     "nur": {
       "inputs": {
         "flake-parts": [
@@ -269,6 +329,68 @@
         "type": "github"
       }
     },
+    "nvf": {
+      "inputs": {
+        "neowiki": "neowiki",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "nvf": "nvf_2"
+      },
+      "locked": {
+        "lastModified": 1784914597,
+        "narHash": "sha256-NtHH3DbN/2P2ZokyBuNERdmmlIxghj0n8ln+XXB9UTo=",
+        "owner": "jonwin1",
+        "repo": "nvf-config",
+        "rev": "5688a276eae2c446f268f41d61a9be93652d6cdf",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jonwin1",
+        "repo": "nvf-config",
+        "type": "github"
+      }
+    },
+    "nvf_2": {
+      "inputs": {
+        "flake-compat": "flake-compat",
+        "mnw": "mnw",
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1784909162,
+        "narHash": "sha256-yKER2cAhlkmE1NAmJ5lfQl3Jz1SI+izFl0H5x7mEPDE=",
+        "owner": "notashelf",
+        "repo": "nvf",
+        "rev": "754b2bef42308b67a291b0c00787c0948195ebba",
+        "type": "github"
+      },
+      "original": {
+        "owner": "notashelf",
+        "repo": "nvf",
+        "type": "github"
+      }
+    },
+    "pomodoro": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1744053501,
+        "narHash": "sha256-OiyJmFK90AunQ6V8WzvPGJBCnFdB+xMoR7RSWL3c1rY=",
+        "owner": "jonwin1",
+        "repo": "go-pomodoro",
+        "rev": "d491159dc4c3ed280f5e93abf0fec982b372bd49",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jonwin1",
+        "repo": "go-pomodoro",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "flake-parts": "flake-parts",
@@ -276,6 +398,8 @@
         "import-tree": "import-tree",
         "jwmenu": "jwmenu",
         "nixpkgs": "nixpkgs",
+        "nvf": "nvf",
+        "pomodoro": "pomodoro",
         "stylix": "stylix",
         "zen-browser": "zen-browser"
       }

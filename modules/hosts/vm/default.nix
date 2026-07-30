@@ -5,12 +5,7 @@
         vmConfiguration
         vmHardware
 
-        myHomeManager
-
-        core
-        git
-        lazygit
-        zsh
+        small
       ];
     };
   };

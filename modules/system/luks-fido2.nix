@@ -1,5 +1,9 @@
-{
+{ self, ... }: {
   flake.nixosModules.luks-fido2 = { lib, config, ... }: {
+    imports = [
+      self.nixosModules.yubikey
+    ];
+
     options.my.luksPart = lib.mkOption {
       type = lib.types.str;
       example = "/dev/disk/by-uuid/abcd1234-5ef6-7g89-0hij-1kl2mno34567";

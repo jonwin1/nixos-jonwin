@@ -28,7 +28,13 @@
       };
   };
 
-  flake.homeModules.waybar = { lib, options, my, ... }:
+  flake.homeModules.waybar =
+    {
+      lib,
+      options,
+      my,
+      ...
+    }:
     let
       hasBattery = lib.hasAttrByPath [ "my" "hasBattery" ] options;
     in

@@ -1,6 +1,15 @@
-{ user, ... }:
-{
-  home-manager.users.${user} = {
+{ self, ... }: {
+  flake.nixosModules.laptopHyprland = { config, ... }: {
+    imports = [
+      self.nixosModules.user
+    ];
+
+    home-manager.users.${config.my.username}.imports = [
+      self.homeModules.laptopHyprland
+    ];
+  };
+
+  flake.homeModules.laptopHyprland = {
     wayland.windowManager.hyprland.settings = {
       cursor = {
         default_monitor = "eDP-1";

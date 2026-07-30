@@ -1,4 +1,4 @@
-{ self, ... }: {
+{ self, inputs, ... }: {
   flake.nixosModules.zenBrowser = { config, ... }: {
     imports = [
       self.nixosModules.user
@@ -9,7 +9,7 @@
     ];
   };
 
-  flake.homeModules.zenBrowser = { inputs, ... }: {
+  flake.homeModules.zenBrowser = {
     imports = [
       inputs.zen-browser.homeModules.beta
     ];

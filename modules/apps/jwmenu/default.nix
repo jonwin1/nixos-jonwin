@@ -1,4 +1,4 @@
-{ self, ... }: {
+{ self, inputs, ... }: {
   flake.nixosModules.jwmenu = { config, ... }: {
     imports = [
       self.nixosModules.user
@@ -9,7 +9,7 @@
     ];
   };
 
-  flake.homeModules.jwmenu = { inputs, pkgs, ... }: {
+  flake.homeModules.jwmenu = { pkgs, ... }: {
     home = {
       packages = with pkgs; [
         inputs.jwmenu.packages.${stdenv.hostPlatform.system}.default

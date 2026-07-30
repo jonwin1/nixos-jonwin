@@ -1,9 +1,11 @@
 {
-  flake.nixosModules.vmConfiguration = {
-    my.username = "jonwin";
-    my.hostname = "nixos";
+  flake = {
+    nixosModules.vmConfiguration = {
+      my.username = "jonwin";
+      my.hostname = "nixos";
 
-    services.openssh.enable = true;
-    security.sudo.wheelNeedsPassword = false;
+      services.openssh.enable = true;
+      security.sudo.wheelNeedsPassword = false;
+    };
   };
 }

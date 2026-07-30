@@ -22,7 +22,7 @@
     };
   };
 
-  flake.homeModules.hyprland = {
+  flake.homeModules.hyprland = { pkgs, ... }: {
     wayland.windowManager.hyprland = {
       enable = true;
       configType = "hyprlang";
@@ -33,5 +33,17 @@
         ];
       };
     };
+
+    home.packages = with pkgs; [
+      cliphist
+      wl-clipboard
+      wl-clip-persist
+
+      hyprpolkitagent
+      kdePackages.qtwayland
+      qt5.qtwayland
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-hyprland
+    ];
   };
 }
