@@ -29,11 +29,6 @@
       ];
     };
 
-    fileSystems."/home/jonwin/dendritic" = {
-      device = "dendritic";
-      fsType = "virtiofs";
-    };
-
     fileSystems."/home/jonwin/nixos-jonwin" = {
       device = "nixos-jonwin";
       fsType = "virtiofs";
