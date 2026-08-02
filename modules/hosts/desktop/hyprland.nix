@@ -1,0 +1,30 @@
+{ self, ... }: {
+  flake.nixosModules.desktopHyprland = { config, ... }: {
+    home-manager.users.${config.my.username}.imports = [
+      self.homeModules.desktopHyprland
+    ];
+  };
+
+  flake.homeModules.desktopHyprland =
+    let
+      primary = "AOC U34G2G4R3 0x0000326C";
+      tv = "Samsung Electric Company QCQ90S 0x01000E00";
+    in
+    {
+      wayland.windowManager.hyprland.settings = {
+        cursor = {
+          default_monitor = "DP-1";
+        };
+
+        monitor = [
+          "desc:${primary}, 3440x1440@144, 0x0, 1"
+          "desc:${tv}, 1920x1080@120, auto-left, 1"
+        ];
+
+        workspace = [
+          "1, monitor:desc:${primary}, default:true"
+          "10, monitor:desc:${tv}, default:true"
+        ];
+      };
+    };
+}

@@ -1,0 +1,48 @@
+{ self, ... }: {
+  flake.nixosModules.rofi = { config, ... }: {
+    home-manager.users.${config.my.username}.imports = [
+      self.homeModules.rofi
+    ];
+  };
+
+  flake.homeModules.rofi = { config, ... }: {
+    programs.rofi = {
+      enable = true;
+      location = "center";
+      theme =
+        let
+          # Use `mkLiteral` for string-like values that should show without
+          # quotes, e.g.:
+          # {
+          #   foo = "abc"; => foo: "abc";
+          #   bar = mkLiteral "abc"; => bar: abc;
+          # };
+          inherit (config.lib.formats.rasi) mkLiteral;
+        in
+        {
+          "window" = {
+            width = 512;
+            border = mkLiteral "2px";
+            border-radius = mkLiteral "4px";
+          };
+
+          "inputbar" = {
+            padding = mkLiteral "16px";
+            children = map mkLiteral [ "entry" ];
+          };
+
+          "entry" = {
+            placeholder = "...";
+          };
+
+          "listview" = {
+            fixed-height = false;
+          };
+
+          "element" = {
+            padding = mkLiteral "8px 16px";
+          };
+        };
+    };
+  };
+}

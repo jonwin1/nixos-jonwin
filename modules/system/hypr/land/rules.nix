@@ -1,0 +1,59 @@
+{
+  flake.homeModules.hyprland = { my, ... }: {
+    wayland.windowManager.hyprland.settings = {
+      windowrule = [
+        # Pinentry stays focused
+        "match:class Pinentry, stay_focused on"
+
+        # Remove opacity for some applications
+        "match:class (org.freecad.FreeCAD|UltiMaker-Cura|steam|qemu|gimp|.virt-manager-wrapped), opacity 1 override"
+
+        # Floating windows
+        "match:tag floating-window, float on"
+        "match:tag floating-window, center on"
+        "match:tag floating-window, size (monitor_w*0.5) (monitor_h*0.5)"
+
+        "match:class (se.jonwin.nmtui|se.jonwin.bluetui|com.gabm.satty|thunar|com.yubico.yubioath), tag +floating-window"
+        "match:title (Open.*Files?|Open [F|f]older.*|Save.*Files?|Save.*As|Save|All Files|.*wants to (open|save).*|[C|c]hoose.*|.*file to save.*), tag +floating-window"
+        "match:title Volume Control, tag +floating-window"
+
+        # Fixes FreeCAD drag and drop
+        "match:class org.freecad.FreeCAD, no_initial_focus on"
+
+        # zoom.us
+        "match:class zoom, float on"
+        "match:class zoom, no_initial_focus on"
+
+        # ---------- Browsers ----------
+
+        # Browser types
+        "tag +browser, match:class ([fF]irefox|zen|zen-beta|librewolf|[lL]adybird)"
+
+        # Less opacity for browsers
+        "opacity 1 override 0.97 override, match:tag browser"
+
+        # No opacity on video sites
+        "opacity 1 override, match:title (.* - YouTube .*)"
+
+        # Picture-in-Picture
+        "match:title Picture-in-Picture, float on"
+        "match:title Picture-in-Picture, size (monitor_w/3) (monitor_w/3/16*9)"
+        "match:title Picture-in-Picture, move (monitor_w-window_w-2) (0+27)"
+        "match:title Picture-in-Picture, no_initial_focus on"
+        "match:title Picture-in-Picture, pin on"
+      ];
+
+      layerrule = [
+        "blur on, match:namespace waybar"
+        "ignore_alpha 0, match:namespace waybar"
+      ];
+
+      workspace = [
+        "special:discord, on-created-empty:uwsm-app -- discord"
+        "special:music, on-created-empty:jonwin-launch-webapp https://music.youtube.com/"
+        "special:scratchpad, on-created-empty:uwsm-app -- ghostty +new-window"
+        "special:wiki, on-created-empty:uwsm-app -- ghostty --working-directory=/home/${my.username}/wiki --initial-command=\"jonwin-wiki\""
+      ];
+    };
+  };
+}
