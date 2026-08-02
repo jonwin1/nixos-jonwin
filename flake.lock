@@ -118,27 +118,6 @@
         "type": "github"
       }
     },
-    "flake-parts_2": {
-      "inputs": {
-        "nixpkgs-lib": [
-          "stylix",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1782949081,
-        "narHash": "sha256-vp6Y/Grm98ESt6ceOkWiHWyZRDV3J1RID4w+6NWK9yA=",
-        "owner": "hercules-ci",
-        "repo": "flake-parts",
-        "rev": "17c9d6cdfc60c64f4ee8d306f9bc0b4ccb51481e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "hercules-ci",
-        "repo": "flake-parts",
-        "type": "github"
-      }
-    },
     "fromYaml": {
       "flake": false,
       "locked": {
@@ -401,6 +380,7 @@
         "nvf": "nvf",
         "pomodoro": "pomodoro",
         "stylix": "stylix",
+        "wrapper-modules": "wrapper-modules",
         "zen-browser": "zen-browser"
       }
     },
@@ -411,7 +391,9 @@
         "base16-helix": "base16-helix",
         "base16-vim": "base16-vim",
         "firefox-gnome-theme": "firefox-gnome-theme",
-        "flake-parts": "flake-parts_2",
+        "flake-parts": [
+          "flake-parts"
+        ],
         "gnome-shell": "gnome-shell",
         "nixpkgs": [
           "nixpkgs"
@@ -514,6 +496,26 @@
       "original": {
         "owner": "tinted-theming",
         "repo": "base16-zed",
+        "type": "github"
+      }
+    },
+    "wrapper-modules": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1782135443,
+        "narHash": "sha256-vAmbArdCyjqpVW+37aCy/PMBOLIqukUXLQuEKLwUhA4=",
+        "owner": "BirdeeHub",
+        "repo": "nix-wrapper-modules",
+        "rev": "6e7f66fa2cdf4d63162580b438f7fcf87c28a46f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "BirdeeHub",
+        "repo": "nix-wrapper-modules",
         "type": "github"
       }
     },

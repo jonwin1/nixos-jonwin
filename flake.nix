@@ -6,6 +6,10 @@
 
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
+    wrapper-modules = {
+      url = "github:BirdeeHub/nix-wrapper-modules";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -27,6 +31,7 @@
     stylix = {
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
     };
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
