@@ -1,7 +1,8 @@
 { self, inputs, ... }: {
-  flake.nixosModules.small = { config, ... }: {
+  flake.nixosModules.smallProfile = { config, ... }: {
     imports = with self.nixosModules; [
-      core
+      coreProfile
+
       git
       lazygit
       myHomeManager

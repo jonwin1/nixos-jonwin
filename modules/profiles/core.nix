@@ -1,5 +1,5 @@
 { self, ... }: {
-  flake.nixosModules.core = { pkgs, ... }: {
+  flake.nixosModules.coreProfile = { pkgs, ... }: {
     imports = with self.nixosModules; [
       boot
       gc

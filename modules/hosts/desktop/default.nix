@@ -4,16 +4,15 @@
       modules = with self.nixosModules; [
         desktopConfiguration
         desktopHardware
+
         desktopHyprland
-        desktop
+        hyprlandProfile
 
         android
         foldingathome
-        hypr
         luks-fido2
         nvidiaDrivers
         steam
-        waybar
         yubikey
         zmkbatx
       ];

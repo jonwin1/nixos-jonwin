@@ -4,17 +4,16 @@
       modules = with self.nixosModules; [
         laptopConfiguration
         laptopHardware
+
+        hyprlandProfile
         laptopHyprland
-        desktop
+        hypridleBacklight
 
         android
         battery
         backlight
-        hypridleBacklight
-        hypr
         luks-fido2
         steam
-        waybar
         yubikey
       ];
     };

@@ -1,6 +1,8 @@
 { self, inputs, ... }: {
-  flake.nixosModules.desktop = { config, ... }: {
+  flake.nixosModules.desktopProfile = { config, ... }: {
     imports = with self.nixosModules; [
+      smallProfile
+
       audio
       bluetooth
       dunst
@@ -9,7 +11,6 @@
       rofi
       scripts
       sddm
-      small
       stylix
       swayosd
       thunar

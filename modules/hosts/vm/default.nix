@@ -5,7 +5,7 @@
         vmConfiguration
         vmHardware
 
-        small
+        smallProfile
       ];
     };
   };
