@@ -20,7 +20,6 @@
       fastfetch
       fd
       libnotify
-      nixfmt-tree
       p7zip
       tree
       unp
