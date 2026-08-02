@@ -22,41 +22,105 @@
         NoDefaultBookmarks = true;
         OfferToSaveLogins = false;
         PromptForDownloadLocation = true;
+      };
 
-        SearchEngines = {
-          Default = "SearXNG";
-          Add = [
-            {
-              Name = "SearXNG";
-              URLTemplate = "https://searxng.jonwin.se/search?q={searchTerms}";
-              Alias = "@searx";
-            }
-            {
-              Name = "NixOS Wiki";
-              URLTemplate = "https://wiki.nixos.org/w/index.php?search={searchTerms}";
-              Alias = "@nix";
-            }
-            {
-              Name = "NixOS Packages";
-              URLTemplate = "https://search.nixos.org/packages?channel=unstable&query={searchTerms}";
-              Alias = "@pkg";
-            }
-            {
-              Name = "NixOS Options";
-              URLTemplate = "https://search.nixos.org/options?channel=unstable&query={searchTerms}";
-              Alias = "@opt";
-            }
-            {
-              Name = "Home Manager Options";
-              URLTemplate = "https://home-manager-options.extranix.com/?query={searchTerms}&release=master";
-              Alias = "@hmopt";
-            }
-            {
-              Name = "Arch Wiki";
-              URLTemplate = "https://wiki.archlinux.org/index.php?search={searchTerms}";
-              Alias = "@arch";
-            }
-          ];
+      profiles.default = {
+        search = {
+          force = true;
+          default = "SearXNG";
+
+          engines = {
+            SearXNG = {
+              urls = [
+                {
+                  template = "https://searxng.jonwin.se/search";
+                  params = [
+                    {
+                      name = "q";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
+              definedAliases = [ "@searx" ];
+            };
+
+            "Nix Packages" = {
+              urls = [
+                {
+                  template = "https://search.nixos.org/packages";
+                  params = [
+                    {
+                      name = "type";
+                      value = "packages";
+                    }
+                    {
+                      name = "channel";
+                      value = "unstable";
+                    }
+                    {
+                      name = "query";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
+              definedAliases = [ "nixp" ];
+            };
+
+            "Nix Options" = {
+              urls = [
+                {
+                  template = "https://search.nixos.org/options";
+                  params = [
+                    {
+                      name = "channel";
+                      value = "unstable";
+                    }
+                    {
+                      name = "query";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
+              definedAliases = [ "nixo" ];
+            };
+
+            "NixOS Wiki" = {
+              urls = [
+                {
+                  template = "https://wiki.nixos.org/w/index.php";
+                  params = [
+                    {
+                      name = "search";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
+              definedAliases = [ "@nixw" ];
+            };
+
+            "Home Manager Options" = {
+              urls = [
+                {
+                  template = "https://home-manager-options.extranix.com/";
+                  params = [
+                    {
+                      name = "query";
+                      value = "{searchTerms}";
+                    }
+                    {
+                      name = "release";
+                      value = "master";
+                    }
+                  ];
+                }
+              ];
+              definedAliases = [ "hm" ];
+            };
+          };
         };
       };
     };
