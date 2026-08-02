@@ -6,5 +6,9 @@
       hypr
       waybar
     ];
+
+    services.displayManager = {
+      defaultSession = "hyprland-uwsm";
+    };
   };
 }

@@ -5,7 +5,8 @@
         vmConfiguration
         vmHardware
 
-        smallProfile
+        # smallProfile
+        mangoProfile
       ];
     };
   };

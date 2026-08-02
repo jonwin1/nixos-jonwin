@@ -10,8 +10,6 @@
         enable = true;
         user = config.my.username;
       };
-
-      defaultSession = "hyprland-uwsm";
     };
   };
 }
