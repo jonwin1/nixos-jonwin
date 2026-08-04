@@ -1,9 +1,7 @@
 { self, ... }: {
   flake.nixosModules.mangoProfile = {
     imports = with self.nixosModules; [
-      # desktopProfile
-      # temporary
-      smallProfile
+      desktopProfile
 
       ghostty
       mango
