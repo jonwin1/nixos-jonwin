@@ -10,6 +10,9 @@
     imports = [ wlib.wrapperModules.mangowc ];
 
     settings = {
+      monitorrule = "name:^eDP-1$,width:2560,height:1600,refresh:120,x:0,y:0,scale:1.6,vrr:1";
+      exec-once = [ "waybar" ];
+
       # Window effect
       blur = 0;
       blur_layer = 0;
@@ -112,7 +115,8 @@
       repeat_rate = 25;
       repeat_delay = 600;
       numlockon = 0;
-      xkb_rules_layout = "us";
+      xkb_rules_layout = "se";
+      xkb_rules_options = "caps:escape";
 
       # Trackpad
       # need relogin to make it apply
@@ -171,49 +175,3 @@
     };
   };
 }
-
-# { self, ... }: {
-#   flake.nixosModules.hyprland = { config, ... }: {
-#     home-manager.users.${config.my.username}.imports = [
-#       self.homeModules.hyprland
-#     ];
-#
-#     programs.hyprland = {
-#       enable = true;
-#       withUWSM = true;
-#       xwayland = {
-#         enable = true;
-#       };
-#     };
-#
-#     environment.sessionVariables = {
-#       NIXOS_OZONE_WL = "1";
-#       QT_QPA_PLATFORM = "wayland";
-#     };
-#   };
-#
-#   flake.homeModules.hyprland = { pkgs, ... }: {
-#     wayland.windowManager.hyprland = {
-#       enable = true;
-#       configType = "hyprlang";
-#       systemd.enable = false;
-#       settings = {
-#         monitor = [
-#           ", preferred, auto, 1"
-#         ];
-#       };
-#     };
-#
-#     home.packages = with pkgs; [
-#       cliphist
-#       wl-clipboard
-#       wl-clip-persist
-#
-#       hyprpolkitagent
-#       kdePackages.qtwayland
-#       qt5.qtwayland
-#       xdg-desktop-portal-gtk
-#       xdg-desktop-portal-hyprland
-#     ];
-#   };
-# }

@@ -5,9 +5,10 @@
         laptopConfiguration
         laptopHardware
 
-        hyprlandProfile
-        laptopHyprland
-        hypridleBacklight
+        # hyprlandProfile
+        # laptopHyprland
+        # hypridleBacklight
+        mangoProfile
 
         android
         battery

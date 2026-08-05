@@ -10,7 +10,7 @@
       jwmenu
       rofi
       scripts
-      sddm
+      # sddm TODO: Uncomment
       stylix
       swayosd
       thunar
@@ -40,6 +40,10 @@
       discord
       gimp
       kdePackages.okular
+
+      cliphist
+      wl-clipboard
+      wl-clip-persist
 
       inputs.pomodoro.packages.${stdenv.hostPlatform.system}.default
     ];

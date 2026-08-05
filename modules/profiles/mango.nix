@@ -3,10 +3,7 @@
     imports = with self.nixosModules; [
       desktopProfile
 
-      ghostty
       mango
-      rofi
-      sddm
       waybar
     ];
 
