@@ -10,6 +10,9 @@
       main = {
         modules-left = [
           "mango/workspaces"
+          "mango/layout"
+          "mango/keymode"
+          "mango/window"
         ];
 
         "mango/workspaces" = {
