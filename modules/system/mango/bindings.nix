@@ -12,16 +12,20 @@
           "${mod}, e, spawn, thunar"
           "${mod}, u, spawn, yubioath-flutter"
 
-          "${mod}, r, spawn, rofi -show drun"
-          "${mod}+shift, r, spawn, rofi -show run"
-          "${mod}, v, spawn_shell, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
-          "${mod}, Space, spawn, jwmenu ~/.config/jwmenu/system.toml"
+          # "${mod}, r, spawn, rofi -show drun"
+          # "${mod}+shift, r, spawn, rofi -show run"
+          # "${mod}, v, spawn_shell, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
+          # "${mod}, Space, spawn, jwmenu ~/.config/jwmenu/system.toml"
+
+          "${mod}, r, spawn, noctalia msg panel-toggle launcher"
+          "${mod}, space, spawn, noctalia msg panel-toggle control-center"
+          "${mod}, comma, spawn, noctalia msg settings-toggle"
 
           # Quit
           "${mod}, q, killclient"
-          "${mod}+shift, q, quit"
+          "${mod}+shift, q, spawn, noctalia msg panel-toggle session"
           # "${mod}+shift, q, spawn, jwmenu ~/.config/jwmenu/power.toml"
-          "none, XF86PowerOff, spawn, jwmenu ~/.config/jwmenu/power.toml"
+          # "none, XF86PowerOff, spawn, jwmenu ~/.config/jwmenu/power.toml"
 
           # switch window focus
           "${mod}, h, focusdir, left"
@@ -109,20 +113,34 @@
         ];
 
         bindl = [
-          "none, XF86MonBrightnessUp, spawn, swayosd-client --brightness raise"
-          "none, XF86MonBrightnessDown, spawn, swayosd-client --brightness lower"
+          # "none, XF86MonBrightnessUp, spawn, swayosd-client --brightness raise"
+          # "none, XF86MonBrightnessDown, spawn, swayosd-client --brightness lower"
+          #
+          # "none, XF86AudioRaiseVolume, spawn, swayosd-client --output-volume raise"
+          # "none, XF86AudioLowerVolume, spawn, swayosd-client --output-volume lower"
+          # "none, XF86AudioMute, spawn, swayosd-client --output-volume mute-toggle"
+          # "alt, XF86AudioMute, spawn, jonwin-audio-switch"
+          # "none, XF86AudioMicMute, spawn, swayosd-client --input-volume mute-toggle"
+          #
+          # "none, XF86AudioNext, spawn, swayosd-client --playerctl next"
+          # "none, XF86AudioPrev, spawn, swayosd-client --playerctl previous"
+          # "none, XF86AudioPlay, spawn, swayosd-client --playerctl play-pause"
+          # "none, XF86AudioPause, spawn, swayosd-client --playerctl pause"
+          # "none, XF86AudioStop, spawn, swayosd-client --playerctl stop"
 
-          "none, XF86AudioRaiseVolume, spawn, swayosd-client --output-volume raise"
-          "none, XF86AudioLowerVolume, spawn, swayosd-client --output-volume lower"
-          "none, XF86AudioMute, spawn, swayosd-client --output-volume mute-toggle"
-          "alt, XF86AudioMute, spawn, jonwin-audio-switch"
-          "none, XF86AudioMicMute, spawn, swayosd-client --input-volume mute-toggle"
+          "none, XF86MonBrightnessUp, spawn, noctalia msg brightness-up"
+          "none, XF86MonBrightnessDown, spawn, noctalia msg brightness-down"
 
-          "none, XF86AudioNext, spawn, swayosd-client --playerctl next"
-          "none, XF86AudioPrev, spawn, swayosd-client --playerctl previous"
-          "none, XF86AudioPlay, spawn, swayosd-client --playerctl play-pause"
-          "none, XF86AudioPause, spawn, swayosd-client --playerctl pause"
-          "none, XF86AudioStop, spawn, swayosd-client --playerctl stop"
+          "none, XF86AudioRaiseVolume, spawn, noctalia msg volume-up"
+          "none, XF86AudioLowerVolume, spawn, noctalia msg volume-down"
+          "none, XF86AudioMute, spawn, noctalia msg volume-mute"
+          "none, XF86AudioMicMute, spawn, noctalia msg mic-mute"
+
+          "none, XF86AudioNext, spawn, noctalia msg media next"
+          "none, XF86AudioPrev, spawn, noctalia msg media previous"
+          "none, XF86AudioPlay, spawn, noctalia msg media toggle"
+          "none, XF86AudioPause, spawn, noctalia msg media pause"
+          "none, XF86AudioStop, spawn, noctalia msg media stop"
         ];
 
         # Mouse Button Bindings

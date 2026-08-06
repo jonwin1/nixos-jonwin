@@ -5,6 +5,11 @@
       package = self.packages.${pkgs.stdenv.hostPlatform.system}.mangowc;
     };
 
+    environment.sessionVariables = {
+      NIXOS_OZONE_WL = "1";
+      QT_QPA_PLATFORM = "wayland";
+    };
+
     systemd.user.targets.mango-session = {
       description = "mango compositor session";
       bindsTo = [ "graphical-session.target" ];

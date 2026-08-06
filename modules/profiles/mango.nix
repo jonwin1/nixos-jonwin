@@ -4,8 +4,9 @@
       desktopProfile
 
       mango
-      waybar
-      waybarMango
+      # waybar
+      # waybarMango
+      noctalia
     ];
 
     services.displayManager = {
