@@ -5,6 +5,7 @@
 
       mango
       waybar
+      waybarMango
     ];
 
     services.displayManager = {

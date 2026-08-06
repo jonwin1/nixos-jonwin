@@ -5,6 +5,7 @@
 
       hypr
       waybar
+      waybarHyprland
     ];
 
     services.displayManager = {
