@@ -10,7 +10,7 @@
       jwmenu
       rofi
       scripts
-      # sddm TODO: Uncomment
+      sddm
       stylix
       swayosd
       thunar

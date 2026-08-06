@@ -4,6 +4,13 @@
       enable = true;
       package = self.packages.${pkgs.stdenv.hostPlatform.system}.mangowc;
     };
+
+    systemd.user.targets.mango-session = {
+      description = "mango compositor session";
+      bindsTo = [ "graphical-session.target" ];
+      wants = [ "graphical-session-pre.target" ];
+      after = [ "graphical-session-pre.target" ];
+    };
   };
 
   flake.wrappers.mangowc = { wlib, ... }: {
@@ -11,7 +18,16 @@
 
     settings = {
       monitorrule = "name:^eDP-1$,width:2560,height:1600,refresh:120,x:0,y:0,scale:1.6,vrr:1";
-      exec-once = [ "waybar" ];
+
+      exec-once = [
+        "dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE NIXOS_OZONE_WL XCURSOR_THEME XCURSOR_SIZE"
+        "systemctl --user stop mango-session.target"
+        "systemctl --user start mango-session.target"
+
+        "wl-clip-persist --clipboard both"
+        "wl-paste --type text --watch cliphist store"
+        "wl-paste --type image --watch cliphist store"
+      ];
 
       # Window effect
       blur = 0;
