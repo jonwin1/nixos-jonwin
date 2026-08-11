@@ -74,8 +74,6 @@
           "${mod}, 0, togglejump, "
 
           # tag: move client to the tag and focus it
-          # tagsilent: move client to the tag and not focus it
-          # bind=Alt, 1, tagsilent, 1
           "${mod}+shift, 1, tag, 1, 0"
           "${mod}+shift, 2, tag, 2, 0"
           "${mod}+shift, 3, tag, 3, 0"
@@ -85,6 +83,17 @@
           "${mod}+shift, 7, tag, 7, 0"
           "${mod}+shift, 8, tag, 8, 0"
           "${mod}+shift, 9, tag, 9, 0"
+
+          # toggleview: add/remove tag to/from current view
+          "${mod}+ctrl, 1, toggleview, 1"
+          "${mod}+ctrl, 2, toggleview, 2"
+          "${mod}+ctrl, 3, toggleview, 3"
+          "${mod}+ctrl, 4, toggleview, 4"
+          "${mod}+ctrl, 5, toggleview, 5"
+          "${mod}+ctrl, 6, toggleview, 6"
+          "${mod}+ctrl, 7, toggleview, 7"
+          "${mod}+ctrl, 8, toggleview, 8"
+          "${mod}+ctrl, 9, toggleview, 9"
 
           # monitor switch
           "${mod}+alt, h, focusmon, left"
