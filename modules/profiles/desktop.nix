@@ -5,14 +5,10 @@
 
       audio
       bluetooth
-      dunst
       ghostty
-      jwmenu
-      rofi
       scripts
       sddm
       stylix
-      swayosd
       thunar
       virtualization
       zenBrowser

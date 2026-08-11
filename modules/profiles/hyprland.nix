@@ -3,7 +3,11 @@
     imports = with self.nixosModules; [
       desktopProfile
 
+      rofi
       hypr
+      jwmenu
+      dunst
+      swayosd
       waybar
       waybarHyprland
     ];
