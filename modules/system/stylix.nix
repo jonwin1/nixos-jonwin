@@ -44,9 +44,10 @@
   };
 
   flake.homeModules.stylix = { pkgs, ... }: {
-    stylix = {
-      targets.waybar.addCss = false;
-      targets.zen-browser.profileNames = [ "default" ];
+    stylix.targets = {
+      ghostty.enable = false; # TODO: remove once no stylix for mango
+      waybar.addCss = false;
+      zen-browser.profileNames = [ "default" ];
     };
 
     gtk = {

@@ -8,7 +8,6 @@
       ghostty
       scripts
       sddm
-      stylix
       thunar
       virtualization
       zenBrowser

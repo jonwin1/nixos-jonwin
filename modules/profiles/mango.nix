@@ -4,9 +4,8 @@
       desktopProfile
 
       mango
-      # waybar
-      # waybarMango
       noctalia
+      stylix
     ];
 
     services.displayManager = {

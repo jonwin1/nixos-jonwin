@@ -22,6 +22,8 @@
     imports = [ wlib.wrapperModules.mangowc ];
 
     settings = {
+      source = "~/.config/mango/noctalia.conf";
+
       monitorrule = "name:^eDP-1$,width:2560,height:1600,refresh:120,x:0,y:0,scale:1.6,vrr:1";
 
       exec-once = [
