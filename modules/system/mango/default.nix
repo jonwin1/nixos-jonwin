@@ -54,7 +54,6 @@
       shadows_blur = 15;
       shadows_position_x = 0;
       shadows_position_y = 0;
-      shadowscolor = "0x000000ff";
 
       border_radius = 6;
       no_radius_when_single = 0;
@@ -165,19 +164,9 @@
       scratchpad_width_ratio = 0.8;
       scratchpad_height_ratio = 0.9;
       borderpx = 4;
-      rootcolor = "0x201b14ff";
-      bordercolor = "0x444444ff";
-      dropcolor = "0x8FBA7C55";
-      splitcolor = "0xEB441EFF";
-      focuscolor = "0xc9b890ff";
-      maximizescreencolor = "0x89aa61ff";
-      urgentcolor = "0xad401fff";
-      scratchpadcolor = "0x516c93ff";
-      globalcolor = "0xb153a7ff";
-      overlaycolor = "0x14a57cff";
 
-      # layout support:
-      # tile,scroller,grid,deck,monocle,center_tile,vertical_tile,vertical_scroller
+      # Layout
+      circle_layout = "tile,scroller,fair,dwindle,center_tile,right_tile,vertical_scroller";
       tagrule = [
         "id:1,layout_name:tile"
         "id:2,layout_name:tile"
