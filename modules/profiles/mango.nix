@@ -5,7 +5,7 @@
 
       mango
       noctalia
-      stylix
+      style
     ];
 
     services.displayManager = {
