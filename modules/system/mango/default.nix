@@ -28,7 +28,7 @@
 
       exec-once = [
         "dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE NIXOS_OZONE_WL XCURSOR_THEME XCURSOR_SIZE"
-        "systemctl --user stop mango-session.target"
+        "systemctl --user reset-failed"
         "systemctl --user start mango-session.target"
 
         "wl-clip-persist --clipboard both"
