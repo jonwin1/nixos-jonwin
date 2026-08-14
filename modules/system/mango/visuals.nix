@@ -3,18 +3,20 @@
     settings = {
       source = "~/.config/mango/noctalia.conf";
 
-      # Appearance
+      # ---------- Theming ----------
+      # Dimensions
       borderpx = 4;
       gappih = 5;
       gappiv = 5;
       gappoh = 5;
       gappov = 5;
 
+      # ---------- Window management ----------
       scratchpad_width_ratio = 0.8;
       scratchpad_height_ratio = 0.9;
 
-      # Window effects
-      ## Blur
+      # ---------- Window effects ----------
+      # Blur
       blur = 1;
       blur_layer = 0;
       blur_optimized = 1;
@@ -25,22 +27,22 @@
       blur_params_contrast = 0.9;
       blur_params_saturation = 1.2;
 
-      ## Shadows
+      # Shadows
       shadows = 1;
       layer_shadows = 0;
-      shadow_only_floating = 0;
-      shadows_size = 10;
-      shadows_blur = 15;
-      shadows_position_x = 0;
-      shadows_position_y = 0;
+      shadow_only_floating = 1;
+      shadows_size = 4;
+      shadows_blur = 10;
+      shadows_position_x = 2;
+      shadows_position_y = 2;
 
+      # Opacity & Corner Radius
       border_radius = 10;
-      border_radius_location_default = 0;
       no_radius_when_single = 0;
-      focused_opacity = 0.95;
-      unfocused_opacity = 0.9;
+      focused_opacity = 1;
+      unfocused_opacity = 1;
 
-      # Animations
+      # ---------- Animations ----------
       animations = 1;
       layer_animations = 0;
 
