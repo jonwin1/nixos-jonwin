@@ -11,6 +11,7 @@
         android
         foldingathome
         luks-fido2
+        mangohud
         nvidiaDrivers
         steam
         yubikey

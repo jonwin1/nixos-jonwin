@@ -33,8 +33,8 @@
       shadow_only_floating = 1;
       shadows_size = 4;
       shadows_blur = 10;
-      shadows_position_x = 2;
-      shadows_position_y = 2;
+      shadows_position_x = 0;
+      shadows_position_y = 0;
 
       # Opacity & Corner Radius
       border_radius = 10;

@@ -17,6 +17,7 @@
         battery
         backlight
         luks-fido2
+        mangohud
         steam
         yubikey
       ];
