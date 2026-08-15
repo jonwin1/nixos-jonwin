@@ -5,6 +5,9 @@
         laptopConfiguration
         laptopHardware
 
+        nvidiaDrivers
+        nvidiaPrime
+
         # hyprlandProfile
         # laptopHyprland
         # hypridleBacklight
