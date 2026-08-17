@@ -5,15 +5,11 @@
 
       # ---------- Theming ----------
       # Dimensions
-      borderpx = 4;
+      borderpx = 3;
       gappih = 5;
       gappiv = 5;
       gappoh = 5;
       gappov = 5;
-
-      # ---------- Window management ----------
-      scratchpad_width_ratio = 0.8;
-      scratchpad_height_ratio = 0.9;
 
       # ---------- Window effects ----------
       # Blur
