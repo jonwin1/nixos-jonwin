@@ -1,13 +1,26 @@
 { self, ... }: {
-  flake.nixosModules.MODULE = { config, ... }: {
-    home-manager.users.${config.my.username}.imports = [
-      self.homeModules.MODULE
-    ];
+  flake = {
+    nixosModules.MODULE = { config, pkgs, ... }: {
+      home-manager.users.${config.my.username}.imports = [
+        self.homeModules.MODULE
+      ];
 
-    # NixOS options
-  };
+      # environment.systemPackages = [
+      #   self.packages.${pkgs.stdenv.hostPlatform.system}.PACKAGE
+      # ];
 
-  flake.homeModules.MODULE = { pkgs, ... }: {
-    # Home Manager options
+      # NixOS options
+    };
+
+    homeModules.MODULE = { pkgs, ... }: {
+      # Home Manager options
+    };
+
+    wrappers.PACKAGE = { wlib, ... }: {
+      # imports = [ wlib.wrapperModules.PACKAGE ];
+      # OR
+      # imports = [ wlib.modules.default ];
+      # package = pkgs.PACKAGE;
+    };
   };
 }
