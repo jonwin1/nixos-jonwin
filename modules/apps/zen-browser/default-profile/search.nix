@@ -110,6 +110,15 @@
           ];
           definedAliases = [ "arch" ];
         };
+
+        "Zig docs" = {
+          urls = [
+            {
+              template = "https://ziglang.org/documentation/0.16.0/std/#?{searchTerms}";
+            }
+          ];
+          definedAliases = [ "zig" ];
+        };
       };
     };
   };
