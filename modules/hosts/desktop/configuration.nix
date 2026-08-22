@@ -21,7 +21,6 @@
         cura-appimage
         freecad-wayland
         heroic
-        ladybird
         openscad
         oversteer
         proton-vpn
