@@ -8,14 +8,14 @@
         bind = [
           # Applications
           "${mod}, x, spawn, ghostty"
-          "${mod}, b, spawn, zen-beta"
 
-          # Named Scratchpad
-          "${mod}, e, toggle_named_scratchpad, thunar, none, thunar"
-          "${mod}, d, toggle_named_scratchpad, discord, none, discord"
-          "${mod}, y, toggle_named_scratchpad, none, (.*YouTube Music.*), zen-beta --new-window https://music.youtube.com/"
-          "${mod}, w, toggle_named_scratchpad, none, wiki, ghostty --working-directory=/home/jonwin/wiki --initial-command=jonwin-wiki --title=wiki"
-          "${mod}, u, toggle_named_scratchpad, com.yubico.yubioath, none, yubioath-flutter"
+          "${mod}, b, spawn_on_empty, zen-beta, 6"
+          "${mod}, y, spawn_on_empty, zen-beta --new-window https://music.youtube.com/, 7"
+          "${mod}, d, spawn_on_empty, discord, 8"
+          "${mod}, w, spawn_on_empty, ghostty --working-directory=/home/jonwin/wiki --initial-command=jonwin-wiki, 9"
+
+          "${mod}, e, spawn, thunar"
+          "${mod}, u, spawn, yubioath-flutter"
 
           # Scratchpad
           "${mod}, i, minimized"

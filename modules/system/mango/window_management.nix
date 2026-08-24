@@ -27,14 +27,9 @@
         # Swallowing
         "isterm:1,appid:com.mitchellh.ghostty"
 
-        # Named Scratchpad
-        "isnamedscratchpad:1,width:0.6,height:0.6,appid:thunar"
-        "isnamedscratchpad:1,width:0.8,height:0.8,appid:discord"
-        "isnamedscratchpad:1,width:0.8,height:0.8,title:(.*YouTube Music.*)"
-        "isnamedscratchpad:1,width:0.8,height:0.8,title:wiki"
-        "isnamedscratchpad:1,width:0.6,height:0.6,appid:com.yubico.yubioath"
-
-        "isfloating:1,width:0.6,height:0.6,title:(Open.*Files?|Open [F|f]older.*|Save.*Files?|Save.*As|Save|All Files|.*wants to (open|save).*|[C|c]hoose.*|.*file to save.*)"
+        # Floating
+        "isfloating:1,isoverlay:1,width:0.6,height:0.6,appid:(thunar|com.yubico.yubioath)"
+        "isfloating:1,isoverlay:1,width:0.6,height:0.6,title:(Open.*Files?|Open [F|f]older.*|Save.*Files?|Save.*As|Save|All Files|.*wants to (open|save).*|[C|c]hoose.*|.*file to save.*)"
       ];
 
       tagrule = [
