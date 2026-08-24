@@ -119,6 +119,21 @@
           ];
           definedAliases = [ "zig" ];
         };
+
+        "Go Packages" = {
+          urls = [
+            {
+              template = "https://pkg.go.dev/search";
+              params = [
+                {
+                  name = "q";
+                  value = "{searchTerms}";
+                }
+              ];
+            }
+          ];
+          definedAliases = [ "go" ];
+        };
       };
     };
   };
