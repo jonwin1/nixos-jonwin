@@ -105,8 +105,12 @@
           # Monitor switch
           "${mod}+alt, h, focusmon, left"
           "${mod}+alt, l, focusmon, right"
+          "${mod}+alt, k, focusmon, up"
+          "${mod}+alt, j, focusmon, down"
           "${mod}+alt+shift, h, tagmon, left"
           "${mod}+alt+shift, l, tagmon, right"
+          "${mod}+alt+shift, k, tagmon, up"
+          "${mod}+alt+shift, j, tagmon, down"
 
           # Move floating window
           "${mod}+ctrl+shift, h, movewin, -50, +0"
@@ -119,8 +123,6 @@
           "${mod}+ctrl, l, resizewin, +50, +0"
           "${mod}+ctrl, k, resizewin, +0, -50"
           "${mod}+ctrl, j, resizewin, +0, +50"
-
-          "${mod}, t, toggle_trackpad_enable"
         ];
 
         bindl = [
