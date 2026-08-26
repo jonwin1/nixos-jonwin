@@ -32,6 +32,11 @@
       # (writeScriptBin "jonwin-toggle-nightlight" (builtins.readFile ./hypr/jonwin-toggle-nightlight.sh))
 
       (writeScriptBin "jonwin-wiki" (builtins.readFile ./jonwin-wiki.sh))
+
+      # Mango
+      (writeScriptBin "jonwin-mango-focus-or-launch" (
+        builtins.readFile ./mango/jonwin-mango-focus-or-launch.sh
+      ))
     ];
   };
 }

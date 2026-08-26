@@ -9,10 +9,10 @@
           # Applications
           "${mod}, x, spawn, ghostty"
 
-          "${mod}, b, spawn_on_empty, zen-beta, 6"
-          "${mod}, y, spawn_on_empty, zen-beta --new-window https://music.youtube.com/, 7"
-          "${mod}, d, spawn_on_empty, discord, 8"
-          "${mod}, w, spawn_on_empty, ghostty --working-directory=/home/jonwin/wiki --initial-command=jonwin-wiki, 9"
+          "${mod}, b, spawn, jonwin-mango-focus-or-launch zen-beta zen-beta 6 '!YouTube Music'"
+          "${mod}, y, spawn, jonwin-mango-focus-or-launch zen-beta 'zen-beta --new-window https://music.youtube.com/' 7 'YouTube Music'"
+          "${mod}, d, spawn, jonwin-mango-focus-or-launch discord discord 8"
+          "${mod}, w, spawn, jonwin-mango-focus-or-launch com.mitchellh.ghostty 'ghostty --working-directory=/home/jonwin/wiki --initial-command=jonwin-wiki --title=wiki' 9 'wiki'"
 
           "${mod}, e, spawn, thunar"
           "${mod}, u, spawn, yubioath-flutter"
