@@ -1,0 +1,280 @@
+[bar.default]
+position = "bottom"
+font_family = "FiraCode Nerd Font"
+background_opacity = 0.97
+start = [ "workspaces", "btn", "tray" ]
+center = [ "clock", "privacy" ]
+end = [
+    "media",
+    "notifications",
+    "network",
+    "bluetooth",
+    "volume",
+    "temp",
+    "cpu",
+    "GPU",
+    "ram",
+    "sysmon",
+    "widget",
+    "battery"
+]
+
+[control_center.calendar]
+show_events_card = false
+show_week_numbers = true
+
+[desktop_widgets]
+schema_version = 2
+widget_order = [ "desktop-widget-0000000000000005" ]
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget.desktop-widget-0000000000000005]
+    box_height = 208.0
+    box_width = 496.0
+    cx = 800.0
+    cy = 180.0
+    rotation = 0.0
+    type = "clock"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000005.settings]
+        background = false
+        center_text = true
+        circle = true
+        clock_style = "digital"
+        shadow = true
+
+[dock]
+enabled = true
+icon_size = 20
+position = "right"
+reserve_space = false
+smart_auto_hide = true
+
+[idle]
+behavior_order = [ "lock", "lock-and-suspend" ]
+pre_action_fade_seconds = 5
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = true
+    timeout = 300.0
+
+    [idle.behavior.lock-and-suspend]
+    action = "suspend"
+    enabled = true
+    lock_before_suspend = false
+    timeout = 360.0
+
+[location]
+auto_locate = true
+
+[lockscreen]
+allow_empty_password = true
+
+[lockscreen_widgets]
+enabled = true
+schema_version = 2
+widget_order = [
+    "lockscreen-login-box@eDP-1",
+    "lockscreen-widget-0000000000000001",
+    "lockscreen-widget-0000000000000002"
+]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 150.0
+    box_width = 810.0
+    cx = 800.0
+    cy = 818.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 0.97
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = false
+        show_unlock_hint = false
+        show_weather = true
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
+    box_height = 192.0
+    box_width = 320.0
+    cx = 800.0
+    cy = 276.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000001.settings]
+        background = false
+        center_text = true
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000002]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 800.0
+    cy = 948.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "yocraft/battery-widget:widget"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000002.settings]
+        background = true
+        layout = "horizontal"
+        show_glyph = true
+        show_label = true
+
+[nightlight]
+enabled = true
+temperature_night = 3000
+
+[notification]
+history_retention_hours = 24
+layer = "overlay"
+
+[osd]
+position = "bottom_center"
+
+[plugin_settings."ezequiel/mango_layouts"]
+panel_open_near_click = true
+panel_placement = "attached"
+panel_position = "auto"
+show_deck = false
+show_grid = false
+show_monocle = false
+show_vertical_deck = false
+show_vertical_fair = false
+show_vertical_grid = false
+show_vertical_tile = false
+
+[plugins]
+enabled = [ "ezequiel/mango_layouts", "yocraft/battery-widget" ]
+
+[shell]
+avatar_path = "/home/jonwin/nixos-jonwin/modules/system/hypr/lock/logo.png"
+clipboard_history_max_entries = 1000
+clipboard_image_action_command = "satty -f -"
+font_family = "FiraCode Nerd Font"
+lang = "sv"
+screen_time_enabled = true
+
+    [shell.panel]
+    control_center_position = "center"
+
+    [shell.screenshot]
+    directory = "~/Pictures/screenshots"
+
+    [[shell.session.actions]]
+    action = "lock"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "1"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "logout"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "2"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "lock_and_suspend"
+    countdown_seconds = 0.0
+    enabled = true
+    label = "Lås & vila"
+    shortcut = "3"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "reboot"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "4"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "shutdown"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "5"
+    variant = "destructive"
+
+[theme]
+mode = "dark"
+source = "wallpaper"
+wallpaper_scheme = "m3-tonal-spot"
+
+    [theme.templates]
+    builtin_ids = [ "gtk3", "gtk4", "ghostty", "mango" ]
+    community_ids = [ "zen-browser" ]
+
+[wallpaper]
+directory = "/home/jonwin/Pictures/wallpaper"
+transition_on_startup = true
+
+    [wallpaper.default]
+    path = "/home/jonwin/Pictures/wallpaper/20260801_164314.jpg"
+
+[widget.GPU]
+show_value = false
+stat = "gpu_usage"
+type = "sysmon"
+
+[widget.battery]
+display_mode = "graphic"
+show_label = false
+
+[widget.btn]
+type = "ezequiel/mango_layouts:btn"
+
+[widget.clock]
+tooltip_format = "{:%A %d %B %Y}\\n{:%x v.%V}"
+
+[widget.cpu]
+show_value = false
+
+[widget.media]
+hide_when_no_media = true
+max_length = 200
+title_scroll = "on_hover"
+
+[widget.network]
+show_label = false
+
+[widget.notifications]
+hide_when_no_unread = true
+
+[widget.privacy]
+hide_inactive = true
+
+[widget.ram]
+show_value = false
+
+[widget.sysmon]
+show_value = false
+stat = "disk_used_pct"
+
+[widget.temp]
+show_value = false
+
+[widget.volume]
+show_label = false
