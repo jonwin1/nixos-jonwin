@@ -8,8 +8,9 @@
 
         # package = pkgs.noctalia;
       };
-      environment.systemPackages = [
-        pkgs.glib # For gdbus which is required by Battery Widget plugin
+      environment.systemPackages = with pkgs; [
+        glib # For gdbus which is required by Battery Widget plugin
+        satty # Screenshot annotation
       ];
     };
 
