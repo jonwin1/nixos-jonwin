@@ -28,6 +28,9 @@
           "${mod}, comma, spawn, noctalia msg settings-toggle"
           "${mod}, v, spawn, noctalia msg panel-toggle clipboard"
 
+          "none, print, spawn, noctalia msg screenshot-fullscreen"
+          "shift, print, spawn, noctalia msg screenshot-region"
+
           # Quit
           "${mod}, q, killclient"
           "${mod}+shift, q, spawn, noctalia msg panel-toggle session"
