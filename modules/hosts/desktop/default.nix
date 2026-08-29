@@ -4,18 +4,16 @@
       modules = with self.nixosModules; [
         desktopConfiguration
         desktopHardware
-        desktopHyprland
-        desktop
 
-        android
+        mangoProfile
+
+        # android
         foldingathome
-        hypr
         luks-fido2
+        mangohud
         nvidiaDrivers
         steam
-        waybar
         yubikey
-        zmkbatx
       ];
     };
   };

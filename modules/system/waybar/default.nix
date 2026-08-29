@@ -1,4 +1,4 @@
-{ self, ... }: {
+{ self, inputs, ... }: {
   flake.nixosModules.waybar = { config, ... }: {
     home-manager.users.${config.my.username}.imports = [
       self.homeModules.waybar
@@ -11,6 +11,7 @@
     programs.waybar = {
       enable = true;
       systemd.enable = true;
+      package = inputs.waybar.packages.${pkgs.stdenv.hostPlatform.system}.default;
     };
 
     services = {

@@ -20,6 +20,13 @@
       clearDefaultKeybinds = true;
 
       settings = {
+        theme = "noctalia";
+        font-family = [
+          "FiraCode Nerd Font"
+          "Noto Color Emoji"
+        ];
+        font-size = 12;
+
         shell-integration-features = "ssh-env";
 
         keybind = [

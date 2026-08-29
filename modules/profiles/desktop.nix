@@ -1,17 +1,13 @@
 { self, inputs, ... }: {
-  flake.nixosModules.desktop = { config, ... }: {
+  flake.nixosModules.desktopProfile = { config, ... }: {
     imports = with self.nixosModules; [
+      smallProfile
+
       audio
       bluetooth
-      dunst
       ghostty
-      jwmenu
-      rofi
       scripts
       sddm
-      small
-      stylix
-      swayosd
       thunar
       virtualization
       zenBrowser
@@ -39,6 +35,10 @@
       discord
       gimp
       kdePackages.okular
+
+      cliphist
+      wl-clipboard
+      wl-clip-persist
 
       inputs.pomodoro.packages.${stdenv.hostPlatform.system}.default
     ];

@@ -6,6 +6,11 @@
 
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
+    wrapper-modules = {
+      # url = "github:BirdeeHub/nix-wrapper-modules";
+      url = "github:jasdeep-dhillon/nix-wrapper-modules"; # NOTE: noctalia v5 pr
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -26,6 +31,11 @@
     };
     stylix = {
       url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
+    };
+    waybar = {
+      url = "github:Alexays/Waybar";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     zen-browser = {

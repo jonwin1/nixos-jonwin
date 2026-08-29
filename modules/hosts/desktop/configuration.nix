@@ -5,7 +5,6 @@
         username = "jonwin";
         hostname = "desktop";
         luksPart = "/dev/disk/by-uuid/cafb7838-4fb3-4c07-8fdb-4dd2aaf3f872";
-        waybar.output = "!HDMI-A-1";
       };
 
       home-manager.users.${config.my.username}.imports = [ self.homeModules.desktopHome ];

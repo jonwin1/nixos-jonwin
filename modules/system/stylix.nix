@@ -44,9 +44,9 @@
   };
 
   flake.homeModules.stylix = { pkgs, ... }: {
-    stylix = {
-      targets.waybar.addCss = false;
-      targets.zen-browser.profileNames = [ "default" ];
+    stylix.targets = {
+      waybar.addCss = false;
+      zen-browser.profileNames = [ "default" ];
     };
 
     gtk = {

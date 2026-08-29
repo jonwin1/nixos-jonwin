@@ -30,16 +30,12 @@
       hasBattery = lib.hasAttrByPath [ "hasBattery" ] my;
     in
     {
-      programs.waybar.settings = [
-        {
+      programs.waybar.settings = {
+        main = {
           inherit (my.waybar) output;
 
           height = 25;
           spacing = 0;
-
-          modules-left = [
-            "hyprland/workspaces"
-          ];
 
           modules-center = [
             "clock"
@@ -58,28 +54,6 @@
             "custom/disk"
           ]
           ++ lib.optionals hasBattery [ "battery" ];
-
-          "hyprland/workspaces" = {
-            show-special = true;
-            format = "{icon}";
-            format-icons = {
-              default = "󰞋";
-              "1" = "󰎤";
-              "2" = "󰎧";
-              "3" = "󰎪";
-              "4" = "󰎭";
-              "5" = "󰎱";
-              "6" = "󰎳";
-              "7" = "󰎶";
-              "8" = "󰎹";
-              "9" = "󰎼";
-              "10" = "󰽽";
-              scratchpad = "󰏬";
-              discord = "󰙯";
-              music = "󰎄";
-              wiki = "󰈚";
-            };
-          };
 
           "custom/status_icons" = {
             exec = "~/.config/waybar/scripts/status_icons.sh";
@@ -236,7 +210,7 @@
             tooltip-format-discharging = "{timeTo}\n{power:>1.0f}W↓ {capacity}%";
             tooltip-format-charging = "{timeTo}\n{power:>1.0f}W↑ {capacity}%";
           };
-        }
-      ];
+        };
+      };
     };
 }

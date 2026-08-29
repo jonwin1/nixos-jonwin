@@ -31,10 +31,6 @@
     };
 
     home.packages = with pkgs; [
-      cliphist
-      wl-clipboard
-      wl-clip-persist
-
       hyprpolkitagent
       kdePackages.qtwayland
       qt5.qtwayland

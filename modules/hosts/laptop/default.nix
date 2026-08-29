@@ -4,17 +4,18 @@
       modules = with self.nixosModules; [
         laptopConfiguration
         laptopHardware
-        laptopHyprland
-        desktop
 
-        android
+        nvidiaDrivers
+        nvidiaPrime
+
+        mangoProfile
+
+        # android
         battery
         backlight
-        hypridleBacklight
-        hypr
         luks-fido2
+        mangohud
         steam
-        waybar
         yubikey
       ];
     };
