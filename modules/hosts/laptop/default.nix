@@ -13,7 +13,7 @@
         # hypridleBacklight
         mangoProfile
 
-        android
+        # android
         battery
         backlight
         luks-fido2
