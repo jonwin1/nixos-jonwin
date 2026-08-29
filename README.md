@@ -9,10 +9,8 @@ with [flake-parts](https://github.com/hercules-ci/flake-parts) and
 ## Features
 
 - 🖥️ **Multiple Hosts Support**: Easy to configure for different hosts.
-- 🪟 **Hyprland + Waybar**: Highly configurable window compositor on Wayland.
-- ⚙️ **Rofi + jwmenu**: Applications launcher and custom system menus.
-- 🏠 **Home Manager Integration**: Manage user-specific configurations with
-ease.
+- 🪟 **MangoWM**: Lightweight & Feature-Rich Wayland compositor.
+- ✨ **Noctalia**: A sleek, customizable desktop shell crafted for Wayland.
 - 🐚 **Zsh + Starship**: Efficient shell setup with useful aliases.
 - 👻 **Ghostty**: Fast and feature-rich terminal emulator.
 - ✍️ **Neovim**: Configured through [nvf](https://github.com/NotAShelf/nvf), see
@@ -20,7 +18,6 @@ ease.
 - 🔑 **YubiKey Login**: Fast and secure authentication with YubiKeys.
 - 💾 **Full Disk Encryption**: [YubiKey-based
 FDE](https://jonwin.se/posts/yubikey-fde/) for secure and convenient unlock.
-- ✨ **Stylix**: Unified system theming.
 
 ## Host Template
 
@@ -29,23 +26,42 @@ TODO
 ## Module Template
 
 Every module exports a NixOS module and may optionally contain a Home Manager
-module which is imported by the NixOS module, this avoids having to
-differentiate between NixOS and Home Manager modules when importing.
+module or a wrapped package, which are imported by the NixOS module. This avoids
+having to differentiate between NixOS and Home Manager modules when importing.
+
+Modules are imported in host configurations or other modules and packages can be
+installed on the system or executed from the command line with `nix run
+github:jonwin1/nixos-jonwin#PACKAGE`.
 
 ```nix
 { self, imports, ... }: {
-  flake.nixosModules.MODULE = { pkgs, lib, config, ... }: {
-    home-manager.users.${config.my.username}.imports = [
-      self.homeModules.MODULE
-    ];
+  flake = {
+    nixosModules.MODULE = { pkgs, lib, config, ... }: {
+      home-manager.users.${config.my.username}.imports = [
+        self.homeModules.MODULE
+      ];
 
-    # NixOS options
-  };
+      environment.systemPackages = [
+      #   self.packages.${pkgs.stdenv.hostPlatform.system}.PACKAGE
+      ];
 
-  flake.homeModules.MODULE = { pkgs, lib, my, ... }: {
-    # my on the line above is equivalent to config.my in nixosModules
+      # NixOS options
+    };
 
-    # Home Manager options
+    homeModules.MODULE = { pkgs, lib, my, ... }: {
+      # my on the line above is equivalent to config.my in nixosModules
+
+      # Home Manager options
+    };
+
+    wrappers.PACKAGE = { wlib, ... }: {
+      # imports = [ wlib.wrapperModules.PACKAGE ];
+      # OR
+      # imports = [ wlib.modules.default ];
+      # package = pkgs.PACKAGE;
+
+      # Package options
+    };
   };
 }
 ```
