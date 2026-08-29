@@ -11,6 +11,8 @@
 
       # Fix grub and splash screen stretch
       boot.loader.grub.gfxmodeEfi = "3440x1440";
+
+      hardware.new-lg4ff.enable = true;
     };
 
     homeModules.desktopHome = { pkgs, ... }: {
@@ -18,8 +20,8 @@
         cura-appimage
         freecad-wayland
         heroic
-        ladybird
         openscad
+        oversteer
         proton-vpn
       ];
     };
