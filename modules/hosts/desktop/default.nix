@@ -5,17 +5,15 @@
         desktopConfiguration
         desktopHardware
 
-        desktopHyprland
-        hyprlandProfile
+        mangoProfile
 
-        android
+        # android
         foldingathome
         luks-fido2
         mangohud
         nvidiaDrivers
         steam
         yubikey
-        zmkbatx
       ];
     };
   };

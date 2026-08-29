@@ -4,7 +4,9 @@ My NixOS configuration for multiple hosts, built using the dendritic pattern
 with [flake-parts](https://github.com/hercules-ci/flake-parts) and
 [import-tree](https://github.com/denful/import-tree).
 
-![screenshot](./screenshots/screenshot1.png)
+![screenshot](./screenshots/mango.png)
+
+---
 
 ## Features
 
@@ -19,11 +21,87 @@ with [flake-parts](https://github.com/hercules-ci/flake-parts) and
 - 💾 **Full Disk Encryption**: [YubiKey-based
 FDE](https://jonwin.se/posts/yubikey-fde/) for secure and convenient unlock.
 
+---
+
+## Installation
+
+To install with full disk encryption and YubiKey unlock follow the steps
+outlined in [this post](https://jonwin.se/posts/yubikey-fde/). To install
+without, the process is more or less the same, just skip anything encryption
+related. Also see the [NixOS Installation
+Guide](https://nixos.org/manual/nixos/stable/#sec-installation).
+
+1. After completing the initial NixOS installation clone the repository:
+
+    ```sh
+    git clone https://github.com/jonwin1/nixos-jonwin
+    cd nixos-jonwin
+    ```
+
+2. Copy the host template to set up your own.
+
+    ```bash
+    cp -r modules/hosts/template modules/hosts/<your_hostname>
+    ```
+
+3. Copy paste the content of `etc/nixos/hardware-configuration.nix` into
+   `modules/hosts/<your_hostname>/hardware.nix`.
+
+4. Edit the host configuration files as needed, change every occurrence of
+   HOSTNAME and USERNAME to the appropriate value. Then choose which modules to
+include, pick one profile from `modules/profiles` and remember to include
+`modules/system/luks-fido2.nix` when using the disk encryption from the post
+mentioned above.
+
+5. Optionally add a YubiKey for PAM, see `modules/system/yubikey.nix` and [NixOS
+   Wiki - YubiKey PAM U2F](https://wiki.nixos.org/wiki/Yubikey#pam_u2f).
+
+6. Rebuild.
+
+    ```bash
+    git add .
+    sudo nixos-rebuild switch --flake .#<hostname>
+    ```
+
+---
+
+## Project Structure
+
+```markdown
+📂 .
+├ 📂 modules                  Imported by import-tree
+│ ├ 📂 apps                   GUI applications
+│ ├ 📂 drivers                E.g. Nvidia GPU
+│ ├ 📂 hosts
+│ │ └ 📂 hostname
+│ │   ├ ❄️ configuration.nix  Host-specific nixos and home-manager options
+│ │   ├ ❄️ default.nix        Module imports
+│ │   ├ ❄️ hardware.nix       Hardware configuration (Generated)
+│ │   └ ...                   Host-specific modules
+│ ├ 📂 profiles               Presets of modules and programs
+│ ├ 📂 scripts                Custom scripts installed as packages
+│ ├ 📂 shell                  Shell and terminal applications
+│ ├ 📂 system                 System services and programs (network, audio, wm, ...)
+│ ├ ❄️ parts.nix              flake-parts config
+│ └ ❄️ template.nix           Module template (as explained previously)
+└ ❄️ flake.nix                Main entry point
+```
+
+---
+
 ## Host Template
 
-TODO
+A system host template can be found at `modules/hosts/template/`. It contains 3
+files:
+
+- `default.nix` imports for all modules which should be included in the host,
+- `configuration.nix` NixOS options, Home Manager options, and packages for the
+host,
+- and `hardware.nix` for the content of `/etc/nixos/hardware-configuration.nix`.
 
 ## Module Template
+
+A module template can be found in `modules/template.nix` and is shown below.
 
 Every module exports a NixOS module and may optionally contain a Home Manager
 module or a wrapped package, which are imported by the NixOS module. This avoids
@@ -66,116 +144,7 @@ github:jonwin1/nixos-jonwin#PACKAGE`.
 }
 ```
 
-## Installation
-
-https://jonwin.se/posts/yubikey-fde/
-
-TODO
-
-<!---->
-<!-- > As of march 2026 I have migrated both my hosts to using full disk encryption, -->
-<!-- > which requires [this](https://jonwin.se/posts/yubikey-fde/) more advanced -->
-<!-- > setup process. The below steps should still work, but the disk encryption -->
-<!-- > options must be removed from the options. -->
-<!---->
-<!-- To get started with this setup, follow these steps: -->
-<!---->
-<!-- 1. **Install NixOS** -->
-<!---->
-<!--    If you haven’t already installed NixOS, follow the [NixOS Installation Guide](https://nixos.org/manual/nixos/stable/#sec-installation) for detailed instructions. -->
-<!---->
-<!-- 2. **Clone the Repository** -->
-<!---->
-<!--     ```bash -->
-<!--     git clone https://github.com/jonwin1/nixos-jonwin -->
-<!--     cd nixos-jonwin -->
-<!--     ``` -->
-<!---->
-<!-- 3. **Copy one of the host configurations to set up your own** -->
-<!---->
-<!--     ```bash -->
-<!--     cp -r config/desktop config/<your_hostname> -->
-<!--     ``` -->
-<!---->
-<!-- 4. **Put your `hardware-configuration.nix` file there** -->
-<!---->
-<!--     ```bash -->
-<!--     cp /etc/nixos/hardware-configuration.nix nixos/<your_hostname>/ -->
-<!--     ``` -->
-<!---->
-<!-- 5. **Edit the configuration files as needed** -->
-<!---->
-<!--     See [File Structure](#-file-structure) below for an overview of where to find what. -->
-<!--     You might for example what to set you git name and email or change the name -->
-<!--     and logo on the hyprlock screen. -->
-<!---->
-<!-- 6. **Add a YubiKey or disable the module** -->
-<!---->
-<!--    See [NixOS Wiki - YubiKey PAM U2F](https://wiki.nixos.org/wiki/Yubikey#pam_u2f) -->
-<!--    or remove the module from `modules/default.nix`. -->
-<!---->
-<!-- 7. **Edit the `flake.nix` file** -->
-<!---->
-<!--     ```diff -->
-<!--     ... -->
-<!--     let -->
-<!--       hosts = [ -->
-<!--     --  { -->
-<!--     --    user = "jonwin"; -->
-<!--     --    hostname = "desktop"; -->
-<!--     --    system = "x86_64-linux"; -->
-<!--     --  } -->
-<!--     --  { -->
-<!--     --    user = "jonwin"; -->
-<!--     --    hostname = "laptop"; -->
-<!--     --    system = "x86_64-linux"; -->
-<!--     --  } -->
-<!--     ++  { -->
-<!--     ++    user = "<your_username>"; -->
-<!--     ++    hostname = "<your_hostname>"; -->
-<!--     ++    system = "x86_64-linux"; -->
-<!--     ++  } -->
-<!--       ]; -->
-<!--     ... -->
-<!--     ``` -->
-<!---->
-<!-- 8. **Rebuild** -->
-<!---->
-<!--     ```bash -->
-<!--     git add . -->
-<!--     sudo nixos-rebuild switch --flake .#<hostname> -->
-<!--     # or, if you're installing on a fresh system: -->
-<!--     sudo nixos-install --flake .#<hostname> -->
-<!---->
-<!-- 9. **Wallpaper** -->
-<!---->
-<!--     Put wallpapers in ```~/Pictures/wallpaper/```, if there are multiple images -->
-<!--     in the directory they will be cycled through on an interval. -->
-<!--     [This](https://github.com/dharmx/walls) is a good place to find multiple -->
-<!--     wallpapers that fit a theme. -->
-
-
-## Project Structure
-
-```markdown
-📂 .
-├ 📂 modules                  Imported by import-tree
-│ ├ 📂 apps                   GUI applications
-│ ├ 📂 collections            of core modules and programs
-│ ├ 📂 drivers                E.g. Nvidia GPU
-│ ├ 📂 hosts
-│ │ └ 📂 hostname
-│ │   ├ ❄️ configuration.nix  Host-specific nixos and home-manager options
-│ │   ├ ❄️ default.nix        Module imports
-│ │   ├ ❄️ hardware.nix       Hardware configuration (Generated)
-│ │   └ ...                   Host-specific modules
-│ ├ 📂 scripts                Custom scripts installed as packages
-│ ├ 📂 shell                  Shell and terminal applications
-│ ├ 📂 system                 System services and programs (network, audio, wm, ...)
-│ ├ ❄️ parts.nix              flake-parts config
-│ └ ❄️ template.nix           Module template (as explained previously)
-└ ❄️ flake.nix                Main entry point
-```
+---
 
 ## Contributions
 

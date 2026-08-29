@@ -8,9 +8,6 @@
         nvidiaDrivers
         nvidiaPrime
 
-        # hyprlandProfile
-        # laptopHyprland
-        # hypridleBacklight
         mangoProfile
 
         # android
