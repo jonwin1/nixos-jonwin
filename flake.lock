@@ -286,19 +286,6 @@
         "type": "github"
       }
     },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1784796856,
-        "narHash": "sha256-vwxWgF+Gj276WznzGb1LxGsK/39HaQwgQXiU3EkC844=",
-        "rev": "e2587caef70cea85dd97d7daab492899902dbf5d",
-        "type": "tarball",
-        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1040357.e2587caef70c/nixexprs.tar.xz"
-      },
-      "original": {
-        "type": "tarball",
-        "url": "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz"
-      }
-    },
     "nur": {
       "inputs": {
         "flake-parts": [
@@ -333,11 +320,11 @@
         "nvf": "nvf_2"
       },
       "locked": {
-        "lastModified": 1787408830,
-        "narHash": "sha256-AO3s6UCy5lSNOFwe2N0Qd7cZJFb4FY3PdmfsYLnr3/k=",
+        "lastModified": 1788032851,
+        "narHash": "sha256-3AhkNwYOSGFi+E5Bf8Bx6qqi3bNza8A6TvRRJ4PWOrY=",
         "owner": "jonwin1",
         "repo": "nvf-config",
-        "rev": "3bc32356e6e69c4f5b7306704191ecf3ba4424df",
+        "rev": "3037333516de17304df17de6fb9f7241e788487b",
         "type": "github"
       },
       "original": {
@@ -350,18 +337,21 @@
       "inputs": {
         "flake-compat": "flake-compat",
         "mnw": "mnw",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": [
+          "nvf",
+          "nixpkgs"
+        ]
       },
       "locked": {
-        "lastModified": 1787322198,
-        "narHash": "sha256-MlaZ6QFcTtx1DGvE1NGjtd3067KqhNTgAXYWAfBrrZk=",
-        "owner": "notashelf",
+        "lastModified": 1787776375,
+        "narHash": "sha256-gxa6C1+Xfl0ys5h0X/ocusbwT3ABIdX38mrX3MRmPnM=",
+        "owner": "NotAShelf",
         "repo": "nvf",
-        "rev": "83d781d065b1b584baaf40436cbad6559ff14a8a",
+        "rev": "f019fe83c224eedb145982a9a26b764e7cb2fdd0",
         "type": "github"
       },
       "original": {
-        "owner": "notashelf",
+        "owner": "NotAShelf",
         "repo": "nvf",
         "type": "github"
       }
