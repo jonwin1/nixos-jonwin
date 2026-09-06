@@ -22,6 +22,16 @@
         home-manager.users.${config.my.username}.imports = [
           self.homeModules.style
         ];
+
+        fonts = {
+          enableDefaultPackages = true;
+          packages = [
+            config.my.font.package
+            pkgs.dejavu_fonts
+            pkgs.noto-fonts
+            pkgs.noto-fonts-color-emoji
+          ];
+        };
       };
     };
 
