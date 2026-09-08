@@ -6,5 +6,3 @@ ModuleName=script
 [script]
 ImageDir=/usr/share/plymouth/themes/mytheme/
 ScriptFile=/usr/share/plymouth/themes/mytheme/mytheme.script
-MonospaceFont=Cantarell 11
-Font=Cantarell 11
