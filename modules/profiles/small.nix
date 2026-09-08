@@ -6,6 +6,7 @@
       git
       lazygit
       myHomeManager
+      plymouth
       zsh
     ];
 
