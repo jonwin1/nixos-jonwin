@@ -8,8 +8,8 @@
         bind = [
           # Applications
           "${mod}, x, spawn, ghostty"
+          "${mod}, b, spawn, zen-beta"
 
-          "${mod}, b, spawn, jonwin-mango-focus-or-launch zen-beta zen-beta 6 '!YouTube Music'"
           "${mod}, y, spawn, jonwin-mango-focus-or-launch zen-beta 'zen-beta --new-window https://music.youtube.com/' 7 'YouTube Music'"
           "${mod}, d, spawn, jonwin-mango-focus-or-launch discord discord 8"
           "${mod}, w, spawn, jonwin-mango-focus-or-launch com.mitchellh.ghostty 'ghostty --working-directory=/home/jonwin/wiki --initial-command=jonwin-wiki --title=wiki' 9 'wiki'"
