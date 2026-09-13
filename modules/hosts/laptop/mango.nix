@@ -2,9 +2,10 @@
   flake.wrappers.mangowc = {
     settings = {
       bind = [
-          "super, t, toggle_trackpad_enable"
-          "super+shift, t, toggle_monitor, make:California Institute of Technology&&model:0x160A"
+        "super, t, toggle_trackpad_enable"
+        "super+shift, t, toggle_monitor, make:California Institute of Technology&&model:0x160A"
       ];
+
       monitorrule = [
         "make:California Institute of Technology, model:0x160A, width:2560, height:1600, refresh:120, x:0, y:0, scale:1.6, vrr:1"
 

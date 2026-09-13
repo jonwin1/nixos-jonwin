@@ -8,6 +8,7 @@
     environment.sessionVariables = {
       NIXOS_OZONE_WL = "1";
       QT_QPA_PLATFORM = "wayland";
+      WLR_DRM_NO_ATOMIC = 1;
     };
 
     systemd.user.targets.mango-session = {

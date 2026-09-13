@@ -4,8 +4,10 @@
       # ---------- Layouts ----------
 
       # Scroller Layout
-      scroller_default_proportion = 0.6;
-      scroller_proportion_preset = "0.5,0.6,0.75,1.0";
+      scroller_default_proportion = 0.7;
+      scroller_proportion_preset = "0.5,0.7,0.9";
+      scroller_prefer_center = 1;
+      scroller_prefer_overspread = 0;
 
       circle_layout = "tile,scroller,fair,dwindle,center_tile,right_tile,vertical_scroller";
 
@@ -30,6 +32,12 @@
         # Floating
         "isfloating:1,isoverlay:1,width:0.6,height:0.6,appid:(thunar|com.yubico.yubioath|com.gabm.satty)"
         "isfloating:1,isoverlay:1,width:0.6,height:0.6,title:(Open.*Files?|Open [F|f]older.*|Save.*Files?|Save.*As|Save|All Files|.*wants to (open|save).*|[C|c]hoose.*|.*file to save.*)"
+
+        # Tearing
+        "force_tearing:1,title:World of Warships"
+
+        # Scroller proportion
+        "scroller_proportion:0.5,appid:com.mitchellh.ghostty"
       ];
 
       tagrule = [
