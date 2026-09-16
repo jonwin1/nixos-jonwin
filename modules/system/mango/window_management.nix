@@ -4,10 +4,8 @@
       # ---------- Layouts ----------
 
       # Scroller Layout
-      scroller_default_proportion = 0.7;
-      scroller_proportion_preset = "0.5,0.7,0.9";
-      scroller_prefer_center = 1;
-      scroller_prefer_overspread = 0;
+      scroller_default_proportion = 0.6;
+      scroller_proportion_preset = "0.8,0.6,0.4";
 
       circle_layout = "tile,scroller,fair,dwindle,center_tile,right_tile,vertical_scroller";
 
@@ -37,7 +35,7 @@
         "force_tearing:1,title:World of Warships"
 
         # Scroller proportion
-        "scroller_proportion:0.5,appid:com.mitchellh.ghostty"
+        "scroller_proportion:0.4,appid:com.mitchellh.ghostty"
       ];
 
       tagrule = [
