@@ -9,7 +9,7 @@
       gappih = 5;
       gappiv = 5;
       gappoh = 5;
-      gappov = 5;
+      gappov = 20;
 
       # ---------- Window effects ----------
       # Blur

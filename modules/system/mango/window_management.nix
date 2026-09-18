@@ -4,10 +4,11 @@
       # ---------- Layouts ----------
 
       # Scroller Layout
+      scroller_structs = 20;
       scroller_default_proportion = 0.6;
       scroller_proportion_preset = "0.8,0.6,0.4";
 
-      circle_layout = "tile,scroller,fair,dwindle,center_tile,right_tile,vertical_scroller";
+      circle_layout = "tile,scroller,dwindle";
 
       # ---------- Rules ----------
 
@@ -44,10 +45,10 @@
         "id:3,layout_name:scroller"
         "id:4,layout_name:scroller"
         "id:5,layout_name:scroller"
-        "id:6,layout_name:tile"
-        "id:7,layout_name:tile"
-        "id:8,layout_name:tile"
-        "id:9,layout_name:tile"
+        "id:6,layout_name:scroller"
+        "id:7,layout_name:scroller"
+        "id:8,layout_name:scroller"
+        "id:9,layout_name:scroller"
       ];
     };
   };

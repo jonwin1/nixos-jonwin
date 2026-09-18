@@ -1,29 +1,86 @@
-config_version = 13
+config_version = 14
 
-[bar.default]
-position = "bottom"
-font_family = "FiraCode Nerd Font"
-background_opacity = 0.97
-start = [ "workspaces", "btn", "tray" ]
-center = [ "clock", "privacy" ]
-end = [
-    "media",
-    "notifications",
-    "network",
-    "bluetooth",
-    "volume",
-    "temp",
-    "cpu",
-    "GPU",
-    "ram",
-    "sysmon",
-    "widget",
-    "battery"
-]
+[bar]
+order = [ "default", "bottom" ]
 
-[control_center.calendar]
-show_events_card = false
-show_week_numbers = true
+    [bar.default]
+    position = "top"
+    background_opacity = 0.0
+    capsule = true
+    capsule_opacity = 0.9
+    capsule_padding = 8.0
+    capsule_thickness = 0.85
+    margin_ends = 0
+    radius = 0
+    reserve_space = false
+    shadow = false
+    start = [ ]
+    center = [ "group:g1" ]
+    end = [ "group:g2", "group:g3" ]
+
+        [[bar.default.capsule_group]]
+        accordion = false
+        accordion_direction = "end"
+        enabled = true
+        fill = "surface_variant"
+        id = "g1"
+        members = [ "clock", "notifications", "privacy" ]
+        opacity = 0.9
+        padding = 8.0
+
+        [[bar.default.capsule_group]]
+        accordion = true
+        accordion_direction = "start"
+        enabled = true
+        fill = "surface_variant"
+        id = "g2"
+        members = [ "temp", "cpu", "GPU", "ram", "sysmon" ]
+        opacity = 0.9
+        padding = 8.0
+
+        [[bar.default.capsule_group]]
+        accordion = false
+        accordion_direction = "start"
+        enabled = true
+        fill = "surface_variant"
+        id = "g3"
+        members = [ "bluetooth", "network", "battery" ]
+        opacity = 0.9
+        padding = 8.0
+        widget_spacing = 8
+
+    [bar.bottom]
+    position = "bottom"
+    background_opacity = 0.0
+    capsule = true
+    capsule_opacity = 0.9
+    capsule_padding = 8.0
+    capsule_thickness = 0.85
+    margin_ends = 0
+    radius = 0
+    reserve_space = false
+    shadow = false
+    start = []
+    center = [ "group:g1" ]
+    end = [ "media" ]
+
+        [[bar.bottom.capsule_group]]
+        accordion = false
+        accordion_direction = "end"
+        enabled = true
+        fill = "surface_variant"
+        id = "g1"
+        members = [ "workspaces", "tray" ]
+        opacity = 0.9
+        padding = 8.0
+        widget_spacing = 12
+
+[control_center]
+hidden_tabs = [ "monitor", "weather" ]
+
+    [control_center.calendar]
+    show_events_card = false
+    show_week_numbers = true
 
 [desktop_widgets]
 schema_version = 2
@@ -78,22 +135,17 @@ reserve_space = false
 smart_auto_hide = true
 
 [idle]
-behavior_order = [ "lock", "lock-and-suspend" ]
+behavior_order = [ "idle-behavior", "lock" ]
 pre_action_fade_seconds = 5
 
-    [idle.behavior.lock]
-    action = "lock"
+    [idle.behavior.idle-behavior]
+    action = "screen_off"
     enabled = true
     timeout = 300.0
 
-    [idle.behavior.lock-and-suspend]
-    action = "suspend"
-    enabled = true
-    lock_before_suspend = false
-    timeout = 360.0
-
 [location]
-auto_locate = true
+address = "Sweden"
+auto_locate = false
 
 [lockscreen]
 allow_empty_password = true
@@ -139,7 +191,7 @@ widget_order = [
         show_media = true
         show_session_buttons = false
         show_unlock_hint = false
-        show_weather = true
+        show_weather = false
 
     [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
     box_height = 150.0
@@ -166,7 +218,7 @@ widget_order = [
         show_media = true
         show_session_buttons = false
         show_unlock_hint = false
-        show_weather = true
+        show_weather = false
 
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
     box_height = 208.0
@@ -222,9 +274,14 @@ temperature_night = 3000
 [notification]
 history_retention_hours = 24
 layer = "overlay"
+background_opacity = 0.9
+offset_y = 40
+position = "top_center"
 
 [osd]
 position = "bottom_center"
+background_opacity = 0.9
+offset_y = 40
 
 [plugin_settings."ezequiel/mango_layouts"]
 panel_open_near_click = true
@@ -250,7 +307,10 @@ lang = "sv"
 screen_time_enabled = true
 
     [shell.panel]
-    control_center_position = "center"
+    control_center_placement = "floating"
+    wallpaper_placement = "floating"
+    session_placement = "floating"
+    session_position = "center"
 
     [shell.screenshot]
     directory = "~/Pictures/screenshots"
@@ -271,47 +331,76 @@ transition_on_startup = true
     [wallpaper.default]
     path = "/home/jonwin/Pictures/wallpaper/20260801_164314.jpg"
 
+[weather]
+enabled = false
+
 [widget.GPU]
 show_value = false
 stat = "gpu_usage"
 type = "sysmon"
+interactive = false
 
 [widget.battery]
 display_mode = "graphic"
 show_label = false
+interactive = false
+
+[widget.bluetooth]
+hide_when_no_connected_device = true
+interactive = false
 
 [widget.btn]
 type = "ezequiel/mango_layouts:btn"
 
 [widget.clock]
 tooltip_format = "{:%A %d %B %Y}\\n{:%x v.%V}"
+interactive = false
 
 [widget.cpu]
 show_value = false
+interactive = false
 
 [widget.media]
+max_length = 300
 hide_when_no_media = true
-max_length = 200
 title_scroll = "on_hover"
 
 [widget.network]
 show_label = false
+interactive = false
 
 [widget.notifications]
 hide_when_no_unread = true
+interactive = false
 
 [widget.privacy]
 hide_inactive = true
+interactive = false
 
 [widget.ram]
 show_value = false
+interactive = false
 
 [widget.sysmon]
 show_value = false
 stat = "disk_used_pct"
+interactive = false
 
 [widget.temp]
 show_value = false
 
-[widget.volume]
-show_label = false
+    [widget.temp.actions]
+    left = "none"
+    middle = "none"
+
+[widget.tray]
+hide_passive = false
+
+[widget.workspaces]
+active_pill_size = 2.0
+focused_output_only = true
+hide_when_empty = true
+interactive = false
+scale = 1.1
+show_labels = false
+style = "focus_hint"

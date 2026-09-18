@@ -25,7 +25,8 @@
           # Noctalia
           "${mod}, r, spawn, noctalia msg panel-toggle launcher"
           "${mod}, space, spawn, noctalia msg panel-toggle control-center"
-          "${mod}, comma, spawn, noctalia msg settings-toggle"
+          "${mod}, comma, spawn, noctalia msg panel-toggle control-center notifications"
+          "${mod}, period, spawn, noctalia msg settings-toggle"
           "${mod}, v, spawn, noctalia msg panel-toggle clipboard"
 
           "none, print, spawn, noctalia msg screenshot-fullscreen"
@@ -37,8 +38,8 @@
           "none, XF86PowerOff, spawn, noctalia msg panel-toggle session"
 
           # Layout
-          "${mod}, n, switch_layout"
           "${mod}, s, switch_proportion_preset"
+          "${mod}+shift, s, switch_layout"
           # "alt+super+ctrl, Left, scroller_stack, left"
           # "alt+super+ctrl, Right, scroller_stack, right"
           # "alt+super+ctrl, Up, scroller_stack, up"
@@ -81,7 +82,9 @@
           "${mod}, 8, view, 8, 0"
           "${mod}, 9, view, 9, 0"
           "${mod}, 0, togglejump"
-          "${mod}+shift, 0, toggleoverview"
+          "${mod}+shift, 0, overcircle, current_next"
+          "${mod}, n, view, 9, 0"
+          "${mod}+shift, n, view_insert, next"
 
           # Move window to tag
           "${mod}+shift, 1, tag, 1, 0"

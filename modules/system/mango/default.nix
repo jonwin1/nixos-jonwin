@@ -54,6 +54,7 @@
       cursor_hide_timeout = 1;
       drag_tile_to_tile = 1;
       scratchpad_cross_monitor = 1;
+      tag_gather = 1;
     };
   };
 }
