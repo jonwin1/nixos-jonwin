@@ -308,7 +308,9 @@ screen_time_enabled = true
 
     [shell.panel]
     control_center_placement = "floating"
+    control_center_position = "center"
     wallpaper_placement = "floating"
+    wallpaper_position = "center"
     session_placement = "floating"
     session_position = "center"
 
@@ -327,9 +329,6 @@ wallpaper_scheme = "m3-tonal-spot"
 [wallpaper]
 directory = "/home/jonwin/Pictures/wallpaper"
 transition_on_startup = true
-
-    [wallpaper.default]
-    path = "/home/jonwin/Pictures/wallpaper/20260801_164314.jpg"
 
 [weather]
 enabled = false
@@ -364,6 +363,15 @@ interactive = false
 max_length = 300
 hide_when_no_media = true
 title_scroll = "on_hover"
+
+    [widget.media.actions]
+    back = "none"
+    forward = "none"
+    left = "media toggle"
+    middle = "none"
+    right = "media stop"
+    scroll_down = "none"
+    scroll_up = "none"
 
 [widget.network]
 show_label = false
