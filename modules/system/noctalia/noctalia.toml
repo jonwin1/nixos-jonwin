@@ -97,8 +97,8 @@ widget_order = [ "desktop-widget-0000000000000005", "desktop-widget-000000000000
     cx = 800.0
     cy = 180.0
     output = "eDP-1"
-    placement_height = 1600.0
-    placement_width = 2560.0
+    placement_height = 1000.0
+    placement_width = 1600.0
     rotation = 0.0
     type = "clock"
 
@@ -199,8 +199,8 @@ widget_order = [
     cx = 800.0
     cy = 818.0
     output = "eDP-1"
-    placement_height = 1600.0
-    placement_width = 2560.0
+    placement_height = 1000.0
+    placement_width = 1600.0
     rotation = 0.0
     type = "login_box"
 
@@ -226,8 +226,8 @@ widget_order = [
     cx = 800.0
     cy = 180.0
     output = "eDP-1"
-    placement_height = 1600.0
-    placement_width = 2560.0
+    placement_height = 1000.0
+    placement_width = 1600.0
     rotation = 0.0
     type = "clock"
 
@@ -241,8 +241,8 @@ widget_order = [
     cx = 800.0
     cy = 948.0
     output = "eDP-1"
-    placement_height = 1600.0
-    placement_width = 2560.0
+    placement_height = 1000.0
+    placement_width = 1600.0
     rotation = 0.0
     type = "yocraft/battery-widget:widget"
 
