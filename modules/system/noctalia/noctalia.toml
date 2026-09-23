@@ -29,7 +29,7 @@ order = [ "default", "bottom" ]
         padding = 8.0
 
         [[bar.default.capsule_group]]
-        accordion = true
+        accordion = false
         accordion_direction = "start"
         enabled = true
         fill = "surface_variant"
@@ -283,20 +283,11 @@ position = "bottom_center"
 background_opacity = 0.9
 offset_y = 40
 
-[plugin_settings."ezequiel/mango_layouts"]
-panel_open_near_click = true
-panel_placement = "attached"
-panel_position = "auto"
-show_deck = false
-show_grid = false
-show_monocle = false
-show_vertical_deck = false
-show_vertical_fair = false
-show_vertical_grid = false
-show_vertical_tile = false
+    [osd.kinds]
+    keyboard_layout = false
 
 [plugins]
-enabled = [ "ezequiel/mango_layouts", "yocraft/battery-widget" ]
+enabled = [ "yocraft/battery-widget" ]
 
 [shell]
 avatar_path = "/home/jonwin/nixos-jonwin/modules/system/hypr/lock/logo.png"
@@ -342,14 +333,9 @@ interactive = false
 [widget.battery]
 display_mode = "graphic"
 show_label = false
-interactive = false
 
 [widget.bluetooth]
 hide_when_no_connected_device = true
-interactive = false
-
-[widget.btn]
-type = "ezequiel/mango_layouts:btn"
 
 [widget.clock]
 tooltip_format = "{:%A %d %B %Y}\\n{:%x v.%V}"
@@ -375,7 +361,6 @@ title_scroll = "on_hover"
 
 [widget.network]
 show_label = false
-interactive = false
 
 [widget.notifications]
 hide_when_no_unread = true
