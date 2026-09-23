@@ -11,6 +11,7 @@
       settings = {
         gui.nerdFontsVersion = "3";
         git.autoFetch = false;
+        os.editPreset = "nvim";
       };
     };
   };
