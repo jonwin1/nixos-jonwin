@@ -57,8 +57,8 @@
             l = "eza --long --group-directories-first";
             la = "eza --long --group-directories-first --almost-all";
             ll = "eza --long --reverse --sort=size --total-size";
-            lt = "eza --long --group-directories-first --tree --level=2";
-            lta = "eza --long --group-directories-first --tree";
+            lt = "eza --long --group-directories-first --tree";
+            lta = "eza --long --group-directories-first --tree --all";
 
             mkdir = "mkdir -vp";
             mv = "mv -iv";
