@@ -6,37 +6,28 @@
       # ---------- Theming ----------
       # Dimensions
       borderpx = 3;
-      gappih = 5;
-      gappiv = 5;
-      gappoh = 5;
-      gappov = 20;
+      gappih = 10;
+      gappiv = 10;
+      gappoh = 0;
+      gappov = 0;
 
       # ---------- Window effects ----------
       # Blur
       blur = 1;
       blur_layer = 0;
       blur_optimized = 1;
-      blur_params_radius = 5;
+      blur_params_radius = 10;
       blur_params_num_passes = 2;
-      blur_params_noise = 0.02;
-      blur_params_brightness = 0.9;
-      blur_params_contrast = 0.9;
-      blur_params_saturation = 1.2;
 
       # Shadows
       shadows = 1;
       layer_shadows = 0;
-      shadow_only_floating = 1;
-      shadows_size = 4;
-      shadows_blur = 10;
-      shadows_position_x = 0;
-      shadows_position_y = 0;
+      shadow_only_floating = 0;
 
       # Opacity & Corner Radius
-      border_radius = 10;
-      no_radius_when_single = 0;
-      focused_opacity = 1;
-      unfocused_opacity = 1;
+      border_radius = 16;
+      focused_opacity = 1.0;
+      unfocused_opacity = 0.95;
 
       # ---------- Animations ----------
       animations = 1;
