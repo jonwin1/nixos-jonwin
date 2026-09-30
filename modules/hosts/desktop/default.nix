@@ -14,6 +14,8 @@
         nvidiaDrivers
         steam
         yubikey
+
+        docker
       ];
     };
   };
