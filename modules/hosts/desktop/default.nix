@@ -6,6 +6,7 @@
         desktopHardware
 
         mangoProfile
+        mangoDesktop
 
         # android
         foldingathome

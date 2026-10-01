@@ -21,6 +21,10 @@
       url = "github:jonwin1/jwmenu";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    mangowm = {
+      url = "github:mangowm/mango";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nvf = {
       url = "github:jonwin1/nvf-config";
       inputs.nixpkgs.follows = "nixpkgs";

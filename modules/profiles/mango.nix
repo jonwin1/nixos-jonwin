@@ -1,5 +1,5 @@
 { self, ... }: {
-  flake.nixosModules.mangoProfile = {
+  flake.nixosModules.mangoProfile = { pkgs, ... }: {
     imports = with self.nixosModules; [
       desktopProfile
 
@@ -9,6 +9,7 @@
     ];
 
     services.displayManager = {
+      sessionPackages = [ pkgs.mango ];
       defaultSession = "mango";
     };
   };
