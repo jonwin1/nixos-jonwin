@@ -104,12 +104,9 @@ host,
 A module template can be found in `modules/template.nix` and is shown below.
 
 Every module exports a NixOS module and may optionally contain a Home Manager
-module or a wrapped package, which are imported by the NixOS module. This avoids
-having to differentiate between NixOS and Home Manager modules when importing.
-
-Modules are imported in host configurations or other modules and packages can be
-installed on the system or executed from the command line with `nix run
-github:jonwin1/nixos-jonwin#PACKAGE`.
+module, which is imported by the NixOS module. This avoids having to
+differentiate between NixOS and Home Manager modules when importing. Modules are
+imported in host configurations or in other modules.
 
 ```nix
 { self, imports, ... }: {
@@ -119,10 +116,6 @@ github:jonwin1/nixos-jonwin#PACKAGE`.
         self.homeModules.MODULE
       ];
 
-      environment.systemPackages = [
-      #   self.packages.${pkgs.stdenv.hostPlatform.system}.PACKAGE
-      ];
-
       # NixOS options
     };
 
@@ -130,15 +123,6 @@ github:jonwin1/nixos-jonwin#PACKAGE`.
       # my on the line above is equivalent to config.my in nixosModules
 
       # Home Manager options
-    };
-
-    wrappers.PACKAGE = { wlib, ... }: {
-      # imports = [ wlib.wrapperModules.PACKAGE ];
-      # OR
-      # imports = [ wlib.modules.default ];
-      # package = pkgs.PACKAGE;
-
-      # Package options
     };
   };
 }

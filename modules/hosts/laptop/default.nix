@@ -9,6 +9,7 @@
         nvidiaPrime
 
         mangoProfile
+        mangoLaptop
 
         # android
         battery

@@ -1,60 +1,56 @@
-{ self, ... }: {
-  flake.nixosModules.mango = { pkgs, ... }: {
-    programs.mango = {
-      enable = true;
-      package = self.packages.${pkgs.stdenv.hostPlatform.system}.mangowc;
-    };
-
-    environment.sessionVariables = {
-      NIXOS_OZONE_WL = "1";
-      QT_QPA_PLATFORM = "wayland";
-      WLR_DRM_NO_ATOMIC = 1;
-    };
-
-    systemd.user.targets.mango-session = {
-      description = "mango compositor session";
-      bindsTo = [ "graphical-session.target" ];
-      wants = [ "graphical-session-pre.target" ];
-      after = [ "graphical-session-pre.target" ];
-    };
-  };
-
-  flake.wrappers.mangowc = { wlib, ... }: {
-    imports = [ wlib.wrapperModules.mangowc ];
-
-    settings = {
-      exec-once = [
-        "dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE NIXOS_OZONE_WL XCURSOR_THEME XCURSOR_SIZE"
-        "systemctl --user reset-failed"
-        "systemctl --user start mango-session.target"
-
-        "wl-clip-persist --clipboard regular"
-        "wl-paste --type text --watch cliphist store"
-        "wl-paste --type image --watch cliphist store"
+{ self, inputs, ... }: {
+  flake = {
+    nixosModules.mango = { config, ... }: {
+      home-manager.users.${config.my.username}.imports = [
+        self.homeModules.mango
       ];
 
-      # ---------- Monitors ----------
+      environment.sessionVariables = {
+        NIXOS_OZONE_WL = "1";
+        QT_QPA_PLATFORM = "wayland";
+        WLR_DRM_NO_ATOMIC = 1;
+      };
+    };
 
-      allow_tearing = 1;
+    homeModules.mango = {
+      imports = [
+        inputs.mangowm.hmModules.mango
+      ];
 
-      # ---------- Input Device ----------
+      wayland.windowManager.mango = {
+        enable = true;
+        systemd.enable = true;
+        settings = {
+          exec-once = [
+            "wl-clip-persist --clipboard regular"
+            "wl-paste --type text --watch cliphist store"
+            "wl-paste --type image --watch cliphist store"
+          ];
 
-      # Keyboard
-      numlockon = 1;
-      xkb_rules_layout = "se";
-      xkb_rules_options = "caps:escape";
+          # ---------- Monitors ----------
 
-      # Mouse
-      mouse_accel_profile = 0;
+          allow_tearing = 1;
 
-      # ---------- Miscellaneous ----------
+          # ---------- Input Device ----------
 
-      syncobj_enable = 1;
-      sloppyfocus = 0;
-      cursor_hide_timeout = 1;
-      drag_tile_to_tile = 1;
-      scratchpad_cross_monitor = 1;
-      tag_gather = 1;
+          # Keyboard
+          numlockon = 1;
+          xkb_rules_layout = "se";
+          xkb_rules_options = "caps:escape";
+
+          # Mouse
+          mouse_accel_profile = 0;
+
+          # ---------- Miscellaneous ----------
+
+          syncobj_enable = 1;
+          sloppyfocus = 0;
+          cursor_hide_timeout = 1;
+          drag_tile_to_tile = 1;
+          scratchpad_cross_monitor = 1;
+          tag_gather = 1;
+        };
+      };
     };
   };
 }

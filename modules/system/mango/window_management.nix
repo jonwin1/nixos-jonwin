@@ -1,6 +1,6 @@
 {
-  flake.wrappers.mangowc = {
-    settings = {
+  flake.homeModules.mango = {
+    wayland.windowManager.mango.settings = {
       # ---------- Layouts ----------
 
       # Scroller Layout
