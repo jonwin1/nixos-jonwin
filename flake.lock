@@ -465,7 +465,6 @@
         "pomodoro": "pomodoro",
         "stylix": "stylix",
         "waybar": "waybar",
-        "wrapper-modules": "wrapper-modules",
         "zen-browser": "zen-browser"
       }
     },
@@ -640,26 +639,6 @@
       "original": {
         "owner": "Alexays",
         "repo": "Waybar",
-        "type": "github"
-      }
-    },
-    "wrapper-modules": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1789280673,
-        "narHash": "sha256-WYXI8STUhjxRAM0Ukd0hR1/eIsRRO64AOH5cGfAm81o=",
-        "owner": "jasdeep-dhillon",
-        "repo": "nix-wrapper-modules",
-        "rev": "8dc6e5fa91c39033b6a8613b2ba5cfcc72728792",
-        "type": "github"
-      },
-      "original": {
-        "owner": "jasdeep-dhillon",
-        "repo": "nix-wrapper-modules",
         "type": "github"
       }
     },
