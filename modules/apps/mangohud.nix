@@ -1,40 +1,30 @@
 { self, ... }: {
-  flake.nixosModules.mangohud = { pkgs, ... }: {
-    environment.systemPackages = [
-      self.packages.${pkgs.stdenv.hostPlatform.system}.mangohud
-    ];
-  };
-
-  flake.wrappers.mangohud =
-    {
-      wlib,
-      pkgs,
-      config,
-      ...
-    }:
-    {
-      imports = [ wlib.modules.default ];
-
-      package = pkgs.mangohud;
-
-      constructFiles."MangoHud.conf" = {
-        relPath = "$XDG_CONFIG_HOME/MangoHud";
-        content = ''
-          font_size=18
-
-          gpu_stats
-          gpu_temp
-          cpu_stats
-          cpu_temp
-          vram
-          ram
-          battery
-          fps
-          frametime
-          frame_timing
-        '';
-      };
-
-      env.MANGOHUD_CONFIGFILE = config.constructFiles."MangoHud.conf".path;
+  flake = {
+    nixosModules.mangohud = { config, ... }: {
+      home-manager.users.${config.my.username}.imports = [
+        self.homeModules.mangohud
+      ];
     };
+
+    homeModules.mangohud = {
+      programs.mangohud = {
+        enable = true;
+
+        settings = {
+          font_size = 18;
+
+          gpu_stats = true;
+          gpu_temp = true;
+          cpu_stats = true;
+          cpu_temp = true;
+          vram = true;
+          ram = true;
+          battery = true;
+          fps = true;
+          frametime = true;
+          frame_timing = true;
+        };
+      };
+    };
+  };
 }
