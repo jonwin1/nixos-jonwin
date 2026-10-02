@@ -7,6 +7,7 @@
 
         mangoProfile
         mangoDesktop
+        niri
 
         # android
         foldingathome
