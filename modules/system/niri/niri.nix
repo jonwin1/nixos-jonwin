@@ -10,7 +10,6 @@
         "/share/xdg-desktop-portal"
       ];
 
-      # TODO: Move to profile
       services.displayManager = {
         sessionPackages = [ pkgs.niri ];
       };
@@ -20,7 +19,6 @@
       wayland.windowManager.niri = {
         enable = true;
         systemd.enable = true;
-        settings = { };
       };
     };
   };
