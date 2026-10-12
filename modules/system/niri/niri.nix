@@ -15,10 +15,11 @@
       };
     };
 
-    homeModules.niri = {
+    homeModules.niri = { pkgs, ... }: {
       wayland.windowManager.niri = {
         enable = true;
         systemd.enable = true;
+        portalPackage = pkgs.xdg-desktop-portal-gtk;
       };
     };
   };
