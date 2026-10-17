@@ -143,7 +143,7 @@
           "none, XF86AudioNext, spawn, noctalia msg media next"
           "none, XF86AudioPrev, spawn, noctalia msg media previous"
           "none, XF86AudioPlay, spawn, noctalia msg media toggle"
-          "none, XF86AudioPause, spawn, noctalia msg media pause"
+          # "none, XF86AudioPause, spawn, noctalia msg media pause"
           "none, XF86AudioStop, spawn, noctalia msg media stop"
         ];
 

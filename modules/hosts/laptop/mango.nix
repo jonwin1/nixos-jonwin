@@ -13,7 +13,7 @@
           "super+shift, t, toggle_monitor, make:California Institute of Technology&&model:0x160A"
         ];
 
-        monitorrule = [
+        monitor_rule = [
           "make:California Institute of Technology, model:0x160A, width:2560, height:1600, refresh:120, x:0, y:0, scale:1.6, vrr:1"
 
           # Hemma kontor

@@ -21,7 +21,7 @@
         enable = true;
         systemd.enable = true;
         settings = {
-          exec-once = [
+          exec_once = [
             "wl-clip-persist --clipboard regular"
             "wl-paste --type text --watch cliphist store"
             "wl-paste --type image --watch cliphist store"
@@ -34,7 +34,7 @@
           # ---------- Input Device ----------
 
           # Keyboard
-          numlockon = 1;
+          numlock_on = 1;
           xkb_rules_layout = "se";
           xkb_rules_options = "caps:escape";
 
@@ -43,8 +43,8 @@
 
           # ---------- Miscellaneous ----------
 
-          syncobj_enable = 1;
-          sloppyfocus = 0;
+          sync_obj_enable = 1;
+          sloppy_focus = 0;
           cursor_hide_timeout = 1;
           drag_tile_to_tile = 1;
           scratchpad_cross_monitor = 1;

@@ -5,11 +5,11 @@
 
       # ---------- Theming ----------
       # Dimensions
-      borderpx = 3;
-      gappih = 10;
-      gappiv = 10;
-      gappoh = 0;
-      gappov = 0;
+      border_px = 3;
+      gap_inner_horizontal = 10;
+      gap_inner_vertical = 10;
+      gap_outer_horizontal = 0;
+      gap_outer_vertical = 0;
 
       # ---------- Window effects ----------
       # Blur
@@ -38,8 +38,8 @@
 
       animation_fade_in = 1;
       animation_fade_out = 1;
-      fadein_begin_opacity = 0.5;
-      fadeout_begin_opacity = 0.8;
+      fade_in_begin_opacity = 0.5;
+      fade_out_begin_opacity = 0.8;
 
       zoom_initial_ratio = 0.4;
       zoom_end_ratio = 0.8;
@@ -55,8 +55,8 @@
       animation_curve_tag = "0.46,1.0,0.29,0.99";
       animation_curve_close = "0.46,1.0,0.29,0.99";
       animation_curve_focus = "0.46,1.0,0.29,0.99";
-      animation_curve_opafadein = "0.46,1.0,0.29,0.99";
-      animation_curve_opafadeout = "0.5,0.5,0.5,0.5";
+      animation_curve_opacity_fade_in = "0.46,1.0,0.29,0.99";
+      animation_curve_opacity_fade_out = "0.5,0.5,0.5,0.5";
 
       tag_animation_direction = 1;
     };
