@@ -19,7 +19,6 @@
       home.packages = with pkgs; [
         cura-appimage
         freecad-wayland
-        heroic
         openscad
         oversteer
         proton-vpn
