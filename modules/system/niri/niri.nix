@@ -1,6 +1,6 @@
 { self, ... }: {
   flake = {
-    nixosModules.niri = { config, pkgs, ... }: {
+    nixosModules.niri = { config, ... }: {
       home-manager.users.${config.my.username}.imports = [
         self.homeModules.niri
       ];
@@ -9,10 +9,6 @@
         "/share/applications"
         "/share/xdg-desktop-portal"
       ];
-
-      services.displayManager = {
-        sessionPackages = [ pkgs.niri ];
-      };
     };
 
     homeModules.niri = { pkgs, ... }: {

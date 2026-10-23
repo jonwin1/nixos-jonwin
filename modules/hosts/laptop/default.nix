@@ -8,8 +8,8 @@
         nvidiaDrivers
         nvidiaPrime
 
-        mangoProfile
-        mangoLaptop
+        niriProfile
+        niriLaptop
 
         # android
         battery
@@ -18,6 +18,7 @@
         mangohud
         steam
         yubikey
+        docker
       ];
     };
   };
