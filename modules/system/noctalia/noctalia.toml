@@ -345,7 +345,7 @@ show_value = false
     middle = "none"
 
 [widget.tray]
-hide_passive = false
+hide_passive = true
 
 [widget.workspaces]
 active_pill_size = 2.0
