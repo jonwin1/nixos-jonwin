@@ -8,6 +8,7 @@ order = [ "default", "bottom" ]
 
     [bar.default]
     position = "top"
+    smart_auto_hide = true
     background_opacity = 0.0
     capsule = true
     capsule_opacity = 0.9
@@ -54,6 +55,7 @@ order = [ "default", "bottom" ]
 
     [bar.bottom]
     position = "bottom"
+    smart_auto_hide = true
     background_opacity = 0.0
     capsule = true
     capsule_opacity = 0.9
