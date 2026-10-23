@@ -1,5 +1,8 @@
 config_version = 14
 
+[backdrop]
+enabled = true
+
 [bar]
 order = [ "default", "bottom" ]
 
@@ -81,51 +84,6 @@ hidden_tabs = [ "monitor", "weather" ]
     [control_center.calendar]
     show_events_card = false
     show_week_numbers = true
-
-[desktop_widgets]
-schema_version = 2
-widget_order = [ "desktop-widget-0000000000000005", "desktop-widget-0000000000000006" ]
-
-    [desktop_widgets.grid]
-    cell_size = 16
-    major_interval = 4
-    visible = true
-
-    [desktop_widgets.widget.desktop-widget-0000000000000005]
-    box_height = 208.0
-    box_width = 496.0
-    cx = 800.0
-    cy = 180.0
-    output = "eDP-1"
-    placement_height = 1000.0
-    placement_width = 1600.0
-    rotation = 0.0
-    type = "clock"
-
-        [desktop_widgets.widget.desktop-widget-0000000000000005.settings]
-        background = false
-        center_text = true
-        circle = true
-        clock_style = "digital"
-        shadow = true
-
-    [desktop_widgets.widget.desktop-widget-0000000000000006]
-    box_height = 240.0
-    box_width = 624.0
-    cx = 1720.0
-    cy = 272.0
-    output = "DP-1"
-    placement_height = 1440.0
-    placement_width = 3440.0
-    rotation = 0.0
-    type = "clock"
-
-        [desktop_widgets.widget.desktop-widget-0000000000000006.settings]
-        background = false
-        center_text = true
-        circle = true
-        clock_style = "digital"
-        shadow = true
 
 [dock]
 enabled = true
@@ -314,7 +272,7 @@ source = "wallpaper"
 wallpaper_scheme = "m3-tonal-spot"
 
     [theme.templates]
-    builtin_ids = [ "gtk3", "gtk4", "ghostty", "mango" ]
+    builtin_ids = [ "gtk3", "gtk4", "ghostty", "niri" ]
     community_ids = [ "zen-browser" ]
 
 [wallpaper]
