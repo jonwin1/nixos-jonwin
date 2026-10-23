@@ -417,26 +417,6 @@
         "type": "github"
       }
     },
-    "pomodoro": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1744053501,
-        "narHash": "sha256-OiyJmFK90AunQ6V8WzvPGJBCnFdB+xMoR7RSWL3c1rY=",
-        "owner": "jonwin1",
-        "repo": "go-pomodoro",
-        "rev": "d491159dc4c3ed280f5e93abf0fec982b372bd49",
-        "type": "github"
-      },
-      "original": {
-        "owner": "jonwin1",
-        "repo": "go-pomodoro",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "flake-parts": "flake-parts",
@@ -446,7 +426,6 @@
         "mangowm": "mangowm",
         "nixpkgs": "nixpkgs",
         "nvf": "nvf",
-        "pomodoro": "pomodoro",
         "stylix": "stylix",
         "zen-browser": "zen-browser"
       }

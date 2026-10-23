@@ -24,10 +24,6 @@
       url = "github:jonwin1/nvf-config";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    pomodoro = {
-      url = "github:jonwin1/go-pomodoro";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     stylix = {
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";

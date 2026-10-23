@@ -1,4 +1,4 @@
-{ self, inputs, ... }: {
+{ self, ... }: {
   flake.nixosModules.desktopProfile = { config, ... }: {
     imports = with self.nixosModules; [
       smallProfile
@@ -39,8 +39,6 @@
       cliphist
       wl-clipboard
       wl-clip-persist
-
-      inputs.pomodoro.packages.${stdenv.hostPlatform.system}.default
     ];
   };
 }
