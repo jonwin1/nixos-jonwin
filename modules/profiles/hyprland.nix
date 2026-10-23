@@ -9,8 +9,6 @@
       rofi
       stylix
       swayosd
-      waybar
-      waybarHyprland
     ];
 
     services.displayManager = {
