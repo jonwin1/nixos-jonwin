@@ -8,7 +8,7 @@
       ghostty
       scripts
       sddm
-      thunar
+      nautilus
       virtualization
       zenBrowser
     ];

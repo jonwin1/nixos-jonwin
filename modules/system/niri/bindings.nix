@@ -10,7 +10,7 @@
     };
     "Mod+X".spawn = [ "ghostty" ];
     "Mod+B".spawn = [ "zen-beta" ];
-    "Mod+E".spawn = [ "thunar" ];
+    "Mod+E".spawn = [ "nautilus" ];
     "Mod+U".spawn = [ "yubioath-flutter" ];
 
     # ---------- Misc ----------
