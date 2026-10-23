@@ -290,7 +290,7 @@ offset_y = 40
 enabled = [ "yocraft/battery-widget" ]
 
 [shell]
-avatar_path = "/home/jonwin/nixos-jonwin/modules/system/hypr/lock/logo.png"
+avatar_path = "/home/jonwin/nixos-jonwin/screenshots/logo.png"
 clipboard_history_max_entries = 1000
 clipboard_image_action_command = "satty -f -"
 font_family = "FiraCode Nerd Font"

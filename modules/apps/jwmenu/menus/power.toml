@@ -23,4 +23,4 @@ command = "systemctl hibernate"
 
 [[config.menu]]
 label = "    Lock"
-command = "hyprlock"
+command = "loginctl lock-session"

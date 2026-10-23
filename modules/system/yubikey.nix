@@ -18,11 +18,6 @@
       };
 
       services = {
-        hyprlock = {
-          u2fAuth = true; # Enable YubiKey login.
-          unixAuth = false; # Disable password login.
-        };
-
         login = {
           u2fAuth = true;
           unixAuth = false;
