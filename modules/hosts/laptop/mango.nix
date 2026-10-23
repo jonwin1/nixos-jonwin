@@ -16,6 +16,8 @@
         monitor_rule = [
           "make:California Institute of Technology, model:0x160A, width:2560, height:1600, refresh:120, x:0, y:0, scale:1.6, vrr:1"
 
+          "make:AOC, model:U34G2G4R3, width:3440, height:1440, refresh:144, x:3840, y:720, scale:1"
+
           # Hemma kontor
           "make:AOC, model:2460G5, serial:0x00002C61, width:1920, height:1080, refresh:75, x:1600, y:0, scale:1"
           "make:AOC, model:2460G5, serial:0x00025047, width:1920, height:1080, refresh:75, x:3520, y:0, scale:1"
