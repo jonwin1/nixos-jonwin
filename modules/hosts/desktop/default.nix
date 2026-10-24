@@ -5,20 +5,16 @@
         desktopConfiguration
         desktopHardware
 
-        mangoProfile
-        mangoDesktop
-        niri
+        niriProfile
         niriDesktop
 
-        # android
+        docker
         foldingathome
         luks-fido2
         mangohud
         nvidiaDrivers
         steam
         yubikey
-
-        docker
       ];
     };
   };
