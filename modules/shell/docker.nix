@@ -1,9 +1,11 @@
 {
-  flake.nixosModules.docker = { config, ... }: {
+  flake.nixosModules.docker = {
     virtualisation.docker = {
       enable = true;
+      rootless = {
+        enable = true;
+        setSocketVariable = true;
+      };
     };
-
-    users.users.${config.my.username}.extraGroups = [ "docker" ];
   };
 }
