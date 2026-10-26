@@ -8,7 +8,6 @@
 
     config = {
       boot.initrd = {
-        systemd.enable = true;
         luks.devices.encrypted = {
           device = config.my.luksPart;
           crypttabExtraOpts = [ "fido2-device=auto" ];
