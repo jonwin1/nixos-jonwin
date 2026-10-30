@@ -212,9 +212,9 @@
 
     # workspace between monitors
     "Mod+Alt+Ctrl+H".move-workspace-to-monitor-left = { };
-    "Mod+Alt+Ctrl+J".move-workspace-to-monitor-right = { };
-    "Mod+Alt+Ctrl+K".move-workspace-to-monitor-down = { };
-    "Mod+Alt+Ctrl+L".move-workspace-to-monitor-up = { };
+    "Mod+Alt+Ctrl+J".move-workspace-to-monitor-down = { };
+    "Mod+Alt+Ctrl+K".move-workspace-to-monitor-up = { };
+    "Mod+Alt+Ctrl+L".move-workspace-to-monitor-right = { };
 
     # ---------- Size ----------
 
