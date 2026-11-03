@@ -9,6 +9,10 @@
         numlock = true;
       };
 
+      mouse = {
+        accel-profile = "flat";
+      };
+
       warp-mouse-to-focus._props = {
         mode = "center-xy-always";
       };
