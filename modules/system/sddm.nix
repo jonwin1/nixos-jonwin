@@ -7,7 +7,7 @@
       };
 
       autoLogin = {
-        enable = false;
+        enable = true;
         user = config.my.username;
       };
     };
