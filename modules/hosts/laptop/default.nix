@@ -19,6 +19,8 @@
         steam
         yubikey
         docker
+
+        foldingathome
       ];
     };
   };
