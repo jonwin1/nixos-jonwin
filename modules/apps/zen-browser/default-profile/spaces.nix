@@ -13,6 +13,12 @@
         icon = "💼";
         container = config.programs.zen-browser.profiles.default.containers.Work.id;
       };
+      KV = {
+        id = "78aabdad-8aae-4fe0-8ff0-2a0c6c4ccc24";
+        position = 3000;
+        icon = "💼";
+        container = config.programs.zen-browser.profiles.default.containers.KV.id;
+      };
     };
   };
 }

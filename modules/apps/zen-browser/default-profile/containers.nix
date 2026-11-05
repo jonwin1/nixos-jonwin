@@ -11,6 +11,11 @@
         icon = "briefcase";
         id = 2;
       };
+      KV = {
+        color = "red";
+        icon = "briefcase";
+        id = 3;
+      };
     };
   };
 }
