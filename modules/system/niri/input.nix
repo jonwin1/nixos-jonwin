@@ -13,6 +13,10 @@
         accel-profile = "flat";
       };
 
+      touchpad = {
+        tap = {};
+      };
+
       warp-mouse-to-focus._props = {
         mode = "center-xy-always";
       };
