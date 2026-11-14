@@ -48,6 +48,14 @@
           initContent = ''
             zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
             zstyle ':completion:*' list-colors "$\{(s.:.)LS_COLORS}"
+
+            ns() {
+              nix shell "''${@/#/nixpkgs#}"
+            }
+
+            nr() {
+              nix run "nixpkgs#$1" -- "''${@:2}"
+            }
           '';
 
           shellAliases = {
