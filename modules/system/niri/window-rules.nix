@@ -32,5 +32,23 @@
         { default-window-height.fixed = 920; }
       ];
     }
+    {
+      window-rule._children = [
+        {
+          match._props = {
+            app-id = "steam";
+            title = "^notificationtoasts_\\d+_desktop$";
+          };
+        }
+        {
+          default-floating-position._props = {
+            x = 10;
+            y = 10;
+            relative-to = "bottom-right";
+          };
+        }
+        { open-focused = false; }
+      ];
+    }
   ];
 }
